@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Oyster Web Storage</title>
+    <style type="text/css">
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        @font-face {
+            font-family: 'geo_med';
+            src: url('geo_med.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'geo_light';
+            src: url('geo_light.ttf') format('truetype');
+        }
+
+        .slide {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .render {
+            transform: translate3d(0,0,0);
+        }
+
+        @media screen and (orientation:landscape) {
+            .slide_img {
+                position: absolute;
+                top:-10%;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0;
+                display: block;
+                margin: 0 auto;
+                height: 110%;
+                min-width:100%;
+            }
+            .shell_img {
+                position: relative;
+                width:auto;
+                height:auto;
+                max-height:28vh;
+                max-width:35vh;
+                top: -1vh;
+                left: 0;
+                animation: bounce 8s ease-in-out infinite;
+                animation-delay: 0.1s;
+                z-index: 100;
+            }
+            .shell_cont_img {
+                position:absolute;
+                top: calc(18% - 5vh);
+                left: 50%;
+                height:35vh;
+                transform: translateX(-50%);
+            }
+            .shadow {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 6.5vh;
+                animation: expand 4s ease-in-out infinite;
+                animation-direction: alternate;
+                animation-delay: 0.1s;
+            }
+            .logo_text {
+                position:absolute;
+                left:50%;
+                top:18%;
+                transform: translateX(-50%) translateY(-25%) translateY(32vh);
+                background-color:rgba(255,32,38,0.1)
+            }
+            .logo_text_a {
+                position:absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width:auto;
+                height:auto;
+                max-height:6vh;
+                max-width:50vh;
+            }
+            .logo_text_b {
+                position:absolute;
+                top: 6vh;
+                left: 50%;
+                transform: translateX(-50%);
+                width:auto;
+                height:auto;
+                max-height:6vh;
+                max-width:50vh;
+            }
+            .intro_box {
+                position:absolute;
+                width:80vh;
+                height:24vh;
+                padding:10px;
+                left:50%;
+                top: calc(18% + 45vh);
+                border-radius:1vh;
+                transform: translateX(-50%);
+                background-color:rgba(205,205,205,0.2);
+            }
+            .intro_a {
+                position:fixed;
+                padding:1vh;
+                width:40%;
+                height:35%;
+                font-family:geo_med, Fallback, sans-serif;
+                font-size:2.2vh;
+            }
+            .intro_b {
+                position:fixed;
+                right:2%;
+                top:5%;
+                width:58%;
+                height:90%;
+                background-color:rgba(0,34,255,0);
+                font-family:geo_light, Fallback, sans-serif;
+                font-size:1.8vh;
+            }
+            .intro_c {
+                position:fixed;
+                left:2%;
+                bottom:0;
+                width:40%;
+                height:50%;
+                background-color:rgba(12,255,0,0);
+                font-family:geo_med, Fallback, sans-serif;
+                font-size:3vh;
+            }
+            .nav {
+                position: absolute;
+                bottom: 1vh;
+                left: 50%;
+                transform: translateX(-50%);
+                border: solid 0.5vh white;
+                color: white;
+                padding: 0.5vh;
+                text-decoration: none;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 2vh;
+                z-index: 500;
+            }
+            .nav.black {
+                border: solid 0.5vh black;
+                color: black;
+            }
+            .title {
+                position: absolute;
+                top: 0;
+                left: 2vh;
+                opacity: 0.25;
+                color: #404040;
+                text-decoration: none;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 8vh;
+                z-index: 600;
+            }
+
+            .feature {
+                position: absolute;
+                width: 55vh;
+                height: 25vh;
+                left: 50%;
+                z-index: 620;
+            }
+
+            .feature_under {
+                position: absolute;
+                opacity: 0.6;
+                background-color: #FFF;
+                width: 55vh;
+                height: 25vh;
+                left: 50%;
+                filter: blur(8px);
+                border-radius: 12px;
+                z-index: 610;
+            }
+
+            .feature_title {
+                position: fixed;
+                top: 1.8vh;
+                left: 0;
+                width: 100%;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 2vh;
+                text-align: center;
+            }
+
+            .feature_content {
+                position: fixed;
+                top: calc(1vh + 50%);
+                transform: translateY(-50%);
+                left: 14.5vh;
+                width: calc(100% - 16vh);
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.7vh;
+                text-align: left;
+            }
+
+            .feature_cont_img {
+                position: fixed;
+                top: 0;
+                left: 1.8vh;
+                width: 12vh;
+                height: 100%;
+            }
+
+            .feature_img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width:auto;
+                height:auto;
+                max-height:12vh;
+                max-width:12vh;
+            }
+            .protocol {
+                position: absolute;
+                width: 60vh;
+                left: 50%;
+                z-index: 620;
+            }
+
+            .protocol_under {
+                position: absolute;
+                opacity: 0.6;
+                background-color: #FFF;
+                width: 60vh;
+                left: 50%;
+                filter: blur(0.5vh);
+                border-radius: 1vh;
+                z-index: 610;
+            }
+
+            .protocol_title {
+                position: fixed;
+                top: 8px;
+                right: 0;
+                width: 80%;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 2vh;
+                text-align: center;
+            }
+
+            .protocol_caption {
+                position: relative;
+                top: -2px;
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.6vh;
+            }
+
+            .protocol_head {
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 1.6vh;
+            }
+
+            .protocol_content {
+                position: fixed;
+                bottom:1.5vh;
+                left: 1.8vh;
+                width: calc(100% - 3vh);
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.4vh;
+                text-align: left;
+            }
+
+            .protocol_cont_img {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 22%;
+                height: 8vh;
+            }
+            .protocol_img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width:auto;
+                height:auto;
+                max-height:7vh;
+                max-width:8vh;
+            }
+
+            .protocol_float_under {
+                position:absolute;
+                top: calc(50% - 8vh);
+                left:50%;
+                transform: translate(-50%, -50%);
+                width: 60vh;
+                height: 50vh;
+                filter: blur(1vh);
+                border-radius: 2vh;
+                background-color: rgba(220, 255, 255, 0.95);
+                z-index:1000;
+            }
+            .protocol_float {
+                position:absolute;
+                top: calc(50% - 8vh);
+                left:50%;
+                transform: translate(-50%, -50%);
+                width: 52vh;
+                height: 42vh;
+                padding:4vh;
+                border-radius: 2vh;
+                z-index:1002;
+            }
+            .level_one_b {
+                height: 36vh;
+                top: 38%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_two_b {
+                height: 32vh;
+                top: calc(83% - 6vh);
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_one_c {
+                height: 22vh;
+                top: 12.5%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_two_c {
+                height: 20vh;
+                top: 36%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_three_c {
+                height: 22vh;
+                top: 59.5%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_four_c {
+                height: 20vh;
+                top: 83%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            .right {
+                display:none;
+            }
+            .slide_img {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0;
+                display: block;
+                margin: 0 auto;
+                height: 100%;
+            }
+            .shell_img {
+                position: relative;
+                width:auto;
+                height:auto;
+                max-height:28vw;
+                max-width:35vw;
+                top: -1vw;
+                left: 0;
+                animation: bounce 8s ease-in-out infinite;
+                animation-delay: 0.1s;
+                z-index: 100;
+            }
+            .shell_cont_img {
+                position:absolute;
+                top: calc(18% - 5vw);
+                left: 50%;
+                height:35vw;
+                transform: translateX(-50%);
+            }
+            .shadow {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 6.5vw;
+                animation: expand 4s ease-in-out infinite;
+                animation-direction: alternate;
+                animation-delay: 0.1s;
+            }
+            .logo_text {
+                position:absolute;
+                left:50%;
+                top:18%;
+                transform: translateX(-50%) translateY(-25%) translateY(32vw);
+                background-color:rgba(255,32,38,0.1)
+            }
+            .logo_text_a {
+                position:absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width:auto;
+                height:auto;
+                max-height:6vw;
+                max-width:50vw;
+            }
+            .logo_text_b {
+                position:absolute;
+                top: 6vw;
+                left: 50%;
+                transform: translateX(-50%);
+                width:auto;
+                height:auto;
+                max-height:6vw;
+                max-width:50vw;
+            }
+            .intro_box {
+                position:absolute;
+                width:80vw;
+                height:24vw;
+                padding:10px;
+                left:50%;
+                top: calc(18% + 46vw);
+                border-radius:1vw;
+                transform: translateX(-50%);
+                background-color:rgba(205,205,205,0.2);
+            }
+            .intro_a {
+                position:fixed;
+                padding:1vw;
+                width:40%;
+                height:35%;
+                font-family:geo_med, Fallback, sans-serif;
+                font-size:2.2vw;
+            }
+            .intro_b {
+                position:fixed;
+                right:2%;
+                top:5%;
+                width:58%;
+                height:90%;
+                background-color:rgba(0,34,255,0);
+                font-family:geo_light, Fallback, sans-serif;
+                font-size:1.8vw;
+            }
+            .intro_c {
+                position:fixed;
+                left:2%;
+                bottom:0;
+                width:40%;
+                height:50%;
+                background-color:rgba(12,255,0,0);
+                font-family:geo_med, Fallback, sans-serif;
+                font-size:3vw;
+            }
+            .nav {
+                position: absolute;
+                bottom: 1vw;
+                left: 50%;
+                transform: translateX(-50%);
+                border: solid 0.5vw white;
+                color: white;
+                padding: 0.5vw;
+                text-decoration: none;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 2vw;
+                z-index: 500;
+            }
+            .nav.black {
+                border: solid 0.5vw black;
+                color: black;
+            }
+            .title {
+                position: absolute;
+                top: 0;
+                left: 2vw;
+                opacity: 0.25;
+                color: #404040;
+                text-decoration: none;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 8vw;
+                z-index: 600;
+            }
+
+            .feature {
+                position: absolute;
+                width: 48vw;
+                height: 30vw;
+                left: 50%;
+                z-index: 620;
+            }
+
+            .feature_under {
+                position: absolute;
+                opacity: 0.6;
+                background-color: #FFF;
+                width: 48vw;
+                height: 30vw;
+                left: 50%;
+                filter: blur(8px);
+                border-radius: 12px;
+                z-index: 610;
+            }
+
+            .feature_title {
+                position: fixed;
+                top: 8px;
+                left: 0;
+                width: 100%;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 2vw;
+                text-align: center;
+            }
+
+            .feature_content {
+                position: fixed;
+                top: calc(1vw + 50%);
+                transform: translateY(-50%);
+                left: 14.5vw;
+                width: calc(100% - 16vw);
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.7vw;
+                text-align: left;
+            }
+
+            .feature_cont_img {
+                position: fixed;
+                top: 0;
+                left: 1.8vw;
+                width: 12vw;
+                height: 100%;
+            }
+
+            .feature_img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width:auto;
+                height:auto;
+                max-height:12vw;
+                max-width:12vw;
+            }
+            .protocol {
+                position: absolute;
+                width: 45vw;
+                left: 50%;
+                z-index: 620;
+            }
+
+            .protocol_under {
+                position: absolute;
+                opacity: 0.6;
+                background-color: #FFF;
+                width: 45vw;
+                left: 50%;
+                filter: blur(0.5vw);
+                border-radius: 1vw;
+                z-index: 610;
+            }
+
+            .protocol_title {
+                position: fixed;
+                top: 8px;
+                right: 0;
+                width: 80%;
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 2vw;
+                text-align: center;
+            }
+
+            .protocol_caption {
+                position: relative;
+                top: -2px;
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.6vw;
+            }
+
+            .protocol_head {
+                font-family: geo_med, Fallback, sans-serif;
+                font-size: 1.6vw;
+            }
+
+            .protocol_content {
+                position: fixed;
+                bottom: 1.5vw;
+                left: 1.8vw;
+                width: calc(100% - 3vw);
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.4vw;
+                text-align: left;
+            }
+
+            .protocol_cont_img {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 22%;
+                height: 8vw;
+            }
+
+            .protocol_img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width:auto;
+                height:auto;
+                max-height:7vw;
+                max-width:8vw;
+            }
+            .level_one_b {
+                height: 45vw;
+                top: 38%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_two_b {
+                height: 38vw;
+                top: calc(83% - 8vw);
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_one_c {
+                height: 24vw;
+                top: 12.5%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_two_c {
+                height: 22vw;
+                top: 36.5%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_three_c {
+                height: 24vw;
+                top: 60%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_four_c {
+                height: 22vw;
+                top: 83%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+        .level_one {
+            top: 20%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .level_two {
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .level_three {
+            top: 80%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        /* Keyframes for the fade-in */
+        @-webkit-keyframes fade_in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fade_in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade_in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(2vh);
+            }
+        }
+
+        @keyframes expand {
+            0% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        .center_hor {
+            position:absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .oy_fade {
+            opacity: 0;
+            opacity: 1 \9; /*just in case ie*/
+            animation: fade_in ease-in 1;
+            animation-fill-mode: forwards;
+        }
+
+        .oy_fade.one {
+            animation-delay: 0.1s;
+            animation-duration: 0.8s;
+        }
+
+        .oy_fade.two {
+            animation-delay: 0.4s;
+            animation-duration: 0.4s;
+        }
+
+        .oy_fade.three {
+            animation-delay: 0.6s;
+            animation-duration: 0.2s;
+        }
+
+        .oy_fade.four {
+            animation-delay: 1.2s;
+            animation-duration: 0.8s;
+        }
+
+        .oy_fade.five {
+            animation-delay: 1.2s;
+            animation-duration: 0.2s;
+        }
+
+        .oy_fade.six {
+            animation-delay: 1.4s;
+            animation-duration: 0.2s;
+        }
+
+        .oy_fade.seven {
+            animation-delay: 1.6s;
+            animation-duration: 0.2s;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css"/>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.min.js"></script>
+</head>
+<body>
+<div id="fullpage">
+    <div class="section" data-anchor="intro">
+        <div id="introduction" class="slide" style="background: radial-gradient(at 50% 45%, rgb(133,133,133), rgb(70,70,70), rgb(40,40,40));">
+                <div class="oy_fade one shell_cont_img">
+                    <img class="shell_img" src="oy_logo_shell.png?5"/>
+                    <div class="shadow">
+                        <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
+                            <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
+                        </div>
+                    </div>
+                </div>
+            <div class="logo_text">
+                <div class="oy_fade two" style="position:relative;">
+                    <img class="logo_text_a" src="oy_logo_text_a.png?1"/>
+                </div>
+                <div class="oy_fade three" style="position:relative;top:10px;">
+                    <img class="logo_text_b" src="oy_logo_text_b.png?1"/>
+                </div>
+            </div>
+            <div class="oy_fade four intro_box">
+                <div class="oy_fade five intro_a">
+                    <div>Decentralized Cold Storage,</div>
+                    <div>Silent Website Monetization</div>
+                </div>
+                <div class="oy_fade six intro_b">
+                    The Oyster Protocol is built upon two separate ledgers;<br>the IOTA Tangle and the Ethereum
+                    Blockchain.<br>Therefore the Protocol achieves two simultaneous benefits:<br><br>Firstly, it
+                    provides anonymous, web-accessible, decentralized file storage that is retained on the
+                    Tangle.<br><br>Secondly, it allows website owners to earn revenue from their websites without
+                    imposing intrusive advertisements on visitors, therefore re-enabling the economy of the web.
+                </div>
+                <div class="oy_fade seven intro_c">
+                    35 DAYS 20 HRS<br>32 MIN 12 SEC
+                </div>
+            </div>
+            <a class="nav black oy_fade seven" href="#features">CONTINUE</a>
+        </div>
+    </div>
+    <div class="section" data-anchor="features">
+        <div class="slide render">
+            <a class="title">FEATURES</a>
+            <img class="slide_img" src="oy_slide_a.jpg?1" style="bottom:0;"/>
+            <div style="position:absolute;bottom:0;width:50%;height:100%;left:0;">
+                <div class="feature_under level_one"></div>
+                <div class="feature_under level_two"></div>
+                <div class="feature_under level_three"></div>
+                <div class="feature level_one">
+                    <div class="feature_cont_img"><img class="feature_img" src="oy_feat_1.png"/></div>
+                    <div class="feature_title">Robust, Redundant Data Storage</div>
+                    <div class="feature_content">Files uploaded via the Oyster Protocol are stored on the IOTA Tangle.
+                        This implies that an excess of redundant duplicates are stored throughout the network topology
+                        of the Tangle, therefore mitigating the threat of data loss. Nodes running the Oyster Protocol
+                        continuously perform Proof of Work to guarantee that the Tangle retains the data.
+                    </div>
+                </div>
+                <div class="feature level_two">
+                    <div class="feature_cont_img"><img class="feature_img" src="oy_feat_3.png"/></div>
+                    <div class="feature_title">Dual Ledger Integration</div>
+                    <div class="feature_content">The IOTA Tangle (Directed Acyclic Graph) is used for data retention and
+                        Proof of Work negotiation between nodes. The Smart Contract technology of the Ethereum
+                        Blockchain is used to produce Oyster Pearls (the token), therefore activating the unique token
+                        attributes that enable key Oyster Protocol functions.
+                    </div>
+                </div>
+                <div class="feature level_three">
+                    <div class="feature_cont_img"><img class="feature_img" src="oy_feat_4.png"/></div>
+                    <div class="feature_title">Treasure Hunting Algorithm</div>
+                    <div class="feature_content">Oyster Pearls are chaotically distributed amongst the data map that
+                        defines the data structure. Nodes perform the Proof of Work required for maintaining such data
+                        on the Tangle whilst searching for the embedded Pearls. Therefore all activity on the network is
+                        economically motivated, and no aspects of the Protocol rely on altruistic actors.
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;bottom:0;width:50%;height:100%;right:0;">
+                <div class="feature_under level_one"></div>
+                <div class="feature_under level_two"></div>
+                <div class="feature_under level_three"></div>
+                <div class="feature level_one">
+                    <div class="feature_cont_img"><img class="feature_img" src="oy_feat_2.png"/></div>
+                    <div class="feature_title">Zero Knowledge, Anonymous Storage</div>
+                    <div class="feature_content">No personal information, usernames, nor passwords are ever used. Each
+                        uploaded file is assigned a unique handle, which acts like a private seed key. Anyone that has
+                        the handle can retrieve the data from the Tangle, even if they were to use their own
+                        custom-built script and Tangle node. Mixer contracts from Ethereum can conceal who payed for the
+                        storage.
+                    </div>
+                </div>
+                <div class="feature level_two">
+                    <div class="feature_cont_img"><img class="feature_img" src="oy_feat_6.png"/></div>
+                    <div class="feature_title">Open Source, Decentralized & Auditable</div>
+                    <div class="feature_content">The Oyster Protocol is developed and maintained in a community driven
+                        model; without any single point of failure. Whilst the typical access to the storage features
+                        are via the web interface, there are no restrictions to the interfaces that can be independently
+                        developed. Anyone is able to develop API endpoints, smartphone apps etc.
+                    </div>
+                </div>
+                <div class="feature level_three">
+                    <div class="feature_cont_img"><img class="feature_img" src="oy_feat_5.png"/></div>
+                    <div class="feature_title">Scalable Storage Supply</div>
+                    <div class="feature_content">Oyster Pearls are the bridge between the motivation of a user to spend
+                        money on reliably storing data and the motivation of a website owner to cleanly monetize their
+                        web content. Technologies designed for the Tangle such as Swarm Intelligence further increase
+                        the scale of mass data retention and retrieval with excessive geographically distributed
+                        redundancy.
+                    </div>
+                </div>
+            </div>
+            <a class="nav" href="#protocol">PROTOCOL</a>
+        </div>
+    </div>
+    <div class="section" data-anchor="protocol">
+        <div class="slide render">
+            <a class="title">PROTOCOL</a>
+            <img class="slide_img" src="oy_slide_b.jpg?1" style="top:0;"/>
+            <div style="position:absolute;bottom:0;width:100%;height:50%;background:linear-gradient(transparent, black);z-index:200;"></div>
+            <div style="position:absolute;bottom:0;width:50%;height:100%;left:0;">
+                <div class="protocol_under level_one_b"></div>
+                <div class="protocol_under level_two_b"></div>
+                <div class="protocol level_one_b">
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_purple.png?1"/></div>
+                    <div class="protocol_title">
+                        <div>Broker Node</div>
+                        <div class="protocol_caption">A server with access to the Tangle and Blockchain</div>
+                    </div>
+                    <div id="protocol_1" class="protocol_content">
+                        <div class="protocol_head">Responsibilities</div>
+                        <div id="a1">&bull; Maintain connectivity to the main Tangle by upholding mutual connectivity
+                            with neighboring nodes.
+                        </div>
+                        <div id="a2">&bull; Perform Proof of Work for new file uploads, where applicable.</div>
+                        <div id="a3">&bull; Submit the Oyster User's Pearls to a buried state in the Blockchain
+                            Contract.
+                        </div>
+                        <div id="a4">&bull; Unlock discovered treasure for which the Proof of Work has been correctly
+                            performed.
+                        </div>
+                        <div id="a5">&bull; Maintain a positive balance of ETH to unlock discovered treasure.</div>
+                        <div id="a6">&bull; Calculate the correct fees to collect according to the Oyster Protocol
+                            specifications.
+                        </div>
+                        <div id="a7">&bull; Broker peer-to-peer connection initiations between Web Nodes.</div>
+                        <div id="a8">&bull; Send new Treasure Maps to Web Nodes that sufficiently perform the Proof of
+                            Work requirements.
+                        </div>
+                        <div class="protocol_head">Reward</div>
+                        <div id="a9">&bull; Earn Oyster Pearls by collecting fees from newly buried treasure.</div>
+                        <div id="a9a">&bull; Earn Oyster Pearls by collecting fees from newly discovered treasure.</div>
+                        <div id="a10">&bull; Pass on burden of Proof of Work to Web Nodes where applicable.</div>
+                    </div>
+                </div>
+                <div class="protocol level_two_b">
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_yellow.png?1"/></div>
+                    <div class="protocol_title">
+                        <div>Web Node</div>
+                        <div class="protocol_caption">A web browser that is visiting a web site</div>
+                    </div>
+                    <div id="protocol_2" class="protocol_content">
+                        <div class="protocol_head">Responsibilities</div>
+                        <div id="a11">&bull; Search through Treasure Maps, by performing Proof of Work, to discover
+                            embedded Pearls.
+                        </div>
+                        <div id="a12">&bull; Perform Proof of Work required by Broker Nodes to receive identities of
+                            other Web Nodes and newer Treasure Maps.
+                        </div>
+                        <div id="a13">&bull; Perform Proof of Work required by other Web Nodes to receive identities of
+                            other Web Nodes and older Treasure Maps.
+                        </div>
+                        <div id="a14">&bull; Send identities of other Web Nodes and older Treasure Maps to Web Nodes
+                            that have performed the adequate Proof of Work requirements.
+                        </div>
+                        <div class="protocol_head">Reward</div>
+                        <div id="a15">&bull; Permitted access to content/goods/services that are provided by the
+                            corresponding Website Owner.
+                        </div>
+                        <div id="a16">&bull; Pass on Proof of Work burden to other Web Nodes where applicable.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute;bottom:0;width:50%;height:100%;right:0;">
+                <div class="protocol_under level_one_c"></div>
+                <div class="protocol_under level_two_c"></div>
+                <div class="protocol_under level_three_c"></div>
+                <div class="protocol_under level_four_c"></div>
+                <div class="protocol level_one_c">
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_red.png?1"/></div>
+                    <div class="protocol_title">
+                        <div>IOTA Tangle</div>
+                        <div class="protocol_caption">A distributed ledger known as a Directed Acyclic Graph</div>
+                    </div>
+                    <div id="protocol_3" class="protocol_content">
+                        <div class="protocol_head">Responsibilities</div>
+                        <div id="b1">&bull; Retain data for which the Proof of Work has been performed.</div>
+                        <div id="b2">&bull; Geographically distribute redundant copies of data.</div>
+                        <div id="b3">&bull; Load balance storage burden, such as with Swarm Intelligence.</div>
+                        <div class="protocol_head">Reward</div>
+                        <div id="b4">&bull; Network experiences increased resistance against attack vectors.</div>
+                        <div id="b5">&bull; Faster average confirmation time for transactions.</div>
+                    </div>
+                </div>
+                <div class="protocol level_two_c">
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_brown.png?1"/></div>
+                    <div class="protocol_title">
+                        <div>Ethereum Blockchain</div>
+                        <div class="protocol_caption">A distributed ledger with Smart Contract capabilities</div>
+                    </div>
+                    <div id="protocol_4" class="protocol_content">
+                        <div class="protocol_head">Responsibilities</div>
+                        <div id="b6">&bull; Provide Smart Contract framework that produces the properties inherit in the
+                            Oyster Pearls (as tokens).
+                        </div>
+                        <div class="protocol_head">Reward</div>
+                        <div id="b7">&bull; Blockchain miners receive fees paid in ETH from the Broker Nodes.</div>
+                    </div>
+                </div>
+                <div class="protocol level_three_c">
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_blue.png?1"/></div>
+                    <div class="protocol_title">
+                        <div>Oyster User</div>
+                        <div class="protocol_caption">A user that spends Oyster Pearls to upload a file</div>
+                    </div>
+                    <div id="protocol_5" class="protocol_content">
+                        <div class="protocol_head">Responsibilities</div>
+                        <div id="b8">&bull; Pay the correct amount of Oyster Pearls to the Broker Nodes, as defined by the Protocol specification.</div>
+                        <div id="b9">&bull; Despite automation, has final discretion in choosing which two Broker Nodes to use.</div>
+                        <div id="b9a">&bull; Encrypt and split file locally in browser, and send parts to chosen Broker Nodes.</div>
+                        <div class="protocol_head">Reward</div>
+                        <div id="b10">&bull; Their file is securely, reliably, and anonymously stored.</div>
+                    </div>
+                </div>
+                <div class="protocol level_four_c">
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_orange.png?1"/></div>
+                    <div class="protocol_title">
+                        <div>Website Owner</div>
+                        <div class="protocol_caption">An organization or individual that runs a website</div>
+                    </div>
+                    <div id="protocol_6" class="protocol_content">
+                        <div class="protocol_head">Responsibilities</div>
+                        <div id="b11">&bull; Provide content/goods/services to Web Nodes.</div>
+                        <div id="b12">&bull; Add the Oyster Protocol script to their website HTML.</div>
+                        <div class="protocol_head">Reward</div>
+                        <div id="b13">&bull; Get paid in Oyster Pearls that have been discovered by Web Nodes.</div>
+                    </div>
+                </div>
+            </div>
+            <div id="protocol_float_under" class="protocol_float_under" style="display:none">
+            </div>
+            <div id="protocol_float" class="protocol_float" style="display:none">
+            </div>
+            <a class="nav" href="#launch">LAUNCH</a>
+        </div>
+    </div>
+    <div class="section" data-anchor="launch">
+        <div class="slide render"
+             style="background:linear-gradient(rgb(45,45,45), rgb(105,105,105), rgb(45,45,45))">
+            <a class="title">LAUNCH</a>
+            <img class="slide_img" src="oy_slide_c.png?1" style="top:-2px;"/>
+            <div style="position:absolute;bottom:0;width:100%;height:50px;background-color: #000;z-index:220">BOB</div>
+            <a class="nav" href="#intro">TOP</a>
+        </div>
+    </div>
+</div>
+<div style="display:none">
+    <div id="oy_close_box">
+        <div class="nav black" style="bottom:4%" onmouseover="this.style.cursor = 'pointer'" onclick="oy_protocol_close()">CLOSE BOX</div>
+    </div>
+    <div id="c1">
+        <div class="protocol_head center_hor">Tangle Based File Storage</div>
+        <div class="protocol_content">This is a test</div>
+    </div>
+    <div id="c2">C2</div>
+    <div id="c3">C3</div>
+    <div id="c4">C4</div>
+    <div id="c5">C5</div>
+    <div id="c6">C6</div>
+    <div id="c7">C7</div>
+    <div id="c8">C8</div>
+</div>
+<script type="text/javascript">
+    window.PROTOCOL_SELECT = [];
+    window.PROTOCOL_CURRENT = false;
+    window.PROTOCOL_CLUSTER = false;
+    var protocol_def = [];
+    protocol_def["c1"] = ["a1", "b2", "b3", "b10"];
+    protocol_def["c2"] = ["a2", "b1", "b4", "b5"];
+    protocol_def["c3"] = ["a3", "a6", "a9", "b8"];
+    protocol_def["c4"] = ["a4", "a5", "a11", "b7", "b13"];
+    protocol_def["c5"] = ["a7", "a8", "a10", "a12", "a13", "a14", "a16"];
+    protocol_def["c6"] = ["a15", "b11", "b12"];
+    protocol_def["c7"] = ["b6"];
+    protocol_def["c8"] = ["b9"];
+
+    function oy_protocol_assign() {
+        var oy_protocol_array = ["protocol_1", "protocol_2", "protocol_3", "protocol_4", "protocol_5", "protocol_6"];
+        var oy_div_list;
+        var i;
+        oy_protocol_array.forEach(function (protocol_id) {
+            oy_div_list = document.getElementById(protocol_id).getElementsByTagName('div');
+            for (i = 0; i < oy_div_list.length; i++) {
+                var oy_div = oy_div_list[i];
+                if (oy_div.className !== "protocol_head") {
+                    oy_div.onmousemove = function () {
+                        oy_protocol_hover(this.id);
+                        this.style.cursor = 'pointer';
+                    };
+                    oy_div.onmouseout = function () {
+                        oy_protocol_out();
+                    };
+                    oy_div.onclick = function () {
+                        oy_protocol_click();
+                    };
+                }
+            }
+        });
+    }
+
+    function oy_protocol_hover(oy_id) {
+        var cluster = false;
+        var key;
+        for (key in protocol_def) {
+            if (protocol_def.hasOwnProperty(key)) {
+                protocol_def[key].forEach(function (element) {
+                    if (element === oy_id) {
+                        cluster = key;
+                    }
+                });
+            }
+        }
+        if (cluster !== false) {
+            window.PROTOCOL_CLUSTER = cluster;
+            if (cluster !== window.PROTOCOL_CURRENT) {
+                protocol_def[cluster].forEach(function (element) {
+                    window.PROTOCOL_SELECT.push(element);
+                    document.getElementById(element).style.backgroundColor = "rgba(46,194,255,0.5)";
+                });
+            }
+        }
+    }
+
+    function oy_protocol_out() {
+        if (window.PROTOCOL_CURRENT!==window.PROTOCOL_CLUSTER) {
+            window.PROTOCOL_CLUSTER = false;
+            window.PROTOCOL_SELECT.forEach(function (element) {
+                document.getElementById(element).style.backgroundColor = "transparent";
+            });
+        }
+        window.PROTOCOL_SELECT = [];
+    }
+    function oy_protocol_click() {
+        console.log("CURRENT: "+window.PROTOCOL_CURRENT);
+        console.log("CLUSTER: "+window.PROTOCOL_CLUSTER);
+        console.log("----------------------------------")
+        if (window.PROTOCOL_CURRENT!==false) {
+            if (window.PROTOCOL_CURRENT===window.PROTOCOL_CLUSTER) {
+                oy_protocol_close();
+            }
+            else {
+                protocol_def[window.PROTOCOL_CURRENT].forEach(function (element) {
+                    window.PROTOCOL_SELECT.push(element);
+                    document.getElementById(element).style.backgroundColor = "transparent";
+                });
+            }
+        }
+        if (window.PROTOCOL_CURRENT===false&&window.PROTOCOL_CLUSTER!==false) {
+            window.PROTOCOL_CURRENT = window.PROTOCOL_CLUSTER;
+            document.getElementById('protocol_float').innerHTML = document.getElementById(window.PROTOCOL_CLUSTER).innerHTML+document.getElementById("oy_close_box").innerHTML;
+            $("#protocol_float_under").fadeIn();
+            $("#protocol_float").fadeIn();
+        }
+        else if (window.PROTOCOL_CURRENT!==false&&window.PROTOCOL_CLUSTER!==false) {
+            window.PROTOCOL_CURRENT = window.PROTOCOL_CLUSTER;
+            document.getElementById('protocol_float').innerHTML = document.getElementById(window.PROTOCOL_CLUSTER).innerHTML+document.getElementById("oy_close_box").innerHTML;
+        }
+        if (window.PROTOCOL_CURRENT!==false) {
+            protocol_def[window.PROTOCOL_CURRENT].forEach(function (element) {
+                window.PROTOCOL_SELECT.push(element);
+                document.getElementById(element).style.backgroundColor = "rgba(46,80,255,0.7)";
+            });
+        }
+    }
+
+    function oy_protocol_close() {
+        if (window.PROTOCOL_CURRENT!==false) {
+            $("#protocol_float_under").fadeOut();
+            $("#protocol_float").fadeOut();
+            protocol_def[window.PROTOCOL_CURRENT].forEach(function (element) {
+                window.PROTOCOL_SELECT.push(element);
+                document.getElementById(element).style.backgroundColor = "transparent";
+            });
+            window.PROTOCOL_CURRENT = false;
+            window.PROTOCOL_CLUSTER = false;
+        }
+    }
+
+    oy_protocol_assign();
+    $(document).ready(function () {
+        $('#fullpage').fullpage({
+            anchors: ['intro', 'features', 'protocol', 'launch'],
+            css3: true,
+            scrollingSpeed: 950,
+            lazyLoading: false,
+            navigation: true
+        });
+    });
+</script>
+</body>
+</html>
