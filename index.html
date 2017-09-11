@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Oyster Web Storage</title>
+    <title>Oyster - Economical Storage Protocol</title>
     <style type="text/css">
         body, html {
             height: 100%;
@@ -31,40 +31,43 @@
         }
 
         .render {
-            transform: translate3d(0,0,0);
+            transform: translate3d(0, 0, 0);
         }
 
-        @media screen and (orientation:landscape) {
+        @media screen and (orientation: landscape) {
             .slide_img {
                 position: absolute;
-                top:-10%;
+                top: -10%;
                 left: 50%;
                 transform: translateX(-50%);
                 padding: 0;
                 display: block;
                 margin: 0 auto;
                 height: 110%;
-                min-width:100%;
+                min-width: 100%;
             }
+
             .shell_img {
                 position: relative;
-                width:auto;
-                height:auto;
-                max-height:28vh;
-                max-width:35vh;
+                width: auto;
+                height: auto;
+                max-height: 28vh;
+                max-width: 35vh;
                 top: -1vh;
                 left: 0;
                 animation: bounce 8s ease-in-out infinite;
                 animation-delay: 0.1s;
                 z-index: 100;
             }
+
             .shell_cont_img {
-                position:absolute;
+                position: absolute;
                 top: calc(18% - 5vh);
                 left: 50%;
-                height:35vh;
+                height: 35vh;
                 transform: translateX(-50%);
             }
+
             .shadow {
                 position: absolute;
                 bottom: 0;
@@ -75,71 +78,109 @@
                 animation-direction: alternate;
                 animation-delay: 0.1s;
             }
+
             .logo_text {
-                position:absolute;
-                left:50%;
-                top:18%;
+                position: absolute;
+                left: 50%;
+                top: 18%;
                 transform: translateX(-50%) translateY(-25%) translateY(32vh);
-                background-color:rgba(255,32,38,0.1)
+                background-color: rgba(255, 32, 38, 0.1)
             }
+
             .logo_text_a {
-                position:absolute;
+                position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                width:auto;
-                height:auto;
-                max-height:6vh;
-                max-width:50vh;
+                width: auto;
+                height: auto;
+                max-height: 6vh;
+                max-width: 50vh;
             }
+
             .logo_text_b {
-                position:absolute;
+                position: absolute;
                 top: 6vh;
                 left: 50%;
                 transform: translateX(-50%);
-                width:auto;
-                height:auto;
-                max-height:6vh;
-                max-width:50vh;
+                width: auto;
+                height: auto;
+                max-height: 6vh;
+                max-width: 50vh;
             }
+
             .intro_box {
-                position:absolute;
-                width:80vh;
-                height:24vh;
-                padding:10px;
-                left:50%;
+                position: absolute;
+                width: 80vh;
+                height: 24vh;
+                padding: 2vh;
+                left: 50%;
                 top: calc(18% + 45vh);
-                border-radius:1vh;
+                border-radius: 1vh;
                 transform: translateX(-50%);
-                background-color:rgba(205,205,205,0.2);
+                background-color: rgba(205, 205, 205, 0.2);
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.8vh;
+                overflow: hidden;
             }
-            .intro_a {
-                position:fixed;
-                padding:1vh;
-                width:40%;
-                height:35%;
-                font-family:geo_med, Fallback, sans-serif;
-                font-size:2.2vh;
+
+            .intro_lead {
+                width: 100%;
+                font-size: 2.2vh;
+                font-weight: bold;
+                text-align: center;
             }
-            .intro_b {
-                position:fixed;
-                right:2%;
-                top:5%;
-                width:58%;
-                height:90%;
-                background-color:rgba(0,34,255,0);
-                font-family:geo_light, Fallback, sans-serif;
-                font-size:1.8vh;
+
+            #github_ribbon a:hover {
+                background: #14a2cc;
+                color: #fff;
             }
-            .intro_c {
-                position:fixed;
-                left:2%;
-                bottom:0;
-                width:40%;
-                height:50%;
-                background-color:rgba(12,255,0,0);
-                font-family:geo_med, Fallback, sans-serif;
-                font-size:3vh;
+
+            #github_ribbon a::before, #github_ribbon a::after {
+                content: "";
+                width: 100%;
+                display: block;
+                position: absolute;
+                top: 0.1vh;
+                left: 0;
+                height: 0.1vh;
+                background: #898989;
             }
+
+            #github_ribbon a::after {
+                bottom: 0.1vh;
+                top: auto;
+            }
+
+            #github_ribbon {
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
+                width: 20vh;
+                overflow: hidden;
+                height: 20vh;
+                z-index: 9999;
+            }
+
+            #github_ribbon a {
+                background: #000;
+                color: #898989;
+                text-decoration: none;
+                font-family: arial, sans-serif;
+                text-align: center;
+                font-weight: bold;
+                padding: 0.5vh 4vh;
+                font-size: 1.5vh;
+                line-height: 3vh;
+                transition: 0.5s;
+                width: 20vh;
+                position: absolute;
+                top: 6vh;
+                right: -6vh;
+                transform: rotate(45deg);
+                box-shadow: 0.5vh 0.5vh 1vh rgba(0, 0, 0, 0.8);
+            }
+
             .nav {
                 position: absolute;
                 bottom: 1vh;
@@ -147,16 +188,65 @@
                 transform: translateX(-50%);
                 border: solid 0.5vh white;
                 color: white;
-                padding: 0.5vh;
+                padding: 0.15vh 0.3vh;
                 text-decoration: none;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 2vh;
                 z-index: 500;
+                transition: 0.3s;
             }
+
+            .nav:hover {
+                background-color: #14a2cc;
+            }
+
             .nav.black {
                 border: solid 0.5vh black;
                 color: black;
             }
+
+            .arrow {
+                position: absolute;
+                bottom: 1.3vh;
+                border: solid white;
+                border-width: 0 0.3vh 0.3vh 0;
+                display: inline-block;
+                padding: 0.3vh;
+            }
+
+            .arrow_black {
+                position: absolute;
+                bottom: 1.3vh;
+                border: solid black;
+                border-width: 0 0.3vh 0.3vh 0;
+                display: inline-block;
+                padding: 0.3vh;
+            }
+
+            .up_left {
+                left: -2vh;
+                transform: rotate(-135deg);
+            }
+
+            .up_right {
+                right: -2vh;
+                transform: rotate(-135deg);
+            }
+
+            .down {
+                transform: rotate(45deg);
+            }
+
+            .down_left {
+                left: -2vh;
+                transform: rotate(45deg);
+            }
+
+            .down_right {
+                right: -2vh;
+                transform: rotate(45deg);
+            }
+
             .title {
                 position: absolute;
                 top: 0;
@@ -223,11 +313,12 @@
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
-                width:auto;
-                height:auto;
-                max-height:12vh;
-                max-width:12vh;
+                width: auto;
+                height: auto;
+                max-height: 12vh;
+                max-width: 12vh;
             }
+
             .protocol {
                 position: absolute;
                 width: 60vh;
@@ -264,13 +355,15 @@
             }
 
             .protocol_head {
+                position: relative;
+                top: 0;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 1.6vh;
             }
 
             .protocol_content {
                 position: fixed;
-                bottom:1.5vh;
+                bottom: 1.5vh;
                 left: 1.8vh;
                 width: calc(100% - 3vh);
                 font-family: geo_light, Fallback, sans-serif;
@@ -285,48 +378,66 @@
                 width: 22%;
                 height: 8vh;
             }
+
             .protocol_img {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width:auto;
-                height:auto;
-                max-height:7vh;
-                max-width:8vh;
+                width: auto;
+                height: auto;
+                max-height: 7vh;
+                max-width: 8vh;
             }
 
             .protocol_float_under {
-                position:absolute;
-                top: calc(50% - 8vh);
-                left:50%;
+                position: absolute;
+                top: calc(50% - 4vh);
+                left: 50%;
                 transform: translate(-50%, -50%);
-                width: 60vh;
-                height: 50vh;
+                width: 88vh;
+                height: 78vh;
                 filter: blur(1vh);
                 border-radius: 2vh;
                 background-color: rgba(220, 255, 255, 0.95);
-                z-index:1000;
+                z-index: 1000;
             }
+
             .protocol_float {
-                position:absolute;
-                top: calc(50% - 8vh);
-                left:50%;
+                position: absolute;
+                top: calc(50% - 4vh);
+                left: 50%;
                 transform: translate(-50%, -50%);
-                width: 52vh;
-                height: 42vh;
-                padding:4vh;
+                width: 80vh;
+                height: 64vh;
+                padding: 4vh;
                 border-radius: 2vh;
-                z-index:1002;
+                z-index: 1002;
             }
+
+            .protocol_float_content {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 1.8vh;
+                width: calc(100% - 5.5vh);
+                height: 64vh;
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.75vh;
+                text-align: left;
+                overflow: scroll;
+                border: 0.25vh solid rgba(99, 99, 99, 0.5);
+                padding: 1vh;
+            }
+
             .level_one_b {
-                height: 36vh;
+                height: 38vh;
                 top: 38%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
             .level_two_b {
-                height: 32vh;
+                height: 35vh;
                 top: calc(83% - 6vh);
                 transform: translateX(-50%) translateY(-50%);
             }
@@ -354,12 +465,125 @@
                 top: 83%;
                 transform: translateX(-50%) translateY(-50%);
             }
+
+            .flare_shell {
+                background-color: rgba(48, 93, 171, 0.15);
+            }
+
+            .flare_shell:after {
+                background-image: url(oy_logo_shell.png);
+                background-size: 1.23vh 1.5vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.23vh;
+                height: 1.5vh;
+                content: "";
+            }
+
+            .flare_yellow {
+                background-color: rgba(255, 221, 110, 0.15);
+            }
+
+            .flare_yellow:after {
+                background-image: url(oy_shell_yellow.png);
+                background-size: 2vh 1vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 2vh;
+                height: 1vh;
+                content: "";
+            }
+
+            .flare_brown {
+                background-color: rgba(187, 133, 107, 0.15);
+            }
+
+            .flare_brown:after {
+                background-image: url(oy_shell_brown.png);
+                background-size: 1.88vh 1.5vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.88vh;
+                height: 1.5vh;
+                content: "";
+            }
+
+            .flare_red {
+                background-color: rgba(255, 83, 64, 0.15);
+            }
+
+            .flare_red:after {
+                background-image: url(oy_shell_red.png);
+                background-size: 0.97vh 1.5vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 0.97vh;
+                height: 1.5vh;
+                content: "";
+            }
+
+            .flare_purple {
+                background-color: rgba(128, 48, 224, 0.15);
+            }
+
+            .flare_purple:after {
+                background-image: url(oy_shell_purple.png);
+                background-size: 2vh 1.47vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 2vh;
+                height: 1.47vh;
+                content: "";
+            }
+
+            .flare_blue {
+                background-color: rgba(38, 147, 255, 0.15);
+            }
+
+            .flare_blue:after {
+                background-image: url(oy_shell_blue.png);
+                background-size: 1.48vh 1.5vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.48vh;
+                height: 1.5vh;
+                content: "";
+            }
+
+            .flare_pink {
+                background-color: rgba(247, 96, 185, 0.15);
+            }
+
+            .flare_pink:after {
+                background-image: url(oy_shell_pink.png);
+                background-size: 1.68vh 1.5vh;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.68vh;
+                height: 1.5vh;
+                content: "";
+            }
+
+            .text_sel {
+                position: absolute;
+                font-family: geo_light, Fallback, sans-serif;
+                text-align: center;
+                border-right: 0.3vh solid black;
+                border-left: 0.3vh solid black;
+                border-bottom: 0.3vh solid black;
+            }
+
+            .text_sel_label {
+                position: relative;
+                top: 2vh;
+            }
         }
 
-        @media screen and (orientation:portrait) {
+        @media screen and (orientation: portrait) {
             .right {
-                display:none;
+                display: none;
             }
+
             .slide_img {
                 position: absolute;
                 top: 0;
@@ -370,25 +594,28 @@
                 margin: 0 auto;
                 height: 100%;
             }
+
             .shell_img {
                 position: relative;
-                width:auto;
-                height:auto;
-                max-height:28vw;
-                max-width:35vw;
+                width: auto;
+                height: auto;
+                max-height: 28vw;
+                max-width: 35vw;
                 top: -1vw;
                 left: 0;
                 animation: bounce 8s ease-in-out infinite;
                 animation-delay: 0.1s;
                 z-index: 100;
             }
+
             .shell_cont_img {
-                position:absolute;
+                position: absolute;
                 top: calc(18% - 5vw);
                 left: 50%;
-                height:35vw;
+                height: 35vw;
                 transform: translateX(-50%);
             }
+
             .shadow {
                 position: absolute;
                 bottom: 0;
@@ -399,71 +626,109 @@
                 animation-direction: alternate;
                 animation-delay: 0.1s;
             }
+
             .logo_text {
-                position:absolute;
-                left:50%;
-                top:18%;
+                position: absolute;
+                left: 50%;
+                top: 18%;
                 transform: translateX(-50%) translateY(-25%) translateY(32vw);
-                background-color:rgba(255,32,38,0.1)
+                background-color: rgba(255, 32, 38, 0.1)
             }
+
             .logo_text_a {
-                position:absolute;
+                position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                width:auto;
-                height:auto;
-                max-height:6vw;
-                max-width:50vw;
+                width: auto;
+                height: auto;
+                max-height: 6vw;
+                max-width: 50vw;
             }
+
             .logo_text_b {
-                position:absolute;
+                position: absolute;
                 top: 6vw;
                 left: 50%;
                 transform: translateX(-50%);
-                width:auto;
-                height:auto;
-                max-height:6vw;
-                max-width:50vw;
+                width: auto;
+                height: auto;
+                max-height: 6vw;
+                max-width: 50vw;
             }
+
             .intro_box {
-                position:absolute;
-                width:80vw;
-                height:24vw;
-                padding:10px;
-                left:50%;
-                top: calc(18% + 46vw);
-                border-radius:1vw;
+                position: absolute;
+                width: 80vw;
+                height: 24vw;
+                padding: 2vw;
+                left: 50%;
+                top: calc(18% + 45vw);
+                border-radius: 1vw;
                 transform: translateX(-50%);
-                background-color:rgba(205,205,205,0.2);
+                background-color: rgba(205, 205, 205, 0.2);
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.8vw;
+                overflow: hidden;
             }
-            .intro_a {
-                position:fixed;
-                padding:1vw;
-                width:40%;
-                height:35%;
-                font-family:geo_med, Fallback, sans-serif;
-                font-size:2.2vw;
+
+            .intro_lead {
+                width: 100%;
+                font-size: 2.2vw;
+                font-weight: bold;
+                text-align: center;
             }
-            .intro_b {
-                position:fixed;
-                right:2%;
-                top:5%;
-                width:58%;
-                height:90%;
-                background-color:rgba(0,34,255,0);
-                font-family:geo_light, Fallback, sans-serif;
-                font-size:1.8vw;
+
+            #github_ribbon a:hover {
+                background: #14a2cc;
+                color: #fff;
             }
-            .intro_c {
-                position:fixed;
-                left:2%;
-                bottom:0;
-                width:40%;
-                height:50%;
-                background-color:rgba(12,255,0,0);
-                font-family:geo_med, Fallback, sans-serif;
-                font-size:3vw;
+
+            #github_ribbon a::before, #github_ribbon a::after {
+                content: "";
+                width: 100%;
+                display: block;
+                position: absolute;
+                top: 0.1vw;
+                left: 0;
+                height: 0.1vw;
+                background: #898989;
             }
+
+            #github_ribbon a::after {
+                bottom: 0.1vw;
+                top: auto;
+            }
+
+            #github_ribbon {
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
+                width: 20vw;
+                overflow: hidden;
+                height: 20vw;
+                z-index: 9999;
+            }
+
+            #github_ribbon a {
+                background: #000;
+                color: #898989;
+                text-decoration: none;
+                font-family: arial, sans-serif;
+                text-align: center;
+                font-weight: bold;
+                padding: 0.5vw 4vw;
+                font-size: 1.5vw;
+                line-height: 3vw;
+                transition: 0.5s;
+                width: 20vw;
+                position: absolute;
+                top: 6vw;
+                right: -6vw;
+                transform: rotate(45deg);
+                box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.8);
+            }
+
             .nav {
                 position: absolute;
                 bottom: 1vw;
@@ -471,16 +736,60 @@
                 transform: translateX(-50%);
                 border: solid 0.5vw white;
                 color: white;
-                padding: 0.5vw;
+                padding: 0.15vw 0.3vw;
                 text-decoration: none;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 2vw;
                 z-index: 500;
             }
+
+            .nav:hover {
+                background-color: #14a2cc;
+            }
+
             .nav.black {
                 border: solid 0.5vw black;
                 color: black;
             }
+
+            .arrow {
+                position: absolute;
+                bottom: 1.3vw;
+                border: solid white;
+                border-width: 0 0.3vw 0.3vw 0;
+                display: inline-block;
+                padding: 0.3vw;
+            }
+
+            .arrow_black {
+                position: absolute;
+                bottom: 1.3vw;
+                border: solid black;
+                border-width: 0 0.3vw 0.3vw 0;
+                display: inline-block;
+                padding: 0.3vw;
+            }
+
+            .up_left {
+                left: -2vw;
+                transform: rotate(-135deg);
+            }
+
+            .up_right {
+                right: -2vw;
+                transform: rotate(-135deg);
+            }
+
+            .down_left {
+                left: -2vw;
+                transform: rotate(45deg);
+            }
+
+            .down_right {
+                right: -2vw;
+                transform: rotate(45deg);
+            }
+
             .title {
                 position: absolute;
                 top: 0;
@@ -547,14 +856,15 @@
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
-                width:auto;
-                height:auto;
-                max-height:12vw;
-                max-width:12vw;
+                width: auto;
+                height: auto;
+                max-height: 12vw;
+                max-width: 12vw;
             }
+
             .protocol {
                 position: absolute;
-                width: 45vw;
+                width: 50vw;
                 left: 50%;
                 z-index: 620;
             }
@@ -563,7 +873,7 @@
                 position: absolute;
                 opacity: 0.6;
                 background-color: #FFF;
-                width: 45vw;
+                width: 49vw;
                 left: 50%;
                 filter: blur(0.5vw);
                 border-radius: 1vw;
@@ -588,6 +898,7 @@
             }
 
             .protocol_head {
+                top: 0;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 1.6vw;
             }
@@ -615,19 +926,60 @@
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
-                width:auto;
-                height:auto;
-                max-height:7vw;
-                max-width:8vw;
+                width: auto;
+                height: auto;
+                max-height: 7vw;
+                max-width: 8vw;
             }
+
+            .protocol_float_under {
+                position: absolute;
+                top: calc(50% - 4vw);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 88vw;
+                height: 78vw;
+                filter: blur(1vw);
+                border-radius: 2vw;
+                background-color: rgba(220, 255, 255, 0.95);
+                z-index: 1000;
+            }
+
+            .protocol_float {
+                position: absolute;
+                top: calc(50% - 4vw);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80vw;
+                height: 64vw;
+                padding: 4vw;
+                border-radius: 2vw;
+                z-index: 1002;
+            }
+
+            .protocol_float_content {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 1.8vw;
+                width: calc(100% - 5.5vw);
+                height: 64vw;
+                font-family: geo_light, Fallback, sans-serif;
+                font-size: 1.75vw;
+                text-align: left;
+                overflow: scroll;
+                border: 0.25vw solid rgba(99, 99, 99, 0.5);
+                padding: 1vw;
+            }
+
             .level_one_b {
-                height: 45vw;
+                height: 47vw;
                 top: 38%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
             .level_two_b {
-                height: 38vw;
+                height: 41vw;
                 top: calc(83% - 8vw);
                 transform: translateX(-50%) translateY(-50%);
             }
@@ -645,7 +997,7 @@
             }
 
             .level_three_c {
-                height: 24vw;
+                height: 26vw;
                 top: 60%;
                 transform: translateX(-50%) translateY(-50%);
             }
@@ -655,7 +1007,120 @@
                 top: 83%;
                 transform: translateX(-50%) translateY(-50%);
             }
+
+            .flare_shell {
+                background-color: rgba(48, 93, 171, 0.15);
+            }
+
+            .flare_shell:after {
+                background-image: url(oy_logo_shell.png);
+                background-size: 1.23vw 1.5vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.23vw;
+                height: 1.5vw;
+                content: "";
+            }
+
+            .flare_yellow {
+                background-color: rgba(255, 221, 110, 0.15);
+            }
+
+            .flare_yellow:after {
+                background-image: url(oy_shell_yellow.png);
+                background-size: 2vh 1vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 2vw;
+                height: 1vw;
+                content: "";
+            }
+
+            .flare_brown {
+                background-color: rgba(187, 133, 107, 0.15);
+            }
+
+            .flare_brown:after {
+                background-image: url(oy_shell_brown.png);
+                background-size: 1.88vw 1.5vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.88vw;
+                height: 1.5vw;
+                content: "";
+            }
+
+            .flare_red {
+                background-color: rgba(255, 83, 64, 0.15);
+            }
+
+            .flare_red:after {
+                background-image: url(oy_shell_red.png);
+                background-size: 0.97vw 1.5vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 0.97vw;
+                height: 1.5vw;
+                content: "";
+            }
+
+            .flare_purple {
+                background-color: rgba(128, 48, 224, 0.15);
+            }
+
+            .flare_purple:after {
+                background-image: url(oy_shell_purple.png);
+                background-size: 2vw 1.47vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 2vw;
+                height: 1.47vw;
+                content: "";
+            }
+
+            .flare_blue {
+                background-color: rgba(38, 147, 255, 0.15);
+            }
+
+            .flare_blue:after {
+                background-image: url(oy_shell_blue.png);
+                background-size: 1.48vw 1.5vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.48vw;
+                height: 1.5vw;
+                content: "";
+            }
+
+            .flare_pink {
+                background-color: rgba(247, 96, 185, 0.15);
+            }
+
+            .flare_pink:after {
+                background-image: url(oy_shell_pink.png);
+                background-size: 1.68vw 1.5vw;
+                display: inline-block;
+                opacity: 0.4;
+                width: 1.68vw;
+                height: 1.5vw;
+                content: "";
+            }
+
+            .text_sel {
+                position: absolute;
+                font-family: geo_light, Fallback, sans-serif;
+                text-align: center;
+                border-right: 0.3vw solid black;
+                border-left: 0.3vw solid black;
+                border-bottom: 0.3vw solid black;
+            }
+
+            .text_sel_label {
+                position: relative;
+                top: 2vw;
+            }
         }
+
         .level_one {
             top: 20%;
             transform: translateX(-50%) translateY(-50%);
@@ -671,7 +1136,6 @@
             transform: translateX(-50%) translateY(-50%);
         }
 
-        /* Keyframes for the fade-in */
         @-webkit-keyframes fade_in {
             from {
                 opacity: 0;
@@ -716,11 +1180,13 @@
                 transform: scale(1.1);
             }
         }
+
         .center_hor {
-            position:absolute;
+            position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
+
         .oy_fade {
             opacity: 0;
             opacity: 1 \9; /*just in case ie*/
@@ -734,35 +1200,69 @@
         }
 
         .oy_fade.two {
-            animation-delay: 0.4s;
-            animation-duration: 0.4s;
+            animation-delay: 1s;
+            animation-duration: 0.8s;
         }
 
         .oy_fade.three {
-            animation-delay: 0.6s;
-            animation-duration: 0.2s;
+            animation-delay: 1.2s;
+            animation-duration: 0.4s;
         }
 
         .oy_fade.four {
-            animation-delay: 1.2s;
+            animation-delay: 2.2s;
             animation-duration: 0.8s;
         }
 
         .oy_fade.five {
-            animation-delay: 1.2s;
-            animation-duration: 0.2s;
+            animation-delay: 2.4s;
+            animation-duration: 0.5s;
         }
 
-        .oy_fade.six {
-            animation-delay: 1.4s;
-            animation-duration: 0.2s;
+        .protocol_mention {
+            font-family: geo_med, Fallback, sans-serif;
+            color: #5e5e5e;
         }
 
-        .oy_fade.seven {
-            animation-delay: 1.6s;
-            animation-duration: 0.2s;
+        .protocol_mention:hover {
+            cursor: pointer;
+        }
+
+        span.challenge {
+            height: 0;
+            background-color: rgba(155, 6, 7, 0.39);
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+            z-index: 5100;
+        }
+
+        span.challenge:after {
+            content: attr(data-response);
+            background: rgba(0, 0, 0, 0.85);
+            color: #FFF;
+            border-radius: 3px;
+            opacity: 0;
+            top: 0;
+            left: -150px;
+            width: 300px;
+            position: absolute;
+            transition: 500ms ease;
+            z-index: 5000;
+        }
+
+        span.challenge:hover:after {
+            opacity: 1;
+            top: 1.2em;
+            max-height: 200px;
+            padding: .4em;
+        }
+
+        .bold {
+            font-family: geo_med, Fallback, sans-serif;
         }
     </style>
+    <base target="_blank">
     <link rel="stylesheet" type="text/css" href="jquery.fullPage.css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="jquery.fullPage.min.js"></script>
@@ -770,40 +1270,38 @@
 <body>
 <div id="fullpage">
     <div class="section" data-anchor="intro">
-        <div id="introduction" class="slide" style="background: radial-gradient(at 50% 45%, rgb(133,133,133), rgb(70,70,70), rgb(40,40,40));">
-                <div class="oy_fade one shell_cont_img">
-                    <img class="shell_img" src="oy_logo_shell.png?5"/>
-                    <div class="shadow">
-                        <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
-                            <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
-                        </div>
+        <span id="github_ribbon" class="oy_fade four"><a href="https://github.com/oysterprotocol" target="_blank">Review me on GitHub</a></span>
+        <div id="introduction" class="slide"
+             style="background: radial-gradient(at 50% 45%, rgb(133,133,133), rgb(70,70,70), rgb(40,40,40));">
+            <div class="oy_fade one shell_cont_img">
+                <img class="shell_img" src="oy_logo_shell.png?5"/>
+                <div class="shadow">
+                    <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
+                        <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
                     </div>
                 </div>
+            </div>
             <div class="logo_text">
                 <div class="oy_fade two" style="position:relative;">
-                    <img class="logo_text_a" src="oy_logo_text_a.png?1"/>
+                    <img class="logo_text_a" src="oy_logo_text_a.png?2"/>
                 </div>
                 <div class="oy_fade three" style="position:relative;top:10px;">
-                    <img class="logo_text_b" src="oy_logo_text_b.png?1"/>
+                    <img class="logo_text_b" src="oy_logo_text_b.png?2"/>
                 </div>
             </div>
             <div class="oy_fade four intro_box">
-                <div class="oy_fade five intro_a">
-                    <div>Decentralized Cold Storage,</div>
-                    <div>Silent Website Monetization</div>
+                <div class="intro_lead">The Oyster Protocol enables websites to silently generate traffic revenue as
+                    visitors perform Proof of Work for a decentralized file storage ledger
                 </div>
-                <div class="oy_fade six intro_b">
-                    The Oyster Protocol is built upon two separate ledgers;<br>the IOTA Tangle and the Ethereum
-                    Blockchain.<br>Therefore the Protocol achieves two simultaneous benefits:<br><br>Firstly, it
-                    provides anonymous, web-accessible, decentralized file storage that is retained on the
-                    Tangle.<br><br>Secondly, it allows website owners to earn revenue from their websites without
-                    imposing intrusive advertisements on visitors, therefore re-enabling the economy of the web.
-                </div>
-                <div class="oy_fade seven intro_c">
-                    35 DAYS 20 HRS<br>32 MIN 12 SEC
-                </div>
+                <br>Creative content publishers are suffering due to the advent of ad blockers and a general disregard
+                to what advertisements have to offer. The Oyster Protocol is the radical new solution that grants a
+                parallel revenue stream to website owners by adding one line of code.<br><br>Website visitors contribute
+                a portion of their GPU power to enable users' files to be stored on a decentralized, distributed and
+                anonymous ledger. In return, such users indirectly pay the website owners for maintaining the storage of
+                their data.
             </div>
-            <a class="nav black oy_fade seven" href="#features">CONTINUE</a>
+            <a class="nav black oy_fade five" href="#features" target="_self"><i class="arrow_black down_left"></i>CONTINUE<i
+                    class="arrow_black down_right"></i></a>
         </div>
     </div>
     <div class="section" data-anchor="features">
@@ -835,9 +1333,11 @@
                 <div class="feature level_three">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_4.png"/></div>
                     <div class="feature_title">Treasure Hunting Algorithm</div>
-                    <div class="feature_content">Oyster Pearls are chaotically distributed amongst the data map that
-                        defines the data structure. Nodes perform the Proof of Work required for maintaining such data
-                        on the Tangle whilst searching for the embedded Pearls. Therefore all activity on the network is
+                    <div class="feature_content">Oyster Pearls are randomly embedded within the Data Map that
+                        defines the structure of the uploaded file. Nodes perform the Proof of Work required for
+                        maintaining such data
+                        on the Tangle whilst searching for the embedded Pearls. Therefore all activity across the
+                        network is
                         economically motivated, and no aspects of the Protocol rely on altruistic actors.
                     </div>
                 </div>
@@ -852,7 +1352,8 @@
                     <div class="feature_content">No personal information, usernames, nor passwords are ever used. Each
                         uploaded file is assigned a unique handle, which acts like a private seed key. Anyone that has
                         the handle can retrieve the data from the Tangle, even if they were to use their own
-                        custom-built script and Tangle node. Mixer contracts from Ethereum can conceal who payed for the
+                        custom-built script and Tangle node. Mixer contracts on the Ethereum Blockchain can conceal who
+                        payed for the
                         storage.
                     </div>
                 </div>
@@ -862,7 +1363,8 @@
                     <div class="feature_content">The Oyster Protocol is developed and maintained in a community driven
                         model; without any single point of failure. Whilst the typical access to the storage features
                         are via the web interface, there are no restrictions to the interfaces that can be independently
-                        developed. Anyone is able to develop API endpoints, smartphone apps etc.
+                        developed. Anyone is able to develop API endpoints, smartphone apps etc. without permission from
+                        a central figurehead.
                     </div>
                 </div>
                 <div class="feature level_three">
@@ -876,7 +1378,8 @@
                     </div>
                 </div>
             </div>
-            <a class="nav" href="#protocol">PROTOCOL</a>
+            <a class="nav" href="#protocol" target="_self"><i class="arrow down_left"></i>PROTOCOL<i
+                    class="arrow down_right"></i></a>
         </div>
     </div>
     <div class="section" data-anchor="protocol">
@@ -890,60 +1393,95 @@
                 <div class="protocol level_one_b">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_purple.png?1"/></div>
                     <div class="protocol_title">
-                        <div>Broker Node</div>
-                        <div class="protocol_caption">A server with access to the Tangle and Blockchain</div>
+                        <div><span style="background-color: rgba(128, 48, 224, 0.25);">&nbsp;Broker Node&nbsp;</span>
+                        </div>
+                        <div class="protocol_caption">A network device with access to the Tangle and Blockchain</div>
                     </div>
                     <div id="protocol_1" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="a1">&bull; Maintain connectivity to the main Tangle by upholding mutual connectivity
+                        <div id="a1">&bull; Maintain connectivity to the <span class="flare_red">Tangle</span> by
+                            upholding mutual connectivity
                             with neighboring nodes.
                         </div>
-                        <div id="a2">&bull; Perform Proof of Work for new file uploads, where applicable.</div>
-                        <div id="a3">&bull; Submit the Oyster User's Pearls to a buried state in the Blockchain
-                            Contract.
+                        <div id="a2">&bull; Provide <span class="flare_yellow">Web Nodes</span> and <span
+                                class="flare_blue">Oyster Users</span> with access to the <span
+                                class="flare_red">Tangle</span>.
                         </div>
-                        <div id="a4">&bull; Unlock discovered treasure for which the Proof of Work has been correctly
+                        <div id="a3">&bull; Perform <span class="flare_red">Proof of Work</span> for new <span
+                                class="flare_blue">file uploads</span> where applicable.
+                        </div>
+                        <div id="a4">&bull; Submit the <span class="flare_blue">Oyster User's</span> <span
+                                class="flare_pink">Pearls</span> to a <span class="flare_pink">buried state</span> in
+                            the <span class="flare_pink">Blockchain Contract</span>.
+                        </div>
+                        <div id="a5">&bull; Unlock discovered treasure for which the <span class="flare_red">Proof of Work</span>
+                            has been correctly
                             performed.
                         </div>
-                        <div id="a5">&bull; Maintain a positive balance of ETH to unlock discovered treasure.</div>
-                        <div id="a6">&bull; Calculate the correct fees to collect according to the Oyster Protocol
+                        <div id="a6">&bull; Maintain a positive balance of <span class="flare_pink">ETH</span> to unlock
+                            discovered treasure.
+                        </div>
+                        <div id="a7">&bull; Calculate the correct fees to collect according to the <span
+                                class="flare_shell">Oyster Protocol</span>
                             specifications.
                         </div>
-                        <div id="a7">&bull; Broker peer-to-peer connection initiations between Web Nodes.</div>
-                        <div id="a8">&bull; Send new Treasure Maps to Web Nodes that sufficiently perform the Proof of
-                            Work requirements.
+                        <div id="a8">&bull; Broker peer-to-peer connection initiations between <span
+                                class="flare_yellow">Web Nodes</span>.
+                        </div>
+                        <div id="a9">&bull; Send new Treasure Maps to <span class="flare_yellow">Web Nodes</span> that
+                            sufficiently perform the <span class="flare_red">Proof of
+                            Work</span> requirements.
                         </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="a9">&bull; Earn Oyster Pearls by collecting fees from newly buried treasure.</div>
-                        <div id="a9a">&bull; Earn Oyster Pearls by collecting fees from newly discovered treasure.</div>
-                        <div id="a10">&bull; Pass on burden of Proof of Work to Web Nodes where applicable.</div>
+                        <div id="a10">&bull; Earn <span class="flare_shell">Oyster</span> <span
+                                class="flare_pink">Pearls</span> by collecting fees from newly <span class="flare_pink">buried</span>
+                            treasure.
+                        </div>
+                        <div id="a11">&bull; Earn <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>
+                            by collecting fees from newly <span class="flare_yellow">discovered</span> treasure.
+                        </div>
+                        <div id="a12">&bull; Pass on burden of <span class="flare_red">Proof of Work</span> to <span
+                                class="flare_yellow">Web Nodes</span> where applicable.
+                        </div>
                     </div>
                 </div>
                 <div class="protocol level_two_b">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_yellow.png?1"/></div>
                     <div class="protocol_title">
-                        <div>Web Node</div>
+                        <div><span style="background-color: rgba(255, 221, 110, 0.25);">&nbsp;Web Node&nbsp;</span>
+                        </div>
                         <div class="protocol_caption">A web browser that is visiting a web site</div>
                     </div>
                     <div id="protocol_2" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="a11">&bull; Search through Treasure Maps, by performing Proof of Work, to discover
-                            embedded Pearls.
+                        <div id="a13">&bull; Search through Treasure Maps, by performing <span class="flare_red">Proof of Work</span>,
+                            to discover
+                            embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>.
                         </div>
-                        <div id="a12">&bull; Perform Proof of Work required by Broker Nodes to receive identities of
-                            other Web Nodes and newer Treasure Maps.
+                        <div id="a14">&bull; Submit the discovered Treasure to a <span
+                                class="flare_purple">Broker Node</span> to claim it on behalf of the corresponding <span
+                                class="flare_brown">Website Owner</span>.
                         </div>
-                        <div id="a13">&bull; Perform Proof of Work required by other Web Nodes to receive identities of
-                            other Web Nodes and older Treasure Maps.
+                        <div id="a15">&bull; Perform <span class="flare_red">Proof of Work</span> required by <span
+                                class="flare_purple">Broker Nodes</span> to receive identities of
+                            other <span class="flare_yellow">Web Nodes</span> and newer Treasure Maps.
                         </div>
-                        <div id="a14">&bull; Send identities of other Web Nodes and older Treasure Maps to Web Nodes
-                            that have performed the adequate Proof of Work requirements.
+                        <div id="a16">&bull; Perform <span class="flare_red">Proof of Work</span> required by other
+                            <span class="flare_yellow">Web Nodes</span> to receive identities of
+                            other <span class="flare_yellow">Web Nodes</span> and older Treasure Maps.
+                        </div>
+                        <div id="a17">&bull; Send identities of other <span class="flare_yellow">Web Nodes</span> and
+                            older Treasure Maps to <span class="flare_yellow">Web Nodes</span>
+                            that have performed the adequate <span class="flare_red">Proof of Work</span> requirements.
                         </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="a15">&bull; Permitted access to content/goods/services that are provided by the
-                            corresponding Website Owner.
+                        <div id="a18">&bull; Permitted access to <span class="flare_brown">content/goods/services</span>
+                            that are provided by the
+                            corresponding <span class="flare_brown">Website Owner</span>.
                         </div>
-                        <div id="a16">&bull; Pass on Proof of Work burden to other Web Nodes where applicable.</div>
+                        <div id="a19">&bull; Pass on <span class="flare_red">Proof of Work</span> burden to other <span
+                                class="flare_yellow">Web Nodes</span> where applicable.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -955,61 +1493,95 @@
                 <div class="protocol level_one_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_red.png?1"/></div>
                     <div class="protocol_title">
-                        <div>IOTA Tangle</div>
+                        <div><span style="background-color: rgba(255, 83, 64, 0.25);">&nbsp;IOTA Tangle&nbsp;</span>
+                        </div>
                         <div class="protocol_caption">A distributed ledger known as a Directed Acyclic Graph</div>
                     </div>
                     <div id="protocol_3" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="b1">&bull; Retain data for which the Proof of Work has been performed.</div>
-                        <div id="b2">&bull; Geographically distribute redundant copies of data.</div>
-                        <div id="b3">&bull; Load balance storage burden, such as with Swarm Intelligence.</div>
+                        <div id="b1">&bull; Retain <span class="flare_blue">data</span> for which the <span
+                                class="flare_red">Proof of Work</span> has been <span
+                                class="flare_yellow">performed</span>.
+                        </div>
+                        <div id="b2">&bull; Geographically distribute redundant copies of <span
+                                class="flare_blue">data</span>.
+                        </div>
+                        <div id="b3">&bull; Load balance storage burden, such as with <span class="flare_red">Swarm Intelligence</span>.
+                        </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b4">&bull; Network experiences increased resistance against attack vectors.</div>
-                        <div id="b5">&bull; Faster average confirmation time for transactions.</div>
+                        <div id="b4">&bull; <span class="flare_red">Network</span> experiences increased resistance
+                            against attack vectors.
+                        </div>
+                        <div id="b5">&bull; Faster average confirmation time for <span
+                                class="flare_red">transactions</span>.
+                        </div>
                     </div>
                 </div>
                 <div class="protocol level_two_c">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_brown.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_pink.png?1"/></div>
                     <div class="protocol_title">
-                        <div>Ethereum Blockchain</div>
+                        <div><span
+                                style="background-color: rgba(247, 96, 185, 0.25);">&nbsp;Ethereum Blockchain&nbsp;</span>
+                        </div>
                         <div class="protocol_caption">A distributed ledger with Smart Contract capabilities</div>
                     </div>
                     <div id="protocol_4" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="b6">&bull; Provide Smart Contract framework that produces the properties inherit in the
-                            Oyster Pearls (as tokens).
+                        <div id="b6">&bull; Provide <span class="flare_pink">Smart Contract Framework</span> that
+                            produces the properties inherit in
+                            <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span> (as tokens).
                         </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b7">&bull; Blockchain miners receive fees paid in ETH from the Broker Nodes.</div>
+                        <div id="b7">&bull; <span class="flare_pink">Blockchain miners</span> receive fees paid in <span
+                                class="flare_pink">ETH</span> from the <span class="flare_purple">Broker Nodes</span>.
+                        </div>
                     </div>
                 </div>
                 <div class="protocol level_three_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_blue.png?1"/></div>
                     <div class="protocol_title">
-                        <div>Oyster User</div>
+                        <div><span style="background-color: rgba(38, 147, 255, 0.25);">&nbsp;Oyster User&nbsp;</span>
+                        </div>
                         <div class="protocol_caption">A user that spends Oyster Pearls to upload a file</div>
                     </div>
                     <div id="protocol_5" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="b8">&bull; Pay the correct amount of Oyster Pearls to the Broker Nodes, as defined by the Protocol specification.</div>
-                        <div id="b9">&bull; Despite automation, has final discretion in choosing which two Broker Nodes to use.</div>
-                        <div id="b9a">&bull; Encrypt and split file locally in browser, and send parts to chosen Broker Nodes.</div>
+                        <div id="b8">&bull; Pay the correct amount of <span class="flare_shell">Oyster</span> <span
+                                class="flare_pink">Pearls</span> to dual <span class="flare_purple">Broker Nodes</span>,
+                            as defined by the <span class="flare_shell">Oyster Protocol</span> specification.
+                        </div>
+                        <div id="b9">&bull; Despite automation, has final discretion in choosing which two <span
+                                class="flare_purple">Broker Nodes</span> to use.
+                        </div>
+                        <div id="b10">&bull; Encrypt and split <span class="flare_blue">file</span> locally in browser,
+                            then send parts to chosen <span class="flare_purple">Broker Nodes</span>.
+                        </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b10">&bull; Their file is securely, reliably, and anonymously stored.</div>
+                        <div id="b11">&bull; Their <span class="flare_blue">file</span> is securely, reliably, and
+                            anonymously <span class="flare_red">stored</span>.
+                        </div>
                     </div>
                 </div>
                 <div class="protocol level_four_c">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_orange.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_brown.png?1"/></div>
                     <div class="protocol_title">
-                        <div>Website Owner</div>
+                        <div><span style="background-color: rgba(187, 133, 107, 0.25);">&nbsp;Website Owner&nbsp;</span>
+                        </div>
                         <div class="protocol_caption">An organization or individual that runs a website</div>
                     </div>
                     <div id="protocol_6" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="b11">&bull; Provide content/goods/services to Web Nodes.</div>
-                        <div id="b12">&bull; Add the Oyster Protocol script to their website HTML.</div>
+                        <div id="b12">&bull; Provide <span class="flare_brown">content/goods/services</span> to <span
+                                class="flare_yellow">Web Nodes</span>.
+                        </div>
+                        <div id="b13">&bull; Add the <span class="flare_shell">Oyster Protocol</span> script to their
+                            <span class="flare_brown">website HTML</span>.
+                        </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b13">&bull; Get paid in Oyster Pearls that have been discovered by Web Nodes.</div>
+                        <div id="b14">&bull; Get paid in <span class="flare_shell">Oyster</span> <span
+                                class="flare_pink">Pearls</span> that have been discovered by <span
+                                class="flare_yellow">Web Nodes</span>.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1017,7 +1589,8 @@
             </div>
             <div id="protocol_float" class="protocol_float" style="display:none">
             </div>
-            <a class="nav" href="#launch">LAUNCH</a>
+            <a class="nav" href="#launch" target="_self"><i class="arrow down_left"></i>LAUNCH<i
+                    class="arrow down_right"></i></a>
         </div>
     </div>
     <div class="section" data-anchor="launch">
@@ -1026,39 +1599,510 @@
             <a class="title">LAUNCH</a>
             <img class="slide_img" src="oy_slide_c.png?1" style="top:-2px;"/>
             <div style="position:absolute;bottom:0;width:100%;height:50px;background-color: #000;z-index:220">BOB</div>
-            <a class="nav" href="#intro">TOP</a>
+            <a class="nav" href="#intro" target="_self"><i class="arrow up_left"></i>TOP<i
+                    class="arrow up_right"></i></a>
         </div>
     </div>
 </div>
 <div style="display:none">
     <div id="oy_close_box">
-        <div class="nav black" style="bottom:4%" onmouseover="this.style.cursor = 'pointer'" onclick="oy_protocol_close()">CLOSE BOX</div>
+        <div class="nav black" style="bottom:0;transform: scale(0.8) translate(-120%, 50%)"
+             onmouseover="this.style.cursor = 'pointer'" onclick="oy_protocol_close()">CLOSE DESCRIPTION
+        </div>
+        <a class="nav black" style="bottom:0;transform: scale(0.8) translate(0, 50%)"
+           href="https://join.slack.com/t/oysterprotocol/shared_invite/MjM3MTAxMDc0NjE0LTE1MDQ2MDIyNDYtM2NlYWQxMjBhZg">DISCUSS
+            ON SLACK</a>
     </div>
     <div id="c1">
-        <div class="protocol_head center_hor">Tangle Based File Storage</div>
-        <div class="protocol_content">This is a test</div>
+        <div class="protocol_head center_hor">Mechanics of the Tangle</div>
+        <div class="protocol_float_content">The <span class="flare_red">IOTA Tangle</span> is a <a
+                href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph</a>, which means it
+            is a blockless distributed ledger. A live visualization of the <span class="flare_red">IOTA Tangle</span>
+            can be seen <a href="https://tangle.blox.pm">here</a>. Each submitted transaction must perform <span
+                    class="flare_red">Proof of Work</span> for two prior transactions, therefore confirming them. These
+            two transactions are contextually referenced as the branch and trunk. Each
+            transaction has a payload capacity which is used to retain the data that is uploaded by the <span
+                    class="flare_blue">Oyster User</span>. Transactions are propagated throughout a <span
+                    class="flare_red">meshnet</span> of nodes that have mutually peered with each other, whilst each
+            node retains a redundant copy of the transactions. This leads to a great redundancy of <span
+                    class="flare_blue">data copies</span>, therefore heavily mitigating the risk of dataloss whilst not
+            relying on a centralized hosting provider.<br><br><span class="flare_red">Tangle Nodes</span> are designed
+            so that they automatically delete old <span class="flare_blue">data</span> once they reach saturation of
+            their physical storage limits (it is called Automatic Snapshots and it is not yet live on the <span
+                    class="flare_red">Tangle</span>). This means that eventually, transaction <span class="flare_blue">data</span>
+            is deleted from the node. Therefore <span class="flare_yellow">Web Nodes</span> perform <span
+                    class="flare_red">Proof of Work</span> to re-attach the transaction <span
+                    class="flare_blue">data</span> to the <span class="flare_red">Tangle</span> as they search for
+            embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. This ensures that
+            the <span class="flare_blue">data</span> is maintained across the topology of the <span class="flare_red">Tangle Nodes</span>
+            and never becomes irrevocably deleted. See <span class="protocol_mention"
+                                                             onclick="oy_protocol_click('c4');">Treasure Hunting for Oyster Pearls</span>
+            for more details.<br><br>The <span class="flare_red">IOTA Tangle</span> contains many innovations in it's
+            roadmap, specifically Swarm Intelligence. Swarm Intelligence is relevant to the <span class="flare_shell">Oyster Protocol</span>
+            because it removes the bottleneck of each <span class="flare_red">Tangle Node</span> being required to
+            maintain the entire ledger. It is similar to transitioning from a <a
+                    href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1">RAID 1</a> drive array setup to a
+            <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1">RAID 10</a> setup. Implementation of
+            Swarm Intelligence further strengthens scalability merits of the <span
+                    class="flare_shell">Oyster Protocol</span>.<br><br>Network bandwidth is the most scarce resource
+            concerning reliably committing <span class="flare_blue">data</span> across the <span class="flare_red">Tangle</span>.
+            A <span class="flare_red">Tangle Node</span> is inherently restricted by it's network interface bandwidth.
+            Since the <span class="flare_shell">Oyster Protocol</span> aims to commit <span
+                    class="flare_blue">data</span> more reliably to the <span class="flare_red">Tangle</span>, bandwidth
+            access to the <span class="flare_red">Tangle</span> is rewarded with a percentage cut of the processed <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. Tangle Nodes that adhere
+            to the <span class="flare_shell">Oyster Protocol</span> Specifications are called <span
+                    class="flare_purple">Broker Nodes</span>. They maintain connectivity to the Tangle so that data can
+            be stored and retrieved.<br><br><span class="challenge" data-response="This is the response">How will I get my data if Broker Nodes block me?</span>
+        </div>
     </div>
-    <div id="c2">C2</div>
-    <div id="c3">C3</div>
-    <div id="c4">C4</div>
-    <div id="c5">C5</div>
-    <div id="c6">C6</div>
-    <div id="c7">C7</div>
-    <div id="c8">C8</div>
+    <div id="c2" data-height="">
+        <div class="protocol_head center_hor">Initial File Storage on the Tangle</div>
+        <div class="protocol_float_content">When an <span class="flare_blue">Oyster User</span> wants to upload a file
+            via the <span class="flare_shell">Oyster Protocol</span>, the file
+            is split into parts and encrypted locally in the browser. This isolation ensures the impossibility of a
+            malicious actor retrieving the <span class="flare_blue">data</span>, even if they were to find out the
+            Genesis Hash of the Data Map.
+            The <span class="flare_blue">data</span> can only be successfully accessed with the corresponding encryption
+            key, which is known as the
+            <span class="flare_shell">Oyster</span> Handle.<br><br><br><br>
+            <div class="center_hor bold" style="transform: translateX(-50%) translateX(2vh);font-size:1.65vh">
+                <div class="text_sel" style="top:-2vh;left:0.5%;width:98%;height:1.3vh;transform: rotate(180deg)">
+                    <div class="text_sel_label" style="transform: rotate(180deg) translateX(-1.2vh)">Oyster Handle</div>
+                </div>
+                IMPTDOCS3fd39dd505e5d14c9ca0949b9dcd68c55306fc5826cd3e6cb67962b7d4efe8efx294@8@56
+                <div class="text_sel" style="left:0.2vh;width:6vh;height:1.3vh;">
+                    <div class="text_sel_label">Name</div>
+                </div>
+                <div class="text_sel" style="left:7.5vh;width:55vh;height:1.3vh;">
+                    <div class="text_sel_label">Primordial Hash</div>
+                </div>
+                <div class="text_sel" style="right:6vh;width:2.6vh;height:1.3vh;">
+                    <div class="text_sel_label">Salt</div>
+                </div>
+                <div class="text_sel" style="right:1vh;width:2.6vh;height:1.3vh;">
+                    <div class="text_sel_label">Pearl Map</div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="font-size:1.65vh">
+                SHA256 Function
+            </div>
+            <br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="font-size:1.65vh">
+                622bf32890f45f33ca25436e4c55eb346dfd85e1e896d1a81f2a5255fcfbb9cd
+                <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
+                    <div class="text_sel_label">Genesis Hash</div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="font-size:1.65vh">
+                SHA256 Function
+            </div>
+            <br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="font-size:1.65vh">
+                801b42c510bcfdd2c48842a0a6e73f45474e0d54a22fbeea8d9673f57b2d9679
+                <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
+                    <div class="text_sel_label">Hash N1</div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="width:80%;font-size:1.65vh;text-align:center;">
+                The sequence continues until the file is fully represented in the Data Map
+            </div>
+            <br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="font-size:1.65vh">
+                SHA256 Function
+            </div>
+            <br><br><br>
+            <div class="center_hor"><i class="arrow_black down"></i></div>
+            <div class="center_hor bold" style="font-size:1.65vh">
+                801b42c510bcfdd2c48842a0a6e73f45474e0d54a22fbeea8d9673f57b2d9679
+                <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
+                    <div class="text_sel_label">Hash NX</div>
+                </div>
+            </div>
+            <br><br><br><br>
+            The first 8 characters of the Handle represents the name of the file. This is usually copied from the
+            filename that was uploaded to the browser, but can also be customized by the user for their own references.
+            The Primordial Hash is a 64 character long SHA256 hash of random input that is generated from within the
+            <span class="flare_shell">Oyster User's</span> browser. The next 4 characters of the Handle is the <a
+                    href="https://en.wikipedia.org/wiki/Salt_(cryptography)">cryptographic salt</a> that differentiates
+            the Primordial Hash from the overall encryption key. Therefore the entire 78+ character long Handle is the
+            entire encryption key used to encrypt and decrypt the split parts of the <span
+                    class="flare_blue">data</span>. The Primordial Hash initiates a
+            sequence of SHA256 hashes that represents split parts of the <span class="flare_blue">data</span>.
+            <br>
+            The <span class="flare_blue">data</span> is first split in approximately 1kb parts, and each part is then individually encrypted with the
+            entire Handle as the key. Each part is sequentially represented by a Hash iteration (Genesis, N1, N2 etc.),
+            and
+            is eventually submitted as a <span class="flare_red">Tangle</span> transaction each by two <span
+                    class="flare_blue">Broker Nodes</span>. A networked reputation system tracks the best performing
+            <span class="flare_purple">Broker Nodes</span>, therefore automatically selecting the most appropriate two
+            <span class="flare_purple">Broker Nodes</span> on behalf of the <span class="flare_blue">Oyster User</span>. The selection of exactly two <span
+                    class="flare_purple">Broker Nodes</span> is mandatory according to the <span class="flare_shell">Oyster Protocol</span>
+            so as to induce a <a href="https://en.wikipedia.org/wiki/Prisoner's_dilemma">Prisoner's Dillemma</a>. The
+            value of the Genesis Hash is submitted to both <span class="flare_purple">Broker Nodes</span>. One <span
+                    class="flare_purple">Broker Nodes</span> is designated to commit the Data Map working downwards from
+            Genesis Hash, whilst the other is designated to commit the Data Map upwards from Hash NX (whilst X
+            represents the last iterations of the sequence). The correct amount of <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span> are sent to both <span
+                    class="flare_purple">Broker
+                Nodes</span>, whilst the client performing the upload does not disclose the identities of the <span
+                    class="flare_purple">Broker Nodes</span> secret, except for the <span class="flare_shell">Oyster User</span>.
+            This is done to prevent both <span class="flare_purple">Broker Nodes</span> from being able to conspire
+            against the <span class="flare_blue">Oyster User</span>.<br><br>By default, the selected <span
+                    class="flare_purple">Broker Nodes</span> are responsible for performing the <span class="flare_red">Proof of Work</span>
+            to attach each data part to the <span class="flare_red">Tangle</span>. The <span
+                    class="flare_red">Tangle</span> address used to send the transaction is the <a
+                    href="https://en.wikipedia.org/wiki/Ternary_computer">trinary</a> form of the corresponding Hash
+            iteration (Genesis, N1, N2 etc.) of the sequence. However, <span class="flare_purple">Broker Nodes</span>
+            are
+            able to delegate the <span class="flare_red">Proof of Work</span> tasks to <span class="flare_yellow">Web Nodes</span>
+            if there is sufficient demand of peer-to-peer connection brokerage, and new Genesis Hashes. See <span
+                    class="protocol_mention"
+                    onclick="oy_protocol_click('c5');">Web Node and Broker Node Collaboration</span> for more
+            details.<br><br>To understand how the increase in overall <span class="flare_red">Proof of Work</span> being
+            performed across the <span class="flare_red">Tangle</span> lowers transaction confirmation times and
+            increases the general security of the <span class="flare_red">network</span>, see the <a
+                    href="http://iota.org">IOTA Website</a>.
+        </div>
+    </div>
+    <div id="c3">
+        <div class="protocol_head center_hor">Burying Pearls with Broker Nodes</div>
+        <div class="protocol_float_content"><span class="flare_shell">Oyster</span> <span
+                class="flare_pink">Pearls</span> are designed to be embedded within the Data Map that defines the
+            structure and contents of the <span class="flare_blue">uploaded file</span>. See <span
+                    class="protocol_mention"
+                    onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span> for more details
+            concerning the Data Map. Instead of <span class="flare_blue">Oyster User's</span> embedding the <span
+                    class="flare_pink">Pearls</span> into the Data Map themselves, <span class="flare_purple">Broker Nodes</span>
+            have been allocated this task for several reasons:<br><br>
+            &bull; <span class="flare_purple">Broker Nodes</span> have access to <span
+                    class="flare_pink">ETH balances</span>, and therefore can pay the <span class="flare_pink"><a
+                    href="https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas">Gas</a></span>
+            fees needed to move all the
+            <span class="flare_pink">Pearls</span> into the correct designations. Every 10mb worth of <span
+                    class="flare_blue">user data</span> requires a transaction on the <span class="flare_pink">Ethereum Blockchain</span>.<br><br>
+            &bull; It would be impractically complicated for the <span class="flare_blue">Oyster User</span> to have to
+            perform a large amount of complex <span class="flare_pink">Blockchain transactions</span>, which includes
+            invoking custom <span class="flare_pink">Smart Contract</span> functions. When this complexity is passed
+            onto <span class="flare_purple">Broker Nodes</span>, the <span class="flare_blue">Oyster User</span> need
+            only send the <span class="flare_pink">Pearls</span> once to the alpha-designated <span class="flare_pink">Broker Node</span>
+            via a typical <span class="flare_pink">Ethereum Wallet</span>.<br><br>
+            &bull; Having <span class="flare_purple">Broker Nodes</span> embed the <span
+                    class="flare_pink">Pearls</span> in the Data Map heavily mitigates the red herring attack
+            vector.<br><br>
+            A red herring attack is when a malicious <span class="flare_blue">Oyster User</span> pretends to embed <span
+                    class="flare_pink">Pearls</span> into the Data Map but does not actually embed them. If they were to
+            upload garbage data without any <span class="flare_pink">Pearls</span> in it, it would waste the time of
+            <span class="flare_yellow">Web Nodes</span> that are searching for treasure (that doesn't exist). Eventually
+            the <span class="flare_yellow">Web Nodes</span> would realize that the Data Map is not within the bounds of
+            the <span class="flare_shell">Oyster Protocol</span> specification, but by then the energy spent by the
+            <span class="flare_yellow">Web Nodes</span> is expected to be greater than the energy put in by the
+            malicious attacker. Therefore this would cause the attack to be successful and potentially profitable.
+            However, because <span class="flare_yellow">Web Nodes</span> rely on <span
+                    class="flare_purple">Broker Nodes</span> to receive Genesis Hashes (which define the entire data
+            map), red herring attacks are heavily mitigated. This is because if a <span
+                    class="flare_purple">Broker Node</span> began to give out Genesis Hashes that represented an invalid
+            Data Map (that doesn't have the correct amount of <span class="flare_pink">Pearls</span> in the correct
+            places), it would be easy for <span class="flare_yellow">Web Nodes</span> to realize that the <span
+                    class="flare_purple">Broker Node</span> lied and therefore ruin it's reputation and blacklist it.
+            Whilst Broker Nodes have consistent identities that have associated reputation scores, <span
+                    class="flare_blue">Oyster Users</span> and <span class="flare_yellow">Web Nodes</span> are much more
+            dynamic. Not only is it already difficult to establish consistent cryptographic identities for <span
+                    class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Oyster Users</span>, but the
+            <span class="flare_shell">Oyster Protocol</span> defines that <span class="flare_yellow">Web Nodes</span>
+            need to reset their identities every X amount of treasure hunts. <span
+                    class="flare_blue">Oyster Users</span> do not have a discernible identity except on a session basis
+            to negotiate with <span class="flare_purple">Broker Nodes</span>.<br><br>
+            Once a <span class="flare_purple">Broker Node</span> receives the correct amount of <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>, a special bury function of
+            the <span class="flare_shell">Oyster</span> <span class="flare_pink">Smart Contract</span> is invoked. A
+            sector of a Data Map represents 10,000 hashes after the Primordial Hash (Genesis - N9,999, N10,000 - N19,999
+            etc.). Therefore a sector holds approximately 10mb of <span class="flare_blue">user data</span>. Each sector
+            must have exactly one embedded treasure of <span class="flare_pink">Pearls</span> inside. The location of
+            the <span class="flare_pink">Pearls</span> within the sector is randomly chosen by the <span
+                    class="flare_purple">Broker Node</span>. Therefore the amount of <span
+                    class="flare_pink">Pearls</span> per sector defines how long the <span
+                    class="flare_blue">file</span> should be retained in the <span class="flare_red">Tangle</span>.
+            0.00001 PRLs would ensure 10mb is maintained on the Tangle for 10 months. Therefore the <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Smart Contract</span> locks up the <span
+                    class="flare_pink">Pearls</span> of that sector for 10 months. During this time, <span
+                    class="flare_yellow">Web Nodes</span> perform <span class="flare_red">Proof of Work</span> to find
+            the <span class="flare_pink">embedded Pearls</span>. See <span class="protocol_mention"
+                                                                           onclick="oy_protocol_click('c4');">Treasure Hunting for Oyster Pearls</span>
+            for more details.<br><br>
+            <span class="flare_pink">Pearls</span> must already be in a buried state before they can be claimed by a
+            <span class="flare_yellow">Web Node</span>. <span class="flare_pink">Pearls</span> are also claimed in
+            seperate time zones named Epochs. The <span class="flare_shell">Oyster Protocol</span> Epoch length
+            definition is 4 months. This means that if there is a sector of the datamap that contains treasure of
+            0.00002 <span class="flare_pink">PRLs</span> (20 months storage time), then there are 5 available Epochs:
+            months 0-4, 5-8, 9-12, 13-16 and 17-20. The <span class="flare_shell">Oyster</span> <span
+                    class="flare_pink">Smart Contract</span> would only allow 0.000004 <span
+                    class="flare_pink">PRLs</span> to be claimed per Epoch (0.0002 PRLs / 5 Epochs). <span
+                    class="flare_yellow">Web Nodes</span> claim <span class="flare_pink">Pearls</span> on behalf of
+            their corresponding <span class="flare_brown">Website Owner</span>.
+        </div>
+    </div>
+    <div id="c4">
+        <div class="protocol_head center_hor">Treasure Hunting for Oyster Pearls</div>
+        <div class="protocol_float_content">
+            <span class="flare_yellow">Web Nodes</span> search through sectors of Data Maps to find embedded <span
+                class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. A sector of a Data Map
+            represents 10,000 hashes after the Primordial Hash (Genesis - N9,999, N10,000 - N19,999 etc.). Therefore a
+            sector holds approximately 10mb of <span class="flare_blue">user data</span>. Each sector must have exactly
+            one embedded treasure of <span class="flare_pink">Pearls</span> inside. The location of the <span
+                class="flare_pink">Pearls</span> within the sector is randomly chosen by the <span class="flare_purple">Broker Node</span>.
+            See <span class="protocol_mention"
+                      onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span> for more details
+            concerning Data Map structure.<br><br>
+            A Data Map is defined by a single SHA256 hash known as the Genesis Hash. <span class="flare_yellow">Web Nodes</span>
+            get Genesis Hashes from <span class="flare_purple">Broker Nodes</span> and other <span class="flare_yellow">Web Nodes</span>.
+            They don't come for free, a <span class="flare_yellow">Web Node</span> must perform specific <span
+                class="flare_red">Proof of Work</span> tasks that are defined by the counterparty node. The <span
+                class="flare_red">Proof of Work</span> task is defined by quoting a two unconfirmed transactions from
+            the Tangle, one that is the designated branch and the other is the designated trunk. See <span
+                class="protocol_mention" onclick="oy_protocol_click('c1');">Mechanics of the Tangle</span> for more
+            details. Once the Proof of Work has been complete, the Web Node responds to the counterparty node with the
+            ID of the transaction it just submitted. The counterparty node then checks the Tangle to verify that the
+            quoted transaction matches the previously specified branch and trunk identities, and also that the
+            transaction references the <span class="flare_blue">data</span> that was meant to have Proof of Work
+            performed on it. Once the counterparty node verifies the <span class="flare_red">Proof of Work</span> was
+            performed, the Genesis Hash is sent in exchange.<br><br>To search for treasure, <span class="flare_yellow">Web Nodes</span>
+            select a random sector of the Data Map that is derived from the newly earned Genesis Hash. The <span
+                class="flare_yellow">Web Node</span> then checks to see if <span class="flare_red">Proof of Work</span>
+            was performed by another <span class="flare_yellow">Web Node</span> within the current Epoch. If the <span
+                class="flare_red">Proof of Work</span> was performed, then the <span
+                class="flare_yellow">Web Node</span> abandons the sector and tries again at another sector. This is
+            because even if the <span class="flare_yellow">Web Node</span> were to find the treasure of that sector, it
+            is highly likely that another <span class="flare_yellow">Web Node</span> already claimed the <span
+                class="flare_pink">Pearls</span> for the Epoch at the <span class="flare_shell">Oyster</span> <span
+                class="flare_pink">Smart Contract</span>. See <span class="protocol_mention"
+                                                                    onclick="oy_protocol_click('c3');">Burying Pearls with Broker Nodes</span>
+            for more details concerning Epochs. If <span class="flare_red">Proof of Work</span> was not performed during
+            the current Epoch, then the <span class="flare_yellow">Web Node</span> scrolls through each consecutive hash
+            of that sector. For example: if sector 5 was chosen, the <span class="flare_yellow">Web Node</span> scrolls
+            through Hashes N50,000 to N59,999, which represents 10mb of data of the <span class="flare_blue">uploaded file</span>.<br><br>
+            For each hash that is encountered, the <span class="flare_yellow">Web Node</span> first performs the <span
+                class="flare_red">Proof of Work</span> on the <span class="flare_red">Tangle</span> for the
+            corresponding transaction, which utilizes the GPU of the device (using OpenGL2). Thereafter, the <span
+                class="flare_yellow">Web Node</span> retrieves the ~1kb payload of the corresponding transaction and
+            calculates the SHA512 hash of the current SHA256. The <span class="flare_yellow">Web Node</span> then
+            attempts to unlock the payload using the SHA512 hash as the decryption key. If it unlocks, then this means
+            it is treasure that contains <span class="flare_pink">Pearls</span>. If it does not unlock, then the SHA512
+            hash of the current SHA512 is calculated, therefore scrolling through to the next link in the hashchain. If
+            the <span class="flare_yellow">Web Node</span> reaches the upper limit of hashchain size defined by the
+            <span class="flare_shell">Oyster Protocol</span>,
+            it moves on to the next SHA256 has in the Data Map and repeats the process.<br><br>
+            The <span class="flare_shell">Oyster Protocol</span> defines that treasure must exist exactly once per
+            sector. If no treasure was found in an entire sector, then the Data Map is declared invalid and other <span
+                class="flare_yellow">Web Nodes</span> are warned. This would lead to the degrading of the reputation of
+            the <span class="flare_purple">Broker Node</span> that initially introduced the N0 hash for that invalid
+            Data Map. It could take days for a <span class="flare_yellow">Web Node</span> to scroll through a single
+            SHA512 hashchain, and therefore weeks for an entire sector. This prevents <span class="flare_yellow">Web Nodes</span>
+            from consuming large amounts of data in sudden spikes, as the 10mb data consumption would be spread out over
+            those weeks. Therefore <span class="flare_yellow">Web Nodes</span> do not undertake bandwidth intensive
+            tasks so as to prevent burdening limited/expensive data connection plans. Performing the SHA256, SHA512, and
+            decryption functions all use CPU instructions. This means that a <span class="flare_yellow">Web Node</span>
+            can perform <span class="flare_red">Proof of Work</span> negotiations with other <span class="flare_yellow">Web Nodes</span>
+            and <span class="flare_red">Broker Nodes</span> via the GPU, whilst simultaneously searching for treasure in
+            the sector of a Data Map via the CPU.<br><br>
+            <span class="flare_pink">Pearls</span> are embedded in the Data Map by including the private seed key of the
+            <span class="flare_pink">ETH address</span> that holds the
+            <span class="flare_pink">Pearls</span>. Therefore when a <span class="flare_yellow">Web Node</span>
+            discovers treasure, it stores and guards the private seed key via the HTML5 localstorage
+            directive. Despite the discovered treasure, the <span class="flare_yellow">Web Node</span> faces two major
+            dillemmnas:<br><br>
+            &bull; The <span class="flare_yellow">Web Node</span> does not have direct access to the <span
+                class="flare_pink">Ethereum Blockchain</span>, and would find difficulty in
+            invoking complex Smart Contract functions.<br><br>
+            &bull; The <span class="flare_pink">ETH address</span> contains <span class="flare_pink">Pearls</span> but
+            no <span class="flare_pink">ETH</span> for <span class="flare_pink"><a
+                href="https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas">Gas</a></span>.
+            Therefore <span class="flare_pink">ETH</span> must first be sent to the address
+            from somewhere else to allow the private seed key to generate a transaction that will be accepted by the
+            <span class="flare_pink">Ethereum miners</span>.<br><br>
+            Because of these two dillemnas, the <span class="flare_shell">Oyster Protocol</span> defines that a <span
+                class="flare_yellow">Web Node</span> must collaborate with a <span class="flare_purple">Broker
+            Node</span> to unlock the treasure. However there are two immediate concerns:<br><br>
+            &bull; The <span class="flare_yellow">Web Node</span> is concerned that the <span class="flare_purple">Broker Node</span>
+            will not claim the <span class="flare_pink">Pearls</span> with the <span
+                class="flare_pink">ETH address</span> of the
+            corresponding <span class="flare_pink">Website Owner</span>, therefore stealing the <span
+                class="flare_pink">Pearls</span>.<br><br>
+            &bull; The <span class="flare_purple">Broker Node</span> needs to send <span class="flare_pink">ETH</span>
+            to the <span class="flare_pink">address</span> that is derived from the <span class="flare_pink">private seed key</span>
+            to fuel
+            the <span class="flare_pink">transaction</span>, which the <span class="flare_yellow">Web Node</span> claims
+            to contain treasure. It could be a malicious actor pretending to
+            be a <span class="flare_yellow">Web Node</span> who wants to trick the <span class="flare_purple">Broker Node</span>
+            into sending a small amount of <span class="flare_pink">ETH</span> to an <span
+                class="flare_pink">address</span> that he
+            controls. As soon as the <span class="flare_purple">Broker Node</span> would send the <span
+                class="flare_pink">ETH</span>, the malicious actor steals a marginal amount after
+            the minimum <span class="flare_pink">Gas</span> payment is made. The profit margin may be very small, but it
+            could be repeated indefinitely
+            to cause significant financial losses for the <span class="flare_purple">Broker Node</span>.<br><br>
+            To solve the concern of the Web Node, a reputation system is in place that would easily degrade the
+            reputation of the Broker Node. Broker Nodes have consistent cryptographic identities upon which they build
+            reputation, and Web Nodes will seek to unlock discovered treasure with only the most reputable of Broker
+            Nodes. If a Broker Node were to steal the Pearls of a single Epoch, within a single sector, within a single
+            Data Map, it would cause much more damage than profit. The Broker Node would conceivably lose thousands of
+            dollars worth of potential future revenue in exchange for a tenth of a cent. Therefore the Web Node has
+            confidence in dealing with a reputable Broker Node.<br><br>
+            To Solve the concern of the Broker Node, the Broker Node does not accept the request of a third party to
+            unlock treasure until it can verify that the Proof of Work for the entire sector was recently completed on
+            the Tangle. To illustrate the logistics of this mechanism; this means that in order for a malicious actor to
+            make a profit of 1 cent they would have to spend 5 cents worth of electricity in completely Proof of Work
+            puzzles.
+        </div>
+    </div>
+    <div id="c5">
+        <div class="protocol_head center_hor">Web Node and Broker Node Collaboration</div>
+        <div class="protocol_float_content">
+            One of the major interactions that occurs within the <span class="flare_shell">Oyster Ecosystem</span> are
+            <span class="flare_yellow">Web Nodes</span> that perform a lot of <span
+                class="flare_red">Proof of Work</span> as payments towards a purchase of information from other <span
+                class="flare_yellow">Web Nodes</span> and <span class="flare_purple">Broker Nodes</span>. Therefore
+            <span class="flare_yellow">Web Nodes</span> need consistent access to the <span
+                class="flare_red">Tangle</span> in order to operate correctly. Whilst it is technically possible that
+            one day <span class="flare_yellow">Web Nodes</span> will be able to access the <span class="flare_red">Tangle</span>
+            directly, current library implementations and hardware/bandwidth limitations restrict <span
+                class="flare_yellow">Web Nodes</span> to being light clients of the <span
+                class="flare_red">Tangle</span> network. This means they need need an intermediary light client host to
+            serve <span class="flare_red">Tangle</span> requests and submissions. <span class="flare_red">Tangle</span>
+            light client hosts already exist independently of <span class="flare_purple">Broker Nodes</span>, but the
+            vast majority of them cannot be used by <span class="flare_yellow">Web Nodes</span> because they don't serve
+            the requests via <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">SSL</a>. The <span
+                class="flare_shell">Oyster Protocol</span> mandates that <span class="flare_purple">Broker Nodes</span>
+            serve all <span class="flare_red">Tangle</span> requests via SSL. This is due to the expectation that most
+            of the websites that will run the <span class="flare_shell">Oyster Protocol</span> will be hosted via SSL,
+            therefore the <span class="flare_yellow">Web Node</span> operation logic must be loaded via SSL, therefore
+            any outgoing or incoming communications must be via SSL.<br><br>
+            <span class="flare_purple">Broker Nodes</span> also enable <span class="flare_yellow">Web Nodes</span> to
+            interact with other <span class="flare_yellow">Web Nodes</span> directly in a peer-to-peer connection. The
+            <a href="http://peerjs.com">PeerJS Library</a> is used which relies on the <a href="https://webrtc.org">WebRTC
+            Standard</a>. Therefore a <span class="flare_purple">Broker Node</span> runs the PeerJS server software to
+            enable <span class="flare_yellow">Web Nodes</span> to communicate directly to each other.<br><br>
+            <span class="flare_yellow">Web Nodes</span> are constantly in demand for N0 hashes, especially new ones due
+            to the implications that the embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>
+            therein are unclaimed. Once a <span class="flare_purple">Broker Node</span> concludes a file upload session
+            with an <span class="flare_blue">Oyster User</span>, the <span class="flare_purple">Broker Node</span>
+            retains the Genesis Hashes. See <span class="protocol_mention" onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span>
+            for more details. When the <span class="flare_shell">Oyster Network</span> is in a typical state of equilibrium; <span class="flare_purple">Broker Nodes</span> always retain
+            an excess supply of new Genesis Hashes, whilst <span class="flare_yellow">Web Nodes</span> are in a constant state of excess demand for Genesis Hashes.<br><br>
+            Instead of freely giving away new Genesis Hashes, <span class="flare_yellow">Broker Nodes</span> stipulate a large amount of <span class="flare_red">Proof of Work</span>
+            that
+            must be performed in exchange. This is primarily done to prevent malicious actors from easily attaining Genesis Hashes and retrieving the embedded treasure. Therefore the added <span class="flare_red">Proof of Work</span> burden makes it even more
+            uneconomical for malicious actors to seek Genesis Hashes from <span class="flare_purple">Broker Nodes</span>. The <span class="flare_red">Proof of Work</span>
+            requirement also
+            removes reliance on altruistic behavior, which the <span class="flare_shell">Oyster Protocol</span> avoids.<br><br>
+            The <span class="flare_red">Proof of Work</span> tasks that the <span class="flare_purple">Broker Node</span> burdens the <span class="flare_yellow">Web Nodes</span> with are the same tasks that the <span class="flare_blue">Oyster
+            User</span> burdened the <span class="flare_purple">Broker Node</span> with. Therefore if the equilibrium of the <span class="flare_shell">Oyster Network</span> were to be perfectly
+            saturated, <span class="flare_purple">Broker Nodes</span> would never perform <span class="flare_red">Proof of Work</span> as the tasks would get constantly offset to <span class="flare_yellow">Web
+            Nodes</span>. The exchange sequence that occurs between <span class="flare_yellow">Web Nodes</span> and <span class="flare_purple">Broker Nodes</span> is the same as the one that
+            occurs between <span class="flare_yellow">Web Nodes</span> themselves. Therefore the sequence is detailed at <span class="protocol_mention"
+                                                                                             onclick="oy_protocol_click('c6');">Web Node to Web Node Interaction</span>.<br><br>
+            Overtime, Genesis Hashes migrate from <span class="flare_purple">Broker Nodes</span> to the collective consciousness of <span class="flare_yellow">Web Nodes</span>. <span class="flare_yellow">Web Nodes</span>
+            will
+            only intentionally forget of a Genesis Hash if all of the Epochs of all of the sectors have already been
+            claimed. This would indicate data is intended to expire, and therefore no longer guaranteed by <span class="flare_red">Proof of Work</span>
+            exhibitions, unless the <span class="flare_blue">Oyster User</span> were to add more <span class="flare_pink">Pearls</span> to the treasure thereby extending the guaranteed
+            lifespan of the data. <span class="flare_yellow">Web Nodes</span> use the <a href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5
+            localstorage</a> directive to retain data, including Genesis Hashes that are known by them. If the space
+            afforded
+            by the localstorage directive were to be saturated, the <span class="flare_yellow">Web Node</span> would begin pruning the data by deleting
+            Genesis Hashes that have the smallest prospects for being profitable for the <span class="flare_brown">Website Owner</span>.<br><br>
+            The migration of Genesis Hashes from <span class="flare_purple">Broker Nodes</span> to <span class="flare_yellow">Web Nodes</span> is vital. When an <span class="flare_blue">upload session</span> is completed
+            with
+            the <span class="flare_blue">Oyster User</span>, the Genesis Hashes exist momentarily in only both <span class="flare_purple">Broker Nodes</span> of the session.
+            See
+            <span class="protocol_mention" onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span>
+            for more details. The positive consequence of <span class="flare_yellow">Web Nodes</span> seeking Genesis Hashes is that it secures the
+            existence
+            of the Genesis Hashes amongst the <span class="flare_shell">Oyster Network</span>, therefore removing the initial risk that exists when
+            <span class="flare_purple">Broker Nodes</span> exclusively hold the Genesis Hashes. If a Genesis Hash were to be forgotten by the collective
+            consciousness of
+            the <span class="flare_shell">Oyster Network</span>, it would not be no longer maintained with <span class="flare_red">Proof of Work</span>. Therefore the <span class="flare_red">Tangle</span> would no longer be
+            responsible for retaining the <span class="flare_blue">data</span> for an extended period of time within it's <span class="flare_red">node topology</span>.
+
+        </div>
+    </div>
+    <div id="c6">
+        <div class="protocol_head center_hor">Web Node to Web Node Interaction</div>
+        <div class="protocol_float_content">
+            A <span class="flare_yellow">Web Node</span> can perform the exchange sequence with both other <span class="flare_yellow">Web Nodes</span> and <span class="flare_purple">Broker Nodes</span>, therefore the
+            sequence is labelled with 'counterparty' node. The task delegation/information exchange sequence as
+            such:<br><br>
+            &bull; A <span class="flare_yellow">Web Node</span> asks the counterparty if they have new Genesis Hashes available.<br>
+            &bull; The counterparty responds, and in this case indicates that there is availability. The counterparty
+            also indicates the requested <span class="flare_red">Proof of Work</span> burden magnitude. Work burden magnitude fluctuates according to
+            the state of the <span class="flare_shell">Oyster Network</span> economy due to supply/demand constraints.<br>
+            &bull; If the <span class="flare_yellow">Web Node</span> agrees with the <span class="flare_red">Proof of Work</span> burden magnitude, then it responds with acceptance of
+            the job.<br>
+            &bull; The counterparty sends three references to three <span class="flare_red">transactions</span> on the <span class="flare_red">Tangle</span>. One transaction contains the
+            relevant <span class="flare_blue">Oyster User</span> data which was formerly a burden to the counterparty. The last two are unconfirmed
+            <span class="flare_red">transactions</span> that are recommended for confirmation by the <span class="flare_red"><a href="https://github.com/iotaledger/iri">IOTA
+            Algorithm</a></span>. They are each specified for becoming the <span class="flare_red">branch</span> and <span class="flare_red">trunk transactions</span>.<br>
+            &bull; The <span class="flare_yellow">Web Node</span> performs the <span class="flare_red"><a href="http://dev.iota.org/javascript-library/#replaybundle">replayBundle
+            function</a></span> on the <span class="flare_red">Tangle</span>, therefore manually setting the <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> of the <span class="flare_red">transaction</span> exactly as
+            specified by the counterparty.<br>
+            &bull; Once the <span class="flare_yellow">Web Node</span> completes the <span class="flare_red">Proof of Work</span> and the entire <span class="flare_red">Tangle transaction</span> is submitted, it
+            responds to the counterparty with the identity of the newly submitted <span class="flare_red">transaction</span>.<br>
+            &bull; The counterparty verifies that the quoted <span class="flare_red">transaction</span> identity represents the <span class="flare_blue">correct data</span> on the live
+            <span class="flare_red">Tangle</span>, and has the correct <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> allocations that were specified earlier.<br>
+            &bull; If there is more <span class="flare_red">Proof of Work</span> to be completed to satisfy the agreed upon burden magnitude, then it
+            is also completed as described above.<br>
+            &bull; Once the agreed upon burden magnitude has been satisfied, the counterparty delivers the Genesis Hash
+            to
+            the <span class="flare_yellow">Web Node</span> in exchange.<br><br>
+            Typically, burden magnitudes for Genesis Hashes from Broker Nodes are greater than if they were from other <span class="flare_yellow">Web Nodes</span>. This is because <span class="flare_purple">Broker Nodes</span> hold relatively new Genesis Hashes, whilst <span class="flare_yellow">Web Nodes</span> hold relatively older Genesis Hashes. The going rate for a new Genesis Hash is expected to be higher because there is a greater expectation of unclaimed treasure. This also implies that <span class="flare_yellow">Web Nodes</span> ask <span class="flare_purple">Broker Nodes</span> for Genesis Hashes before they ask other <span class="flare_yellow">Web Nodes</span>. This ensures that Genesis Hashes from <span class="flare_purple">Broker Nodes</span> are constantly, effectively, and quickly migrating towards the collective consciousness of <span class="flare_yellow">Web Nodes</span> where they are highly impervious to data loss.
+        </div>
+    </div>
+    <div id="c7">
+        <div class="protocol_head center_hor">Content Consumption Entitlement</div>
+        <div class="protocol_float_content">
+            Because <span class="flare_yellow">Web Nodes</span> use the <a href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5
+            localstorage</a> directive to retain data, they retain the same identity and work queue whilst being invoked
+            by different <span class="flare_brown">Website Owners</span>. Once a treasure hunting session has been initiated, the <span class="flare_yellow">Web Node</span> permanently
+            associates the <span class="flare_pink">ETH address</span> of the invoking <span class="flare_brown">Website Owner</span> as the claimant. For example: a person is browsing
+            four of their favorite websites on their laptop, two of which have the Oyster Protocol enabled. When the
+            Oyster enabled website 1 is visited, the visitor's laptop will become a Web Node and attribute any active
+            treasure hunts to the Website Owner of website A. Therefore, any discovered Pearls would be claimed in the
+            Oyster Smart Contract under the ETH address of Website A. Thereafter the person visits the Oyster Protocol
+            enabled website B. The laptop still oeprates as a Web Node retains the same cryptographic identitiy,
+            collection of Genesis Hashes, identities of other Web Nodes and Broker Nodes, aswell as any pending data
+            maps
+            that it is working on. If any new treasure hunts are initiated under the jursidiction of website B, then any
+            discovered pearls are attributed to the Website Owner of website B.<br><br>
+        </div>
+    </div>
+    <div id="c8">
+        <div class="protocol_head center_hor">Oyster Pearl Token Functionality</div>
+        <div class="protocol_float_content">
+        </div>
+    </div>
 </div>
 <script type="text/javascript">
     window.PROTOCOL_SELECT = [];
     window.PROTOCOL_CURRENT = false;
     window.PROTOCOL_CLUSTER = false;
     var protocol_def = [];
-    protocol_def["c1"] = ["a1", "b2", "b3", "b10"];
-    protocol_def["c2"] = ["a2", "b1", "b4", "b5"];
-    protocol_def["c3"] = ["a3", "a6", "a9", "b8"];
-    protocol_def["c4"] = ["a4", "a5", "a11", "b7", "b13"];
-    protocol_def["c5"] = ["a7", "a8", "a10", "a12", "a13", "a14", "a16"];
-    protocol_def["c6"] = ["a15", "b11", "b12"];
-    protocol_def["c7"] = ["b6"];
-    protocol_def["c8"] = ["b9"];
+    protocol_def["c1"] = ["a1", "b2", "b3", "b11"];
+    protocol_def["c2"] = ["a3", "b1", "b4", "b5", "b9", "b10"];
+    protocol_def["c3"] = ["a4", "a7", "a10", "b8"];
+    protocol_def["c4"] = ["a5", "a6", "a11", "a13", "a14", "b7", "b14"];
+    protocol_def["c5"] = ["a2", "a8", "a9", "a12", "a15"];
+    protocol_def["c6"] = ["a16", "a17", "a19"];
+    protocol_def["c7"] = ["a18", "b12", "b13"];
+    protocol_def["c8"] = ["b6"];
 
     function oy_protocol_assign() {
         var oy_protocol_array = ["protocol_1", "protocol_2", "protocol_3", "protocol_4", "protocol_5", "protocol_6"];
@@ -1108,7 +2152,7 @@
     }
 
     function oy_protocol_out() {
-        if (window.PROTOCOL_CURRENT!==window.PROTOCOL_CLUSTER) {
+        if (window.PROTOCOL_CURRENT !== window.PROTOCOL_CLUSTER) {
             window.PROTOCOL_CLUSTER = false;
             window.PROTOCOL_SELECT.forEach(function (element) {
                 document.getElementById(element).style.backgroundColor = "transparent";
@@ -1116,12 +2160,14 @@
         }
         window.PROTOCOL_SELECT = [];
     }
-    function oy_protocol_click() {
-        console.log("CURRENT: "+window.PROTOCOL_CURRENT);
-        console.log("CLUSTER: "+window.PROTOCOL_CLUSTER);
-        console.log("----------------------------------")
-        if (window.PROTOCOL_CURRENT!==false) {
-            if (window.PROTOCOL_CURRENT===window.PROTOCOL_CLUSTER) {
+
+    function oy_protocol_click(oy_cluster_force) {
+        oy_cluster_force = oy_cluster_force || false;
+        if (oy_cluster_force !== false) {
+            window.PROTOCOL_CLUSTER = oy_cluster_force;
+        }
+        if (window.PROTOCOL_CURRENT !== false) {
+            if (window.PROTOCOL_CURRENT === window.PROTOCOL_CLUSTER) {
                 oy_protocol_close();
             }
             else {
@@ -1131,17 +2177,17 @@
                 });
             }
         }
-        if (window.PROTOCOL_CURRENT===false&&window.PROTOCOL_CLUSTER!==false) {
+        if (window.PROTOCOL_CURRENT === false && window.PROTOCOL_CLUSTER !== false) {
             window.PROTOCOL_CURRENT = window.PROTOCOL_CLUSTER;
-            document.getElementById('protocol_float').innerHTML = document.getElementById(window.PROTOCOL_CLUSTER).innerHTML+document.getElementById("oy_close_box").innerHTML;
+            document.getElementById('protocol_float').innerHTML = document.getElementById(window.PROTOCOL_CLUSTER).innerHTML + document.getElementById("oy_close_box").innerHTML;
             $("#protocol_float_under").fadeIn();
             $("#protocol_float").fadeIn();
         }
-        else if (window.PROTOCOL_CURRENT!==false&&window.PROTOCOL_CLUSTER!==false) {
+        else if (window.PROTOCOL_CURRENT !== false && window.PROTOCOL_CLUSTER !== false) {
             window.PROTOCOL_CURRENT = window.PROTOCOL_CLUSTER;
-            document.getElementById('protocol_float').innerHTML = document.getElementById(window.PROTOCOL_CLUSTER).innerHTML+document.getElementById("oy_close_box").innerHTML;
+            document.getElementById('protocol_float').innerHTML = document.getElementById(window.PROTOCOL_CLUSTER).innerHTML + document.getElementById("oy_close_box").innerHTML;
         }
-        if (window.PROTOCOL_CURRENT!==false) {
+        if (window.PROTOCOL_CURRENT !== false) {
             protocol_def[window.PROTOCOL_CURRENT].forEach(function (element) {
                 window.PROTOCOL_SELECT.push(element);
                 document.getElementById(element).style.backgroundColor = "rgba(46,80,255,0.7)";
@@ -1150,7 +2196,7 @@
     }
 
     function oy_protocol_close() {
-        if (window.PROTOCOL_CURRENT!==false) {
+        if (window.PROTOCOL_CURRENT !== false) {
             $("#protocol_float_under").fadeOut();
             $("#protocol_float").fadeOut();
             protocol_def[window.PROTOCOL_CURRENT].forEach(function (element) {
@@ -1169,7 +2215,8 @@
             css3: true,
             scrollingSpeed: 950,
             lazyLoading: false,
-            navigation: true
+            navigation: true,
+            normalScrollElements: '.protocol_float'
         });
     });
 </script>
