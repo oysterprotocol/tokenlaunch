@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Oyster - Economical Storage Protocol</title>
+    <title>Oyster - Economic Storage Protocol</title>
     <style type="text/css">
         body, html {
             height: 100%;
@@ -186,14 +186,19 @@
                 bottom: 1vh;
                 left: 50%;
                 transform: translateX(-50%);
-                border: solid 0.5vh white;
-                color: white;
+                border: solid 0.5vh rgba(255, 255, 255, 0.75);
+                color: rgba(255, 255, 255, 0.75);
                 padding: 0.15vh 0.3vh;
                 text-decoration: none;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 2vh;
                 z-index: 500;
                 transition: 0.3s;
+            }
+
+            .nav.hang {
+                top: 1vh;
+                bottom: auto;
             }
 
             .nav:hover {
@@ -208,10 +213,11 @@
             .arrow {
                 position: absolute;
                 bottom: 1.3vh;
-                border: solid white;
+                border: solid rgba(255, 255, 255, 0.75);
                 border-width: 0 0.3vh 0.3vh 0;
                 display: inline-block;
                 padding: 0.3vh;
+                z-index: 502;
             }
 
             .arrow_black {
@@ -221,6 +227,7 @@
                 border-width: 0 0.3vh 0.3vh 0;
                 display: inline-block;
                 padding: 0.3vh;
+                z-index: 502;
             }
 
             .up_left {
@@ -256,7 +263,7 @@
                 text-decoration: none;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 8vh;
-                z-index: 600;
+                z-index: 480;
             }
 
             .feature {
@@ -430,15 +437,49 @@
                 padding: 1vh;
             }
 
+            .launch_float_under {
+                position: absolute;
+                top: calc(50% + 4vh);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 88vh;
+                height: 32vh;
+                filter: blur(0.3vh);
+                border-radius: 2vh;
+                background-color: rgba(33, 33, 33, 0.95);
+                z-index: -10;
+            }
+
+            .launch_float {
+                position: absolute;
+                top: calc(50% + 4vh);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 76vh;
+                height: 21vh;
+                padding: 4vh;
+                border-radius: 2vh;
+                z-index: 1000;
+                font-family: geo_light, Fallback, sans-serif;
+                color: #f3f3f3;
+                font-size: 1.4vh;
+            }
+
             .level_one_b {
-                height: 38vh;
-                top: 38%;
+                height: 8vh;
+                top: 13.5%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
             .level_two_b {
+                height: 38vh;
+                top: 39.2%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_three_b {
                 height: 35vh;
-                top: calc(83% - 6vh);
+                top: calc(88% - 7.5vh);
                 transform: translateX(-50%) translateY(-50%);
             }
 
@@ -450,115 +491,115 @@
 
             .level_two_c {
                 height: 20vh;
-                top: 36%;
+                top: 35.8%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
             .level_three_c {
-                height: 22vh;
-                top: 59.5%;
+                height: 26vh;
+                top: 62%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
             .level_four_c {
                 height: 20vh;
-                top: 83%;
+                top: 88%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
             .flare_shell {
-                background-color: rgba(48, 93, 171, 0.15);
+                background-color: rgba(48, 93, 171, 0.1);
             }
 
             .flare_shell:after {
-                background-image: url(oy_logo_shell.png);
+                background-image: url(oy_logo_shell_micro.png);
                 background-size: 1.23vh 1.5vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.23vh;
                 height: 1.5vh;
                 content: "";
             }
 
             .flare_yellow {
-                background-color: rgba(255, 221, 110, 0.15);
+                background-color: rgba(255, 221, 110, 0.08);
             }
 
             .flare_yellow:after {
-                background-image: url(oy_shell_yellow.png);
+                background-image: url(oy_shell_yellow_micro.png);
                 background-size: 2vh 1vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 2vh;
                 height: 1vh;
                 content: "";
             }
 
             .flare_brown {
-                background-color: rgba(187, 133, 107, 0.15);
+                background-color: rgba(187, 133, 107, 0.08);
             }
 
             .flare_brown:after {
-                background-image: url(oy_shell_brown.png);
+                background-image: url(oy_shell_brown_micro.png);
                 background-size: 1.88vh 1.5vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.88vh;
                 height: 1.5vh;
                 content: "";
             }
 
             .flare_red {
-                background-color: rgba(255, 83, 64, 0.15);
+                background-color: rgba(255, 83, 64, 0.08);
             }
 
             .flare_red:after {
-                background-image: url(oy_shell_red.png);
+                background-image: url(oy_shell_red_micro.png);
                 background-size: 0.97vh 1.5vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 0.97vh;
                 height: 1.5vh;
                 content: "";
             }
 
             .flare_purple {
-                background-color: rgba(128, 48, 224, 0.15);
+                background-color: rgba(128, 48, 224, 0.08);
             }
 
             .flare_purple:after {
-                background-image: url(oy_shell_purple.png);
+                background-image: url(oy_shell_purple_micro.png);
                 background-size: 2vh 1.47vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 2vh;
                 height: 1.47vh;
                 content: "";
             }
 
             .flare_blue {
-                background-color: rgba(38, 147, 255, 0.15);
+                background-color: rgba(38, 147, 255, 0.08);
             }
 
             .flare_blue:after {
-                background-image: url(oy_shell_blue.png);
+                background-image: url(oy_shell_blue_micro.png);
                 background-size: 1.48vh 1.5vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.48vh;
                 height: 1.5vh;
                 content: "";
             }
 
             .flare_pink {
-                background-color: rgba(247, 96, 185, 0.15);
+                background-color: rgba(247, 96, 185, 0.08);
             }
 
             .flare_pink:after {
-                background-image: url(oy_shell_pink.png);
+                background-image: url(oy_shell_pink_micro.png);
                 background-size: 1.68vh 1.5vh;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.68vh;
                 height: 1.5vh;
                 content: "";
@@ -577,12 +618,31 @@
                 position: relative;
                 top: 2vh;
             }
+
+            .code_demo {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                font-family: 'Courier new', monospace;
+                font-size: 1.35vh;
+                font-weight: bold;
+                width: 95%;
+                padding: 1vh;
+                border-radius: 1vh;
+                background-color: #2e2e2e;
+                text-align: center;
+            }
+
+            .candle_img {
+                position: relative;
+                width: auto;
+                height: auto;
+                max-height: 30vh;
+                max-width: 60vh;
+            }
         }
 
         @media screen and (orientation: portrait) {
-            .right {
-                display: none;
-            }
 
             .slide_img {
                 position: absolute;
@@ -743,6 +803,11 @@
                 z-index: 500;
             }
 
+            .nav.hang {
+                top: 1vw;
+                bottom: auto;
+            }
+
             .nav:hover {
                 background-color: #14a2cc;
             }
@@ -799,7 +864,7 @@
                 text-decoration: none;
                 font-family: geo_med, Fallback, sans-serif;
                 font-size: 8vw;
-                z-index: 600;
+                z-index: 480;
             }
 
             .feature {
@@ -973,12 +1038,18 @@
             }
 
             .level_one_b {
+                height: 12vw;
+                top: 13.5%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .level_two_b {
                 height: 47vw;
                 top: 38%;
                 transform: translateX(-50%) translateY(-50%);
             }
 
-            .level_two_b {
+            .level_three_b {
                 height: 41vw;
                 top: calc(83% - 8vw);
                 transform: translateX(-50%) translateY(-50%);
@@ -1009,98 +1080,98 @@
             }
 
             .flare_shell {
-                background-color: rgba(48, 93, 171, 0.15);
+                background-color: rgba(48, 93, 171, 0.08);
             }
 
             .flare_shell:after {
-                background-image: url(oy_logo_shell.png);
+                background-image: url(oy_logo_shell_micro.png);
                 background-size: 1.23vw 1.5vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.23vw;
                 height: 1.5vw;
                 content: "";
             }
 
             .flare_yellow {
-                background-color: rgba(255, 221, 110, 0.15);
+                background-color: rgba(255, 221, 110, 0.08);
             }
 
             .flare_yellow:after {
-                background-image: url(oy_shell_yellow.png);
+                background-image: url(oy_shell_yellow_micro.png);
                 background-size: 2vh 1vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 2vw;
                 height: 1vw;
                 content: "";
             }
 
             .flare_brown {
-                background-color: rgba(187, 133, 107, 0.15);
+                background-color: rgba(187, 133, 107, 0.08);
             }
 
             .flare_brown:after {
-                background-image: url(oy_shell_brown.png);
+                background-image: url(oy_shell_brown_micro.png);
                 background-size: 1.88vw 1.5vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.88vw;
                 height: 1.5vw;
                 content: "";
             }
 
             .flare_red {
-                background-color: rgba(255, 83, 64, 0.15);
+                background-color: rgba(255, 83, 64, 0.08);
             }
 
             .flare_red:after {
-                background-image: url(oy_shell_red.png);
+                background-image: url(oy_shell_red_micro.png);
                 background-size: 0.97vw 1.5vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 0.97vw;
                 height: 1.5vw;
                 content: "";
             }
 
             .flare_purple {
-                background-color: rgba(128, 48, 224, 0.15);
+                background-color: rgba(128, 48, 224, 0.08);
             }
 
             .flare_purple:after {
-                background-image: url(oy_shell_purple.png);
+                background-image: url(oy_shell_purple_micro.png);
                 background-size: 2vw 1.47vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 2vw;
                 height: 1.47vw;
                 content: "";
             }
 
             .flare_blue {
-                background-color: rgba(38, 147, 255, 0.15);
+                background-color: rgba(38, 147, 255, 0.08);
             }
 
             .flare_blue:after {
-                background-image: url(oy_shell_blue.png);
+                background-image: url(oy_shell_blue_micro.png);
                 background-size: 1.48vw 1.5vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.48vw;
                 height: 1.5vw;
                 content: "";
             }
 
             .flare_pink {
-                background-color: rgba(247, 96, 185, 0.15);
+                background-color: rgba(247, 96, 185, 0.08);
             }
 
             .flare_pink:after {
-                background-image: url(oy_shell_pink.png);
+                background-image: url(oy_shell_pink_micro.png);
                 background-size: 1.68vw 1.5vw;
                 display: inline-block;
-                opacity: 0.4;
+                opacity: 0.2;
                 width: 1.68vw;
                 height: 1.5vw;
                 content: "";
@@ -1118,6 +1189,28 @@
             .text_sel_label {
                 position: relative;
                 top: 2vw;
+            }
+
+            .code_demo {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                font-family: 'Courier new', monospace;
+                font-size: 1.35vw;
+                font-weight: bold;
+                width: 95%;
+                padding: 1vw;
+                border-radius: 1vw;
+                background-color: #2e2e2e;
+                text-align: center;
+            }
+
+            .candle_img {
+                position: relative;
+                width: auto;
+                height: auto;
+                max-height: 30vw;
+                max-width: 60vw;
             }
         }
 
@@ -1228,36 +1321,6 @@
             cursor: pointer;
         }
 
-        span.challenge {
-            height: 0;
-            background-color: rgba(155, 6, 7, 0.39);
-            font-weight: bold;
-            position: relative;
-            cursor: pointer;
-            z-index: 5100;
-        }
-
-        span.challenge:after {
-            content: attr(data-response);
-            background: rgba(0, 0, 0, 0.85);
-            color: #FFF;
-            border-radius: 3px;
-            opacity: 0;
-            top: 0;
-            left: -150px;
-            width: 300px;
-            position: absolute;
-            transition: 500ms ease;
-            z-index: 5000;
-        }
-
-        span.challenge:hover:after {
-            opacity: 1;
-            top: 1.2em;
-            max-height: 200px;
-            padding: .4em;
-        }
-
         .bold {
             font-family: geo_med, Fallback, sans-serif;
         }
@@ -1291,7 +1354,7 @@
             </div>
             <div class="oy_fade four intro_box">
                 <div class="intro_lead">The Oyster Protocol enables websites to silently generate traffic revenue as
-                    visitors perform Proof of Work for a decentralized file storage ledger
+                    visitors perform Proof of Work for a decentralized storage ledger
                 </div>
                 <br>Creative content publishers are suffering due to the advent of ad blockers and a general disregard
                 to what advertisements have to offer. The Oyster Protocol is the radical new solution that grants a
@@ -1315,7 +1378,8 @@
                 <div class="feature level_one">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_1.png"/></div>
                     <div class="feature_title">Robust, Redundant Data Storage</div>
-                    <div class="feature_content">Files uploaded via the Oyster Protocol are stored on the IOTA Tangle.
+                    <div class="feature_content">Files uploaded via the Oyster Protocol are stored on the <a
+                            href="http://iota.org">IOTA Tangle</a>.
                         This implies that an excess of redundant duplicates are stored throughout the network topology
                         of the Tangle, therefore mitigating the threat of data loss. Nodes running the Oyster Protocol
                         continuously perform Proof of Work to guarantee that the Tangle retains the data.
@@ -1324,16 +1388,18 @@
                 <div class="feature level_two">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_3.png"/></div>
                     <div class="feature_title">Dual Ledger Integration</div>
-                    <div class="feature_content">The IOTA Tangle (Directed Acyclic Graph) is used for data retention and
-                        Proof of Work negotiation between nodes. The Smart Contract technology of the Ethereum
-                        Blockchain is used to produce Oyster Pearls (the token), therefore activating the unique token
+                    <div class="feature_content">The <a href="http://iota.org">IOTA Tangle</a> (<a
+                            href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph</a>)
+                        is used for data retention and
+                        Proof of Work negotiation between nodes. The Smart Contract technology of the <a href="https://ethereum.org">Ethereum
+                            Blockchain</a> is used to produce Oyster Pearls (the token), therefore activating the unique token
                         attributes that enable key Oyster Protocol functions.
                     </div>
                 </div>
                 <div class="feature level_three">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_4.png"/></div>
                     <div class="feature_title">Treasure Hunting Algorithm</div>
-                    <div class="feature_content">Oyster Pearls are randomly embedded within the Data Map that
+                    <div class="feature_content">Oyster Pearls are randomly embedded within the <span class="flare_blue">Data Map</span> that
                         defines the structure of the uploaded file. Nodes perform the Proof of Work required for
                         maintaining such data
                         on the Tangle whilst searching for the embedded Pearls. Therefore all activity across the
@@ -1352,19 +1418,20 @@
                     <div class="feature_content">No personal information, usernames, nor passwords are ever used. Each
                         uploaded file is assigned a unique handle, which acts like a private seed key. Anyone that has
                         the handle can retrieve the data from the Tangle, even if they were to use their own
-                        custom-built script and Tangle node. Mixer contracts on the Ethereum Blockchain can conceal who
-                        payed for the
-                        storage.
+                        custom-built script and Tangle node. Mixer contracts on the <a href="https://ethereum.org">Ethereum
+                            Blockchain</a> can conceal who payed for the storage.
                     </div>
                 </div>
                 <div class="feature level_two">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_6.png"/></div>
-                    <div class="feature_title">Open Source, Decentralized & Auditable</div>
-                    <div class="feature_content">The Oyster Protocol is developed and maintained in a community driven
-                        model; without any single point of failure. Whilst the typical access to the storage features
-                        are via the web interface, there are no restrictions to the interfaces that can be independently
-                        developed. Anyone is able to develop API endpoints, smartphone apps etc. without permission from
-                        a central figurehead.
+                    <div class="feature_title">Open Source, Extendable, & Auditable</div>
+                    <div class="feature_content">The Oyster Protocol is developed in a community driven
+                        model without any single point of failure. Extension projects can be built on top of the
+                        meshnet topology and protocol API. This enables a whole class of truly decentralized
+                        applications to be built; such as
+                        decentralized telephone calls. Anyone is able to develop
+                        clients or
+                        extensions without permission from a central figurehead.
                     </div>
                 </div>
                 <div class="feature level_three">
@@ -1372,7 +1439,9 @@
                     <div class="feature_title">Scalable Storage Supply</div>
                     <div class="feature_content">Oyster Pearls are the bridge between the motivation of a user to spend
                         money on reliably storing data and the motivation of a website owner to cleanly monetize their
-                        web content. Technologies designed for the Tangle such as Swarm Intelligence further increase
+                        web content. Technologies designed for the Tangle such as <a
+                                href="https://blog.iota.org/iota-development-roadmap-74741f37ed01">Swarm
+                            Intelligence</a> further increase
                         the scale of mass data retention and retrieval with excessive geographically distributed
                         redundancy.
                     </div>
@@ -1390,7 +1459,25 @@
             <div style="position:absolute;bottom:0;width:50%;height:100%;left:0;">
                 <div class="protocol_under level_one_b"></div>
                 <div class="protocol_under level_two_b"></div>
+                <div class="protocol_under level_three_b"></div>
                 <div class="protocol level_one_b">
+                    <div class="protocol_content" style="left:5%;width:90%;height:80%;bottom:auto;top:16%;">
+                        <div
+                                style="position:relative;width:90%;left:9%;text-align:left;font-weight:bold;transform:scale(1.2);">The
+                            <span
+                                    class="flare_shell">Oyster Protocol</span> is defined here in this interactive guide<br></div>
+                        Hover
+                        over an
+                        item to see
+                        logical correlations and click for a detailed explanation. The Whitepaper contains the
+                        information in a linear layout: <a
+                            href="http://oyster.ws/OysterWhitepaper.pdf" target="_blank"
+                            style="padding:0.25%;border-radius:10%;font-weight:bold;background-color:
+                            rgba(20,162,204,0.35);color:black;">
+                        OysterWhitepaper.pdf</a>
+                    </div>
+                </div>
+                <div class="protocol level_two_b">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_purple.png?1"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(128, 48, 224, 0.25);">&nbsp;Broker Node&nbsp;</span>
@@ -1404,13 +1491,13 @@
                             with neighboring nodes.
                         </div>
                         <div id="a2">&bull; Provide <span class="flare_yellow">Web Nodes</span> and <span
-                                class="flare_blue">Oyster Users</span> with access to the <span
+                                class="flare_blue">Storage Users</span> with access to the <span
                                 class="flare_red">Tangle</span>.
                         </div>
                         <div id="a3">&bull; Perform <span class="flare_red">Proof of Work</span> for new <span
                                 class="flare_blue">file uploads</span> where applicable.
                         </div>
-                        <div id="a4">&bull; Submit the <span class="flare_blue">Oyster User's</span> <span
+                        <div id="a4">&bull; Submit the <span class="flare_blue">Storage User's</span> <span
                                 class="flare_pink">Pearls</span> to a <span class="flare_pink">buried state</span> in
                             the <span class="flare_pink">Blockchain Contract</span>.
                         </div>
@@ -1434,7 +1521,7 @@
                         </div>
                         <div class="protocol_head">Reward</div>
                         <div id="a10">&bull; Earn <span class="flare_shell">Oyster</span> <span
-                                class="flare_pink">Pearls</span> by collecting fees from newly <span class="flare_pink">buried</span>
+                                class="flare_pink">Pearls</span> by collecting leftovers from newly <span class="flare_pink">buried</span>
                             treasure.
                         </div>
                         <div id="a11">&bull; Earn <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>
@@ -1445,7 +1532,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="protocol level_two_b">
+                <div class="protocol level_three_b">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_yellow.png?1"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(255, 221, 110, 0.25);">&nbsp;Web Node&nbsp;</span>
@@ -1540,7 +1627,7 @@
                 <div class="protocol level_three_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_blue.png?1"/></div>
                     <div class="protocol_title">
-                        <div><span style="background-color: rgba(38, 147, 255, 0.25);">&nbsp;Oyster User&nbsp;</span>
+                        <div><span style="background-color: rgba(38, 147, 255, 0.25);">&nbsp;Storage User&nbsp;</span>
                         </div>
                         <div class="protocol_caption">A user that spends Oyster Pearls to upload a file</div>
                     </div>
@@ -1556,8 +1643,13 @@
                         <div id="b10">&bull; Encrypt and split <span class="flare_blue">file</span> locally in browser,
                             then send parts to chosen <span class="flare_purple">Broker Nodes</span>.
                         </div>
+                        <div id="b11">&bull; Verify the integrity of the <span class="flare_blue">Data Map</span> installed by <span class="flare_purple">Broker Nodes</span>.
+                        </div>
+                        <div id="b12">&bull; Securely store the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> to retrieve the file from the
+                            <span class="flare_red">Tangle</span> at a later time.
+                        </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b11">&bull; Their <span class="flare_blue">file</span> is securely, reliably, and
+                        <div id="b13">&bull; Their <span class="flare_blue">file</span> is securely, reliably, and
                             anonymously <span class="flare_red">stored</span>.
                         </div>
                     </div>
@@ -1571,14 +1663,14 @@
                     </div>
                     <div id="protocol_6" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="b12">&bull; Provide <span class="flare_brown">content/goods/services</span> to <span
+                        <div id="b14">&bull; Provide <span class="flare_brown">content/goods/services</span> to <span
                                 class="flare_yellow">Web Nodes</span>.
                         </div>
-                        <div id="b13">&bull; Add the <span class="flare_shell">Oyster Protocol</span> script to their
+                        <div id="b15">&bull; Add the <span class="flare_shell">Oyster Protocol</span> script to their
                             <span class="flare_brown">website HTML</span>.
                         </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b14">&bull; Get paid in <span class="flare_shell">Oyster</span> <span
+                        <div id="b16">&bull; Get paid in <span class="flare_shell">Oyster</span> <span
                                 class="flare_pink">Pearls</span> that have been discovered by <span
                                 class="flare_yellow">Web Nodes</span>.
                         </div>
@@ -1598,90 +1690,100 @@
              style="background:linear-gradient(rgb(45,45,45), rgb(105,105,105), rgb(45,45,45))">
             <a class="title">LAUNCH</a>
             <img class="slide_img" src="oy_slide_c.png?1" style="top:-2px;"/>
-            <div style="position:absolute;bottom:0;width:100%;height:50px;background-color: #000;z-index:220">BOB</div>
-            <a class="nav" href="#intro" target="_self"><i class="arrow up_left"></i>TOP<i
-                    class="arrow up_right"></i></a>
+            <div class="launch_float_under"></div>
+            <div class="launch_float" style="background-color: rgba(189,86,90,0);">
+                <div style="position:absolute;left:0;width:100%;bottom:3.5vh;">
+                    <div style="width:100%;font-size:1.9vh;text-align:center;font-weight:bold;" >The Oyster Protocol unlocks the hidden revenue potential of millions of websites</div>
+                    <div style="text-align: center">
+                        The PRL token is the economic bridge between content publishers, content consumers, storage providers, and storage consumers. Because of the economic nature of the Oyster Protocol, the token value precedes the network infrastructure. Website Owners will not enable the Oyster Protocol on their websites if it pays out near-zero in revenue. No Website Owners means no Web Nodes, which breaks Broker Node operation. This would prevent the reliable uploading of data via the Oyster Protocol.<br><span style="transform:scale(1.2);font-weight:bold;">Therefore token value precedes network initialization.</span><br>Assuming an ETH value of $400, the 100x value increase of the PRL token post-launch would make it equally affordable to the current least expensive storage solution. Therefore if the PRL token were to increase 10x in value post-launch, the Oyster Protocol would offer a storage solution that is 10x less expensive than the current least expensive storage solution. The pre-launch price of the PRL token has been made intentionally low to ensure that the network economy will have enough momentum to initialize the network topology.
+                    </div>
+                </div>
+                <div style="">
+
+                </div>
+                <div style="position:fixed;left:10%;bottom:0;font-size:1.75vh;font-family: geo_med, Fallback, sans-serif;">1 ETH = 1000 PRL</div>
+                <div style="position:fixed;right:10%;bottom:0;font-size:1.75vh;font-family: geo_med, Fallback, sans-serif;">1 PRL = 100 GB - 10 Months</div>
+                <a class="nav" style="left:40%;transform: scale(0.8) translateY(20%);bottom:0;">SEE&nbsp;THE&nbsp;MATH</a>
+            </div>
+            <a class="nav" href="#intro" target="_self"><i class="arrow up_left"></i>TOP<i class="arrow up_right"></i></a>
+            <a class="nav hang" style="left:35%;" href="#intro" target="_blank">BLOG</a>
+            <a class="nav hang" style="left:50%;" href="https://twitter.com/OysterProtocol" target="_blank">@OysterProtocol</a>
+            <a class="nav hang" style="left:65%;" href="https://join.slack.com/t/oysterprotocol/shared_invite/MjM3MTAxMDc0NjE0LTE1MDQ2MDIyNDYtM2NlYWQxMjBhZg" target="_blank">SLACK</a>
+            <a class="nav" style="left:35%;" href="https://github.com/oysterprotocol" target="_blank">GITHUB</a>
+            <a class="nav" style="left:65%;" href="https://oyster.ws/OysterWhitepaper.pdf" target="_blank">WHITEPAPER</a>
         </div>
     </div>
 </div>
 <div style="display:none">
     <div id="oy_close_box">
-        <div class="nav black" style="bottom:0;transform: scale(0.8) translate(-120%, 50%)"
-             onmouseover="this.style.cursor = 'pointer'" onclick="oy_protocol_close()">CLOSE DESCRIPTION
+        <div class="nav black" style="bottom:0;transform: scale(0.8) translate(-120%, 50%)" onmouseover="this.style.cursor = 'pointer'" onclick="oy_protocol_close()">CLOSE DESCRIPTION
         </div>
-        <a class="nav black" style="bottom:0;transform: scale(0.8) translate(0, 50%)"
-           href="https://join.slack.com/t/oysterprotocol/shared_invite/MjM3MTAxMDc0NjE0LTE1MDQ2MDIyNDYtM2NlYWQxMjBhZg">DISCUSS
+        <a class="nav black" style="bottom:0;transform: scale(0.8) translate(0, 50%)" href="https://join.slack.com/t/oysterprotocol/shared_invite/MjM3MTAxMDc0NjE0LTE1MDQ2MDIyNDYtM2NlYWQxMjBhZg">DISCUSS
             ON SLACK</a>
     </div>
     <div id="c1">
         <div class="protocol_head center_hor">Mechanics of the Tangle</div>
-        <div class="protocol_float_content">The <span class="flare_red">IOTA Tangle</span> is a <a
-                href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph</a>, which means it
+        <div class="protocol_float_content">The <span class="flare_red"><a href="http://iota.org">IOTA Tangle</a></span>
+            is a <a
+                    href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph</a>, which means it
             is a blockless distributed ledger. A live visualization of the <span class="flare_red">IOTA Tangle</span>
-            can be seen <a href="https://tangle.blox.pm">here</a>. Each submitted transaction must perform <span
-                    class="flare_red">Proof of Work</span> for two prior transactions, therefore confirming them. These
-            two transactions are contextually referenced as the branch and trunk. Each
-            transaction has a payload capacity which is used to retain the data that is uploaded by the <span
-                    class="flare_blue">Oyster User</span>. Transactions are propagated throughout a <span
-                    class="flare_red">meshnet</span> of nodes that have mutually peered with each other, whilst each
-            node retains a redundant copy of the transactions. This leads to a great redundancy of <span
-                    class="flare_blue">data copies</span>, therefore heavily mitigating the risk of dataloss whilst not
+            can be seen <a href="http://iota.dance/live/">here</a>. Each submitted <span class="flare_red">transaction</span> must perform <span class="flare_red">Proof of Work</span> for two prior <span class="flare_red">transactions</span>, therefore confirming them. These
+            two <span class="flare_red">transactions</span> are contextually referenced as the <span class="flare_red">branch</span> and <span class="flare_red">trunk</span>. See <a href="https://learn.iota.org/faq/what-is-needed-to-make-a-transaction">here</a> for more details concerning broadcasting a <span class="flare_red">transaction</span> on the <span class="flare_red">Tangle</span>. Each
+            <span class="flare_red">transaction</span> has a payload capacity which is used to retain the <span class="flare_blue">data</span> that is uploaded by the <span class="flare_blue">Storage User</span>. Transactions are propagated throughout a <span class="flare_red">meshnet</span> of <span class="flare_red">nodes</span> that have mutually peered with each other, whilst each
+            <span class="flare_red">node</span> retains a redundant copy of the <span class="flare_red">transactions</span>. This leads to a great redundancy of <span class="flare_blue">data copies</span>, therefore heavily mitigating the risk of data-loss whilst not
             relying on a centralized hosting provider.<br><br><span class="flare_red">Tangle Nodes</span> are designed
             so that they automatically delete old <span class="flare_blue">data</span> once they reach saturation of
-            their physical storage limits (it is called Automatic Snapshots and it is not yet live on the <span
-                    class="flare_red">Tangle</span>). This means that eventually, transaction <span class="flare_blue">data</span>
-            is deleted from the node. Therefore <span class="flare_yellow">Web Nodes</span> perform <span
-                    class="flare_red">Proof of Work</span> to re-attach the transaction <span
-                    class="flare_blue">data</span> to the <span class="flare_red">Tangle</span> as they search for
+            their physical storage limits (it is called Automatic Snapshots and it is not yet live on the <span class="flare_red">Tangle</span>). This means that, eventually, <span class="flare_red">transaction</span> <span class="flare_blue">data</span>
+            is deleted from the <span class="flare_red">node</span>. Therefore <span class="flare_yellow">Web Nodes</span> perform <span class="flare_red">Proof of Work</span> to re-attach the <span class="flare_red">transaction</span> <span class="flare_blue">data</span> to the <span class="flare_red">Tangle</span> as they search for
             embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. This ensures that
             the <span class="flare_blue">data</span> is maintained across the topology of the <span class="flare_red">Tangle Nodes</span>
-            and never becomes irrevocably deleted. See <span class="protocol_mention"
-                                                             onclick="oy_protocol_click('c4');">Treasure Hunting for Oyster Pearls</span>
+            and never becomes irrevocably deleted. See <span class="protocol_mention" onclick="oy_protocol_click('c4');">Treasure Hunting for Oyster Pearls</span>
             for more details.<br><br>The <span class="flare_red">IOTA Tangle</span> contains many innovations in it's
-            roadmap, specifically Swarm Intelligence. Swarm Intelligence is relevant to the <span class="flare_shell">Oyster Protocol</span>
+            roadmap, specifically <span class="flare_red"><a
+                    href="https://blog.iota.org/iota-development-roadmap-74741f37ed01">Swarm
+                Intelligence</a></span>. <span class="flare_red">Swarm Intelligence</span> is relevant to the <span
+                    class="flare_shell">Oyster
+                Protocol</span>
             because it removes the bottleneck of each <span class="flare_red">Tangle Node</span> being required to
-            maintain the entire ledger. It is similar to transitioning from a <a
+            maintain the entire <span class="flare_red">ledger</span>. It is similar to transitioning from a <a
                     href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1">RAID 1</a> drive array setup to a
             <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1">RAID 10</a> setup. Implementation of
-            Swarm Intelligence further strengthens scalability merits of the <span
-                    class="flare_shell">Oyster Protocol</span>.<br><br>Network bandwidth is the most scarce resource
+            <span class="flare_red">Swarm Intelligence</span> further strengthens the scalability merits of the <span
+                    class="flare_shell">Oyster Protocol</span>.<br><br>
+            Network bandwidth is the most scarce resource
             concerning reliably committing <span class="flare_blue">data</span> across the <span class="flare_red">Tangle</span>.
             A <span class="flare_red">Tangle Node</span> is inherently restricted by it's network interface bandwidth.
             Since the <span class="flare_shell">Oyster Protocol</span> aims to commit <span
                     class="flare_blue">data</span> more reliably to the <span class="flare_red">Tangle</span>, bandwidth
-            access to the <span class="flare_red">Tangle</span> is rewarded with a percentage cut of the processed <span
-                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. Tangle Nodes that adhere
-            to the <span class="flare_shell">Oyster Protocol</span> Specifications are called <span
-                    class="flare_purple">Broker Nodes</span>. They maintain connectivity to the Tangle so that data can
-            be stored and retrieved.<br><br><span class="challenge" data-response="This is the response">How will I get my data if Broker Nodes block me?</span>
+            access to the <span class="flare_red">Tangle</span> is rewarded with a share of the processed <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. <span class="flare_red">Tangle nodes</span> that adhere
+            to the <span class="flare_shell">Oyster Protocol</span> specifications are called <span
+                    class="flare_purple">Broker Nodes</span>. <span class="flare_purple">Broker Nodes</span> act as a bridge from the <span class="flare_red">Tangle</span> to <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage Users</span>.<br><br>
+            <span class="flare_blue">Data</span> is stored on the <span class="flare_red">Tangle</span> in ~1kb parts within the <span class="flare_red">transaction</span> payload. A SHA256 hash is the referenced basis for storing and retrieving <span class="flare_blue">data</span> on the <span class="flare_red">Tangle</span>. When a SHA256 hash has been selected to represent <span class="flare_blue">data</span>, it is converted into it's <a href="https://en.wikipedia.org/wiki/Ternary_computer">trinary</a> form to represent the <span class="flare_red">recipient address</span> of the <span class="flare_red">transaction</span>. To retrieve the <span class="flare_blue">data</span> from the <span class="flare_red">Tangle</span>, the hash is again converted to it's trinary form and all of the <span class="flare_red">transactions</span> under the <span class="flare_red">address</span> are recovered. The <span class="flare_red">transaction</span> with the oldest issuance timestamp contains the payload <span class="flare_blue">data</span> that represents the selected hash.
         </div>
     </div>
-    <div id="c2" data-height="">
+    <div id="c2">
         <div class="protocol_head center_hor">Initial File Storage on the Tangle</div>
-        <div class="protocol_float_content">When an <span class="flare_blue">Oyster User</span> wants to upload a file
+        <div class="protocol_float_content">When a <span class="flare_blue">Storage User</span> wants to upload a file
             via the <span class="flare_shell">Oyster Protocol</span>, the file
-            is split into parts and encrypted locally in the browser. This isolation ensures the impossibility of a
-            malicious actor retrieving the <span class="flare_blue">data</span>, even if they were to find out the
-            Genesis Hash of the Data Map.
-            The <span class="flare_blue">data</span> can only be successfully accessed with the corresponding encryption
+            is split into parts and encrypted locally in the <span class="flare_blue">browser</span>. This isolation
+            ensures the impossibility of a
+            malicious actor retrieving the <span class="flare_blue">data</span> since it can only be accessed with the corresponding encryption
             key, which is known as the
-            <span class="flare_shell">Oyster</span> Handle.<br><br><br><br>
-            <div class="center_hor bold" style="transform: translateX(-50%) translateX(2vh);font-size:1.65vh">
+            <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span>:<br><br><br><br>
+            <div class="center_hor bold" style="transform: translateX(-50%);font-size:1.65vh">
                 <div class="text_sel" style="top:-2vh;left:0.5%;width:98%;height:1.3vh;transform: rotate(180deg)">
-                    <div class="text_sel_label" style="transform: rotate(180deg) translateX(-1.2vh)">Oyster Handle</div>
+                    <div class="text_sel_label" style="transform: rotate(180deg)">Oyster Handle</div>
                 </div>
-                IMPTDOCS3fd39dd505e5d14c9ca0949b9dcd68c55306fc5826cd3e6cb67962b7d4efe8efx294@8@56
-                <div class="text_sel" style="left:0.2vh;width:6vh;height:1.3vh;">
+                IMPTDOCS3fd39dd505e5d14c9ca0949b9dcd68c55306fc5826cd3e6cb67962b7d4efe8efx294g9iw
+                <div class="text_sel" style="left:0.2vh;width:6.5vh;height:1.3vh;">
                     <div class="text_sel_label">Name</div>
                 </div>
-                <div class="text_sel" style="left:7.5vh;width:55vh;height:1.3vh;">
+                <div class="text_sel" style="left:8vh;width:55vh;height:1.3vh;">
                     <div class="text_sel_label">Primordial Hash</div>
                 </div>
-                <div class="text_sel" style="right:6vh;width:2.6vh;height:1.3vh;">
+                <div class="text_sel" style="right:0.6vh;width:5.7vh;height:1.3vh;">
                     <div class="text_sel_label">Salt</div>
-                </div>
-                <div class="text_sel" style="right:1vh;width:2.6vh;height:1.3vh;">
-                    <div class="text_sel_label">Pearl Map</div>
                 </div>
             </div>
             <br><br><br><br><br>
@@ -1713,7 +1815,7 @@
             <br><br><br><br><br>
             <div class="center_hor"><i class="arrow_black down"></i></div>
             <div class="center_hor bold" style="width:80%;font-size:1.65vh;text-align:center;">
-                The sequence continues until the file is fully represented in the Data Map
+                The sequence continues until the file is fully represented in the <span class="flare_blue">Data Map</span>
             </div>
             <br><br><br>
             <div class="center_hor"><i class="arrow_black down"></i></div>
@@ -1723,66 +1825,55 @@
             <br><br><br>
             <div class="center_hor"><i class="arrow_black down"></i></div>
             <div class="center_hor bold" style="font-size:1.65vh">
-                801b42c510bcfdd2c48842a0a6e73f45474e0d54a22fbeea8d9673f57b2d9679
+                5a6bf9a455234d6a04237e049c026b9fb69e9f35aeac6db847f4400cc724fa39
                 <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
                     <div class="text_sel_label">Hash NX</div>
                 </div>
             </div>
             <br><br><br><br>
-            The first 8 characters of the Handle represents the name of the file. This is usually copied from the
-            filename that was uploaded to the browser, but can also be customized by the user for their own references.
+            The first 8 characters of the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> represents the name of the <span class="flare_blue">file</span>. This is usually copied from the
+            filename that was <span class="flare_blue">uploaded to the browser</span>, but can also be customized by the <span class="flare_blue">Storage User</span> for their own references.
             The Primordial Hash is a 64 character long SHA256 hash of random input that is generated from within the
-            <span class="flare_shell">Oyster User's</span> browser. The next 4 characters of the Handle is the <a
+            <span class="flare_shell">Storage User's browser</span> with as much <a href="https://en.wikipedia.org/wiki/Entropy_(computing)">entropy</a> as possible. The last 8 characters of the <span class="flare_blue">Handle</span> is the <a
                     href="https://en.wikipedia.org/wiki/Salt_(cryptography)">cryptographic salt</a> that differentiates
-            the Primordial Hash from the overall encryption key. Therefore the entire 78+ character long Handle is the
-            entire encryption key used to encrypt and decrypt the split parts of the <span
-                    class="flare_blue">data</span>. The Primordial Hash initiates a
-            sequence of SHA256 hashes that represents split parts of the <span class="flare_blue">data</span>.
-            <br>
-            The <span class="flare_blue">data</span> is first split in approximately 1kb parts, and each part is then individually encrypted with the
-            entire Handle as the key. Each part is sequentially represented by a Hash iteration (Genesis, N1, N2 etc.),
-            and
-            is eventually submitted as a <span class="flare_red">Tangle</span> transaction each by two <span
-                    class="flare_blue">Broker Nodes</span>. A networked reputation system tracks the best performing
+            the Primordial Hash from the overall encryption key. The salt is used to further protect the data in case the Primordial Hash is found because of a future weakness in a hash function or a <a href="https://en.wikipedia.org/wiki/Rainbow_table">rainbow table</a> attack on the Genesis Hash. Therefore the entire 80 character long <span class="flare_blue">Handle</span> is the
+            entire encryption key used to encrypt and decrypt the split parts of the <span class="flare_blue">data</span>. The <span class="flare_shell">Oyster Protocol</span> also supports adding a passphrase to the encryption scheme. The Primordial Hash initiates a
+            sequence of SHA256 hashes that represents split parts of the <span class="flare_blue">data</span>. The <span class="flare_blue">data</span> is first split in ~1kb parts,
+            then each part is individually encrypted with the
+            entire <span class="flare_blue">Handle</span> as the key. Each part is sequentially represented by a Hash iteration (Genesis, N1, N2 etc.),
+            and is eventually submitted as a <span class="flare_red">Tangle transaction</span> each by two <span class="flare_blue">Broker Nodes</span>.<br><br>
+            A distributed reputation system amongst <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage Users</span> tracks the best performing
             <span class="flare_purple">Broker Nodes</span>, therefore automatically selecting the most appropriate two
-            <span class="flare_purple">Broker Nodes</span> on behalf of the <span class="flare_blue">Oyster User</span>. The selection of exactly two <span
-                    class="flare_purple">Broker Nodes</span> is mandatory according to the <span class="flare_shell">Oyster Protocol</span>
-            so as to induce a <a href="https://en.wikipedia.org/wiki/Prisoner's_dilemma">Prisoner's Dillemma</a>. The
-            value of the Genesis Hash is submitted to both <span class="flare_purple">Broker Nodes</span>. One <span
-                    class="flare_purple">Broker Nodes</span> is designated to commit the Data Map working downwards from
-            Genesis Hash, whilst the other is designated to commit the Data Map upwards from Hash NX (whilst X
-            represents the last iterations of the sequence). The correct amount of <span
-                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span> are sent to both <span
-                    class="flare_purple">Broker
-                Nodes</span>, whilst the client performing the upload does not disclose the identities of the <span
-                    class="flare_purple">Broker Nodes</span> secret, except for the <span class="flare_shell">Oyster User</span>.
-            This is done to prevent both <span class="flare_purple">Broker Nodes</span> from being able to conspire
-            against the <span class="flare_blue">Oyster User</span>.<br><br>By default, the selected <span
+            <span class="flare_purple">Broker Nodes</span> on behalf of the <span class="flare_blue">Storage User</span>. The selection of exactly two <span class="flare_purple">Broker Nodes</span> is stipulated by the <span class="flare_shell">Oyster Protocol</span>
+            so as to induce a competitive race between the two for which <span class="flare_purple">Broker Node</span> can install the most <span class="flare_pink">Pearls</span> into the <span class="flare_blue">Data Map</span>. The better performing <span class="flare_purple">Broker Node</span> receives less <span class="flare_pink">Pearls</span> for the specific session, yet gains more reputation and hence <span class="flare_pink">Pearl</span> revenue in the future.<br><br>The value of the Genesis Hash is submitted to both <span class="flare_purple">Broker Nodes</span> by the <span class="flare_blue">Storage User</span>. One <span class="flare_purple">Broker Node</span> is designated to commit the <span class="flare_blue">Data Map</span> working downwards from the Genesis Hash (<span class="flare_purple">Alpha Node</span>), whilst the other (<span class="flare_purple">Beta Node</span>) is designated to commit the <span class="flare_blue">Data Map</span> upwards from the NX Hash (X represents the last iteration of the sequence). The correct amount of <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span> are sent to the alpha-designated <span
+                    class="flare_purple">Broker Node</span>. The <span class="flare_purple">Alpha Node</span> is sent the full <span class="flare_pink">Pearl</span> amount and the <span class="flare_pink">Ethereum address</span> of the <span class="flare_purple">Beta Node</span>. The <span class="flare_purple">Alpha Node</span> sends half of the <span class="flare_pink">Pearls</span> to the <span class="flare_purple">Beta Node</span> when it receives them along with a cryptographically signed statement that reveals it's identity. Any defections by either <span class="flare_purple">Node</span> will be reported via the distributed reputation system, which would exponentially degrade their reputation to <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage Users</span> across the <span class="flare_shell">Oyster Network</span>. The amount of <span class="flare_pink">Pearls</span> which the <span class="flare_blue">Storage User</span> pays is half of the amount that gets eventually embedded in the <span class="flare_blue">Data Map</span>. <span class="flare_purple">Broker Nodes</span> are allowed to keep any leftover <span class="flare_pink">Pearls</span> after the <span class="flare_blue">Data Map</span> has been correctly installed. See <span class="protocol_mention" onclick="oy_protocol_click('c3');">Burying Pearls with Broker Nodes</span> for more details.<br><br>
+            By default, the selected <span
                     class="flare_purple">Broker Nodes</span> are responsible for performing the <span class="flare_red">Proof of Work</span>
-            to attach each data part to the <span class="flare_red">Tangle</span>. The <span
-                    class="flare_red">Tangle</span> address used to send the transaction is the <a
+            to attach each <span class="flare_blue">data part</span> to the <span class="flare_red">Tangle</span>. The <span
+                    class="flare_red">Tangle address</span> used to send the <span class="flare_red">transaction</span> is the <a
                     href="https://en.wikipedia.org/wiki/Ternary_computer">trinary</a> form of the corresponding Hash
             iteration (Genesis, N1, N2 etc.) of the sequence. However, <span class="flare_purple">Broker Nodes</span>
             are
             able to delegate the <span class="flare_red">Proof of Work</span> tasks to <span class="flare_yellow">Web Nodes</span>
-            if there is sufficient demand of peer-to-peer connection brokerage, and new Genesis Hashes. See <span
+            if there is sufficient demand for peer-to-peer connection brokerage and new Genesis Hashes. See <span
                     class="protocol_mention"
                     onclick="oy_protocol_click('c5');">Web Node and Broker Node Collaboration</span> for more
             details.<br><br>To understand how the increase in overall <span class="flare_red">Proof of Work</span> being
-            performed across the <span class="flare_red">Tangle</span> lowers transaction confirmation times and
-            increases the general security of the <span class="flare_red">network</span>, see the <a
-                    href="http://iota.org">IOTA Website</a>.
+            performed across the <span class="flare_red">Tangle</span> lowers <span class="flare_red">transaction</span> confirmation times and
+            increases the general security of the <span class="flare_red">network</span>, more information can be found <a
+                    href="http://iotasupport.com/whatisiota.shtml">here</a>.
         </div>
     </div>
     <div id="c3">
         <div class="protocol_head center_hor">Burying Pearls with Broker Nodes</div>
         <div class="protocol_float_content"><span class="flare_shell">Oyster</span> <span
-                class="flare_pink">Pearls</span> are designed to be embedded within the Data Map that defines the
+                class="flare_pink">Pearls</span> are designed to be embedded within the <span class="flare_blue">Data Map</span> that defines the
             structure and contents of the <span class="flare_blue">uploaded file</span>. See <span
                     class="protocol_mention"
                     onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span> for more details
-            concerning the Data Map. Instead of <span class="flare_blue">Oyster User's</span> embedding the <span
-                    class="flare_pink">Pearls</span> into the Data Map themselves, <span class="flare_purple">Broker Nodes</span>
+            concerning the <span class="flare_blue">Data Map</span>. Instead of <span class="flare_blue">Storage User's</span> embedding the <span
+                    class="flare_pink">Pearls</span> into the <span class="flare_blue">Data Map</span> themselves, <span class="flare_purple">Broker Nodes</span>
             have been allocated this task for several reasons:<br><br>
             &bull; <span class="flare_purple">Broker Nodes</span> have access to <span
                     class="flare_pink">ETH balances</span>, and therefore can pay the <span class="flare_pink"><a
@@ -1790,20 +1881,20 @@
             fees needed to move all the
             <span class="flare_pink">Pearls</span> into the correct designations. Every 10mb worth of <span
                     class="flare_blue">user data</span> requires a transaction on the <span class="flare_pink">Ethereum Blockchain</span>.<br><br>
-            &bull; It would be impractically complicated for the <span class="flare_blue">Oyster User</span> to have to
+            &bull; It would be impractically complicated for the <span class="flare_blue">Storage User</span> to have to
             perform a large amount of complex <span class="flare_pink">Blockchain transactions</span>, which includes
             invoking custom <span class="flare_pink">Smart Contract</span> functions. When this complexity is passed
-            onto <span class="flare_purple">Broker Nodes</span>, the <span class="flare_blue">Oyster User</span> need
+            onto <span class="flare_purple">Broker Nodes</span>, the <span class="flare_blue">Storage User</span> need
             only send the <span class="flare_pink">Pearls</span> once to the alpha-designated <span class="flare_pink">Broker Node</span>
             via a typical <span class="flare_pink">Ethereum Wallet</span>.<br><br>
             &bull; Having <span class="flare_purple">Broker Nodes</span> embed the <span
-                    class="flare_pink">Pearls</span> in the Data Map heavily mitigates the red herring attack
+                    class="flare_pink">Pearls</span> in the <span class="flare_blue">Data Map</span> heavily mitigates the red herring attack
             vector.<br><br>
-            A red herring attack is when a malicious <span class="flare_blue">Oyster User</span> pretends to embed <span
-                    class="flare_pink">Pearls</span> into the Data Map but does not actually embed them. If they were to
+            A red herring attack is when a malicious <span class="flare_blue">Storage User</span> pretends to embed <span
+                    class="flare_pink">Pearls</span> into the <span class="flare_blue">Data Map</span> but does not actually embed them. If they were to
             upload garbage data without any <span class="flare_pink">Pearls</span> in it, it would waste the time of
             <span class="flare_yellow">Web Nodes</span> that are searching for treasure (that doesn't exist). Eventually
-            the <span class="flare_yellow">Web Nodes</span> would realize that the Data Map is not within the bounds of
+            the <span class="flare_yellow">Web Nodes</span> would realize that the <span class="flare_blue">Data Map</span> is not within the bounds of
             the <span class="flare_shell">Oyster Protocol</span> specification, but by then the energy spent by the
             <span class="flare_yellow">Web Nodes</span> is expected to be greater than the energy put in by the
             malicious attacker. Therefore this would cause the attack to be successful and potentially profitable.
@@ -1811,137 +1902,159 @@
                     class="flare_purple">Broker Nodes</span> to receive Genesis Hashes (which define the entire data
             map), red herring attacks are heavily mitigated. This is because if a <span
                     class="flare_purple">Broker Node</span> began to give out Genesis Hashes that represented an invalid
-            Data Map (that doesn't have the correct amount of <span class="flare_pink">Pearls</span> in the correct
+            <span class="flare_blue">Data Map</span> (that doesn't have the correct amount of <span class="flare_pink">Pearls</span> in the correct
             places), it would be easy for <span class="flare_yellow">Web Nodes</span> to realize that the <span
                     class="flare_purple">Broker Node</span> lied and therefore ruin it's reputation and blacklist it.
             Whilst Broker Nodes have consistent identities that have associated reputation scores, <span
-                    class="flare_blue">Oyster Users</span> and <span class="flare_yellow">Web Nodes</span> are much more
+                    class="flare_blue">Storage Users</span> and <span class="flare_yellow">Web Nodes</span> are much more
             dynamic. Not only is it already difficult to establish consistent cryptographic identities for <span
-                    class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Oyster Users</span>, but the
+                    class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage Users</span>, but the
             <span class="flare_shell">Oyster Protocol</span> defines that <span class="flare_yellow">Web Nodes</span>
             need to reset their identities every X amount of treasure hunts. <span
-                    class="flare_blue">Oyster Users</span> do not have a discernible identity except on a session basis
+                    class="flare_blue">Storage Users</span> do not have a discernible identity except on a session basis
             to negotiate with <span class="flare_purple">Broker Nodes</span>.<br><br>
-            Once a <span class="flare_purple">Broker Node</span> receives the correct amount of <span
-                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>, a special bury function of
-            the <span class="flare_shell">Oyster</span> <span class="flare_pink">Smart Contract</span> is invoked. A
-            sector of a Data Map represents 10,000 hashes after the Primordial Hash (Genesis - N9,999, N10,000 - N19,999
-            etc.). Therefore a sector holds approximately 10mb of <span class="flare_blue">user data</span>. Each sector
+            Once a <span class="flare_blue">Storage User</span> submits <span class="flare_pink">Pearls</span> for payments, approximately half are embedded in the <span class="flare_blue">Data Map</span> and the other half are collected as compensation by the two Broker Nodes. The two Broker Nodes installing the <span class="flare_blue">Data Map</span> can be likened to a candle that burns on both ends:<br><br><div style="display:flex;width:100%;justify-content: center;"><img class="candle_img" src="oy_candle.png?1" /></div>
+            <br>
+            The <span class="flare_blue">candle wax</span> represents that <span class="flare_blue">Data Map</span> and the two <span class="flare_purple">flames</span> each represent a <span class="flare_purple">Broker Node</span>. A <span class="flare_purple">Broker Node</span> has the right to retain any leftover <span class="flare_pink">Pearls</span> it has after the <span class="flare_blue">Data Map</span> has been completely installed (or the <span class="flare_blue">candle</span> completely <span class="flare_purple">burns</span> out). The default economic pressures would indicate that it is advantageous for a <span class="flare_purple">Broker Node</span> to install the <span class="flare_blue">Data Map</span> (<span class="flare_purple">burn</span> one side of the <span class="flare_blue">candle</span>) very slowly or not at all. If the <span class="flare_purple">alpha Node burns</span> the <span class="flare_blue">candle</span> at 10 units per second, and the <span class="flare_purple">beta Node burns</span> the <span class="flare_blue">candle</span> at 2 units per second, they will still eventually meet at some stage but the <span class="flare_purple">beta Node</span> will have a lot more leftover <span class="flare_pink">Pearls</span>, which it is entitled to keep. The logical extension of this economic situation is that both <span class="flare_purple">Nodes</span> would not <span class="flare_purple">burn</span> the <span class="flare_blue">candle</span> at all, both trying to keep the most <span class="flare_pink">Pearls</span> for themselves.<br><br>
+            The distributed reputation system inverses the economic incentives. <span class="flare_purple">Broker Nodes</span> are assigned cryptographic identities which initially debut with a score of zero, the lowest possible. <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage User's</span> seek to perform <span class="flare_shell">transactions</span> with the <span class="flare_purple">Broker Nodes</span> that have the highest available reputation scores (whilst also factoring in latency and other selection restrictions). As the average <span class="flare_blue">candle</span> <span class="flare_purple">burning</span> speed of a <span class="flare_purple">Node</span> increases linearly, it's reputation score increases exponentially. This causes <span class="flare_purple">Broker Nodes</span> to race to <span class="flare_purple">burn</span> more of the <span class="flare_blue">candle</span> themselves, despite their being less <span class="flare_pink">Pearl</span> revenue in the short term. A <span class="flare_purple">Broker Node</span> that intends to <span class="flare_purple">burn</span> the <span class="flare_blue">candle</span> as quickly as possible will earn less in the short term whilst earning exponentially more in the long term. Therefore the economic incentive for a <span class="flare_purple">Broker Node</span> to defect has been nullified.
+            <br><br>
+            When a <span class="flare_purple">Broker Node</span> embeds <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span> into a <span class="flare_blue">Data Map</span>, a special bury function of
+            the <span class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> is invoked. A
+            Sector of a <span class="flare_blue">Data Map</span> represents 10,000 hashes after the Primordial Hash (Genesis - N9,999, N10,000 - N19,999
+            etc.). Therefore a Sector holds approximately 10mb of <span class="flare_blue">user data</span>. Each Sector
             must have exactly one embedded treasure of <span class="flare_pink">Pearls</span> inside. The location of
-            the <span class="flare_pink">Pearls</span> within the sector is randomly chosen by the <span
+            the <span class="flare_pink">Pearls</span> within the Sector is randomly chosen by the <span
                     class="flare_purple">Broker Node</span>. Therefore the amount of <span
-                    class="flare_pink">Pearls</span> per sector defines how long the <span
+                    class="flare_pink">Pearls</span> per Sector defines how long the <span
                     class="flare_blue">file</span> should be retained in the <span class="flare_red">Tangle</span>.
             0.00001 PRLs would ensure 10mb is maintained on the Tangle for 10 months. Therefore the <span
-                    class="flare_shell">Oyster</span> <span class="flare_pink">Smart Contract</span> locks up the <span
-                    class="flare_pink">Pearls</span> of that sector for 10 months. During this time, <span
+                    class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> locks up the <span
+                    class="flare_pink">Pearls</span> of that Sector for 10 months. During this time, <span
                     class="flare_yellow">Web Nodes</span> perform <span class="flare_red">Proof of Work</span> to find
             the <span class="flare_pink">embedded Pearls</span>. See <span class="protocol_mention"
                                                                            onclick="oy_protocol_click('c4');">Treasure Hunting for Oyster Pearls</span>
             for more details.<br><br>
             <span class="flare_pink">Pearls</span> must already be in a buried state before they can be claimed by a
             <span class="flare_yellow">Web Node</span>. <span class="flare_pink">Pearls</span> are also claimed in
-            seperate time zones named Epochs. The <span class="flare_shell">Oyster Protocol</span> Epoch length
-            definition is 4 months. This means that if there is a sector of the datamap that contains treasure of
-            0.00002 <span class="flare_pink">PRLs</span> (20 months storage time), then there are 5 available Epochs:
+            separate time zones named Epochs. The <span class="flare_shell">Oyster Protocol</span> Epoch length
+            definition is between 1 - 6 months, and assumed to be 4 months by default. This means that if there is a Sector of the <span class="flare_blue">Data Map</span> that contains treasure of
+            0.00002 <span class="flare_pink">PRL</span> (20 months storage time), then there are 5 available Epochs:
             months 0-4, 5-8, 9-12, 13-16 and 17-20. The <span class="flare_shell">Oyster</span> <span
-                    class="flare_pink">Smart Contract</span> would only allow 0.000004 <span
-                    class="flare_pink">PRLs</span> to be claimed per Epoch (0.0002 PRLs / 5 Epochs). <span
+                    class="flare_pink">Contract</span> would only allow 0.000004 <span
+                    class="flare_pink">PRL</span> to be claimed per Epoch (0.0002 PRLs / 5 Epochs). <span
                     class="flare_yellow">Web Nodes</span> claim <span class="flare_pink">Pearls</span> on behalf of
-            their corresponding <span class="flare_brown">Website Owner</span>.
+            the <span class="flare_brown">Website Owner</span> that invoked them.
         </div>
     </div>
     <div id="c4">
         <div class="protocol_head center_hor">Treasure Hunting for Oyster Pearls</div>
         <div class="protocol_float_content">
-            <span class="flare_yellow">Web Nodes</span> search through sectors of Data Maps to find embedded <span
-                class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. A sector of a Data Map
-            represents 10,000 hashes after the Primordial Hash (Genesis - N9,999, N10,000 - N19,999 etc.). Therefore a
-            sector holds approximately 10mb of <span class="flare_blue">user data</span>. Each sector must have exactly
+            <span class="flare_yellow">Web Nodes</span> search through Sectors of <span class="flare_blue">Data Maps</span> to find embedded <span
+                class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>. A Sector of a <span class="flare_blue">Data Map</span>
+            represents 10,000 hashes after the chosen Hash (Genesis - N9,999, N10,000 - N19,999 etc.). Therefore a
+            Sector holds approximately 10mb of <span class="flare_blue">user data</span>. Each Sector must have exactly
             one embedded treasure of <span class="flare_pink">Pearls</span> inside. The location of the <span
-                class="flare_pink">Pearls</span> within the sector is randomly chosen by the <span class="flare_purple">Broker Node</span>.
+                class="flare_pink">Pearls</span> within the Sector is randomly chosen by the <span class="flare_purple">Broker Node</span>.
             See <span class="protocol_mention"
                       onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span> for more details
-            concerning Data Map structure.<br><br>
-            A Data Map is defined by a single SHA256 hash known as the Genesis Hash. <span class="flare_yellow">Web Nodes</span>
-            get Genesis Hashes from <span class="flare_purple">Broker Nodes</span> and other <span class="flare_yellow">Web Nodes</span>.
-            They don't come for free, a <span class="flare_yellow">Web Node</span> must perform specific <span
+            concerning <span class="flare_blue">Data Map</span> structure (including Genesis Hashes).<br><br>
+            A <span class="flare_blue">Data Map</span> is defined by a single SHA256 hash known as the Genesis Hash. <span class="flare_yellow">Web Nodes</span>
+            get Genesis Hashes from <span class="flare_purple">Broker Nodes</span> and other <span
+                class="flare_yellow">Web Nodes</span>.
+            Genesis Hashes don't come for free, a <span class="flare_yellow">Web Node</span> must perform specific <span
                 class="flare_red">Proof of Work</span> tasks that are defined by the counterparty node. The <span
-                class="flare_red">Proof of Work</span> task is defined by quoting a two unconfirmed transactions from
-            the Tangle, one that is the designated branch and the other is the designated trunk. See <span
+                class="flare_red">Proof of Work</span> task is defined by quoting two unconfirmed transactions from
+            the Tangle, one that is the designated <span
+                class="flare_red">branch</span> and the other is the designated <span
+                class="flare_red">trunk</span>. See <span
                 class="protocol_mention" onclick="oy_protocol_click('c1');">Mechanics of the Tangle</span> for more
-            details. Once the Proof of Work has been complete, the Web Node responds to the counterparty node with the
-            ID of the transaction it just submitted. The counterparty node then checks the Tangle to verify that the
-            quoted transaction matches the previously specified branch and trunk identities, and also that the
-            transaction references the <span class="flare_blue">data</span> that was meant to have Proof of Work
+            details. Once the <span class="flare_red">Proof of Work</span> has been completed, the <span class="flare_yellow">Web Node</span> responds to the counterparty node with the
+            identity of the <span class="flare_red">transaction</span> it just submitted. The counterparty node then checks the <span class="flare_red">Tangle</span> to verify that the quoted <span
+                class="flare_red">transaction</span> matches the previously specified <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> identities, and also that the
+            <span class="flare_red">transaction</span> references the <span class="flare_blue">data</span> that was meant to have <span class="flare_red">Proof of Work</span>
             performed on it. Once the counterparty node verifies the <span class="flare_red">Proof of Work</span> was
-            performed, the Genesis Hash is sent in exchange.<br><br>To search for treasure, <span class="flare_yellow">Web Nodes</span>
-            select a random sector of the Data Map that is derived from the newly earned Genesis Hash. The <span
+            performed, the Genesis Hash is sent in exchange. See <span
+                class="protocol_mention" onclick="oy_protocol_click('c5');">Web Node and Broker Node Collaboration</span> for more
+            details concerning the Exchange Sequence.<br><br>To search for treasure, <span class="flare_yellow">Web Nodes</span>
+            select a random Sector of the <span class="flare_blue">Data Map</span> that is derived from the newly earned Genesis Hash. The <span
                 class="flare_yellow">Web Node</span> then checks to see if <span class="flare_red">Proof of Work</span>
             was performed by another <span class="flare_yellow">Web Node</span> within the current Epoch. If the <span
                 class="flare_red">Proof of Work</span> was performed, then the <span
-                class="flare_yellow">Web Node</span> abandons the sector and tries again at another sector. This is
-            because even if the <span class="flare_yellow">Web Node</span> were to find the treasure of that sector, it
+                class="flare_yellow">Web Node</span> abandons the Sector and tries again at another Sector. This is
+            because even if the <span class="flare_yellow">Web Node</span> were to find the treasure of that Sector, it
             is highly likely that another <span class="flare_yellow">Web Node</span> already claimed the <span
                 class="flare_pink">Pearls</span> for the Epoch at the <span class="flare_shell">Oyster</span> <span
-                class="flare_pink">Smart Contract</span>. See <span class="protocol_mention"
+                class="flare_pink">Contract</span>. See <span class="protocol_mention"
                                                                     onclick="oy_protocol_click('c3');">Burying Pearls with Broker Nodes</span>
             for more details concerning Epochs. If <span class="flare_red">Proof of Work</span> was not performed during
             the current Epoch, then the <span class="flare_yellow">Web Node</span> scrolls through each consecutive hash
-            of that sector. For example: if sector 5 was chosen, the <span class="flare_yellow">Web Node</span> scrolls
+            of that Sector. For example: if Sector 5 was chosen, the <span class="flare_yellow">Web Node</span> scrolls
             through Hashes N50,000 to N59,999, which represents 10mb of data of the <span class="flare_blue">uploaded file</span>.<br><br>
             For each hash that is encountered, the <span class="flare_yellow">Web Node</span> first performs the <span
                 class="flare_red">Proof of Work</span> on the <span class="flare_red">Tangle</span> for the
-            corresponding transaction, which utilizes the GPU of the device (using OpenGL2). Thereafter, the <span
-                class="flare_yellow">Web Node</span> retrieves the ~1kb payload of the corresponding transaction and
-            calculates the SHA512 hash of the current SHA256. The <span class="flare_yellow">Web Node</span> then
+            corresponding <span class="flare_red">transaction</span>, which utilizes the GPU of the <span class="flare_yellow">device</span> (using <a
+                href="https://www.khronos.org/registry/webgl/specs/latest/2.0/">WebGL2</a>).
+            Thereafter, the <span
+                class="flare_yellow">Web Node</span> retrieves the ~1kb payload of the corresponding <span
+                class="flare_red">Transaction</span> and
+            calculates the SHA512 hash of the current SHA256 hash. The <span class="flare_yellow">Web Node</span> then
             attempts to unlock the payload using the SHA512 hash as the decryption key. If it unlocks, then this means
             it is treasure that contains <span class="flare_pink">Pearls</span>. If it does not unlock, then the SHA512
-            hash of the current SHA512 is calculated, therefore scrolling through to the next link in the hashchain. If
-            the <span class="flare_yellow">Web Node</span> reaches the upper limit of hashchain size defined by the
+            hash of the current SHA512 is calculated, therefore scrolling through to the next link in the sequence
+            known as the
+            hashchain. If
+            the <span class="flare_yellow">Web Node</span> reaches the upper limit of the hashchain size defined by the
             <span class="flare_shell">Oyster Protocol</span>,
-            it moves on to the next SHA256 has in the Data Map and repeats the process.<br><br>
+            it moves on to the next SHA256 hash in the <span class="flare_blue">Data Map</span> and repeats the process.<br><br>
             The <span class="flare_shell">Oyster Protocol</span> defines that treasure must exist exactly once per
-            sector. If no treasure was found in an entire sector, then the Data Map is declared invalid and other <span
+            Sector. If no treasure was found in an entire Sector, then the <span class="flare_blue">Data Map</span> is declared invalid and other <span
                 class="flare_yellow">Web Nodes</span> are warned. This would lead to the degrading of the reputation of
-            the <span class="flare_purple">Broker Node</span> that initially introduced the N0 hash for that invalid
-            Data Map. It could take days for a <span class="flare_yellow">Web Node</span> to scroll through a single
-            SHA512 hashchain, and therefore weeks for an entire sector. This prevents <span class="flare_yellow">Web Nodes</span>
+            the <span class="flare_purple">Broker Node</span> that initially introduced the Genesis Hash for that invalid
+            <span class="flare_blue">Data Map</span>. It could take days for a <span class="flare_yellow">Web Node</span> to scroll through a single
+            SHA512 hashchain, and therefore weeks for an entire Sector. This prevents <span class="flare_yellow">Web Nodes</span>
             from consuming large amounts of data in sudden spikes, as the 10mb data consumption would be spread out over
             those weeks. Therefore <span class="flare_yellow">Web Nodes</span> do not undertake bandwidth intensive
             tasks so as to prevent burdening limited/expensive data connection plans. Performing the SHA256, SHA512, and
             decryption functions all use CPU instructions. This means that a <span class="flare_yellow">Web Node</span>
             can perform <span class="flare_red">Proof of Work</span> negotiations with other <span class="flare_yellow">Web Nodes</span>
             and <span class="flare_red">Broker Nodes</span> via the GPU, whilst simultaneously searching for treasure in
-            the sector of a Data Map via the CPU.<br><br>
-            <span class="flare_pink">Pearls</span> are embedded in the Data Map by including the private seed key of the
+            the Sector of a <span class="flare_blue">Data Map</span> via the CPU.<br><br>
+            <span class="flare_pink">Pearls</span> are embedded in the <span class="flare_blue">Data Map</span> by including the <span class="flare_pink">private seed key</span> of the
             <span class="flare_pink">ETH address</span> that holds the
             <span class="flare_pink">Pearls</span>. Therefore when a <span class="flare_yellow">Web Node</span>
-            discovers treasure, it stores and guards the private seed key via the HTML5 localstorage
-            directive. Despite the discovered treasure, the <span class="flare_yellow">Web Node</span> faces two major
-            dillemmnas:<br><br>
+            discovers treasure, it stores and guards the <span class="flare_pink">private seed key</span> via the <a href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5
+            localstorage</a> directive. Despite the discovered treasure, the <span class="flare_yellow">Web
+            Node</span> faces two major
+            dilemmas:<br><br>
             &bull; The <span class="flare_yellow">Web Node</span> does not have direct access to the <span
                 class="flare_pink">Ethereum Blockchain</span>, and would find difficulty in
-            invoking complex Smart Contract functions.<br><br>
+            invoking complex <span class="flare_pink">Contract</span> functions.<br><br>
             &bull; The <span class="flare_pink">ETH address</span> contains <span class="flare_pink">Pearls</span> but
             no <span class="flare_pink">ETH</span> for <span class="flare_pink"><a
                 href="https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas">Gas</a></span>.
             Therefore <span class="flare_pink">ETH</span> must first be sent to the address
-            from somewhere else to allow the private seed key to generate a transaction that will be accepted by the
+            from somewhere else to allow the <span class="flare_pink">private seed key</span> to generate a transaction that will be accepted by the
             <span class="flare_pink">Ethereum miners</span>.<br><br>
-            Because of these two dillemnas, the <span class="flare_shell">Oyster Protocol</span> defines that a <span
-                class="flare_yellow">Web Node</span> must collaborate with a <span class="flare_purple">Broker
-            Node</span> to unlock the treasure. However there are two immediate concerns:<br><br>
+            Because of these two dilemmas, the <span class="flare_shell">Oyster Protocol</span> defines that a <span
+                class="flare_yellow">Web Node</span> collaborates with a <span class="flare_purple">Broker
+            Node</span> to unlock the treasure. The <span class="flare_yellow">Web Node</span> securely sends over the <span class="flare_pink">private seed key</span>, and the <span
+                class="flare_purple">Broker Node</span> checks that there are indeed <span class="flare_pink">Pearls</span> inside. Once the presence of the <span class="flare_pink">Pearls</span> are
+            confirmed, the <span class="flare_purple">Broker Node</span> sends a very small amount of <span class="flare_pink">ETH</span> to the <span class="flare_pink">address</span> to function as
+            <span class="flare_pink">Gas</span> for the <span class="flare_pink">transaction</span>. Then the <span class="flare_purple">Broker Node</span> submits the <span class="flare_pink">transaction</span>
+            to the <span class="flare_pink">Blockchain</span>. The <span class="flare_pink">transaction</span> invokes the <span class="flare_pink">claim function</span> of the <span
+                class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> to claim the <span class="flare_pink">Pearls</span> to the <span class="flare_pink">ETH address</span>
+            of the <span class="flare_brown">Website Owner</span> that corresponds with the <span class="flare_yellow">Web Node</span> that discovered the treasure. However there are two immediate
+            concerns:<br><br>
             &bull; The <span class="flare_yellow">Web Node</span> is concerned that the <span class="flare_purple">Broker Node</span>
             will not claim the <span class="flare_pink">Pearls</span> with the <span
                 class="flare_pink">ETH address</span> of the
-            corresponding <span class="flare_pink">Website Owner</span>, therefore stealing the <span
+            corresponding <span class="flare_brown">Website Owner</span>, therefore stealing the <span
                 class="flare_pink">Pearls</span>.<br><br>
             &bull; The <span class="flare_purple">Broker Node</span> needs to send <span class="flare_pink">ETH</span>
             to the <span class="flare_pink">address</span> that is derived from the <span class="flare_pink">private seed key</span>
             to fuel
-            the <span class="flare_pink">transaction</span>, which the <span class="flare_yellow">Web Node</span> claims
-            to contain treasure. It could be a malicious actor pretending to
+            the <span class="flare_pink">transaction</span>, which the <span class="flare_yellow">Web Node</span> claims contains treasure. It could be a malicious actor pretending to
             be a <span class="flare_yellow">Web Node</span> who wants to trick the <span class="flare_purple">Broker Node</span>
             into sending a small amount of <span class="flare_pink">ETH</span> to an <span
                 class="flare_pink">address</span> that he
@@ -1950,18 +2063,22 @@
             the minimum <span class="flare_pink">Gas</span> payment is made. The profit margin may be very small, but it
             could be repeated indefinitely
             to cause significant financial losses for the <span class="flare_purple">Broker Node</span>.<br><br>
-            To solve the concern of the Web Node, a reputation system is in place that would easily degrade the
-            reputation of the Broker Node. Broker Nodes have consistent cryptographic identities upon which they build
-            reputation, and Web Nodes will seek to unlock discovered treasure with only the most reputable of Broker
-            Nodes. If a Broker Node were to steal the Pearls of a single Epoch, within a single sector, within a single
-            Data Map, it would cause much more damage than profit. The Broker Node would conceivably lose thousands of
-            dollars worth of potential future revenue in exchange for a tenth of a cent. Therefore the Web Node has
-            confidence in dealing with a reputable Broker Node.<br><br>
-            To Solve the concern of the Broker Node, the Broker Node does not accept the request of a third party to
-            unlock treasure until it can verify that the Proof of Work for the entire sector was recently completed on
-            the Tangle. To illustrate the logistics of this mechanism; this means that in order for a malicious actor to
-            make a profit of 1 cent they would have to spend 5 cents worth of electricity in completely Proof of Work
-            puzzles.
+            To solve the concern of the <span class="flare_yellow">Web Node</span>, a reputation system is in place
+            that would
+            quickly degrade the
+            reputation of the <span class="flare_purple">Broker Node</span>. <span class="flare_purple">Broker Nodes</span> have consistent cryptographic
+            identities upon which they build
+            reputation and use to convince <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage Users</span> to use them for services. <span class="flare_yellow">Web Nodes</span> will seek to unlock discovered treasure with only the most reputable of <span class="flare_purple">Broker
+            Nodes</span>. If a <span class="flare_purple">Broker Node</span> were to steal the <span class="flare_pink">Pearls</span> of a single Epoch, within a single Sector, within a single
+            <span class="flare_blue">Data Map</span>, it would cause much more damage than profit. The <span class="flare_purple">Broker Node</span> would conceivably lose thousands of
+            dollars worth of potential future revenue in exchange for a tenth of a cent. Therefore the <span class="flare_yellow">Web Node</span> has
+            confidence in dealing with reputable <span class="flare_purple">Broker Nodes</span>.<br><br>
+            To solve the concern of the <span class="flare_purple">Broker Node</span>, the <span class="flare_purple">Broker Node</span> does not accept the request of a third party to
+            unlock treasure until it verifies that the <span class="flare_red">Proof of Work</span> for the entire Sector was recently completed on
+            the <span class="flare_red">Tangle</span>. To illustrate the futility of the attack vector; in order for a malicious actor to
+            make a profit of 1 cent they would have to spend 5 cents worth of electricity in completing <span class="flare_red">Proof of Work</span> puzzles. Therefore if a <span class="flare_purple">Broker Node</span>
+            witnesses that the <span class="flare_red">Proof of Work</span> has been completed for the Sector from which the claimed treasure originates, it becomes economically viable for it to send <span
+                class="flare_pink">ETH</span> to the treasure <span class="flare_pink">address</span> to fuel the <span class="flare_shell">Oyster</span> <span class="flare_pink">Contract claim function</span>.
         </div>
     </div>
     <div id="c5">
@@ -1981,7 +2098,7 @@
             light client hosts already exist independently of <span class="flare_purple">Broker Nodes</span>, but the
             vast majority of them cannot be used by <span class="flare_yellow">Web Nodes</span> because they don't serve
             the requests via <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">SSL</a>. The <span
-                class="flare_shell">Oyster Protocol</span> mandates that <span class="flare_purple">Broker Nodes</span>
+                class="flare_shell">Oyster Protocol</span> requires that <span class="flare_purple">Broker Nodes</span>
             serve all <span class="flare_red">Tangle</span> requests via SSL. This is due to the expectation that most
             of the websites that will run the <span class="flare_shell">Oyster Protocol</span> will be hosted via SSL,
             therefore the <span class="flare_yellow">Web Node</span> operation logic must be loaded via SSL, therefore
@@ -1991,38 +2108,71 @@
             <a href="http://peerjs.com">PeerJS Library</a> is used which relies on the <a href="https://webrtc.org">WebRTC
             Standard</a>. Therefore a <span class="flare_purple">Broker Node</span> runs the PeerJS server software to
             enable <span class="flare_yellow">Web Nodes</span> to communicate directly to each other.<br><br>
-            <span class="flare_yellow">Web Nodes</span> are constantly in demand for N0 hashes, especially new ones due
+            <span class="flare_yellow">Web Nodes</span> are constantly in demand for Genesis hashes, especially new ones due
             to the implications that the embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>
             therein are unclaimed. Once a <span class="flare_purple">Broker Node</span> concludes a file upload session
-            with an <span class="flare_blue">Oyster User</span>, the <span class="flare_purple">Broker Node</span>
+            with an <span class="flare_blue">Storage User</span>, the <span class="flare_purple">Broker Node</span>
             retains the Genesis Hashes. See <span class="protocol_mention" onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span>
             for more details. When the <span class="flare_shell">Oyster Network</span> is in a typical state of equilibrium; <span class="flare_purple">Broker Nodes</span> always retain
             an excess supply of new Genesis Hashes, whilst <span class="flare_yellow">Web Nodes</span> are in a constant state of excess demand for Genesis Hashes.<br><br>
             Instead of freely giving away new Genesis Hashes, <span class="flare_yellow">Broker Nodes</span> stipulate a large amount of <span class="flare_red">Proof of Work</span>
             that
-            must be performed in exchange. This is primarily done to prevent malicious actors from easily attaining Genesis Hashes and retrieving the embedded treasure. Therefore the added <span class="flare_red">Proof of Work</span> burden makes it even more
+            must be performed in exchange. This is primarily done to prevent malicious actors from easily attaining Genesis Hashes and retrieving the embedded treasure. Therefore the added <span
+                class="flare_red">Proof of Work</span> burden makes it even more
             uneconomical for malicious actors to seek Genesis Hashes from <span class="flare_purple">Broker Nodes</span>. The <span class="flare_red">Proof of Work</span>
             requirement also
             removes reliance on altruistic behavior, which the <span class="flare_shell">Oyster Protocol</span> avoids.<br><br>
-            The <span class="flare_red">Proof of Work</span> tasks that the <span class="flare_purple">Broker Node</span> burdens the <span class="flare_yellow">Web Nodes</span> with are the same tasks that the <span class="flare_blue">Oyster
+            The <span class="flare_red">Proof of Work</span> tasks that the <span class="flare_purple">Broker Node</span> burdens the <span class="flare_yellow">Web Nodes</span> with are the same
+            tasks that the <span class="flare_blue">Oyster
             User</span> burdened the <span class="flare_purple">Broker Node</span> with. Therefore if the equilibrium of the <span class="flare_shell">Oyster Network</span> were to be perfectly
-            saturated, <span class="flare_purple">Broker Nodes</span> would never perform <span class="flare_red">Proof of Work</span> as the tasks would get constantly offset to <span class="flare_yellow">Web
+            saturated, <span class="flare_purple">Broker Nodes</span> would never perform <span class="flare_red">Proof of Work</span> as the tasks would get constantly offset to <span
+                class="flare_yellow">Web
             Nodes</span>. The exchange sequence that occurs between <span class="flare_yellow">Web Nodes</span> and <span class="flare_purple">Broker Nodes</span> is the same as the one that
-            occurs between <span class="flare_yellow">Web Nodes</span> themselves. Therefore the sequence is detailed at <span class="protocol_mention"
-                                                                                             onclick="oy_protocol_click('c6');">Web Node to Web Node Interaction</span>.<br><br>
-            Overtime, Genesis Hashes migrate from <span class="flare_purple">Broker Nodes</span> to the collective consciousness of <span class="flare_yellow">Web Nodes</span>. <span class="flare_yellow">Web Nodes</span>
+            occurs between <span class="flare_yellow">Web Nodes</span> themselves. See <span class="protocol_mention"
+                                                                                             onclick="oy_protocol_click('c6');">Web Node to Web Node Interaction</span> for me details. The Exchange
+            Sequence is as follows:<br><br>
+            &bull; A <span class="flare_yellow">Web Node</span> asks the <span class="flare_purple">Broker Node</span> if they have new Genesis Hashes or reliable <span
+                class="flare_yellow">Neighbor</span> identities available (only one information type is requested per sequence).<br><br>
+            &bull; The <span class="flare_purple">Broker Node</span> responds, and in this case indicates that there is availability. The <span class="flare_purple">Broker Node</span>
+            also indicates the requested <span class="flare_red">Proof of Work</span> burden magnitude. Burden magnitude fluctuates according to
+            the state of the <span class="flare_shell">Oyster Network</span> economy due to supply/demand constraints.<br><br>
+            &bull; If the <span class="flare_yellow">Web Node</span> agrees with the <span class="flare_red">Proof of Work</span> burden magnitude, then it responds with acceptance of
+            the job.<br><br>
+            &bull; The <span class="flare_purple">Broker Node</span> sends three references to three <span class="flare_red">transactions</span> on the <span class="flare_red">Tangle</span>. One
+            transaction contains the
+            relevant <span class="flare_blue">Storage User</span> data which was formerly a burden to the <span class="flare_purple">Broker Node</span>. The last two are unconfirmed
+            <span class="flare_red">transactions</span> that are recommended for confirmation by the <span class="flare_red"><a href="https://github.com/iotaledger/iri">IOTA
+            Algorithm</a></span>. They are each specified for becoming the <span class="flare_red">branch</span> and <span class="flare_red">trunk transactions</span>.<br><br>
+            &bull; The <span class="flare_yellow">Web Node</span> performs the <span class="flare_red"><a href="http://dev.iota.org/javascript-library/#replaybundle">replayBundle
+            function</a></span> on the <span class="flare_red">Tangle</span>, therefore manually setting the <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> of the <span
+                class="flare_red">transaction</span> exactly as
+            specified by the <span class="flare_purple">Broker Node</span>.<br><br>
+            &bull; Once the <span class="flare_yellow">Web Node</span> completes the <span class="flare_red">Proof of Work</span> and the entire <span class="flare_red">Tangle transaction</span> is
+            submitted, it sends the identity of the newly submitted <span class="flare_red">transaction</span> to the <span class="flare_purple">Broker Node</span>.<br><br>
+            &bull; The <span class="flare_purple">Broker Node</span> verifies that the quoted <span class="flare_red">transaction</span> identity represents the <span
+                class="flare_blue">correct data</span> on the live
+            <span class="flare_red">Tangle</span>, and has the correct <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> allocations that were specified earlier.<br><br>
+            &bull; If there is more <span class="flare_red">Proof of Work</span> to be completed to satisfy the agreed upon burden magnitude, then it
+            is also completed as described above.<br><br>
+            &bull; Once the agreed upon burden magnitude has been satisfied, the <span class="flare_purple">Broker Node</span> delivers the Genesis Hash or <span class="flare_yellow">Neighbor</span>
+            identity
+            to
+            the <span class="flare_yellow">Web Node</span> in exchange.<br><br>
+            Overtime, Genesis Hashes migrate from <span class="flare_purple">Broker Nodes</span> to the collective consciousness of <span class="flare_yellow">Web Nodes</span>. <span
+                class="flare_yellow">Web Nodes</span>
             will
-            only intentionally forget of a Genesis Hash if all of the Epochs of all of the sectors have already been
+            only intentionally forget of a Genesis Hash if all of the Epochs of all of the Sectors have already been
             claimed. This would indicate data is intended to expire, and therefore no longer guaranteed by <span class="flare_red">Proof of Work</span>
-            exhibitions, unless the <span class="flare_blue">Oyster User</span> were to add more <span class="flare_pink">Pearls</span> to the treasure thereby extending the guaranteed
+            exhibitions, unless the <span class="flare_blue">Storage User</span> were to add more <span class="flare_pink">Pearls</span> to the treasure thereby extending the guaranteed
             lifespan of the data. <span class="flare_yellow">Web Nodes</span> use the <a href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5
             localstorage</a> directive to retain data, including Genesis Hashes that are known by them. If the space
             afforded
             by the localstorage directive were to be saturated, the <span class="flare_yellow">Web Node</span> would begin pruning the data by deleting
             Genesis Hashes that have the smallest prospects for being profitable for the <span class="flare_brown">Website Owner</span>.<br><br>
-            The migration of Genesis Hashes from <span class="flare_purple">Broker Nodes</span> to <span class="flare_yellow">Web Nodes</span> is vital. When an <span class="flare_blue">upload session</span> is completed
+            The migration of Genesis Hashes from <span class="flare_purple">Broker Nodes</span> to <span class="flare_yellow">Web Nodes</span> is vital. When an <span
+                class="flare_blue">upload session</span> is completed
             with
-            the <span class="flare_blue">Oyster User</span>, the Genesis Hashes exist momentarily in only both <span class="flare_purple">Broker Nodes</span> of the session.
+            the <span class="flare_blue">Storage User</span>, the Genesis Hashes exist momentarily in only both <span class="flare_purple">Broker Nodes</span> of the session.
             See
             <span class="protocol_mention" onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span>
             for more details. The positive consequence of <span class="flare_yellow">Web Nodes</span> seeking Genesis Hashes is that it secures the
@@ -2030,7 +2180,8 @@
             of the Genesis Hashes amongst the <span class="flare_shell">Oyster Network</span>, therefore removing the initial risk that exists when
             <span class="flare_purple">Broker Nodes</span> exclusively hold the Genesis Hashes. If a Genesis Hash were to be forgotten by the collective
             consciousness of
-            the <span class="flare_shell">Oyster Network</span>, it would not be no longer maintained with <span class="flare_red">Proof of Work</span>. Therefore the <span class="flare_red">Tangle</span> would no longer be
+            the <span class="flare_shell">Oyster Network</span>, it would not be no longer maintained with <span class="flare_red">Proof of Work</span>. Therefore the <span
+                class="flare_red">Tangle</span> would no longer be
             responsible for retaining the <span class="flare_blue">data</span> for an extended period of time within it's <span class="flare_red">node topology</span>.
 
         </div>
@@ -2038,55 +2189,289 @@
     <div id="c6">
         <div class="protocol_head center_hor">Web Node to Web Node Interaction</div>
         <div class="protocol_float_content">
-            A <span class="flare_yellow">Web Node</span> can perform the exchange sequence with both other <span class="flare_yellow">Web Nodes</span> and <span class="flare_purple">Broker Nodes</span>, therefore the
-            sequence is labelled with 'counterparty' node. The task delegation/information exchange sequence as
-            such:<br><br>
-            &bull; A <span class="flare_yellow">Web Node</span> asks the counterparty if they have new Genesis Hashes available.<br>
-            &bull; The counterparty responds, and in this case indicates that there is availability. The counterparty
-            also indicates the requested <span class="flare_red">Proof of Work</span> burden magnitude. Work burden magnitude fluctuates according to
+            <span class="flare_yellow">Web Nodes</span> perform peer-to-peer interactions with each other due to the demand/supply constraint motivations that exist within the <span
+                class="flare_shell">Oyster Network</span> economy. Peer-to-peer connections are made via the <a href="http://peerjs.com">PeerJS Library</a> which relies on the <a
+                href="https://webrtc.org">WebRTC Standard</a>. For <span class="flare_yellow">Web Nodes</span> to be able to communicate with each other, they need to be able to identify each other
+            across the <span class="flare_shell">Oyster Network</span>. Therefore each <span class="flare_yellow">Web Node</span> adopts for itself a cryptographic pseudo-persistent identity. This
+            means that identities are meant to be reliable and consistent until a <span class="flare_yellow">Web Node</span> reaches a stage in it's treasure seeking career when it needs to wipe away
+            it's memory and start from scratch; as if it were recently introduced to the <span class="flare_shell">Oyster Network</span>. This is done to induce dynamic turnover cycles within the
+            <span class="flare_yellow">Web Node</span> topology of the <span class="flare_shell">Network</span>. If <span class="flare_yellow">Web Nodes</span> were to indefinitely persist in
+            communicating with the same <span class="flare_yellow">Neighbors</span>, the <span class="flare_shell">Network</span> would become too static and unresponsive to environment changes. As
+            long as the majority of <span class="flare_yellow">Web Nodes</span> follow the <span class="flare_shell">Oyster Protocol</span> stipulation of identity refreshing, it will compel the
+            minority to not expect <span class="flare_yellow">Neighbor</span> relations to persist for an extended period of time.<br><br>
+            When a <span class="flare_yellow">Web Node</span> is either first introduced to the <span class="flare_shell">Oyster Network</span> or has recently reset it's identity, it has no <span
+                class="flare_yellow">Neighbors</span> and must therefore build a list of <span class="flare_yellow">Neighbors</span>. The <span class="flare_yellow">Web Node</span> is therefore faced
+            with a <a href="https://en.wikipedia.org/wiki/Catch-22_(logic)">Catch 22</a> dilemma. <span class="flare_yellow">Neighbor</span> identities are shared by other <span class="flare_yellow">Web Nodes</span>,
+            but it cannot ask because it doesn't known anyone initially. The initial solutions seems to be to ask a <span class="flare_purple">Broker Node</span>, but even <span class="flare_purple">Broker Node</span>
+            identities are shared via the reputation system that <span class="flare_yellow">Web Nodes</span> participate in. Therefore <span class="flare_yellow">Web Nodes</span> assume an initial
+            trusted <span class="flare_purple">Broker Node</span> as a default reference. <span class="flare_brown">Website Owners</span> are able to change their defaults to which ever <span
+                class="flare_purple">Broker Nodes</span> they consider to be trustworthy, therefore maintaining the <span class="flare_shell">Network's</span> compliance with decentralization
+            principles.<br><br>
+            <span class="flare_purple">Broker Nodes</span> are used to broker the initial connections between <span class="flare_yellow">Web Nodes</span> that already know each other's identities.
+            Therefore a <span class="flare_purple">Broker Node</span> retains a list of recently active <span class="flare_yellow">Web Nodes</span> and their identities. A new <span
+                class="flare_yellow">Web Node</span> will purchase these identities from <span class="flare_purple">Broker Nodes</span> in exchange for performing <span
+                class="flare_red">Proof of Work</span> as defined in the Exchange Sequence. A new <span class="flare_yellow">Web Node</span> keeps purchasing identities from <span
+                class="flare_purple">Broker Nodes</span>, whilst also purchasing identities from other <span class="flare_yellow">Web Nodes</span> that it has just formed new relations with. Therefore
+            the <span class="flare_yellow">Neighbor list</span> of the new <span class="flare_yellow">Web Nodes</span> expands exponentially until it reaches a saturation point of pursuit due to the
+            principle of <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a>. A <span class="flare_yellow">Web Node</span> is discouraged from pursuing too many
+            neighbors because the energy spent on <span class="flare_yellow">Neighbor</span>-seeking (via <span class="flare_red">Proof of Work</span>) could have used to purchase Genesis Hashes and
+            seek treasure. Since the <span class="flare_yellow">Neighbor</span> list has expanded, the <span class="flare_yellow">Web Node</span> can now sufficiently receive reputation statements
+            from the reputation system. Therefore the <span class="flare_yellow">Web Node</span> is able to communicate with new <span class="flare_purple">Broker Nodes</span> and also keep the
+            original default <span class="flare_purple">Broker Nodes</span> in check. Because <span class="flare_yellow">Web Node</span> identities reset periodically, <span class="flare_yellow">Web Nodes</span>
+            are compelled to consistently yet gradually seek new <span class="flare_yellow">Neighbors</span>.<br><br>
+            A <span class="flare_yellow">Web Node</span> can perform the Exchange Sequence with both other <span class="flare_yellow">Web Nodes</span> and <span
+                class="flare_purple">Broker Nodes</span>. This allows the <span class="flare_yellow">Web Node</span> to perform <span class="flare_red">Proof of Work</span> in exchange for valuable
+            information such as Genesis Hashes or <span class="flare_yellow">Neighbor</span> identities. The Exchange Sequence is described as the following:<br><br>
+            &bull; A <span class="flare_yellow">Web Node</span> asks the <span class="flare_yellow">Neighbor</span> if they have new Genesis Hashes or <span class="flare_yellow">Neighbor</span>
+            identities available (only one information type is requested per sequence).<br>
+            &bull; The <span class="flare_yellow">Neighbor</span> responds, and in this case indicates that there is availability. The <span class="flare_yellow">Neighbor</span>
+            also indicates the requested <span class="flare_red">Proof of Work</span> burden magnitude. Burden magnitude fluctuates according to
             the state of the <span class="flare_shell">Oyster Network</span> economy due to supply/demand constraints.<br>
             &bull; If the <span class="flare_yellow">Web Node</span> agrees with the <span class="flare_red">Proof of Work</span> burden magnitude, then it responds with acceptance of
             the job.<br>
-            &bull; The counterparty sends three references to three <span class="flare_red">transactions</span> on the <span class="flare_red">Tangle</span>. One transaction contains the
-            relevant <span class="flare_blue">Oyster User</span> data which was formerly a burden to the counterparty. The last two are unconfirmed
+            &bull; The <span class="flare_yellow">Neighbor</span> sends three references to three <span class="flare_red">transactions</span> on the <span class="flare_red">Tangle</span>. One
+            transaction contains the
+            relevant <span class="flare_blue">Storage User</span> data which was formerly a burden to the <span class="flare_yellow">Neighbor</span>. The last two are unconfirmed
             <span class="flare_red">transactions</span> that are recommended for confirmation by the <span class="flare_red"><a href="https://github.com/iotaledger/iri">IOTA
             Algorithm</a></span>. They are each specified for becoming the <span class="flare_red">branch</span> and <span class="flare_red">trunk transactions</span>.<br>
             &bull; The <span class="flare_yellow">Web Node</span> performs the <span class="flare_red"><a href="http://dev.iota.org/javascript-library/#replaybundle">replayBundle
-            function</a></span> on the <span class="flare_red">Tangle</span>, therefore manually setting the <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> of the <span class="flare_red">transaction</span> exactly as
-            specified by the counterparty.<br>
-            &bull; Once the <span class="flare_yellow">Web Node</span> completes the <span class="flare_red">Proof of Work</span> and the entire <span class="flare_red">Tangle transaction</span> is submitted, it
-            responds to the counterparty with the identity of the newly submitted <span class="flare_red">transaction</span>.<br>
-            &bull; The counterparty verifies that the quoted <span class="flare_red">transaction</span> identity represents the <span class="flare_blue">correct data</span> on the live
+            function</a></span> on the <span class="flare_red">Tangle</span>, therefore manually setting the <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> of the <span
+                class="flare_red">transaction</span> exactly as
+            specified by the <span class="flare_yellow">Neighbor</span>.<br>
+            &bull; Once the <span class="flare_yellow">Web Node</span> completes the <span class="flare_red">Proof of Work</span> and the entire <span class="flare_red">Tangle transaction</span> is
+            submitted, it sends the identity of the newly submitted <span class="flare_red">transaction</span> to the <span class="flare_yellow">Neighbor</span>.<br>
+            &bull; The <span class="flare_yellow">Neighbor</span> verifies that the quoted <span class="flare_red">transaction</span> identity represents the <span
+                class="flare_blue">correct data</span> on the live
             <span class="flare_red">Tangle</span>, and has the correct <span class="flare_red">branch</span> and <span class="flare_red">trunk</span> allocations that were specified earlier.<br>
             &bull; If there is more <span class="flare_red">Proof of Work</span> to be completed to satisfy the agreed upon burden magnitude, then it
             is also completed as described above.<br>
-            &bull; Once the agreed upon burden magnitude has been satisfied, the counterparty delivers the Genesis Hash
-            to
-            the <span class="flare_yellow">Web Node</span> in exchange.<br><br>
-            Typically, burden magnitudes for Genesis Hashes from Broker Nodes are greater than if they were from other <span class="flare_yellow">Web Nodes</span>. This is because <span class="flare_purple">Broker Nodes</span> hold relatively new Genesis Hashes, whilst <span class="flare_yellow">Web Nodes</span> hold relatively older Genesis Hashes. The going rate for a new Genesis Hash is expected to be higher because there is a greater expectation of unclaimed treasure. This also implies that <span class="flare_yellow">Web Nodes</span> ask <span class="flare_purple">Broker Nodes</span> for Genesis Hashes before they ask other <span class="flare_yellow">Web Nodes</span>. This ensures that Genesis Hashes from <span class="flare_purple">Broker Nodes</span> are constantly, effectively, and quickly migrating towards the collective consciousness of <span class="flare_yellow">Web Nodes</span> where they are highly impervious to data loss.
+            &bull; Once the agreed upon burden magnitude has been satisfied, the <span class="flare_yellow">Neighbor</span> delivers the Genesis Hash or <span class="flare_yellow">Neighbor</span>
+            identity to the <span class="flare_yellow">Web Node</span> in exchange.<br><br>
+            Typically, burden magnitudes for Genesis Hashes from <span class="flare_purple">Broker Nodes</span> are greater than if they were from other <span class="flare_yellow">Web Nodes</span>.
+            This is because <span class="flare_purple">Broker Nodes</span> hold relatively new Genesis Hashes, whilst <span class="flare_yellow">Web Nodes</span> hold relatively older Genesis Hashes.
+            The going rate for a new Genesis Hash is expected to be higher because there is a greater expectation of unclaimed treasure. This also implies that <span
+                class="flare_yellow">Web Nodes</span> ask <span class="flare_purple">Broker Nodes</span> for Genesis Hashes before they ask other <span class="flare_yellow">Web Nodes</span>. This
+            ensures that Genesis Hashes from <span class="flare_purple">Broker Nodes</span> are constantly, effectively, and quickly migrating towards the collective consciousness of <span
+                class="flare_yellow">Web Nodes</span> where they are highly impervious to data loss.<br><br>
+            When <span class="flare_yellow">Web Nodes</span> communicate with each other, they measure the connection latency for consistent communication types. This means that, for all
+            communications/transactions that have a consistent size of payload exchange, the time between the connection initiation and completion is measured. Therefore a <span class="flare_yellow">Web Node</span>
+            will be able to deduce the approximate relative distance of it's <span class="flare_yellow">Neighbors</span>. This connection latency information is retained so that, gradually over time,
+            a <span class="flare_yellow">Web Node</span> will favor nearby <span class="flare_yellow">Neighbors</span> over far away <span class="flare_yellow">Neighbors</span>. This result of this
+            behavior is that over time the <span class="flare_yellow">Neighbor</span> list of a <span class="flare_yellow">Web Node</span> will become optimized so that it primarily communicates with
+            <span class="flare_yellow">Web Nodes</span> that are nearby. The same optimization is applied for a <span class="flare_yellow">Web Node's</span> <span
+                class="flare_purple">Broker Node</span> list, despite more credence being given to a <span class="flare_purple">Broker Node's</span> reputation rather than latency.<br><br>
+            The fruits of the latency optimization is that the <span class="flare_shell">Oyster Network</span> becomes a decentralized low-latency <a
+                href="https://en.wikipedia.org/wiki/Mesh_networking">Meshnet</a> with efficient node hop pathways upon which third party applications can be built. For example, any small group of
+            skilled programmers could write a decentralized javascript telephone service that extends the core <span class="flare_yellow">Web Node</span> <span class="flare_shell">Protocol</span>
+            logic and uses it's own <span class="flare_pink">Ethereum Token</span>. Therefore the extension can be published as open source code and shared within the <span class="flare_shell">Oyster Community</span>.
+            Therefore the <span class="flare_brown">Website Owners</span> can add the extension in pursuit of the extra revenue afforded by the telephone service sub-economy. This further enables the
+            monetization of the web for <span class="flare_brown">creative content publishers</span>, therefore accomplishing the <span class="flare_shell">Oyster Protocol's</span> goal. The phone
+            call mechanism would simply run on top of the API calls that the <span class="flare_yellow">Web Nodes</span> provides, thereby sending audio packets efficiently across the <span
+                class="flare_shell">Oyster Network</span> topology to the desired recipient. Therefore the <span class="flare_shell">Oyster Protocol</span> is designed as an Extension Platform that
+            becomes the bedrock for decentralized code development and deployment by providing optimized Meshnet <span class="flare_yellow">Node</span> topology and automated <span
+                class="flare_yellow">Node</span> <span class="flare_shell">Hop Logic</span> interaction via a simple API.
         </div>
     </div>
     <div id="c7">
         <div class="protocol_head center_hor">Content Consumption Entitlement</div>
         <div class="protocol_float_content">
+            The basic social contract of the internet is an exchange of information. <span class="flare_brown">Website Owners</span> make investments to produce/obtain/deliver original content and/or
+            services. They must also bear the burden of hosting costs. There must be an economic bridge to justify the investments made by the <span class="flare_brown">Website Owner</span>; as <a
+                href="https://en.wikipedia.org/wiki/There_ain't_no_such_thing_as_a_free_lunch">there is no such thing as a free lunch.</a><br><br>
+            Whilst in need of this economic bridge, the internet as a whole has resorted to the mediocre solution of advertisement exchanges. Advertisements are consistently distracting, tangential,
+            privacy-invasive, and break the design continuity of <span class="flare_brown">websites</span> everywhere. Therefore advertisements have produced unanimous disdain throughout the greater
+            internet community. In due response, ad blockers have become mainstream to the detriment of the internet economy. Therefore <span class="flare_brown">creative content publishers</span> are
+            left stranded, as they still need to justify the costs of producing and hosting content. Overtime, <span class="flare_brown">creative content</span> publishers are left at the mercy of the
+            policies, decisions and whims of the centralized advertisement exchanges.<br><br>
+            The <span class="flare_shell">Oyster Protocol</span> is a radical new departure from the old advertisement paradigm, which allows <span
+                class="flare_brown">creative content publishers</span> to gain full autonomy over the monetization of their content. <span class="flare_yellow">Visitors</span> are able to pay the
+            price of admission whilst not being burdened by off-putting and tangential distractions. As money flows back to the already suffering <span
+                class="flare_brown">creative content publishers</span>, content quantity and quality can cease receding and increase once again. This, in turn, entices <span class="flare_yellow">visitors</span>
+            to continue visiting and spending their computational resources via the <span class="flare_shell">Oyster Protocol</span>.<br><br>
+            The <span class="flare_shell">Oyster Protocol</span> is very simple for <span class="flare_brown">Website Owners</span> to enable. They need only add a single line of code to their website
+            HTML to fully enable the <span class="flare_shell">Oyster Protoco</span> and receive automatic payments in <span class="flare_pink">Pearls</span>, like so:<br><br>
+            <div class="code_demo"><span style="color:#925a00">&lt;script</span>&nbsp;<span style="color:#d0b900">id</span><span style="color:#828282">=</span><span
+                    style="color:#83AC6F">"oyster.ws"</span>&nbsp;<span style="color:#d0b900">data-payout</span><span style="color:#828282">=</span><span style="color:#83AC6F">"ETH_ADDRESS"</span>&nbsp;<span
+                    style="color:#d0b900">src</span><span style="color:#828282">=</span><span style="color:#83AC6F">"https://oyster.ws/webnode.js"</span><span
+                    style="color:#925a00">&gt;&lt;/script&gt;</span></div>
+            <br>
+            The <span class="flare_shell">Oyster Protocol</span> is also very simply for visitors to disable, should they not consent to spend their computational resources in exchange. In such a
+            case, a blocking flag would be installed at the <a href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5 localstorage</a> area of the disabled <span class="flare_yellow">Web Node</span>.
+            The <span class="flare_yellow">visitor's device</span> would then not perform any <span class="flare_red">Proof of Work</span> or treasure hunting tasks, but a javascript flag would be
+            enabled on the <span class="flare_brown">Website Owner's</span> site to mark the abstention. Therefore a <span class="flare_brown">Website Owner</span> can opt to easily block sending out
+            content to anyone who doesn't consent to work for them to find treasure.<br><br>
             Because <span class="flare_yellow">Web Nodes</span> use the <a href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5
             localstorage</a> directive to retain data, they retain the same identity and work queue whilst being invoked
             by different <span class="flare_brown">Website Owners</span>. Once a treasure hunting session has been initiated, the <span class="flare_yellow">Web Node</span> permanently
-            associates the <span class="flare_pink">ETH address</span> of the invoking <span class="flare_brown">Website Owner</span> as the claimant. For example: a person is browsing
-            four of their favorite websites on their laptop, two of which have the Oyster Protocol enabled. When the
-            Oyster enabled website 1 is visited, the visitor's laptop will become a Web Node and attribute any active
-            treasure hunts to the Website Owner of website A. Therefore, any discovered Pearls would be claimed in the
-            Oyster Smart Contract under the ETH address of Website A. Thereafter the person visits the Oyster Protocol
-            enabled website B. The laptop still oeprates as a Web Node retains the same cryptographic identitiy,
-            collection of Genesis Hashes, identities of other Web Nodes and Broker Nodes, aswell as any pending data
+            associates the <span class="flare_pink">ETH address</span> of the invoking <span class="flare_brown">Website Owner</span> as the claimant.<br><br>
+            For example: a person is browsing
+            four of their favorite websites on their <span class="flare_yellow">laptop</span>, two of which have the <span class="flare_shell">Oyster Protocol</span> enabled. When the
+            <span class="flare_shell">Oyster</span> enabled website A is visited, the <span class="flare_yellow">visitor's laptop</span> will become a <span class="flare_yellow">Web Node</span> and
+            attribute any active
+            treasure hunts to the <span class="flare_brown">Website Owner</span> of website A. Therefore, any discovered Pearls would be claimed in the
+            <span class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> under the <span class="flare_pink">ETH address</span> of Website A. Thereafter the person visits the
+            <span class="flare_shell">Oyster Protocol</span>
+            enabled website B. The <span class="flare_yellow">laptop</span> still operates as a <span class="flare_yellow">Web Node</span> and retains the same cryptographic identity,
+            collection of Genesis Hashes, identities of other <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Broker Nodes</span>, as well as any pending data
             maps
-            that it is working on. If any new treasure hunts are initiated under the jursidiction of website B, then any
-            discovered pearls are attributed to the Website Owner of website B.<br><br>
+            that it is working on. If any new treasure hunts are initiated under the jurisdiction of website B, then any
+            discovered <span class="flare_pink">Pearls</span> are attributed to the <span class="flare_brown">Website Owner</span> of website B. This continuity behavior across different websites is
+            contingent on the javascript file for the <span class="flare_yellow">Web Node</span> being loaded by the same domain name. (like oyster.ws/webnode.js)<br><br>
         </div>
     </div>
     <div id="c8">
         <div class="protocol_head center_hor">Oyster Pearl Token Functionality</div>
         <div class="protocol_float_content">
+            Because the <span class="flare_shell">Oyster Network</span> is a fully decentralized system, it requires a <span class="flare_pink">trustless mechanism</span> to manage it's referenced
+            value <span class="flare_pink">token</span>; the <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearl</span>. The <span class="flare_shell">Oyster</span> <span
+                class="flare_pink">Pearl</span> is an <span class="flare_pink"><a href="https://theethereum.wiki/w/index.php/ERC20_Token_Standard">ERC20-compliant</a> token</span> on the <span
+                class="flare_pink">Ethereum Blockchain</span> that contains custom designed properties that enable the functionality of the <span class="flare_shell">Oyster Protocol</span>.<br><br>
+            A custom function specific to the <span class="flare_pink">Pearl</span> token is the <span class="flare_pink">bury function</span>. <span class="flare_pink">Burying</span> an <span
+                class="flare_pink">Ethereum address</span> blocks <span class="flare_pink">Pearls</span> from being withdrawn whilst still permitting deposits. Deposits to a <span class="flare_pink">buried address</span>
+            are still enabled to allow <span class="flare_blue">Storage Users</span> to potentially extend the lifespan of their <span class="flare_blue">data</span> to prevent intentional <span class="flare_blue">data</span> expiration. <span
+                class="flare_purple">Broker Nodes</span> invoke the <span class="flare_pink">bury function</span> of the <span class="flare_shell">Oyster</span> <span
+                class="flare_pink">Contract</span> when initially uploading a file to the <span class="flare_red">Tangle</span>. See <span class="protocol_mention" onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span>
+            for more details. The <span class="flare_pink">Pearls</span> that are embedded in the <span class="flare_blue">Data Map</span> by the <span class="flare_purple">Broker Node</span> are withheld by the <span
+                class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> and are therefore unspendable.<br><br>
+            As <span class="flare_yellow">Web Nodes</span> seek treasure they will encounter <span class="flare_pink">private seed keys</span> of <span class="flare_pink">Ethereum addresses</span>
+            that have had the <span class="flare_pink">bury function</span> invoked on them, therefore locking the <span class="flare_pink">Pearls</span> from being withdrawn all at once. Therefore
+            anyone who retrieves the <span class="flare_pink">private seed key</span>, <span class="flare_yellow">Web Node</span> or not, will not be able to withdraw any <span class="flare_pink">Pearls</span>
+            via the typical transfer function that is invoked on all <span class="flare_pink">ERC20-compliant tokens</span>. A <span class="flare_yellow">Web Node</span> must ask a <span
+                class="flare_purple">Broker Node</span> to invoke the <span class="flare_pink">claim function</span> on behalf of the <span class="flare_brown">Website Owner's</span> <span
+                class="flare_pink">Ethereum address</span>. See <span class="protocol_mention" onclick="oy_protocol_click('c5');">Web Node and Broker Node Collaboration</span> for more details. The
+            <span class="flare_pink">claim function</span> can only be invoked on an <span class="flare_pink">Ethereum address</span> that is in a <span class="flare_pink">buried state</span>. The
+            <span class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> calculates the Epochs for the specified Sector, and allocates only an Epoch's worth of <span
+                class="flare_pink">Pearls</span> to the <span class="flare_brown">claimant</span>. If two or more Epochs worth of <span class="flare_pink">Pearls</span> are unclaimed within a Sector,
+            then the <span class="flare_brown">claimant</span> is rewarded all of them. The <span class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> doesn't need to factor in
+            the metric of Sectors, because each embedded <span class="flare_pink">Ethereum address</span> already represents exactly one Sector each. See <span class="protocol_mention"
+                                                                                                                                                                onclick="oy_protocol_click('c3');">Burying Pearls with Broker Nodes</span>
+            for more details concerning Epochs and Sectors.<br><br>
+            The <span class="flare_purple">Broker Node</span> invokes the <span class="flare_pink">claim function</span> with the <span class="flare_pink">Ethereum address</span> of the <span
+                class="flare_brown">claimant Website Owner</span> which invoked the <span class="flare_yellow">Web Node</span> that discovered the treasure. The <span class="flare_pink">claim function</span> also defines a fee address
+            variable. When the <span class="flare_purple">Broker Node</span> invokes the <span class="flare_pink">claim function</span>, it submits it's own <span class="flare_pink">Ethereum address</span> as the fee variable. Therefore the
+            <span class="flare_shell">Oyster</span> <span class="flare_pink">Contract</span> automatically assigns the due fee that the <span class="flare_purple">Broker Node</span> has earned for
+            unlocking the treasure. Therefore the fees which <span class="flare_purple">Broker Nodes</span> receive are unanimously agreed upon and auditable. Once the <span class="flare_pink">claim function</span> is executed, any claimable <span class="flare_pink">Pearls</span> are directly sent to the <span
+                class="flare_pink">Ethereum address</span> of the <span class="flare_brown">Website Owner</span>, whilst an <span class="flare_shell">agreed upon percentage</span> is reserved for the
+            <span class="flare_purple">Broker Node</span> as a brokerage fee.<br><br>
+            Therefore the <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearl</span> is the essential medium of exchange that bridges the economic motivations of <span
+                class="flare_brown">Website Owners</span>, <span class="flare_yellow">Web Nodes</span>, <span class="flare_purple">Broker Nodes</span>, and <span class="flare_blue">Storage Users</span>.
+        </div>
+    </div>
+    <div id="c9">
+        <div class="protocol_head center_hor">File Verification and Retrieval</div>
+        <div class="protocol_float_content">
+            To upload a file via the <span class="flare_shell">Oyster Protocol</span>, the <span
+                class="flare_blue">Storage User's client</span> had
+            selected two <span class="flare_purple">Broker Nodes</span> to
+            commit the data to the <span class="flare_red">Tangle</span>. The <span class="flare_blue">data</span> is
+            processed from the beginning and
+            end of the <span class="flare_blue">file</span>, one <span class="flare_purple">Broker
+            Node</span> performing each, similar to a candle that burns on both ends. See <span class="protocol_mention"
+                                                                                                onclick="oy_protocol_click('c2');">Initial File Storage on the Tangle</span> for more details. At some
+            stage the <span class="flare_purple">Broker Nodes</span> will have met somewhere near the middle of the <span class="flare_blue">Data Map</span>. However, in the
+            unlikely scenario that one
+            of the <span class="flare_purple">Broker Nodes</span> was defecting by not performing the work (and keeping
+            the
+            <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span> for
+            themself), the non-defecting <span class="flare_purple">Broker Node</span> will have completed the entire
+            <span class="flare_blue">Data Map</span>. The <span class="flare_blue">Storage User's client</span> would have noted the defection and
+            cryptographically reported the defecting
+            <span class="flare_purple">Node</span> via the distributed reputation system.<br><br>
+            Once the <span class="flare_blue">file</span> has been fully committed to the <span
+                class="flare_red">Tangle</span>, the <span class="flare_blue">client</span> begins
+            downloading the entire <span class="flare_blue">Data Map</span> in
+            order to verify it's integrity. The <span class="flare_blue">client</span> uses Broker Nodes other than the
+            first two (that performed the
+            upload) to access the <span class="flare_red">Tangle</span>, to download the <span class="flare_blue">Data Map</span>. This verification
+            stage is technically skippable,
+            but highly recommended so that in the unlikely scenario that two <span class="flare_purple">Broker
+            Nodes</span>
+            conspired against the
+            <span class="flare_blue">Storage User</span> or both individually defected, the <span
+                class="flare_blue">Storage User's client</span> would
+            be
+            able to cryptographically
+            report the offense via the distributed reputation system. Honest <span class="flare_purple">Broker
+            Nodes</span>
+            would then elect to perform
+            the task that the dishonest <span class="flare_purple">Broker Nodes</span> didn't do, whilst not seeking
+            any
+            <span class="flare_pink">Pearl</span> payments from the <span class="flare_blue">Oyster
+            User</span>. Honest <span class="flare_purple">Broker Nodes</span> seek to perform this act of data
+            rectification
+            because they would get a large
+            boost
+            to their cryptographic reputation, which would in turn boost their prospects for increased future
+            revenue.<br><br>
+            Whilst the verification process guards against dishonest <span class="flare_pink">Broker Nodes</span>, it
+            also
+            guarantees that there is
+            no flaw in the <span class="flare_blue">Data Map</span> due to a programming error or execution bug. The download sequence that is used
+            for the both <span class="flare_blue">upload verifications</span> and <span class="flare_blue">candid
+            data retrievals</span> is defined as
+            such:<br><br>
+            &bull; The <span class="flare_blue">client</span> retrieves the Primordial Hash from the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> and
+            submits it as input to the
+            SHA256 function to produce the Genesis Hash.<br>
+            &bull; The <span class="flare_blue">client</span> calculates the trinary data of the selected hash of the
+            SHA256 hashchain (Genesis Hash
+            for first iteration).<br>
+            &bull; The <span class="flare_blue">client</span> retrieves the <span class="flare_blue">payload data</span> of
+            the <span
+                class="flare_red">Tangle transaction</span> that
+            correlates with the trinary
+            data from the previous step. The retrieval is performed via a <span class="flare_purple">Broker Node</span>
+            that
+            is selected according to
+            the <span class="flare_shell">Protocol</span> <span class="flare_purple">Broker Node</span> <span
+                class="flare_shell">Selection
+            Algorithm</span>
+            (which is used by <span class="flare_yellow">Web
+            Nodes</span>). If a verification process is occurring, the <span class="flare_purple">Broker Nodes</span> used to
+            access
+            the <span class="flare_red">Tangle</span> cannot be of
+            the same <span class="flare_purple">Broker Nodes</span> that performed the initial upload.<br>
+            &bull; Once the <span class="flare_blue">payload data</span> is retrieved, the <span
+                class="flare_blue">client</span> attempts to unlock
+            it with
+            the entire <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span>
+            as the encryption key. The <span class="flare_shell">Oyster Protocol</span> also allows for a
+            <span class="flare_blue"><a href="https://en.wikipedia.org/wiki/Passphrase">passphrase</a></span> to
+            be used in
+            the encryption scheme, yet
+            caution is advised due to the risk of the <span class="flare_blue">Storage User</span> forgetting the
+            <span class="flare_blue">passphrase</span>. If either the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> or the optional <span class="flare_blue">passphrase</span> are lost, then the <span class="flare_blue">file</span> is permanently
+            lost.<br>
+            &bull; If the <span class="flare_blue">payload data</span> unlocks, then it is part of the <span class="flare_blue">data sequence</span>
+            that
+            makes up the <span class="flare_blue">uploaded file</span>. If it does not unlock, then it is a reference to the SHA512
+            hashchain that contains the embedded treasure. As the <span class="flare_blue">client</span> progresses through the <span class="flare_blue">Data Map</span>, if it
+            detects anything other than exactly one SHA512 hashchain reference per Sector (10,000 SHA256
+            hashes), then it declares the <span class="flare_blue">Data Map</span> invalid and performs the appropriate procedure with the
+            distributed reputation system.<br>
+            &bull; Once the <span class="flare_blue">payload data</span> of a single hash has been retrieved, it is
+            stored
+            on the <span
+                class="flare_blue">Storage User's</span> persistent storage device and is freed from the corresponding
+            memory usage allocation.<br>
+            &bull; The <span class="flare_blue">client</span> calculates the next iteration in the SHA256 hashchain, by
+            submitting the current
+            SHA256 hash into the SHA256 function. The resultant hash is the next iteration of the hashchain. (e.g.
+            The N1 hash comes after the Genesis Hash).<br>
+            &bull; The process repeats itself until the entire <span class="flare_blue">file</span> has been
+            retrieved from the <span class="flare_red">Tangle</span>.<br>
+            &bull; The individual <span class="flare_blue">file parts</span> are glued back together, and the entire
+            <span class="flare_blue">contents</span> are compared to the
+            embedded checksum to guarantee data integrity.<br><br>
+            The <span class="flare_blue">Storage User</span> is able to access their <span class="flare_blue">files
+        </span>
+            through any <span
+                class="flare_blue">client</span>, even from
+            <span class="flare_red">Tangle Nodes</span> that are not
+            <span class="flare_purple">Broker Nodes</span>. The only two things that are needed to retrieve that
+            <span class="flare_blue">data</span>
+            are the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> and access
+            to the <span class="flare_red"><a href="http://iota.org">IOTA Tangle</a></span>.
         </div>
     </div>
 </div>
@@ -2095,14 +2480,15 @@
     window.PROTOCOL_CURRENT = false;
     window.PROTOCOL_CLUSTER = false;
     var protocol_def = [];
-    protocol_def["c1"] = ["a1", "b2", "b3", "b11"];
+    protocol_def["c1"] = ["a1", "b2", "b3", "b13"];
     protocol_def["c2"] = ["a3", "b1", "b4", "b5", "b9", "b10"];
     protocol_def["c3"] = ["a4", "a7", "a10", "b8"];
-    protocol_def["c4"] = ["a5", "a6", "a11", "a13", "a14", "b7", "b14"];
+    protocol_def["c4"] = ["a5", "a6", "a11", "a13", "a14", "b7", "b16"];
     protocol_def["c5"] = ["a2", "a8", "a9", "a12", "a15"];
     protocol_def["c6"] = ["a16", "a17", "a19"];
-    protocol_def["c7"] = ["a18", "b12", "b13"];
+    protocol_def["c7"] = ["a18", "b14", "b15"];
     protocol_def["c8"] = ["b6"];
+    protocol_def["c9"] = ["b11", "b12"];
 
     function oy_protocol_assign() {
         var oy_protocol_array = ["protocol_1", "protocol_2", "protocol_3", "protocol_4", "protocol_5", "protocol_6"];
@@ -2209,7 +2595,7 @@
     }
 
     oy_protocol_assign();
-    $(document).ready(function () {
+    $(function () {
         $('#fullpage').fullpage({
             anchors: ['intro', 'features', 'protocol', 'launch'],
             css3: true,

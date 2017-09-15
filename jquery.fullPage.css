@@ -130,6 +130,11 @@ html.fp-enabled,
 #fp-nav.right {
     right: 17px;
 }
+@media screen and (orientation: portrait) {
+    #fp-nav.right {
+        display: none;
+    }
+}
 
 #fp-nav.left {
     left: 17px;
