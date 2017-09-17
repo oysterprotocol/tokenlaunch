@@ -55,7 +55,7 @@ body, html {
 
     .shell_cont_img {
         position: absolute;
-        top: calc(18% - 5vh);
+        top: 12vh;
         left: 50%;
         height: 35vh;
         transform: translateX(-50%);
@@ -75,7 +75,7 @@ body, html {
     .logo_text {
         position: absolute;
         left: 50%;
-        top: 18%;
+        top: 17vh;
         transform: translateX(-50%) translateY(-25%) translateY(32vh);
         background-color: rgba(255, 32, 38, 0.1)
     }
@@ -104,21 +104,20 @@ body, html {
     .intro_box {
         position: absolute;
         width: 80vh;
-        height: 24vh;
-        padding: 2vh;
+        height: 25vh;
         left: 50%;
-        top: calc(18% + 45vh);
+        top: 62vh;
         border-radius: 1vh;
         transform: translateX(-50%);
         background-color: rgba(205, 205, 205, 0.2);
         font-family: geo_light, Fallback, sans-serif;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
         overflow: hidden;
     }
 
     .intro_lead {
         width: 100%;
-        font-size: 2.2vh;
+        font-size: 2vh;
         font-weight: bold;
         text-align: center;
     }
@@ -185,7 +184,7 @@ body, html {
         text-decoration: none;
         font-family: geo_med, Fallback, sans-serif;
         font-size: 2vh;
-        z-index: 500;
+        z-index: 1500;
         transition: 0.3s;
     }
 
@@ -479,12 +478,12 @@ body, html {
         top: calc(50% + 4vh);
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 90vh;
+        width: 100vh;
         height: 32vh;
         filter: blur(0.3vh);
         border-radius: 2vh;
         background-color: rgba(33, 33, 33, 0.95);
-        z-index: -10;
+        z-index: 1000;
     }
 
     .launch_float {
@@ -492,14 +491,14 @@ body, html {
         top: calc(50% + 4vh);
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 78vh;
+        width: 82vh;
         height: 21vh;
         padding: 4vh;
         border-radius: 2vh;
-        z-index: 1000;
         font-family: geo_light, Fallback, sans-serif;
         color: #f3f3f3;
-        font-size: 1.5vh;
+        font-size: 1.4vh;
+        z-index: 1006;
     }
 
     .launch_bottom {
@@ -522,7 +521,7 @@ body, html {
         position:fixed;
         left:50%;
         transform:translateX(-50%);
-        top:26%;
+        top:9.4vh;
         font-size:1.75vh;
         font-family: geo_med, Fallback, sans-serif;
         background-color: #a8a8a8;
@@ -736,7 +735,7 @@ body, html {
 
     .shell_cont_img {
         position: absolute;
-        top: calc(18% - 5vw);
+        top: 12vw;
         left: 50%;
         height: 35vw;
         transform: translateX(-50%);
@@ -756,7 +755,7 @@ body, html {
     .logo_text {
         position: absolute;
         left: 50%;
-        top: 18%;
+        top: 17vw;
         transform: translateX(-50%) translateY(-25%) translateY(32vw);
         background-color: rgba(255, 32, 38, 0.1)
     }
@@ -785,21 +784,20 @@ body, html {
     .intro_box {
         position: absolute;
         width: 80vw;
-        height: 24vw;
-        padding: 2vw;
+        height: 25vw;
         left: 50%;
-        top: calc(18% + 45vw);
+        top: 68vw;
         border-radius: 1vw;
         transform: translateX(-50%);
         background-color: rgba(205, 205, 205, 0.2);
         font-family: geo_light, Fallback, sans-serif;
-        font-size: 1.8vw;
+        font-size: 1.7vw;
         overflow: hidden;
     }
 
     .intro_lead {
         width: 100%;
-        font-size: 2.2vw;
+        font-size: 2vw;
         font-weight: bold;
         text-align: center;
     }
@@ -866,7 +864,8 @@ body, html {
         text-decoration: none;
         font-family: geo_med, Fallback, sans-serif;
         font-size: 2vw;
-        z-index: 500;
+        z-index: 1500;
+        transition: 0.3s;
     }
 
     .nav.hang {
@@ -1157,11 +1156,11 @@ body, html {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90vw;
-        height: 36vw;
+        height: 38vw;
         filter: blur(0.3vw);
         border-radius: 2vw;
         background-color: rgba(33, 33, 33, 0.95);
-        z-index: -10;
+        z-index: 1000;
     }
 
     .launch_float {
@@ -1169,14 +1168,14 @@ body, html {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 78vw;
+        width: 76vw;
         height: 25vw;
         padding: 4vw;
         border-radius: 2vw;
-        z-index: 1000;
         font-family: geo_light, Fallback, sans-serif;
         color: #f3f3f3;
         font-size: 1.5vw;
+        z-index: 1006;
     }
 
     .launch_bottom {
@@ -1494,4 +1493,53 @@ body, html {
 
 .bold {
     font-family: geo_med, Fallback, sans-serif;
+}
+
+@media screen and (min-width: 800px) {
+
+    @media screen and (orientation: landscape) {
+        .launch_clock_extra {
+            position: absolute;
+            top: -28%;
+            left: 3vh;
+            transform: scale(0.5);
+        }
+    }
+
+    @media screen and (orientation: portrait) {
+        .launch_clock_extra {
+            position: absolute;
+            top: -28%;
+            left: 1vw;
+            transform: scale(0.5);
+        }
+    }
+
+    .launch_title {
+        display:block;
+    }
+
+    .launch_date {
+        display:none;
+    }
+}
+@media screen and (max-width: 799px) {
+    .launch_clock_extra {
+        display:none;
+    }
+
+    .launch_title {
+        display:none;
+    }
+
+    .launch_date {
+        display:block;
+        font-family: geo_med, Fallback, sans-serif;
+        width:100%;
+        text-align:center;
+        top:0;
+        position:absolute;
+        left:0;
+        transform:scale(1.8);
+    }
 }
