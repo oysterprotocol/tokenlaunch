@@ -3,1355 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <meta name="description" content="The Oyster Protocol enables websites to silently generate traffic revenue as visitors perform Proof of Work for a decentralized storage ledger.">
     <title>Oyster - Economic Storage Protocol</title>
-    <style type="text/css">
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-        }
-
-        @font-face {
-            font-family: 'geo_med';
-            src: url('geo_med.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'geo_light';
-            src: url('geo_light.ttf') format('truetype');
-        }
-
-        .slide {
-            position: relative;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .render {
-            transform: translate3d(0, 0, 0);
-        }
-
-        @media screen and (orientation: landscape) {
-            .slide_img {
-                position: absolute;
-                top: -10%;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 0;
-                display: block;
-                margin: 0 auto;
-                height: 110%;
-                min-width: 100%;
-            }
-
-            .shell_img {
-                position: relative;
-                width: auto;
-                height: auto;
-                max-height: 28vh;
-                max-width: 35vh;
-                top: -1vh;
-                left: 0;
-                animation: bounce 8s ease-in-out infinite;
-                animation-delay: 0.1s;
-                z-index: 100;
-            }
-
-            .shell_cont_img {
-                position: absolute;
-                top: calc(18% - 5vh);
-                left: 50%;
-                height: 35vh;
-                transform: translateX(-50%);
-            }
-
-            .shadow {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 6.5vh;
-                animation: expand 4s ease-in-out infinite;
-                animation-direction: alternate;
-                animation-delay: 0.1s;
-            }
-
-            .logo_text {
-                position: absolute;
-                left: 50%;
-                top: 18%;
-                transform: translateX(-50%) translateY(-25%) translateY(32vh);
-                background-color: rgba(255, 32, 38, 0.1)
-            }
-
-            .logo_text_a {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                width: auto;
-                height: auto;
-                max-height: 6vh;
-                max-width: 50vh;
-            }
-
-            .logo_text_b {
-                position: absolute;
-                top: 6vh;
-                left: 50%;
-                transform: translateX(-50%);
-                width: auto;
-                height: auto;
-                max-height: 6vh;
-                max-width: 50vh;
-            }
-
-            .intro_box {
-                position: absolute;
-                width: 80vh;
-                height: 24vh;
-                padding: 2vh;
-                left: 50%;
-                top: calc(18% + 45vh);
-                border-radius: 1vh;
-                transform: translateX(-50%);
-                background-color: rgba(205, 205, 205, 0.2);
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.8vh;
-                overflow: hidden;
-            }
-
-            .intro_lead {
-                width: 100%;
-                font-size: 2.2vh;
-                font-weight: bold;
-                text-align: center;
-            }
-
-            #github_ribbon a:hover {
-                background: #14a2cc;
-                color: #fff;
-            }
-
-            #github_ribbon a::before, #github_ribbon a::after {
-                content: "";
-                width: 100%;
-                display: block;
-                position: absolute;
-                top: 0.1vh;
-                left: 0;
-                height: 0.1vh;
-                background: #898989;
-            }
-
-            #github_ribbon a::after {
-                bottom: 0.1vh;
-                top: auto;
-            }
-
-            #github_ribbon {
-                position: absolute;
-                display: block;
-                top: 0;
-                right: 0;
-                width: 20vh;
-                overflow: hidden;
-                height: 20vh;
-                z-index: 9999;
-            }
-
-            #github_ribbon a {
-                background: #000;
-                color: #898989;
-                text-decoration: none;
-                font-family: arial, sans-serif;
-                text-align: center;
-                font-weight: bold;
-                padding: 0.5vh 4vh;
-                font-size: 1.5vh;
-                line-height: 3vh;
-                transition: 0.5s;
-                width: 20vh;
-                position: absolute;
-                top: 6vh;
-                right: -6vh;
-                transform: rotate(45deg);
-                box-shadow: 0.5vh 0.5vh 1vh rgba(0, 0, 0, 0.8);
-            }
-
-            .nav {
-                position: absolute;
-                bottom: 1vh;
-                left: 50%;
-                transform: translateX(-50%);
-                border: solid 0.5vh rgba(255, 255, 255, 0.75);
-                color: rgba(255, 255, 255, 0.75);
-                padding: 0.15vh 0.3vh;
-                text-decoration: none;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 2vh;
-                z-index: 500;
-                transition: 0.3s;
-            }
-
-            .nav.hang {
-                top: 1vh;
-                bottom: auto;
-            }
-
-            .nav:hover {
-                background-color: #14a2cc;
-            }
-
-            .nav.black {
-                border: solid 0.5vh black;
-                color: black;
-            }
-
-            .arrow {
-                position: absolute;
-                bottom: 1.3vh;
-                border: solid rgba(255, 255, 255, 0.75);
-                border-width: 0 0.3vh 0.3vh 0;
-                display: inline-block;
-                padding: 0.3vh;
-                z-index: 502;
-            }
-
-            .arrow_black {
-                position: absolute;
-                bottom: 1.3vh;
-                border: solid black;
-                border-width: 0 0.3vh 0.3vh 0;
-                display: inline-block;
-                padding: 0.3vh;
-                z-index: 502;
-            }
-
-            .arrow_up_left {
-                left: -2vh;
-                transform: rotate(-135deg);
-            }
-
-            .arrow_up_right {
-                right: -2vh;
-                transform: rotate(-135deg);
-            }
-
-            .arrow_down {
-                transform: rotate(45deg);
-            }
-
-            .arrow_down_mod {
-                bottom:0.9vh;
-                transform: rotate(45deg);
-            }
-
-            .arrow_down_left {
-                left: -2vh;
-                transform: rotate(45deg);
-            }
-
-            .arrow_down_right {
-                right: -2vh;
-                transform: rotate(45deg);
-            }
-
-            .arrow_right {
-                bottom:0.58vh;
-                transform: rotate(-45deg);
-            }
-
-            .title {
-                position: absolute;
-                top: 0;
-                left: 2vh;
-                opacity: 0.25;
-                color: #404040;
-                text-decoration: none;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 8vh;
-                z-index: 480;
-            }
-
-            .feature {
-                position: absolute;
-                width: 55vh;
-                height: 25vh;
-                left: 50%;
-                z-index: 620;
-            }
-
-            .feature_under {
-                position: absolute;
-                opacity: 0.6;
-                background-color: #FFF;
-                width: 55vh;
-                height: 25vh;
-                left: 50%;
-                filter: blur(8px);
-                border-radius: 12px;
-                z-index: 610;
-            }
-
-            .feature_title {
-                position: fixed;
-                top: 1.8vh;
-                left: 0;
-                width: 100%;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 2vh;
-                text-align: center;
-            }
-
-            .feature_content {
-                position: fixed;
-                top: calc(1vh + 50%);
-                transform: translateY(-50%);
-                left: 14.5vh;
-                width: calc(100% - 16vh);
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.7vh;
-                text-align: left;
-            }
-
-            .feature_cont_img {
-                position: fixed;
-                top: 0;
-                left: 1.8vh;
-                width: 12vh;
-                height: 100%;
-            }
-
-            .feature_img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                width: auto;
-                height: auto;
-                max-height: 12vh;
-                max-width: 12vh;
-            }
-
-            .protocol {
-                position: absolute;
-                width: 60vh;
-                left: 50%;
-                z-index: 620;
-            }
-
-            .protocol_under {
-                position: absolute;
-                opacity: 0.6;
-                background-color: #FFF;
-                width: 60vh;
-                left: 50%;
-                filter: blur(0.5vh);
-                border-radius: 1vh;
-                z-index: 610;
-            }
-
-            .protocol_title {
-                position: fixed;
-                top: 8px;
-                right: 0;
-                width: 80%;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 2vh;
-                text-align: center;
-            }
-
-            .protocol_caption {
-                position: relative;
-                top: -2px;
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.6vh;
-            }
-
-            .protocol_head {
-                position: relative;
-                top: 0;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 1.6vh;
-            }
-
-            .protocol_content {
-                position: fixed;
-                bottom: 1.5vh;
-                left: 1.8vh;
-                width: calc(100% - 3vh);
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.4vh;
-                text-align: left;
-            }
-
-            .protocol_cont_img {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 22%;
-                height: 8vh;
-            }
-
-            .protocol_img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: auto;
-                height: auto;
-                max-height: 7vh;
-                max-width: 8vh;
-            }
-
-            .protocol_float_under {
-                position: absolute;
-                top: calc(50% - 4vh);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 88vh;
-                height: 78vh;
-                filter: blur(1vh);
-                border-radius: 2vh;
-                background-color: rgba(220, 255, 255, 0.95);
-                z-index: 1000;
-            }
-
-            .protocol_float {
-                position: absolute;
-                top: calc(50% - 4vh);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 80vh;
-                height: 64vh;
-                padding: 4vh;
-                border-radius: 2vh;
-                z-index: 1002;
-            }
-
-            .protocol_float_content {
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 1.8vh;
-                width: calc(100% - 5.5vh);
-                height: 64vh;
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.75vh;
-                text-align: left;
-                overflow: scroll;
-                border: 0.25vh solid rgba(99, 99, 99, 0.5);
-                padding: 1vh;
-            }
-
-            .launch_float_under {
-                position: absolute;
-                top: calc(50% + 4vh);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 90vh;
-                height: 32vh;
-                filter: blur(0.3vh);
-                border-radius: 2vh;
-                background-color: rgba(33, 33, 33, 0.95);
-                z-index: -10;
-            }
-
-            .launch_float {
-                position: absolute;
-                top: calc(50% + 4vh);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 78vh;
-                height: 21vh;
-                padding: 4vh;
-                border-radius: 2vh;
-                z-index: 1000;
-                font-family: geo_light, Fallback, sans-serif;
-                color: #f3f3f3;
-                font-size: 1.5vh;
-            }
-
-            .level_one_b {
-                height: 8vh;
-                top: 13.5%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_two_b {
-                height: 38vh;
-                top: 39.2%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_three_b {
-                height: 35vh;
-                top: calc(88% - 7.5vh);
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_one_c {
-                height: 22vh;
-                top: 12.5%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_two_c {
-                height: 20vh;
-                top: 35.8%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_three_c {
-                height: 26vh;
-                top: 62%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_four_c {
-                height: 20vh;
-                top: 88%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .flare_shell {
-                background-color: rgba(48, 93, 171, 0.1);
-            }
-
-            .flare_shell:after {
-                background-image: url(oy_logo_shell_micro.png);
-                background-size: 1.23vh 1.5vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.23vh;
-                height: 1.5vh;
-                content: "";
-            }
-
-            .flare_yellow {
-                background-color: rgba(255, 221, 110, 0.08);
-            }
-
-            .flare_yellow:after {
-                background-image: url(oy_shell_yellow_micro.png);
-                background-size: 2vh 1vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 2vh;
-                height: 1vh;
-                content: "";
-            }
-
-            .flare_brown {
-                background-color: rgba(187, 133, 107, 0.08);
-            }
-
-            .flare_brown:after {
-                background-image: url(oy_shell_brown_micro.png);
-                background-size: 1.88vh 1.5vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.88vh;
-                height: 1.5vh;
-                content: "";
-            }
-
-            .flare_red {
-                background-color: rgba(255, 83, 64, 0.08);
-            }
-
-            .flare_red:after {
-                background-image: url(oy_shell_red_micro.png);
-                background-size: 0.97vh 1.5vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 0.97vh;
-                height: 1.5vh;
-                content: "";
-            }
-
-            .flare_purple {
-                background-color: rgba(128, 48, 224, 0.08);
-            }
-
-            .flare_purple:after {
-                background-image: url(oy_shell_purple_micro.png);
-                background-size: 2vh 1.47vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 2vh;
-                height: 1.47vh;
-                content: "";
-            }
-
-            .flare_blue {
-                background-color: rgba(38, 147, 255, 0.08);
-            }
-
-            .flare_blue:after {
-                background-image: url(oy_shell_blue_micro.png);
-                background-size: 1.48vh 1.5vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.48vh;
-                height: 1.5vh;
-                content: "";
-            }
-
-            .flare_pink {
-                background-color: rgba(247, 96, 185, 0.08);
-            }
-
-            .flare_pink:after {
-                background-image: url(oy_shell_pink_micro.png);
-                background-size: 1.68vh 1.5vh;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.68vh;
-                height: 1.5vh;
-                content: "";
-            }
-
-            .text_sel {
-                position: absolute;
-                font-family: geo_light, Fallback, sans-serif;
-                text-align: center;
-                border-right: 0.3vh solid black;
-                border-left: 0.3vh solid black;
-                border-bottom: 0.3vh solid black;
-            }
-
-            .text_sel_label {
-                position: relative;
-                top: 2vh;
-            }
-
-            .code_demo {
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-                font-family: 'Courier new', monospace;
-                font-size: 1.35vh;
-                font-weight: bold;
-                width: 95%;
-                padding: 1vh;
-                border-radius: 1vh;
-                background-color: #2e2e2e;
-                text-align: center;
-            }
-
-            .candle_img {
-                position: relative;
-                width: auto;
-                height: auto;
-                max-height: 30vh;
-                max-width: 60vh;
-            }
-        }
-
-        @media screen and (orientation: portrait) {
-
-            .slide_img {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 0;
-                display: block;
-                margin: 0 auto;
-                height: 100%;
-            }
-
-            .shell_img {
-                position: relative;
-                width: auto;
-                height: auto;
-                max-height: 28vw;
-                max-width: 35vw;
-                top: -1vw;
-                left: 0;
-                animation: bounce 8s ease-in-out infinite;
-                animation-delay: 0.1s;
-                z-index: 100;
-            }
-
-            .shell_cont_img {
-                position: absolute;
-                top: calc(18% - 5vw);
-                left: 50%;
-                height: 35vw;
-                transform: translateX(-50%);
-            }
-
-            .shadow {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 6.5vw;
-                animation: expand 4s ease-in-out infinite;
-                animation-direction: alternate;
-                animation-delay: 0.1s;
-            }
-
-            .logo_text {
-                position: absolute;
-                left: 50%;
-                top: 18%;
-                transform: translateX(-50%) translateY(-25%) translateY(32vw);
-                background-color: rgba(255, 32, 38, 0.1)
-            }
-
-            .logo_text_a {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                width: auto;
-                height: auto;
-                max-height: 6vw;
-                max-width: 50vw;
-            }
-
-            .logo_text_b {
-                position: absolute;
-                top: 6vw;
-                left: 50%;
-                transform: translateX(-50%);
-                width: auto;
-                height: auto;
-                max-height: 6vw;
-                max-width: 50vw;
-            }
-
-            .intro_box {
-                position: absolute;
-                width: 80vw;
-                height: 24vw;
-                padding: 2vw;
-                left: 50%;
-                top: calc(18% + 45vw);
-                border-radius: 1vw;
-                transform: translateX(-50%);
-                background-color: rgba(205, 205, 205, 0.2);
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.8vw;
-                overflow: hidden;
-            }
-
-            .intro_lead {
-                width: 100%;
-                font-size: 2.2vw;
-                font-weight: bold;
-                text-align: center;
-            }
-
-            #github_ribbon a:hover {
-                background: #14a2cc;
-                color: #fff;
-            }
-
-            #github_ribbon a::before, #github_ribbon a::after {
-                content: "";
-                width: 100%;
-                display: block;
-                position: absolute;
-                top: 0.1vw;
-                left: 0;
-                height: 0.1vw;
-                background: #898989;
-            }
-
-            #github_ribbon a::after {
-                bottom: 0.1vw;
-                top: auto;
-            }
-
-            #github_ribbon {
-                position: absolute;
-                display: block;
-                top: 0;
-                right: 0;
-                width: 20vw;
-                overflow: hidden;
-                height: 20vw;
-                z-index: 9999;
-            }
-
-            #github_ribbon a {
-                background: #000;
-                color: #898989;
-                text-decoration: none;
-                font-family: arial, sans-serif;
-                text-align: center;
-                font-weight: bold;
-                padding: 0.5vw 4vw;
-                font-size: 1.5vw;
-                line-height: 3vw;
-                transition: 0.5s;
-                width: 20vw;
-                position: absolute;
-                top: 6vw;
-                right: -6vw;
-                transform: rotate(45deg);
-                box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.8);
-            }
-
-            .nav {
-                position: absolute;
-                bottom: 1vw;
-                left: 50%;
-                transform: translateX(-50%);
-                border: solid 0.5vw white;
-                color: white;
-                padding: 0.15vw 0.3vw;
-                text-decoration: none;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 2vw;
-                z-index: 500;
-            }
-
-            .nav.hang {
-                top: 1vw;
-                bottom: auto;
-            }
-
-            .nav:hover {
-                background-color: #14a2cc;
-            }
-
-            .nav.black {
-                border: solid 0.5vw black;
-                color: black;
-            }
-
-            .arrow {
-                position: absolute;
-                bottom: 1.3vw;
-                border: solid white;
-                border-width: 0 0.3vw 0.3vw 0;
-                display: inline-block;
-                padding: 0.3vw;
-            }
-
-            .arrow_black {
-                position: absolute;
-                bottom: 1.3vw;
-                border: solid black;
-                border-width: 0 0.3vw 0.3vw 0;
-                display: inline-block;
-                padding: 0.3vw;
-            }
-
-            .arrow_up_left {
-                left: -2vw;
-                transform: rotate(-135deg);
-            }
-
-            .arrow_up_right {
-                right: -2vw;
-                transform: rotate(-135deg);
-            }
-
-            .arrow_down {
-                transform: rotate(45deg);
-            }
-
-            .arrow_down_mod {
-                bottom:0.9vw;
-                transform: rotate(45deg);
-            }
-
-            .arrow_down_left {
-                left: -2vw;
-                transform: rotate(45deg);
-            }
-
-            .arrow_down_right {
-                right: -2vw;
-                transform: rotate(45deg);
-            }
-
-            .arrow_right {
-                bottom:0.58vw;
-                transform: rotate(-45deg);
-            }
-
-            .title {
-                position: absolute;
-                top: 0;
-                left: 2vw;
-                opacity: 0.25;
-                color: #404040;
-                text-decoration: none;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 8vw;
-                z-index: 480;
-            }
-
-            .feature {
-                position: absolute;
-                width: 48vw;
-                height: 30vw;
-                left: 50%;
-                z-index: 620;
-            }
-
-            .feature_under {
-                position: absolute;
-                opacity: 0.6;
-                background-color: #FFF;
-                width: 48vw;
-                height: 30vw;
-                left: 50%;
-                filter: blur(8px);
-                border-radius: 12px;
-                z-index: 610;
-            }
-
-            .feature_title {
-                position: fixed;
-                top: 8px;
-                left: 0;
-                width: 100%;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 2vw;
-                text-align: center;
-            }
-
-            .feature_content {
-                position: fixed;
-                top: calc(1vw + 50%);
-                transform: translateY(-50%);
-                left: 14.5vw;
-                width: calc(100% - 16vw);
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.7vw;
-                text-align: left;
-            }
-
-            .feature_cont_img {
-                position: fixed;
-                top: 0;
-                left: 1.8vw;
-                width: 12vw;
-                height: 100%;
-            }
-
-            .feature_img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                width: auto;
-                height: auto;
-                max-height: 12vw;
-                max-width: 12vw;
-            }
-
-            .protocol {
-                position: absolute;
-                width: 50vw;
-                left: 50%;
-                z-index: 620;
-            }
-
-            .protocol_under {
-                position: absolute;
-                opacity: 0.6;
-                background-color: #FFF;
-                width: 49vw;
-                left: 50%;
-                filter: blur(0.5vw);
-                border-radius: 1vw;
-                z-index: 610;
-            }
-
-            .protocol_title {
-                position: fixed;
-                top: 8px;
-                right: 0;
-                width: 80%;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 2vw;
-                text-align: center;
-            }
-
-            .protocol_caption {
-                position: relative;
-                top: -2px;
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.6vw;
-            }
-
-            .protocol_head {
-                top: 0;
-                font-family: geo_med, Fallback, sans-serif;
-                font-size: 1.6vw;
-            }
-
-            .protocol_content {
-                position: fixed;
-                bottom: 1.5vw;
-                left: 1.8vw;
-                width: calc(100% - 3vw);
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.4vw;
-                text-align: left;
-            }
-
-            .protocol_cont_img {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 22%;
-                height: 8vw;
-            }
-
-            .protocol_img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                width: auto;
-                height: auto;
-                max-height: 7vw;
-                max-width: 8vw;
-            }
-
-            .protocol_float_under {
-                position: absolute;
-                top: calc(50% - 4vw);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 88vw;
-                height: 78vw;
-                filter: blur(1vw);
-                border-radius: 2vw;
-                background-color: rgba(220, 255, 255, 0.95);
-                z-index: 1000;
-            }
-
-            .protocol_float {
-                position: absolute;
-                top: calc(50% - 4vw);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 80vw;
-                height: 64vw;
-                padding: 4vw;
-                border-radius: 2vw;
-                z-index: 1002;
-            }
-
-            .protocol_float_content {
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 1.8vw;
-                width: calc(100% - 5.5vw);
-                height: 64vw;
-                font-family: geo_light, Fallback, sans-serif;
-                font-size: 1.75vw;
-                text-align: left;
-                overflow: scroll;
-                border: 0.25vw solid rgba(99, 99, 99, 0.5);
-                padding: 1vw;
-            }
-
-            .level_one_b {
-                height: 12vw;
-                top: 13.5%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_two_b {
-                height: 47vw;
-                top: 38%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_three_b {
-                height: 41vw;
-                top: calc(83% - 8vw);
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_one_c {
-                height: 24vw;
-                top: 12.5%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_two_c {
-                height: 22vw;
-                top: 36.5%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_three_c {
-                height: 26vw;
-                top: 60%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .level_four_c {
-                height: 22vw;
-                top: 83%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            .flare_shell {
-                background-color: rgba(48, 93, 171, 0.08);
-            }
-
-            .flare_shell:after {
-                background-image: url(oy_logo_shell_micro.png);
-                background-size: 1.23vw 1.5vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.23vw;
-                height: 1.5vw;
-                content: "";
-            }
-
-            .flare_yellow {
-                background-color: rgba(255, 221, 110, 0.08);
-            }
-
-            .flare_yellow:after {
-                background-image: url(oy_shell_yellow_micro.png);
-                background-size: 2vh 1vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 2vw;
-                height: 1vw;
-                content: "";
-            }
-
-            .flare_brown {
-                background-color: rgba(187, 133, 107, 0.08);
-            }
-
-            .flare_brown:after {
-                background-image: url(oy_shell_brown_micro.png);
-                background-size: 1.88vw 1.5vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.88vw;
-                height: 1.5vw;
-                content: "";
-            }
-
-            .flare_red {
-                background-color: rgba(255, 83, 64, 0.08);
-            }
-
-            .flare_red:after {
-                background-image: url(oy_shell_red_micro.png);
-                background-size: 0.97vw 1.5vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 0.97vw;
-                height: 1.5vw;
-                content: "";
-            }
-
-            .flare_purple {
-                background-color: rgba(128, 48, 224, 0.08);
-            }
-
-            .flare_purple:after {
-                background-image: url(oy_shell_purple_micro.png);
-                background-size: 2vw 1.47vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 2vw;
-                height: 1.47vw;
-                content: "";
-            }
-
-            .flare_blue {
-                background-color: rgba(38, 147, 255, 0.08);
-            }
-
-            .flare_blue:after {
-                background-image: url(oy_shell_blue_micro.png);
-                background-size: 1.48vw 1.5vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.48vw;
-                height: 1.5vw;
-                content: "";
-            }
-
-            .flare_pink {
-                background-color: rgba(247, 96, 185, 0.08);
-            }
-
-            .flare_pink:after {
-                background-image: url(oy_shell_pink_micro.png);
-                background-size: 1.68vw 1.5vw;
-                display: inline-block;
-                opacity: 0.2;
-                width: 1.68vw;
-                height: 1.5vw;
-                content: "";
-            }
-
-            .text_sel {
-                position: absolute;
-                font-family: geo_light, Fallback, sans-serif;
-                text-align: center;
-                border-right: 0.3vw solid black;
-                border-left: 0.3vw solid black;
-                border-bottom: 0.3vw solid black;
-            }
-
-            .text_sel_label {
-                position: relative;
-                top: 2vw;
-            }
-
-            .code_demo {
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-                font-family: 'Courier new', monospace;
-                font-size: 1.35vw;
-                font-weight: bold;
-                width: 95%;
-                padding: 1vw;
-                border-radius: 1vw;
-                background-color: #2e2e2e;
-                text-align: center;
-            }
-
-            .candle_img {
-                position: relative;
-                width: auto;
-                height: auto;
-                max-height: 30vw;
-                max-width: 60vw;
-            }
-        }
-
-        .level_one {
-            top: 20%;
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        .level_two {
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        .level_three {
-            top: 80%;
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        @-webkit-keyframes fade_in {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @-moz-keyframes fade_in {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fade_in {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(2vh);
-            }
-        }
-
-        @keyframes expand {
-            0% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1.1);
-            }
-        }
-
-        .center_hor {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .oy_fade {
-            opacity: 0;
-            opacity: 1 \9; /*just in case ie*/
-            animation: fade_in ease-in 1;
-            animation-fill-mode: forwards;
-        }
-
-        .oy_fade.one {
-            animation-delay: 0.1s;
-            animation-duration: 0.8s;
-        }
-
-        .oy_fade.two {
-            animation-delay: 1s;
-            animation-duration: 0.8s;
-        }
-
-        .oy_fade.three {
-            animation-delay: 1.2s;
-            animation-duration: 0.4s;
-        }
-
-        .oy_fade.four {
-            animation-delay: 2.2s;
-            animation-duration: 0.8s;
-        }
-
-        .oy_fade.five {
-            animation-delay: 2.4s;
-            animation-duration: 0.5s;
-        }
-
-        .protocol_mention {
-            font-family: geo_med, Fallback, sans-serif;
-            color: #5e5e5e;
-        }
-
-        .protocol_mention:hover {
-            cursor: pointer;
-        }
-
-        .bold {
-            font-family: geo_med, Fallback, sans-serif;
-        }
-    </style>
     <base target="_blank">
+    <link rel="stylesheet" type="text/css" href="oy_style.css"/>
     <link rel="stylesheet" type="text/css" href="jquery.fullPage.css"/>
-    <link rel="stylesheet" type="text/css" href="flipclock.css?2"/>
+    <link rel="stylesheet" type="text/css" href="flipclock.css"/>
 </head>
 <body>
 <div id="fullpage">
@@ -1360,7 +17,7 @@
         <div id="introduction" class="slide"
              style="background: radial-gradient(at 50% 45%, rgb(133,133,133), rgb(70,70,70), rgb(40,40,40));">
             <div class="oy_fade one shell_cont_img">
-                <img class="shell_img" src="oy_logo_shell.png?5"/>
+                <img class="shell_img" src="oy_logo_shell.png"/>
                 <div class="shadow">
                     <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
                         <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
@@ -1369,10 +26,10 @@
             </div>
             <div class="logo_text">
                 <div class="oy_fade two" style="position:relative;">
-                    <img class="logo_text_a" src="oy_logo_text_a.png?2"/>
+                    <img class="logo_text_a" src="oy_logo_text_a.png"/>
                 </div>
                 <div class="oy_fade three" style="position:relative;top:10px;">
-                    <img class="logo_text_b" src="oy_logo_text_b.png?2"/>
+                    <img class="logo_text_b" src="oy_logo_text_b.png"/>
                 </div>
             </div>
             <div class="oy_fade four intro_box">
@@ -1382,7 +39,7 @@
                 <br>Creative content publishers are suffering due to the advent of ad blockers and a general disregard
                 to what advertisements have to offer. The Oyster Protocol is the radical new solution that grants a
                 parallel revenue stream to website owners by adding one line of code.<br><br>Website visitors contribute
-                a portion of their GPU power to enable users' files to be stored on a decentralized, distributed and
+                a portion of their CPU and GPU power to enable users' files to be stored on a decentralized, distributed and
                 anonymous ledger. In return, such users indirectly pay the website owners for maintaining the storage of
                 their data.
             </div>
@@ -1422,7 +79,7 @@
                 <div class="feature level_three">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_4.png"/></div>
                     <div class="feature_title">Treasure Hunting Algorithm</div>
-                    <div class="feature_content">Oyster Pearls are randomly embedded within the <span class="flare_blue">Data Map</span> that
+                    <div class="feature_content">Oyster Pearls are randomly embedded within the Treasure Map that
                         defines the structure of the uploaded file. Nodes perform the Proof of Work required for
                         maintaining such data
                         on the Tangle whilst searching for the embedded Pearls. Therefore all activity across the
@@ -1462,9 +119,7 @@
                     <div class="feature_title">Scalable Storage Supply</div>
                     <div class="feature_content">Oyster Pearls are the bridge between the motivation of a user to spend
                         money on reliably storing data and the motivation of a website owner to cleanly monetize their
-                        web content. Technologies designed for the Tangle such as <a
-                                href="https://blog.iota.org/iota-development-roadmap-74741f37ed01">Swarm
-                            Intelligence</a> further increase
+                        web content. Technologies designed for the Tangle such as <a href="https://blog.iota.org/iota-development-roadmap-74741f37ed01">Swarm Intelligence</a> further increase
                         the scale of mass data retention and retrieval with excessive geographically distributed
                         redundancy.
                     </div>
@@ -1487,19 +142,15 @@
                     <div class="protocol_content" style="left:5%;width:90%;height:80%;bottom:auto;top:16%;">
                         <div style="position:relative;width:90%;left:9%;text-align:left;font-weight:bold;transform:scale(1.2);">The
                             <span class="flare_shell">Oyster Protocol</span> is defined here in this interactive guide<br></div>
-                        Hover
-                        over an
-                        item to see
-                        logical correlations and click for a detailed explanation. The Whitepaper contains the
-                        information in a linear layout: <a
-                            href="http://oyster.ws/OysterWhitepaper.pdf" target="_blank"
+                        Hover over an item to see logical correlations and click for a detailed explanation. The Whitepaper contains the
+                        information in a linear layout: <a href="http://oyster.ws/OysterWhitepaper.pdf" target="_blank"
                             style="padding:0.25%;border-radius:10%;font-weight:bold;background-color:
                             rgba(20,162,204,0.35);color:black;">
                         OysterWhitepaper.pdf</a>
                     </div>
                 </div>
                 <div class="protocol level_two_b">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_purple.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_purple.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(128, 48, 224, 0.25);">&nbsp;Broker Node&nbsp;</span>
                         </div>
@@ -1552,7 +203,7 @@
                     </div>
                 </div>
                 <div class="protocol level_three_b">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_yellow.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_yellow.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(255, 221, 110, 0.25);">&nbsp;Web Node&nbsp;</span>
                         </div>
@@ -1579,12 +230,12 @@
                             older Treasure Maps to <span class="flare_yellow">Web Nodes</span>
                             that have performed the adequate <span class="flare_red">Proof of Work</span> requirements.
                         </div>
-                        <div class="protocol_head">Reward</div>
-                        <div id="a18">&bull; Granted access to <span class="flare_brown">content/goods/services</span>
-                            that are provided by the
-                            corresponding <span class="flare_brown">Website Owner</span>.
+                        <div id="a18">&bull; Share <span class="flare_purple">Broker Node</span> contracts via the Distributed Reputation System.
                         </div>
-                        <div id="a19">&bull; Pass on <span class="flare_red">Proof of Work</span> burden to other <span
+                        <div class="protocol_head">Reward</div>
+                        <div id="a19">&bull; Granted access to <span class="flare_brown">content/goods/services</span> from the <span class="flare_brown">Website Owner</span>.
+                        </div>
+                        <div id="a20">&bull; Pass on <span class="flare_red">Proof of Work</span> burden to other <span
                                 class="flare_yellow">Web Nodes</span> where applicable.
                         </div>
                     </div>
@@ -1596,7 +247,7 @@
                 <div class="protocol_under level_three_c"></div>
                 <div class="protocol_under level_four_c"></div>
                 <div class="protocol level_one_c">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_red.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_red.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(255, 83, 64, 0.25);">&nbsp;IOTA Tangle&nbsp;</span>
                         </div>
@@ -1623,7 +274,7 @@
                     </div>
                 </div>
                 <div class="protocol level_two_c">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_pink.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_pink.png"/></div>
                     <div class="protocol_title">
                         <div><span
                                 style="background-color: rgba(247, 96, 185, 0.25);">&nbsp;Ethereum Blockchain&nbsp;</span>
@@ -1643,7 +294,7 @@
                     </div>
                 </div>
                 <div class="protocol level_three_c">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_blue.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_blue.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(38, 147, 255, 0.25);">&nbsp;Storage User&nbsp;</span>
                         </div>
@@ -1652,8 +303,7 @@
                     <div id="protocol_5" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
                         <div id="b8">&bull; Pay the correct amount of <span class="flare_shell">Oyster</span> <span
-                                class="flare_pink">Pearls</span> to two <span class="flare_purple">Broker Nodes</span>,
-                            as defined by the <span class="flare_shell">Oyster Protocol</span> specification.
+                                class="flare_pink">Pearls</span> to two <span class="flare_purple">Broker Nodes</span>.
                         </div>
                         <div id="b9">&bull; Despite automation, has final discretion in choosing which two <span
                                 class="flare_purple">Broker Nodes</span> to use.
@@ -1663,17 +313,19 @@
                         </div>
                         <div id="b11">&bull; Verify the integrity of the <span class="flare_blue">Data Map</span> installed by <span class="flare_purple">Broker Nodes</span>.
                         </div>
-                        <div id="b12">&bull; Securely store the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> to retrieve the file from the
+                        <div id="b12">&bull; Share <span class="flare_purple">Broker Node</span> contracts via the Distributed Reputation System.
+                        </div>
+                        <div id="b13">&bull; Securely store the <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span> to retrieve the file from the
                             <span class="flare_red">Tangle</span> at a later time.
                         </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b13">&bull; Their <span class="flare_blue">file</span> is securely, reliably, and
+                        <div id="b14">&bull; Their <span class="flare_blue">file</span> is securely, reliably, and
                             anonymously <span class="flare_red">stored</span>.
                         </div>
                     </div>
                 </div>
                 <div class="protocol level_four_c">
-                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_brown.png?1"/></div>
+                    <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_brown.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(187, 133, 107, 0.25);">&nbsp;Website Owner&nbsp;</span>
                         </div>
@@ -1681,14 +333,14 @@
                     </div>
                     <div id="protocol_6" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="b14">&bull; Provide <span class="flare_brown">content/goods/services</span> to <span
+                        <div id="b15">&bull; Provide <span class="flare_brown">content/goods/services</span> to <span
                                 class="flare_yellow">Web Nodes</span>.
                         </div>
-                        <div id="b15">&bull; Add the <span class="flare_shell">Oyster Protocol</span> script to their
+                        <div id="b16">&bull; Add the <span class="flare_shell">Oyster Protocol</span> script to their
                             <span class="flare_brown">website HTML</span>.
                         </div>
                         <div class="protocol_head">Reward</div>
-                        <div id="b16">&bull; Get paid in <span class="flare_shell">Oyster</span> <span
+                        <div id="b17">&bull; Get paid in <span class="flare_shell">Oyster</span> <span
                                 class="flare_pink">Pearls</span> that have been discovered by <span
                                 class="flare_yellow">Web Nodes</span>.
                         </div>
@@ -1707,28 +359,28 @@
         <div class="slide render"
              style="background:linear-gradient(rgb(45,45,45), rgb(105,105,105), rgb(45,45,45))">
             <a class="title">LAUNCH</a>
-            <img class="slide_img" src="oy_slide_c.png?1" style="top:-2px;"/>
+            <img class="slide_img" src="oy_slide_c.png" style="top:-2px;"/>
             <div class="launch_float_under"></div>
             <div class="launch_float" style="background-color: rgba(189,86,90,0);">
                 <div>
-                    <div class="launch_clock" style="position:absolute;top:-8%;left:6%;transform:scale(0.6);"></div>
+                    <div class="launch_clock" style="position:absolute;top:-9%;left:5%;transform:scale(0.5);"></div>
                 </div>
-                <div style="position:absolute;left:0;width:100%;bottom:0.3vh;">
-                    <div style="width:100%;font-size:1.9vh;text-align:center;font-weight:bold;" >The Oyster Protocol unlocks the dormant revenue potential of millions of websites</div>
+                <div class="launch_bottom" style="position:absolute;left:0;width:100%;">
+                    <div class="launch_font_a" style="width:100%;text-align:center;font-weight:bold;" >The Oyster Protocol unlocks the dormant revenue potential of millions of websites</div>
                     <div style="text-align: center">
                         The PRL token is the economic bridge between content publishers, content consumers, storage providers, and storage consumers. Because of the economic nature of the Oyster Protocol, the token value precedes the network infrastructure. Website Owners will not enable the Oyster Protocol on their websites if it pays out near-zero in revenue. No Website Owners means no Web Nodes, which breaks Broker Node operation. This would prevent the reliable uploading of data via the Oyster Protocol. Therefore token value precedes network initialization. Assuming an ETH value of $300 during the sale, the 2x value increase of the PRL token post-launch would make Oyster storage costs half of the most affordable cloud storage solution. Up to 100 million PRL is mintable by the Smart Contract. Early Adopters have been granted a low pre-launch price of the PRL token (as compared to cloud storage costs) to ensure that the network economy will have enough momentum to initialize the network topology.
                     </div>
                 </div>
-                <div style="position:fixed;left:4%;top:-0.1vh;width:30%;font-size:1.75vh;font-family: geo_med, Fallback, sans-serif;">
+                <div class="launch_sides" style="left:0;">
                     &bull; 1 ETH = 1000 PRL<br>
                     &bull; 1 PRL = 1 GB/1 Year<br>
                     &bull; PRL 100 million cap<br>
                 </div>
-                <div style="position:fixed;right:0;top:-0.1vh;width:25%;font-size:1.75vh;font-family: geo_med, Fallback, sans-serif;">
+                <div class="launch_sides" style="right:0;">
                     &bull; Be cautious of phishing<br>
                     &bull; Sale lasts for 72 hours or until cap is reached<br>
                 </div>
-                <div style="position:fixed;left:50%;transform:translateX(-50%);top:26%;font-size:1.75vh;font-family: geo_med, Fallback, sans-serif;background-color: #a8a8a8;border-radius:1vh;color:black;padding:0.5vh 1vh;">
+                <div class="launch_address">
                     0x________________________________________
                 </div>
             </div>
@@ -1794,62 +446,62 @@
             malicious actor retrieving the <span class="flare_blue">data</span> since it can only be accessed with the corresponding encryption
             key, which is known as the
             <span class="flare_shell">Oyster</span> <span class="flare_blue">Handle</span>:<br><br><br><br>
-            <div class="center_hor bold" style="transform: translateX(-50%);font-size:1.65vh">
-                <div class="text_sel" style="top:-2vh;left:0.5%;width:98%;height:1.3vh;transform: rotate(180deg)">
+            <div class="center_hor bold protocol_font_a" style="transform: translateX(-50%);">
+                <div class="text_sel protocol_fig_a" style="left:0.5%;width:98%;transform: rotate(180deg)">
                     <div class="text_sel_label" style="transform: rotate(180deg)">Oyster Handle</div>
                 </div>
                 IMPTDOCS3fd39dd505e5d14c9ca0949b9dcd68c55306fc5826cd3e6cb67962b7d4efe8efx294g9iw
-                <div class="text_sel" style="left:0.2vh;width:6.5vh;height:1.3vh;">
+                <div class="text_sel protocol_fig_b">
                     <div class="text_sel_label">Name</div>
                 </div>
-                <div class="text_sel" style="left:8vh;width:55vh;height:1.3vh;">
+                <div class="text_sel protocol_fig_c">
                     <div class="text_sel_label">Primordial Hash</div>
                 </div>
-                <div class="text_sel" style="right:0.6vh;width:5.7vh;height:1.3vh;">
+                <div class="text_sel protocol_fig_d">
                     <div class="text_sel_label">Salt</div>
                 </div>
             </div>
             <br><br><br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a">
                 SHA256 Function
             </div>
             <br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a">
                 622bf32890f45f33ca25436e4c55eb346dfd85e1e896d1a81f2a5255fcfbb9cd
-                <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
+                <div class="text_sel protocol_fig_e">
                     <div class="text_sel_label">Genesis Hash</div>
                 </div>
             </div>
             <br><br><br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a">
                 SHA256 Function
             </div>
             <br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a">
                 801b42c510bcfdd2c48842a0a6e73f45474e0d54a22fbeea8d9673f57b2d9679
-                <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
+                <div class="text_sel protocol_fig_e">
                     <div class="text_sel_label">Hash N1</div>
                 </div>
             </div>
             <br><br><br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="width:80%;font-size:1.65vh;text-align:center;">
+            <div class="center_hor bold protocol_font_a" style="width:80%;text-align:center;">
                 The sequence continues until the file is fully represented in the <span class="flare_blue">Data Map</span>
             </div>
             <br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a">
                 SHA256 Function
             </div>
             <br><br><br>
             <div class="center_hor"><i class="arrow_black arrow_down"></i></div>
-            <div class="center_hor bold" style="font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a">
                 5a6bf9a455234d6a04237e049c026b9fb69e9f35aeac6db847f4400cc724fa39
-                <div class="text_sel" style="left:50%;transform: translateX(-50%);width:53vh;height:1.3vh;">
+                <div class="text_sel protocol_fig_e">
                     <div class="text_sel_label">Hash NX</div>
                 </div>
             </div>
@@ -1923,7 +575,7 @@
             <span class="flare_shell">Oyster Protocol</span> defines that <span class="flare_yellow">Web Nodes</span>
             need to reset their identities every X amount of treasure hunts. <span class="flare_blue">Storage Users</span> do not have a discernible identity except on a session basis
             to negotiate with <span class="flare_purple">Broker Nodes</span> and <span class="flare_yellow">Web Nodes</span>.<br><br>
-            Once a <span class="flare_blue">Storage User</span> submits <span class="flare_pink">Pearls</span> for payments, approximately half are embedded in the <span class="flare_blue">Data Map</span> and the other half are collected as compensation by the two <span class="flare_purple">Broker Nodes</span>. The two <span class="flare_purple">Broker Nodes</span> installing the <span class="flare_blue">Data Map</span> can be likened to a candle that burns on both ends:<br><br><div style="display:flex;width:100%;justify-content: center;"><img class="candle_img" src="oy_candle.png?1" /></div>
+            Once a <span class="flare_blue">Storage User</span> submits <span class="flare_pink">Pearls</span> for payments, approximately half are embedded in the <span class="flare_blue">Data Map</span> and the other half are collected as compensation by the two <span class="flare_purple">Broker Nodes</span>. The two <span class="flare_purple">Broker Nodes</span> installing the <span class="flare_blue">Data Map</span> can be likened to a candle that burns on both ends:<br><br><div style="display:flex;width:100%;justify-content: center;"><img class="candle_img" src="oy_candle.png" /></div>
             <br>
             The <span class="flare_blue">candle wax</span> represents that <span class="flare_blue">Data Map</span> and the two <span class="flare_purple">flames</span> each represent a <span class="flare_purple">Broker Node</span>. A <span class="flare_purple">Broker Node</span> has the right to retain any leftover <span class="flare_pink">Pearls</span> remaining after the <span class="flare_blue">Data Map</span> has been completely installed (or the <span class="flare_blue">candle</span> completely <span class="flare_purple">burns</span> out). The default economic pressures would indicate that it is advantageous for a <span class="flare_purple">Broker Node</span> to install the <span class="flare_blue">Data Map</span> (<span class="flare_purple">burn</span> one side of the <span class="flare_blue">candle</span>) very slowly or not at all. If the <span class="flare_purple">Alpha Node burns</span> the <span class="flare_blue">candle</span> at 10 units per second, and the <span class="flare_purple">Beta Node burns</span> the <span class="flare_blue">candle</span> at 2 units per second, they will still eventually meet at some stage but the <span class="flare_purple">Beta Node</span> will have a lot more leftover <span class="flare_pink">Pearls</span>, which it is entitled to keep. The logical extension of this economic situation is that both <span class="flare_purple">Nodes</span> would not <span class="flare_purple">burn</span> the <span class="flare_blue">candle</span> at all, both trying to keep the most <span class="flare_pink">Pearls</span> for themselves.<br><br>
             The Distributed Reputation System inverses the economic incentives. <span class="flare_purple">Broker Nodes</span> are assigned cryptographic identities which initially debut with a score of zero, the lowest possible. <span class="flare_yellow">Web Nodes</span> and <span class="flare_blue">Storage Users</span> seek to perform <span class="flare_shell">transactions</span> with the <span class="flare_purple">Broker Nodes</span> that have the highest available reputation scores (whilst also factoring in latency and other selection restrictions). As the average <span class="flare_blue">candle</span> <span class="flare_purple">burning</span> speed of a <span class="flare_purple">Node</span> increases linearly, it's reputation score increases exponentially. This causes <span class="flare_purple">Broker Nodes</span> to race in <span class="flare_purple">burning</span> more of the <span class="flare_blue">candle</span> themselves, despite there being less <span class="flare_pink">Pearl</span> revenue in the short term. A <span class="flare_purple">Broker Node</span> that intends to <span class="flare_purple">burn</span> the <span class="flare_blue">candle</span> as quickly as possible will earn less in the short term whilst earning exponentially more in the long term. Therefore the economic incentive for a <span class="flare_purple">Broker Node</span> to defect has been nullified.
@@ -2012,16 +664,16 @@
             hashchain. If
             the <span class="flare_yellow">Web Node</span> reaches the upper limit of the hashchain size defined by the
             <span class="flare_shell">Oyster Protocol</span>,
-            it moves on to the next SHA256 hash in the <span class="flare_blue">Data Map</span> and repeats the process.<br><br>
-            <div class="center_hor bold" style="width:50%;font-size:1.65vh">SHA256 N2&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N1&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N2&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N3</div>
+            it moves on to the next SHA256 hash in the <span class="flare_blue">Data Map</span> and repeats the process.<br>
+            <div class="center_hor bold protocol_font_a" style="width:50%;">SHA256 N2&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N1&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N2&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N3</div>
             <br><br>
             <div class="center_hor" style="left:30%;"><i class="arrow_black arrow_down_mod"></i></div>
-            <div class="center_hor bold" style="width:50%;font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a" style="width:50%;">
                 SHA256 N3&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N1&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N2&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N3
             </div>
             <br><br>
             <div class="center_hor" style="left:30%;"><i class="arrow_black arrow_down_mod"></i></div>
-            <div class="center_hor bold" style="width:50%;font-size:1.65vh">
+            <div class="center_hor bold protocol_font_a" style="width:50%;">
                 SHA256 N4&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N1&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N2&nbsp;&nbsp;<i class="arrow_black arrow_right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA512 N3
             </div>
             <br><br>
@@ -2487,16 +1139,16 @@
     window.PROTOCOL_CURRENT = false;
     window.PROTOCOL_CLUSTER = false;
     var protocol_def = [];
-    protocol_def["c1"] = ["a1", "b2", "b3", "b13"];
+    protocol_def["c1"] = ["a1", "b2", "b3", "b14"];
     protocol_def["c2"] = ["a3", "b1", "b4", "b5", "b9", "b10"];
     protocol_def["c3"] = ["a4", "a10", "b8"];
-    protocol_def["c4"] = ["a5", "a6", "a11", "a13", "a14", "b7", "b16"];
+    protocol_def["c4"] = ["a5", "a6", "a11", "a13", "a14", "b7", "b17"];
     protocol_def["c5"] = ["a2", "a8", "a9", "a12", "a15"];
-    protocol_def["c6"] = ["a16", "a17", "a19"];
-    protocol_def["c7"] = ["a18", "b14", "b15"];
+    protocol_def["c6"] = ["a16", "a17", "a20"];
+    protocol_def["c7"] = ["a19", "b14", "b16"];
     protocol_def["c8"] = ["b6"];
-    protocol_def["c9"] = ["b11", "b12"];
-    protocol_def["c10"] = ["a7"];
+    protocol_def["c9"] = ["b11", "b13"];
+    protocol_def["c10"] = ["a7", "a18", "b12"];
 
     function oy_protocol_assign() {
         var oy_protocol_array = ["protocol_1", "protocol_2", "protocol_3", "protocol_4", "protocol_5", "protocol_6"];
@@ -2622,5 +1274,20 @@
         clock.setCountdown(true);
     });
 </script>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+    var sc_project=11448740;
+    var sc_invisible=1;
+    var sc_security="692df40d";
+    var sc_https=1;
+    var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='"+scJsHost+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript>
+    <div class="statcounter">
+        <img class="statcounter" src="//c.statcounter.com/11448740/0/692df40d/1/">
+    </div>
+</noscript>
+<!-- End of StatCounter Code for Default Guide -->
 </body>
 </html>
