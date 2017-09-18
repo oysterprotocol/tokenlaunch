@@ -69,12 +69,12 @@
     <div class="section" data-anchor="features">
         <div class="slide render">
             <a class="title">FEATURES</a>
-            <img class="slide_img" src="oy_slide_a.jpg?1" style="bottom:0;"/>
+            <img class="slide_img" src="oy_slide_a.png?1" style="bottom:0;"/>
             <div style="position:absolute;bottom:0;width:50%;height:100%;left:0;">
-                <div class="feature_under level_one"></div>
-                <div class="feature_under level_two"></div>
-                <div class="feature_under level_three"></div>
-                <div class="feature level_one">
+                <div class="feature_under level_left level_one"></div>
+                <div class="feature_under level_left level_two"></div>
+                <div class="feature_under level_left level_three"></div>
+                <div class="feature level_left level_one">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_1.png"/></div>
                     <div class="feature_title">Robust, Redundant Data Storage</div>
                     <div class="feature_content">Files uploaded via the Oyster Protocol are stored on the <a
@@ -84,7 +84,7 @@
                         continuously perform Proof of Work to guarantee that the Tangle retains the data.
                     </div>
                 </div>
-                <div class="feature level_two">
+                <div class="feature level_left level_two">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_3.png"/></div>
                     <div class="feature_title">Dual Ledger Integration</div>
                     <div class="feature_content">The <a href="http://iota.org">IOTA Tangle</a> (<a
@@ -95,7 +95,7 @@
                         attributes that enable key Oyster Protocol functions.
                     </div>
                 </div>
-                <div class="feature level_three">
+                <div class="feature level_left level_three">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_4.png"/></div>
                     <div class="feature_title">Treasure Hunting Algorithm</div>
                     <div class="feature_content">Oyster Pearls are randomly embedded within the Treasure Map that
@@ -108,10 +108,10 @@
                 </div>
             </div>
             <div style="position:absolute;bottom:0;width:50%;height:100%;right:0;">
-                <div class="feature_under level_one"></div>
-                <div class="feature_under level_two"></div>
-                <div class="feature_under level_three"></div>
-                <div class="feature level_one">
+                <div class="feature_under level_right level_one"></div>
+                <div class="feature_under level_right level_two"></div>
+                <div class="feature_under level_right level_three"></div>
+                <div class="feature level_right level_one">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_2.png"/></div>
                     <div class="feature_title">Zero Knowledge, Anonymous Storage</div>
                     <div class="feature_content">No personal information, usernames, nor passwords are ever used. Each
@@ -121,7 +121,7 @@
                             Blockchain</a> can conceal who payed for the storage.
                     </div>
                 </div>
-                <div class="feature level_two">
+                <div class="feature level_right level_two">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_6.png"/></div>
                     <div class="feature_title">Open Source, Extendable, & Auditable</div>
                     <div class="feature_content">The Oyster Protocol is developed in a community driven
@@ -133,7 +133,7 @@
                         extensions without permission from a central figurehead.
                     </div>
                 </div>
-                <div class="feature level_three">
+                <div class="feature level_right level_three">
                     <div class="feature_cont_img"><img class="feature_img" src="oy_feat_5.png"/></div>
                     <div class="feature_title">Scalable Storage Supply</div>
                     <div class="feature_content">Oyster Pearls are the bridge between the motivation of a user to spend
@@ -151,13 +151,13 @@
     <div class="section" data-anchor="protocol">
         <div class="slide render">
             <a class="title">PROTOCOL</a>
-            <img class="slide_img" src="oy_slide_b.jpg?1" style="top:0;"/>
-            <div style="position:absolute;bottom:0;width:100%;height:50%;background:linear-gradient(transparent, black);z-index:200;"></div>
+            <div style="position:absolute;top:0;width:100%;height:25.5%;background-color:#69CADD;z-index:202;"></div>
+            <div style="position:absolute;bottom:0;width:100%;height:75%;background:linear-gradient(#69CADD, black);z-index:200;"></div>
             <div style="position:absolute;bottom:0;width:50%;height:100%;left:0;">
-                <div class="protocol_under level_one_b"></div>
-                <div class="protocol_under level_two_b"></div>
-                <div class="protocol_under level_three_b"></div>
-                <div class="protocol level_one_b">
+                <div class="protocol_under level_left level_one_b"></div>
+                <div class="protocol_under level_left level_two_b"></div>
+                <div class="protocol_under level_left level_three_b"></div>
+                <div class="protocol level_left level_one_b">
                     <div class="protocol_content" style="left:5%;width:90%;height:80%;bottom:auto;top:16%;">
                         <div style="position:relative;width:90%;left:9%;text-align:left;font-weight:bold;transform:scale(1.2);">The
                             <span class="flare_shell">Oyster Protocol</span> is defined here in this interactive guide<br></div>
@@ -168,7 +168,7 @@
                         OysterWhitepaper.pdf</a>
                     </div>
                 </div>
-                <div class="protocol level_two_b">
+                <div class="protocol level_left level_two_b">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_purple.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(128, 48, 224, 0.25);">&nbsp;Broker Node&nbsp;</span>
@@ -177,9 +177,7 @@
                     </div>
                     <div id="protocol_1" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="a1">&bull; Maintain connectivity to the <span class="flare_red">Tangle</span> by
-                            upholding mutual connectivity
-                            with neighboring <span class="flare_red">Nodes</span>.
+                        <div id="a1">&bull; Maintain connectivity to the <span class="flare_red">Tangle</span> via mutual neighboring <span class="flare_red">Nodes</span>.
                         </div>
                         <div id="a2">&bull; Provide <span class="flare_yellow">Web Nodes</span> and <span
                                 class="flare_blue">Storage Users</span> with access to the <span
@@ -204,9 +202,8 @@
                         <div id="a8">&bull; Broker peer-to-peer connection initiations between <span
                                 class="flare_yellow">Web Nodes</span>.
                         </div>
-                        <div id="a9">&bull; Send new Treasure Maps to <span class="flare_yellow">Web Nodes</span> that
-                            sufficiently perform the <span class="flare_red">Proof of
-                            Work</span> requirements.
+                        <div id="a9">&bull; Send new Treasure Maps to <span class="flare_yellow">Web Nodes</span> that perform <span class="flare_red">Proof of
+                            Work</span>.
                         </div>
                         <div class="protocol_head">Reward</div>
                         <div id="a10">&bull; Earn <span class="flare_shell">Oyster</span> <span
@@ -221,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="protocol level_three_b">
+                <div class="protocol level_left level_three_b">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_yellow.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(255, 221, 110, 0.25);">&nbsp;Web Node&nbsp;</span>
@@ -230,24 +227,19 @@
                     </div>
                     <div id="protocol_2" class="protocol_content">
                         <div class="protocol_head">Responsibilities</div>
-                        <div id="a13">&bull; Search through Treasure Maps, by performing <span class="flare_red">Proof of Work</span>,
-                            to discover
-                            embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>.
+                        <div id="a13">&bull; Search through Treasure Maps via <span class="flare_red">Proof of Work</span> to discover embedded <span class="flare_shell">Oyster</span> <span class="flare_pink">Pearls</span>.
                         </div>
-                        <div id="a14">&bull; Submit the discovered Treasure to a <span
-                                class="flare_purple">Broker Node</span> to claim it on behalf of the corresponding <span
-                                class="flare_brown">Website Owner</span>.
+                        <div id="a14">&bull; Submit discovered Treasure to a <span
+                                class="flare_purple">Broker Node</span> for claiming on behalf of the corresponding <span class="flare_brown">Website Owner</span>.
                         </div>
-                        <div id="a15">&bull; Perform <span class="flare_red">Proof of Work</span> required by <span
-                                class="flare_purple">Broker Nodes</span> to receive identities of
-                            other <span class="flare_yellow">Web Nodes</span> and newer Treasure Maps.
+                        <div id="a15">&bull; Perform <span class="flare_red">Proof of Work</span> for <span
+                                class="flare_purple">Broker Nodes</span> to get <span class="flare_yellow">Web Node</span> identities and new Treasure Maps.
                         </div>
-                        <div id="a16">&bull; Perform <span class="flare_red">Proof of Work</span> required by other
-                            <span class="flare_yellow">Web Nodes</span> to receive <span class="flare_yellow">Web Node</span> identities and older Treasure Maps.
+                        <div id="a16">&bull; Perform <span class="flare_red">Proof of Work</span> for <span class="flare_yellow">Web Nodes</span> to get <span class="flare_yellow">Web Node</span> identities and old Treasure Maps.
                         </div>
                         <div id="a17">&bull; Send <span class="flare_yellow">Web Node</span> identities and
-                            older Treasure Maps to <span class="flare_yellow">Web Nodes</span>
-                            that have performed the adequate <span class="flare_red">Proof of Work</span> requirements.
+                            old Treasure Maps to <span class="flare_yellow">Web Nodes</span>
+                            that have performed the adequate <span class="flare_red">Proof of Work</span>.
                         </div>
                         <div id="a18">&bull; Share <span class="flare_purple">Broker Node</span> contracts via the Distributed Reputation System.
                         </div>
@@ -261,11 +253,11 @@
                 </div>
             </div>
             <div style="position:absolute;bottom:0;width:50%;height:100%;right:0;">
-                <div class="protocol_under level_one_c"></div>
-                <div class="protocol_under level_two_c"></div>
-                <div class="protocol_under level_three_c"></div>
-                <div class="protocol_under level_four_c"></div>
-                <div class="protocol level_one_c">
+                <div class="protocol_under level_right level_one_c"></div>
+                <div class="protocol_under level_right level_two_c"></div>
+                <div class="protocol_under level_right level_three_c"></div>
+                <div class="protocol_under level_right level_four_c"></div>
+                <div class="protocol level_right level_one_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_red.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(255, 83, 64, 0.25);">&nbsp;IOTA Tangle&nbsp;</span>
@@ -292,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="protocol level_two_c">
+                <div class="protocol level_right level_two_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_pink.png"/></div>
                     <div class="protocol_title">
                         <div><span
@@ -312,7 +304,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="protocol level_three_c">
+                <div class="protocol level_right level_three_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_blue.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(38, 147, 255, 0.25);">&nbsp;Storage User&nbsp;</span>
@@ -343,7 +335,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="protocol level_four_c">
+                <div class="protocol level_right level_four_c">
                     <div class="protocol_cont_img"><img class="protocol_img" src="oy_shell_brown.png"/></div>
                     <div class="protocol_title">
                         <div><span style="background-color: rgba(187, 133, 107, 0.25);">&nbsp;Website Owner&nbsp;</span>
@@ -395,8 +387,7 @@
                     &bull; PRL 1 billion cap<br>
                 </div>
                 <div class="launch_sides" style="right:0;">
-                    &bull; Be cautious of phishing<br>
-                    &bull; Sale lasts for 72 hours or until cap is reached<br>
+                    &bull; Be cautious of phishing attempts<br>
                 </div>
                 <div class="launch_address">
                     0x________________________________________

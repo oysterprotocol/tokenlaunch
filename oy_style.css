@@ -258,21 +258,20 @@ body, html {
 
     .title {
         position: absolute;
-        top: 0;
-        left: 2vh;
+        top: -1.2vh;
+        left: 0.8vh;
         opacity: 0.25;
         color: #404040;
         text-decoration: none;
         font-family: geo_med, Fallback, sans-serif;
         font-size: 8vh;
-        z-index: 480;
+        z-index: 1010;
     }
 
     .feature {
         position: absolute;
         width: 55vh;
         height: 25vh;
-        left: 50%;
         z-index: 620;
     }
 
@@ -282,9 +281,8 @@ body, html {
         background-color: #FFF;
         width: 55vh;
         height: 25vh;
-        left: 50%;
-        filter: blur(8px);
-        border-radius: 12px;
+        filter: blur(0.2vh);
+        border-radius: 1vh;
         z-index: 610;
     }
 
@@ -331,7 +329,6 @@ body, html {
     .protocol {
         position: absolute;
         width: 60vh;
-        left: 50%;
         z-index: 620;
     }
 
@@ -340,8 +337,7 @@ body, html {
         opacity: 0.6;
         background-color: #FFF;
         width: 60vh;
-        left: 50%;
-        filter: blur(0.5vh);
+        filter: blur(0.2vh);
         border-radius: 1vh;
         z-index: 610;
     }
@@ -530,46 +526,54 @@ body, html {
         padding:0.5vh 1vh;
     }
 
+    .level_left {
+        right: 2vh;
+    }
+
+    .level_right {
+        left: 2vh;
+    }
+
     .level_one_b {
         height: 8vh;
-        top: 13.5%;
-        transform: translateX(-50%) translateY(-50%);
+        top: 12.4%;
+        transform:translateY(-50%);
     }
 
     .level_two_b {
-        height: 38vh;
-        top: 39.2%;
-        transform: translateX(-50%) translateY(-50%);
+        height: 35vh;
+        top: 36.4%;
+        transform:translateY(-50%);
     }
 
     .level_three_b {
         height: 35vh;
-        top: calc(88% - 7.5vh);
-        transform: translateX(-50%) translateY(-50%);
+        top: calc(84% - 8.25vh);
+        transform:translateY(-50%);
     }
 
     .level_one_c {
         height: 22vh;
-        top: 12.5%;
-        transform: translateX(-50%) translateY(-50%);
+        top: 11.5%;
+        transform:translateY(-50%);
     }
 
     .level_two_c {
-        height: 20vh;
-        top: 35.8%;
-        transform: translateX(-50%) translateY(-50%);
+        height: 18.5vh;
+        top: 34.2%;
+        transform:translateY(-50%);
     }
 
     .level_three_c {
         height: 26vh;
-        top: 62%;
-        transform: translateX(-50%) translateY(-50%);
+        top: 59%;
+        transform:translateY(-50%);
     }
 
     .level_four_c {
-        height: 20vh;
-        top: 88%;
-        transform: translateX(-50%) translateY(-50%);
+        height: 18.5vh;
+        top: 84%;
+        transform:translateY(-50%);
     }
 
     .flare_shell {
@@ -936,21 +940,20 @@ body, html {
 
     .title {
         position: absolute;
-        top: 0;
-        left: 2vw;
+        top: -1.2vw;
+        left: 0.8vw;
         opacity: 0.25;
         color: #404040;
         text-decoration: none;
         font-family: geo_med, Fallback, sans-serif;
         font-size: 8vw;
-        z-index: 480;
+        z-index: 1010;
     }
 
     .feature {
         position: absolute;
         width: 48vw;
         height: 30vw;
-        left: 50%;
         z-index: 620;
     }
 
@@ -960,9 +963,8 @@ body, html {
         background-color: #FFF;
         width: 48vw;
         height: 30vw;
-        left: 50%;
-        filter: blur(8px);
-        border-radius: 12px;
+        filter: blur(0.2vw);
+        border-radius: 1vw;
         z-index: 610;
     }
 
@@ -1009,7 +1011,6 @@ body, html {
     .protocol {
         position: absolute;
         width: 50vw;
-        left: 50%;
         z-index: 620;
     }
 
@@ -1018,8 +1019,7 @@ body, html {
         opacity: 0.6;
         background-color: #FFF;
         width: 49vw;
-        left: 50%;
-        filter: blur(0.5vw);
+        filter: blur(0.2vw);
         border-radius: 1vw;
         z-index: 610;
     }
@@ -1207,46 +1207,54 @@ body, html {
         padding:0.5vw 1vw;
     }
 
+    .level_left {
+        right: 0.5vw;
+    }
+
+    .level_right {
+        left: 0.5vw;
+    }
+
     .level_one_b {
         height: 12vw;
         top: 13.5%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .level_two_b {
-        height: 47vw;
+        height: 43vw;
         top: 40%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .level_three_b {
         height: 40vw;
         top: calc(85% - 9vw);
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .level_one_c {
         height: 24vw;
         top: 12.5%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .level_two_c {
         height: 22vw;
         top: 34.5%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .level_three_c {
         height: 32vw;
         top: 60%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .level_four_c {
         height: 22vw;
         top: 85%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateY(-50%);
     }
 
     .flare_shell {
@@ -1385,18 +1393,18 @@ body, html {
 }
 
 .level_one {
-    top: 20%;
-    transform: translateX(-50%) translateY(-50%);
+    top: 21.5%;
+    transform: translateY(-50%);
 }
 
 .level_two {
     top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .level_three {
-    top: 80%;
-    transform: translateX(-50%) translateY(-50%);
+    top: 78.5%;
+    transform: translateY(-50%);
 }
 
 @-webkit-keyframes fade_in {
