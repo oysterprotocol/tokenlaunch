@@ -477,12 +477,12 @@ a {
     .countdown_major {
         position:absolute;
         left:50%;
-        top:34%;
+        top:30%;
         width:70vh;
         height:20vh;
         transform: translate(-50%, -50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:8vh;
+        font-size:7vh;
         text-align: center;
     }
 
@@ -521,7 +521,7 @@ a {
 
     .launch_title {
         position: absolute;
-        top: calc(34% - 14vh);
+        top: calc(30% - 14vh);
         left:0;
         width: 100%;
         font-weight:bold;
@@ -543,8 +543,8 @@ a {
         position:absolute;
         left:50%;
         transform:translateX(-50%);
-        top: calc(34% + 8vh);
-        font-size:3.2vh;
+        top: calc(30% + 4vh);
+        font-size:3.1vh;
         font-family: geo_med, Fallback, sans-serif;
         background-color: #42BDE9;
         border-radius:1vh;
@@ -554,21 +554,36 @@ a {
 
     .launch_container {
         position:absolute;
-        top: calc(34% + 16vh);
+        top: calc(30% + 11.5vh);
         left: 50%;
         transform: translateX(-50%);
-        width:70vh;
+        width:80vh;
         height:40vh;
         font-size:4vh;
     }
 
+    .launch_info {
+        font-size:3.1vh;
+    }
+
     .launch_details {
-        font-size:2vh;
+        font-size:1.8vh;
+    }
+
+    .launch_chart_img {
+        position: absolute;
+        top: 43%;
+        right: -39%;
+        transform: translateX(-50%) translateY(-50%);
+        width: auto;
+        height: auto;
+        max-height: 28vh;
+        max-width: 28vh;
     }
 
     .launch_lead {
         position:absolute;
-        top: calc(34% - 28vh);
+        top: calc(30% - 28vh);
         left: 50%;
         transform: translateX(-50%);
         width:95%;
@@ -579,7 +594,7 @@ a {
 
     .launch_text {
         position:absolute;
-        top: calc(34% - 24vh);
+        top: calc(30% - 24vh);
         left: 50%;
         transform: translateX(-50%);
         width:65vh;
@@ -590,7 +605,7 @@ a {
 
     .launch_directory {
         position:absolute;
-        bottom: 10vh;
+        bottom: 9vh;
         left: 50%;
         transform: translateX(-50%);
         width:50%;
@@ -610,6 +625,10 @@ a {
         width: 12vh;
         height: 100%;
         transform:scale(0.5);
+    }
+
+    .scroll_text {
+        font-size:2vh;
     }
 
     #github_ribbon a:hover {
@@ -1277,7 +1296,7 @@ a {
         position:absolute;
         left:50%;
         transform:translateX(-50%);
-        top: calc(34% + 8vw);
+        top: calc(34% + 7vw);
         font-size:3.2vw;
         font-family: geo_med, Fallback, sans-serif;
         background-color: #42BDE9;
@@ -1291,13 +1310,28 @@ a {
         top: calc(34% + 15vw);
         left: 50%;
         transform: translateX(-50%);
-        width:70vw;
+        width:80vw;
         height:40vw;
         font-size:4vw;
     }
 
+    .launch_info {
+        font-size:3.1vw;
+    }
+
     .launch_details {
-        font-size:2vw;
+        font-size:1.8vw;
+    }
+
+    .launch_chart_img {
+        position: absolute;
+        top: 46%;
+        right: -39%;
+        transform: translateX(-50%) translateY(-50%);
+        width: auto;
+        height: auto;
+        max-height: 28vw;
+        max-width: 28vw;
     }
 
     .launch_lead {
@@ -1325,7 +1359,7 @@ a {
 
     .launch_directory {
         position:absolute;
-        bottom: 12vh;
+        bottom: 9vh;
         left: 50%;
         transform: translateX(-50%);
         width:50%;
@@ -1345,6 +1379,10 @@ a {
         width: 12vw;
         height: 100%;
         transform:scale(0.55);
+    }
+
+    .scroll_text {
+        font-size:2vw;
     }
 
     #github_ribbon a:hover {
