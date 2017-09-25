@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
     <title>Oyster - Web Storage</title>
     <base target="_blank">
-    <link rel="stylesheet" type="text/css" href="oy_style.css?26"/>
+    <link rel="stylesheet" type="text/css" href="oy_style.css?33"/>
     <script>
         var _prum = [['id', '59c735d0fbb0e6c1867b23c6'],
             ['mark', 'firstbyte', (new Date()).getTime()]];
@@ -509,9 +509,7 @@
         var rect = el.getBoundingClientRect();
         return (
             rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
         );
     }
     window.OY_PRO_CURR = "pr1";
@@ -559,15 +557,21 @@
         var items8 = document.querySelectorAll(".hide_final");
 
         function scroll_effect(target, base, extra, scroll_pos) {
-            var scroll_react = 280;
-            var scroll_offset_img = Math.round((scroll_pos-base)*scroll_react);
-            var scroll_offset_text = Math.round((base-scroll_pos)*scroll_react);
+            var scroll_react = 32;
+            var scroll_offset_img = ((scroll_pos-base)*scroll_react);
+            var scroll_offset_text = ((base-scroll_pos)*scroll_react);
             var scroll_act = scroll_react/10;
             var target_img = document.getElementById(target+'_img');
             var target_text = document.getElementById(target+'_text');
             if (scroll_offset_img<scroll_act&&scroll_offset_img>(scroll_act*-1)&&window.getComputedStyle(target_img).opacity==='1'&&window.getComputedStyle(target_text).opacity==='1') {
-                target_img.style.transform = extra+"translateY(-50%) translateY("+scroll_offset_img+"px)";
-                target_text.style.transform = extra+"translateY(-50%) translateY("+scroll_offset_text+"px)";
+                if (window.innerHeight > window.innerWidth){
+                    target_img.style.transform = extra+"translateY(-50%) translateY("+scroll_offset_img+"vw)";
+                    target_text.style.transform = extra+"translateY(-50%) translateY("+scroll_offset_text+"vw)";
+                }
+                else {
+                    target_img.style.transform = extra+"translateY(-50%) translateY("+scroll_offset_img+"vh)";
+                    target_text.style.transform = extra+"translateY(-50%) translateY("+scroll_offset_text+"vh)";
+                }
                 setTimeout(function() {
                     target_img.style.transition = "all 0.12s linear";
                     target_text.style.transition = "all 0.12s linear";
