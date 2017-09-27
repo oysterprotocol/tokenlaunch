@@ -275,35 +275,48 @@ a {
         max-width: 40vh;
     }
 
-    .el_discussion {
-        position:absolute;
-        top:75%;
-        left:35%;
-        width:20vh;
-        transform: translateY(-50%);
-        font-size:3vh;
-        font-weight:bold;
-    }
-
-    .el_discussion_logo {
+    .el_logo {
         max-width:9vh;
         max-height:9vh;
     }
 
-    .el_whitepaper {
+    .el_container {
         position:absolute;
-        top:75%;
-        left:60%;
+        top:70%;
+        left:55%;
+        transform: translateX(-50%);
+        width:85vh;
+    }
+
+    .el_discussion {
+        position:absolute;
+        top:0;
+        left:0;
         width:20vh;
-        transform: translateY(-50%);
         font-size:3vh;
         font-weight:bold;
         color:#FFF;
     }
 
-    .el_whitepaper_logo {
-        max-width:9vh;
-        max-height:9vh;
+    .el_whitepaper {
+        position:absolute;
+        top:0;
+        left:50%;
+        width:20vh;
+        transform: translateX(-55%);
+        font-size:3vh;
+        font-weight:bold;
+        color:#FFF;
+    }
+
+    .el_team {
+        position:absolute;
+        top:0;
+        right:0;
+        width:20vh;
+        font-size:3vh;
+        font-weight:bold;
+        color:#FFF;
     }
 
     .protocol_cont_img {
@@ -583,7 +596,7 @@ a {
 
     .launch_lead {
         position:absolute;
-        top: calc(30% - 28vh);
+        top: calc(30% - 26vh);
         left: 50%;
         transform: translateX(-50%);
         width:95%;
@@ -594,7 +607,7 @@ a {
 
     .launch_text {
         position:absolute;
-        top: calc(30% - 24vh);
+        top: calc(30% - 22.5vh);
         left: 50%;
         transform: translateX(-50%);
         width:65vh;
@@ -1028,35 +1041,48 @@ a {
         max-width: 30vw;
     }
 
-    .el_discussion {
-        position:absolute;
-        top:75%;
-        left:25%;
-        width:20vw;
-        transform: translateY(-50%);
-        font-size:3vw;
-        font-weight:bold;
-    }
-
-    .el_discussion_logo {
+    .el_logo {
         max-width:9vw;
         max-height:9vw;
     }
 
-    .el_whitepaper {
+    .el_container {
         position:absolute;
-        top:75%;
-        left:65%;
+        top:70%;
+        left:55%;
+        transform: translateX(-50%);
+        width:85vw;
+    }
+
+    .el_discussion {
+        position:absolute;
+        top:0;
+        left:0;
         width:20vw;
-        transform: translateY(-50%);
         font-size:3vw;
         font-weight:bold;
         color:#FFF;
     }
 
-    .el_whitepaper_logo {
-        max-width:9vw;
-        max-height:9vw;
+    .el_whitepaper {
+        position:absolute;
+        top:75%;
+        left:48%;
+        width:20vw;
+        transform: translateX(-50%);
+        font-size:3vw;
+        font-weight:bold;
+        color:#FFF;
+    }
+
+    .el_team {
+        position:absolute;
+        top:0;
+        right:0;
+        width:20vw;
+        font-size:3vw;
+        font-weight:bold;
+        color:#FFF;
     }
 
     .protocol_cont_img {
@@ -1336,7 +1362,7 @@ a {
 
     .launch_lead {
         position:absolute;
-        top: calc(34% - 32vw);
+        top: calc(34% - 29.5vw);
         left: 50%;
         transform: translateX(-50%);
         width:95%;
@@ -1348,7 +1374,7 @@ a {
 
     .launch_text {
         position:absolute;
-        top: calc(34% - 28vw);
+        top: calc(34% - 26vw);
         left: 50%;
         transform: translateX(-50%);
         width:85vw;
