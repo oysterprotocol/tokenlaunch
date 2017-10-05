@@ -516,7 +516,7 @@ a {
         transform: translateX(-50%);
     }
 
-    .countdown_label {
+    .countdown_major_label {
         position:relative;
         top:-5vh;
         left:0;
@@ -524,12 +524,20 @@ a {
         font-size:4vh;
     }
 
-    .countdown_label_minor {
+    .countdown_minor_label {
         position:relative;
         top:-2vh;
         left:0;
         font-family: geo_light, Fallback, sans-serif;
         font-size:2vh;
+    }
+
+    .countdown_extra_label {
+        position:relative;
+        top:-5vh;
+        left:0;
+        font-family: geo_light, Fallback, sans-serif;
+        font-size:4vh;
     }
 
     .launch_title {
@@ -642,6 +650,142 @@ a {
 
     .scroll_text {
         font-size:2vh;
+    }
+
+    .access_go {
+        background-color: #14a2cc;
+        padding:0.6vh;
+        font-size:1vh;
+        display:inline-block;
+        transition: all 0.3s linear;
+    }
+
+    .access_go:hover {
+        cursor: pointer;
+    }
+
+    .extra_top {
+        position:absolute;
+        width:100%;
+        height:20%;
+        top:0;
+        background-color: #46599A;
+        color:#FFF;
+    }
+
+    .extra_top_left {
+        position:absolute;
+        width:50%;
+        height:100%;
+        top:10%;
+        left:-1.5vh;
+        text-align:right;
+        font-size:4vh;
+    }
+
+    .extra_top_right {
+        position:absolute;
+        width:50%;
+        height:100%;
+        top:15%;
+        right:-1.5vh;
+        text-align:left;
+    }
+
+    .extra_top_intro {
+        position:absolute;
+        left:0;
+        top:0;
+        width:54vh;
+        font-size:1.8vh;
+    }
+
+    .extra_expire {
+        position:absolute;
+        bottom:-3vh;
+        left:50%;
+        font-size:2vh;
+        font-weight:bold;
+        transform: translateX(-50%);
+        color:#558AEA;
+    }
+
+    .extra_notice {
+        position:absolute;
+        top: calc(30% + 5vh);
+        left:50%;
+        transform:translate(-50%, -50%);
+        width: 70vh;
+        color:#46599A;
+        font-style: italic;
+        font-weight:bold;
+        font-size:1.2vh;
+    }
+
+    .extra_title_lead {
+        font-family: geo_med, Fallback, sans-serif;
+        font-size:6vh;
+    }
+
+    .extra_head {
+        position:relative;
+        top:1vh;
+        font-size:1.6vh;
+        color: #558AEA;
+    }
+
+    .extra_main {
+        font-size:2vh;
+        font-weight:bold;
+        color: #46599A;
+    }
+
+    .extra_note {
+        position:absolute;
+        top: calc(30% + 3vh);
+        left:50%;
+        transform: translateX(-50%);
+        font-family: geo_med, Fallback, sans-serif;
+        font-size:1.5vh;
+        padding:0.5vh;
+        border-radius: 0.75vh;
+        background-color: rgba(85, 138, 234, 0.57);
+    }
+
+    .extra_push {
+        transform:translateX(-50%) translateY(3vh);
+    }
+
+    .extra_bottom {
+        position:absolute;
+        bottom:10vh;
+        left:50%;
+        transform:translateX(-50%);
+        width:40vh;
+        padding:1vh;
+        font-size:1.6vh;
+        font-weight:bold;
+        text-align: center;
+        color:#558AEA;
+        border: 0.5vh solid #46599A;
+    }
+
+    .extra_directory {
+        position:absolute;
+        bottom:1vh;
+        left:50%;
+        transform:translateX(-50%);
+        width:40vh;
+        padding:2vh;
+        font-size:1.5vh;
+        text-align: center;
+        color: #558AEA;
+    }
+
+    .extra_directory_lead {
+        color:#46599A;
+        font-size:2.2vh;
+        text-decoration: none;
     }
 
     #github_ribbon a:hover {
@@ -1282,7 +1426,7 @@ a {
         transform: translateX(-50%);
     }
 
-    .countdown_label {
+    .countdown_major_label {
         position:relative;
         top:-5vw;
         left:0;
@@ -1290,12 +1434,20 @@ a {
         font-size:4vw;
     }
 
-    .countdown_label_minor {
+    .countdown_minor_label {
         position:relative;
         top:-2vw;
         left:0;
         font-family: geo_light, Fallback, sans-serif;
         font-size:2vw;
+    }
+
+    .countdown_extra_label {
+        position:relative;
+        top:-5vw;
+        left:0;
+        font-family: geo_light, Fallback, sans-serif;
+        font-size:4vw;
     }
 
     .launch_title {
@@ -1409,6 +1561,142 @@ a {
 
     .scroll_text {
         font-size:2vw;
+    }
+
+    .access_go {
+        background-color: #14a2cc;
+        padding:0.6vw;
+        font-size:1vw;
+        display:inline-block;
+        transition: all 0.3s linear;
+    }
+
+    .access_go:hover {
+        cursor: pointer;
+    }
+
+    .extra_top {
+        position:absolute;
+        width:100%;
+        height:30vw;
+        top:0;
+        background-color: #46599A;
+        color:#FFF;
+    }
+
+    .extra_top_left {
+        position:absolute;
+        width:50%;
+        height:100%;
+        top:10%;
+        left:-1.5vw;
+        text-align:right;
+        font-size:4vw;
+    }
+
+    .extra_top_right {
+        position:absolute;
+        width:50%;
+        height:100%;
+        top:15%;
+        right:-1.5vw;
+        text-align:left;
+    }
+
+    .extra_top_intro {
+        position:absolute;
+        left:0;
+        top:0;
+        width:44vw;
+        font-size:1.8vw;
+    }
+
+    .extra_expire {
+        position:absolute;
+        bottom:-3vw;
+        left:50%;
+        font-size:2vw;
+        font-weight:bold;
+        transform: translateX(-50%);
+        color:#558AEA;
+    }
+
+    .extra_notice {
+        position:absolute;
+        top: calc(34% + 7.5vw);
+        left:50%;
+        transform:translate(-50%, -50%);
+        width: 70vw;
+        color:#46599A;
+        font-style: italic;
+        font-weight:bold;
+        font-size:1.2vw;
+    }
+
+    .extra_title_lead {
+        font-family: geo_med, Fallback, sans-serif;
+        font-size:6vw;
+    }
+
+    .extra_head {
+        position:relative;
+        top:1vw;
+        font-size:1.6vw;
+        color: #558AEA;
+    }
+
+    .extra_main {
+        font-size:2vw;
+        font-weight:bold;
+        color: #46599A;
+    }
+
+    .extra_note {
+        position:absolute;
+        top: calc(34% + 5.5vw);
+        left:50%;
+        transform: translateX(-50%);
+        font-family: geo_med, Fallback, sans-serif;
+        font-size:1.5vw;
+        padding:0.5vw;
+        border-radius: 0.75vw;
+        background-color: rgba(85, 138, 234, 0.57);
+    }
+
+    .extra_push {
+        transform:translateX(-50%) translateY(3vw);
+    }
+
+    .extra_bottom {
+        position:absolute;
+        bottom:10vw;
+        left:50%;
+        transform:translateX(-50%);
+        width:40vw;
+        padding:1vw;
+        font-size:1.6vw;
+        font-weight:bold;
+        text-align: center;
+        color:#558AEA;
+        border: 0.5vh solid #46599A;
+    }
+
+    .extra_directory {
+        position:absolute;
+        bottom:1vw;
+        left:50%;
+        transform:translateX(-50%);
+        width:40vw;
+        padding:2vw;
+        font-size:1.5vw;
+        text-align: center;
+        color: #558AEA;
+    }
+
+    .extra_directory_lead {
+        color:#46599A;
+        font-size:2.2vw;
+        text-decoration: none;
     }
 
     #github_ribbon a:hover {

@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
     <title>Oyster - Web Storage</title>
     <base target="_blank">
-    <link rel="stylesheet" type="text/css" href="oy_style.css?35"/>
+    <link rel="stylesheet" type="text/css" href="oy_style.css?42"/>
     <script>
         var _prum = [['id', '59c735d0fbb0e6c1867b23c6'],
             ['mark', 'firstbyte', (new Date()).getTime()]];
@@ -143,7 +143,7 @@
             uploaded file is assigned a unique handle, which acts like a private seed key. Anyone that has
             the handle can retrieve the data from the Tangle, even if they were to use their own
             custom-built script and Tangle Node. Mixer contracts on the <a href="https://ethereum.org">Ethereum
-                Blockchain</a> can conceal who payed for the storage.
+                Blockchain</a> can conceal who paid for the storage.
         </div>
     </div>
     <div class="feature" style="top:70%">
@@ -157,12 +157,11 @@
         </div>
     </div>
     <div class="feature" style="top:85%">
-        <div class="feature_cont_img"><img class="feature_img" src="oy_feat_5.png"/></div>
-        <div class="feature_title">Scalable Storage Supply</div>
+        <div class="feature_cont_img"><img class="feature_img" src="oy_feat_5.png?1"/></div>
+        <div class="feature_title">Intrinsic Storage-Pegged Value</div>
         <div class="feature_content">Oyster Pearls are the bridge between the motivation of a user to spend
             money on reliably storing data and the motivation of a website owner to cleanly monetize their
-            web content. Technologies designed for the Tangle, such as <a href="https://blog.iota.org/iota-development-roadmap-74741f37ed01">Swarm Intelligence</a>, increases
-            the scale of data retention and retrieval whilst maintaining excessively redundant and geographically distributed data duplicates.
+            web content. The Pearl Token (PRL) is unlike any other coin, it is intrinsically pegged to the market value of storage prices without requiring a reserve to back it up. The crowdsale price is offered at a fraction of storage prices, therefore <a href="https://medium.com/oysterprotocol/intrinsic-storage-pegged-value-447d970f6d69">early investors make massive profit with low downside risk</a>.
         </div>
     </div>
 </div>
@@ -208,7 +207,7 @@
             <li>
                 <div>
                     <time>October 21 - PRL Token Crowdsale</time>
-                    PRL Tokens are minted and sold for the first and last time in the only crowdsale. Value attributed to the PRL tokens later enables the Oyster Network, as Website Owners are paid in PRL.
+                    PRL Tokens are minted and sold for the first and last time in the crowdsale. Value attributed to the PRL tokens later enables the Oyster Network, as Website Owners and Broker Nodes are paid in PRL.
                 </div>
             </li>
             <li>
@@ -417,23 +416,23 @@
 </div>
 <div id="launch" class="slide" style="height:100vh;background-color:#f7f7f7;">
     <div class="launch_lead hide_generic" style="transition-duration: 0.4s;">Oyster&nbsp;Unlocks&nbsp;the&nbsp;Dormant&nbsp;Revenue&nbsp;Potential&nbsp;of&nbsp;Millions&nbsp;of&nbsp;Websites</div>
-    <div class="launch_text hide_final">
+    <div class="launch_text hide_final" style="transition-delay: 1.4s;">
         PRL is the economic bridge between content publishers, content consumers, storage providers, and storage consumers.
     </div>
-    <div class="launch_title hide_generic" style="transition-delay:0.4s;transition-duration: 0.6s;">PRL Crowdsale</div>
-    <div id="countdown_major" class="countdown_major hide_generic" style="transition-delay:0.4s;transition-duration: 1s;">
+    <div class="launch_title hide_generic" style="transition-delay:0s;transition-duration: 0.4s;">PRL Crowdsale</div>
+    <div id="countdown_major" class="countdown_major hide_generic" style="transition-delay:0s;transition-duration: 0.6s;">
         <div id="countdown_major_day" class="countdown_inner" style="left:0;"></div>
         <div id="countdown_major_hour" class="countdown_inner" style="left:33%;"></div>
         <div id="countdown_major_minute" class="countdown_inner" style="left:66%;"></div>
         <div id="countdown_major_second" class="countdown_inner" style="left:100%;"></div>
     </div>
-    <div id="launch_address" class="launch_address hide_final" style="transition-delay: 2.6s;">0x________________________________________</div>
-    <div class="launch_container hide_final" style="transition-delay: 2.8s;">
+    <div id="launch_address" class="launch_address hide_final" style="transition-delay: 1.6s;">0x________________________________________</div>
+    <div class="launch_container hide_final" style="transition-delay: 1.8s;">
         <div class="launch_info" style="position:absolute;height:100%;width:60%;left:0;">
             120 million PRL total supply<br>
             96 million PRL crowdsale<br>
-            9,600 ETH hard cap<br>
-            1 ETH = 10,000 PRL<br>
+            19,200 ETH hard cap<br>
+            1 ETH = 5,000 PRL<br>
             1 PRL = 1GB/1 year
             <img class="launch_chart_img" src="oy_token.png?5" />
         </div>
@@ -444,9 +443,13 @@
             Do not send from exchanges.<br>
             PRL is automatically sent to<br> the address that sent ETH.<br>
             Gas limit details are TBA.
+            <div style="position:absolute;right:0;bottom:20%;font-weight:bold;">Access Code<br>
+                <input id="access_input" type="text" style="width:50%;" />
+                <span id="access_go_button" class="access_go" onclick="oy_access(document.getElementById('access_input').value)">GO</span>
+            </div>
         </div>
     </div>
-    <div class="launch_directory hide_final" style="transition-delay: 3s;">
+    <div class="launch_directory hide_final" style="transition-delay: 2s;">
         <div style="position:absolute;height:100%;width:50%;left:0;">
             <div class="launch_img oy_solution">
                 <div class="shell_cont_img">
@@ -470,46 +473,69 @@
     </div>
     <div class="scroll_text hide_final" style="transition-delay: 3.2s;position:absolute;bottom:0;left:50%;transform:translateX(-50%)" onmouseover="this.style.cursor = 'pointer'" onclick="oy_scroll(2)">scroll to top</div>
 </div>
+<div id="oy_extra_space"></div>
 <script type="text/javascript">
+    function oy_access(oy_code) {
+        $.post("https://oyster.ws/tokeninternal/oy_access.php", {oy_code: oy_code},
+            function(data, status) {
+                if (status==="success"&&data!=="oy_reject") {
+                    document.getElementById('oy_extra_space').innerHTML = data;
+                    oy_countdown("countdown_extra", parseFloat(document.getElementById('extra_timeset').innerHTML));
+                    document.getElementById('access_go_button').style.backgroundColor = "#46599A";
+                    oy_scroll(3);
+                }
+                else {
+                    document.getElementById('access_go_button').style.backgroundColor = "#e61000";
+                    setTimeout(function() {
+                        document.getElementById('access_go_button').style.backgroundColor = "#14a2cc";
+                    }, 1000)
+                }
+            });
+    }
     function oy_scroll(scroll_type) {
         if (scroll_type===1) {
             var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             var scroll_offset = Math.round(h/15);
-            $('html,body').animate({
-                scrollTop: $("#problem").offset().top - scroll_offset
-            });
+            $('html,body').animate({scrollTop: $("#problem").offset().top - scroll_offset}, 1500);
         }
         else if (scroll_type===2) {
-            $('html,body').animate({
-                scrollTop: 0
-            });
+            $('html,body').animate({scrollTop: 0}, 2500);
+        }
+        else if (scroll_type===3) {
+            $('html, body').animate({
+                scrollTop: $(document).height()-$(window).height()}, 2000
+            );
         }
     }
-    var countDownDate = new Date(1508601600000).getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown_major_day").innerHTML = days+"<br><span class='countdown_label'>day"+ (days===1 ? '' : 's')+"</span>";
-        document.getElementById("countdown_major_hour").innerHTML = hours+"<br><span class='countdown_label'>hour"+ (hours===1 ? '' : 's')+"</span>";
-        document.getElementById("countdown_major_minute").innerHTML = minutes+"<br><span class='countdown_label'>minute"+ (minutes===1 ? '' : 's')+"</span>";
-        document.getElementById("countdown_major_second").innerHTML = seconds+"<br><span class='countdown_label'>second"+ (seconds===1 ? '' : 's')+"</span>";
+    oy_countdown("countdown_major", 1508601600000);
+    oy_countdown("countdown_minor", 1508601600000);
+    function oy_countdown(oy_label, oy_timestamp) {
+        var countDownDate = new Date(oy_timestamp).getTime();
+        oy_countdown_sub(oy_label, countDownDate);
+        var x = setInterval(function() {
+            oy_countdown_sub(oy_label, countDownDate);
+        }, 1000);
+        function oy_countdown_sub(oy_label, countDownDate) {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown_minor_day").innerHTML = days+"<br><span class='countdown_label_minor'>day"+(days===1 ? '' : 's')+"</span>";
-        document.getElementById("countdown_minor_hour").innerHTML = hours+"<br><span class='countdown_label_minor'>hr"+(hours===1 ? '' : 's')+"</span>";
-        document.getElementById("countdown_minor_minute").innerHTML = minutes+"<br><span class='countdown_label_minor'>min</span>";
-        document.getElementById("countdown_minor_second").innerHTML = seconds+"<br><span class='countdown_label_minor'>sec</span>";
+            document.getElementById(oy_label+"_day").innerHTML = days+"<br><span class='"+oy_label+"_label'>day"+ (days===1 ? '' : 's')+"</span>";
+            document.getElementById(oy_label+"_hour").innerHTML = hours+"<br><span class='"+oy_label+"_label'>hour"+ (hours===1 ? '' : 's')+"</span>";
+            document.getElementById(oy_label+"_minute").innerHTML = minutes+"<br><span class='"+oy_label+"_label'>minute"+ (minutes===1 ? '' : 's')+"</span>";
+            document.getElementById(oy_label+"_second").innerHTML = seconds+"<br><span class='"+oy_label+"_label'>second"+ (seconds===1 ? '' : 's')+"</span>";
 
-        // If the count down is finished, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown_major").innerHTML = "LAUNCH IS LIVE";
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById(oy_label).innerHTML = "LAUNCH IS LIVE";
+            }
         }
-    }, 1000);
+    }
     function isElementInViewport(el) {
         var rect = el.getBoundingClientRect();
         return (
