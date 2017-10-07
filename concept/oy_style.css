@@ -1,0 +1,249 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    font-family: geo_light, Fallback, sans-serif;
+    color: #2a2a2a;
+}
+
+@font-face {
+    font-family: 'geo_med';
+    src: url('../geo_med.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'geo_light';
+    src: url('../geo_light.ttf') format('truetype');
+}
+
+.slide {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+
+a {
+    color:black;
+}
+
+.protocol_link:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display:none;
+    opacity:0;
+}
+
+.hide_generic {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .7s ease-out;
+    transition-delay: 0.2s;
+}
+.hide_final {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease-out;
+    transition-delay: 2.4s;
+}
+.show_generic {
+    visibility: visible;
+    opacity: 1;
+}
+.hide_fixed {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .6s ease-out;
+}
+.hide {
+    transform: translateY(30%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .6s ease-out;
+}
+.show {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (orientation: landscape) {
+
+    .shell_img {
+        position: relative;
+        width: auto;
+        height: auto;
+        max-height: 28vh;
+        max-width: 35vh;
+        top: -1vh;
+        left: 0;
+        animation: bounce 8s ease-in-out infinite;
+        animation-delay: 0.1s;
+        z-index: 100;
+    }
+
+    .shell_cont_img {
+        position: absolute;
+        top: 12vh;
+        left: 50%;
+        height: 35vh;
+        transform: translateX(-50%);
+    }
+
+    .shadow {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6.5vh;
+        animation: expand 4s ease-in-out infinite;
+        animation-direction: alternate;
+        animation-delay: 0.1s;
+    }
+
+    .lead {
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        top:48vh;
+        font-size:5vh;
+        font-family: geo_med, Fallback, sans-serif;
+    }
+}
+@media screen and (orientation: portrait) {
+    .shell_img {
+        position: relative;
+        width: auto;
+        height: auto;
+        max-height: 28vw;
+        max-width: 35vw;
+        top: -1vw;
+        left: 0;
+        animation: bounce 8s ease-in-out infinite;
+        animation-delay: 0.1s;
+        z-index: 100;
+    }
+
+    .shell_cont_img {
+        position: absolute;
+        top: 12vw;
+        left: 50%;
+        height: 35vw;
+        transform: translateX(-50%);
+    }
+
+    .shadow {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6.5vw;
+        animation: expand 4s ease-in-out infinite;
+        animation-direction: alternate;
+        animation-delay: 0.1s;
+    }
+}
+
+.load_view {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+.load_view_semi {
+    transform: translateY(-50%);
+    visibility: visible;
+    opacity: 1;
+}
+
+.load_view_fixed {
+    visibility: visible;
+    opacity: 1;
+}
+
+@-webkit-keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2vh);
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.center_hor {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.oy_fade {
+    opacity: 0;
+    opacity: 1 \9; /*just in case ie*/
+    animation: fade_in ease-in 1;
+    animation-fill-mode: forwards;
+}
+
+.oy_fade.one {
+    animation-delay: 0.1s;
+    animation-duration: 0.8s;
+}
+
+.oy_fade.two {
+    animation-delay: 1s;
+    animation-duration: 0.8s;
+}
+
+.oy_fade.three {
+    animation-delay: 1.2s;
+    animation-duration: 0.4s;
+}
+
+.oy_fade.four {
+    animation-delay: 2.2s;
+    animation-duration: 0.8s;
+}
+
+.oy_fade.five {
+    animation-delay: 2.4s;
+    animation-duration: 0.5s;
+}

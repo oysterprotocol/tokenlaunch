@@ -261,7 +261,7 @@ a {
     }
 
     .oy_project_pos {
-        top:40%;
+        top:45%;
         left:calc(50% + 14vh);
     }
 
@@ -275,6 +275,33 @@ a {
         max-width: 40vh;
     }
 
+    .core_team {
+        position:absolute;
+        top:5%;
+        width:90vh;
+        height:10vh;
+        color:#FFF;
+    }
+
+    .core_team_lead {
+        font-size:3vh;
+        font-family: geo_med, Fallback, sans-serif;
+    }
+
+    .core_team_unit {
+        top:30%;
+        position:absolute;
+        width:50%;
+        height:50%;
+        font-size:2vh;
+        text-align: center;
+    }
+
+    .core_team_name {
+        font-size:2.8vh;
+        font-weight: bold;
+    }
+
     .el_logo {
         max-width:9vh;
         max-height:9vh;
@@ -282,7 +309,7 @@ a {
 
     .el_container {
         position:absolute;
-        top:70%;
+        top:76.5%;
         left:55%;
         transform: translateX(-50%);
         width:85vh;
@@ -1183,6 +1210,33 @@ a {
     .feature_img.oy_project {
         max-height: 30vw;
         max-width: 30vw;
+    }
+
+    .core_team {
+        position:absolute;
+        top:5%;
+        width:90vw;
+        height:10vw;
+        color:#FFF;
+    }
+
+    .core_team_lead {
+        font-size:3vw;
+        font-family: geo_med, Fallback, sans-serif;
+    }
+
+    .core_team_unit {
+        top:30%;
+        position:absolute;
+        width:50%;
+        height:50%;
+        font-size:2vw;
+        text-align: center;
+    }
+
+    .core_team_name {
+        font-size:2.8vw;
+        font-weight: bold;
     }
 
     .el_logo {
