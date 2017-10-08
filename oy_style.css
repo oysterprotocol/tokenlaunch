@@ -618,6 +618,11 @@ a {
         font-size:1.8vh;
     }
 
+    .launch_details2 {
+        top:22vh;
+        font-size:1.1vh;
+    }
+
     .launch_chart_img {
         position: absolute;
         top: 43%;
@@ -1553,6 +1558,11 @@ a {
 
     .launch_details {
         font-size:1.8vw;
+    }
+
+    .launch_details2 {
+        top:22vw;
+        font-size:1.1vw;
     }
 
     .launch_chart_img {
