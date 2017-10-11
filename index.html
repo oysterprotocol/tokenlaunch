@@ -448,12 +448,12 @@
     <div id="launch_address" class="launch_address hide_final" style="transition-delay: 1.6s;">0x________________________________________</div>
     <div class="launch_container hide_final" style="transition-delay: 1.8s;">
         <div class="launch_info" style="position:absolute;height:100%;width:60%;left:0;">
-            120 million PRL total supply<br>
-            Sale lasts Oct 21 - Nov 2<br>
-            19,200 ETH hard cap<br>
+            500 million PRL total supply<br>
+            Sale lasts Oct 21 - Nov 14<br>
+            80,000 ETH hard cap<br>
             1 ETH = 5,000 PRL<br>
             1 PRL = 1GB/1 year
-            <img class="launch_chart_img" src="oy_token.png?5" />
+            <img class="launch_chart_img" src="oy_token.png?6" />
             <div class="launch_details2" style="position:absolute;left:0;width:45%;">
                 <span style="font-weight:bold;">Use of Funds Raised</span><br>
                 Funds from presales and the mainsale are used on a discretionary basis to:<br><br>
@@ -463,7 +463,7 @@
             </div>
         </div>
         <div class="launch_details" style="position:absolute;top:2%;height:100%;width:60%;right:0;text-align:right;">
-            Crowdsale lasts until 96 million PRL hard cap is<br> reached or 12 days, whichever comes first.<br>
+            Crowdsale lasts until 400 million PRL hard cap is<br> reached or 24 days, whichever comes first.<br>
             Unsold crowdsale PRL is destroyed.<br>
             Be cautious of phishing attempts.<br>
             Do not send from exchanges.<br>
@@ -501,14 +501,15 @@
 </div>
 <div id="oy_extra_space"></div>
 <script type="text/javascript">
-    function oy_access(oy_code) {
+    function oy_access(oy_code, oy_noscroll) {
+        if (typeof oy_noscroll === 'undefined') oy_noscroll = false;
         $.post("https://oyster.ws/tokeninternal/oy_access.php", {oy_code: oy_code},
             function(data, status) {
                 if (status==="success"&&data!=="oy_reject") {
                     document.getElementById('oy_extra_space').innerHTML = data;
                     oy_countdown("countdown_extra", parseFloat(document.getElementById('extra_timeset').innerHTML));
                     document.getElementById('access_go_button').style.backgroundColor = "#46599A";
-                    oy_scroll(3);
+                    if (oy_noscroll===false) oy_scroll(3);
                 }
                 else {
                     document.getElementById('access_go_button').style.backgroundColor = "#e61000";
@@ -601,6 +602,12 @@
         }
     }
     (function () {
+
+        var split = location.search.replace('?', '').split('=');
+        if (split[0]==="presale"&&split[1].length>4) {
+            document.getElementById("access_input").value = split[1];
+            oy_access(split[1], true);
+        }
 
         'use strict';
 
