@@ -144,6 +144,17 @@ a {
         text-align: center;
     }
 
+    .front_extra {
+        position:absolute;
+        bottom:1vh;
+        right:1vh;
+        padding:1vh;
+        font-size:1.5vh;
+        color:#558AEA;
+        border: 0.5vh solid #46599A;
+        text-align: center;
+    }
+
     .description {
         position: absolute;
         top:50%;
@@ -277,9 +288,9 @@ a {
 
     .core_team {
         position:absolute;
-        top:5%;
-        width:90vh;
-        height:10vh;
+        top:4%;
+        width:110vh;
+        height:15vh;
         color:#FFF;
     }
 
@@ -1086,6 +1097,17 @@ a {
         text-align: center;
     }
 
+    .front_extra {
+        position:absolute;
+        bottom:1vw;
+        right:1vw;
+        padding:1vw;
+        font-size:1.5vw;
+        color:#558AEA;
+        border: 0.5vw solid #46599A;
+        text-align: center;
+    }
+
     .description {
         position: absolute;
         top:50%;
@@ -1219,9 +1241,9 @@ a {
 
     .core_team {
         position:absolute;
-        top:5%;
-        width:90vw;
-        height:10vw;
+        top:4%;
+        width:110vw;
+        height:15vw;
         color:#FFF;
     }
 

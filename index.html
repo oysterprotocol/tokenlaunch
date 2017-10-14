@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
     <title>Oyster - Web Storage</title>
     <base target="_blank">
-    <link rel="stylesheet" type="text/css" href="oy_style.css?50"/>
+    <link rel="stylesheet" type="text/css" href="oy_style.css?53"/>
     <script>
         var _prum = [['id', '59c735d0fbb0e6c1867b23c6'],
             ['mark', 'firstbyte', (new Date()).getTime()]];
@@ -68,6 +68,11 @@
         <div id="countdown_minor_second" class="countdown_inner" style="left:100%;"></div>
     </div>
     <div class="scroll_text oy_fade four" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%)" onmouseover="this.style.cursor = 'pointer'" onclick="oy_scroll(1)">scroll down</div>
+    <div id="front_extra_sign" class="front_extra oy_fade four" style="display:none">
+        Exclusive presale activated<br>
+        at the bottom of this site
+        <div style="text-decoration: underline" onmouseover="this.style.cursor = 'pointer'" onclick="oy_scroll(3)">scroll there</div>
+    </div>
 </div>
 <div id="problem" class="slide" style="background-color:#42BDE9;">
     <div id="problem_img" class="pop_up oy_problem_pos">
@@ -240,24 +245,32 @@
         <div class="core_team_unit" style="left:0;">
             <div class="center_hor">
                 <div class="core_team_name">Bruno Block</div>
-                <div>Protocol&nbsp;Designer&nbsp;and&nbsp;Lead&nbsp;Developer</div>
+                <div>Protocol&nbsp;Designer<br>&&nbsp;Lead&nbsp;Developer</div>
                 <div><a href="mailto:brunoblock@oyster.ws" style="color:#FFF">brunoblock@oyster.ws</a></div>
                 <div><a href="https://github.com/orgs/oysterprotocol/people/brunoblock" style="color:#FFF">GitHub</a>&nbsp;|&nbsp;<a href="https://t.me/brunoblock" style="color:#FFF">Telegram</a></div>
             </div>
         </div>
-        <div class="core_team_unit" style="right:0;">
+        <div class="core_team_unit" style="left:50%;transform: translateX(-50%);">
             <div class="center_hor">
                 <div class="core_team_name">Taylor French</div>
-                <div>Senior&nbsp;Software&nbsp;Engineer&nbsp;and&nbsp;Design&nbsp;Director</div>
+                <div>Senior&nbsp;Software&nbsp;Engineer<br>&&nbsp;Design&nbsp;Director</div>
                 <div><a href="mailto:taylorfrench@oyster.ws" style="color:#FFF">taylorfrench@oyster.ws</a></div>
                 <div><a href="https://github.com/tfrench93" style="color:#FFF">GitHub</a>&nbsp;|&nbsp;<a href="https://linkedin.com/in/taylorfrench93" style="color:#FFF">LinkedIn</a></div>
+            </div>
+        </div>
+        <div class="core_team_unit" style="right:0;">
+            <div class="center_hor">
+                <div class="core_team_name">Ian Seyer</div>
+                <div>Software&nbsp;Architect<br>&&nbsp;Engineer</div>
+                <div><a href="mailto:ianseyer@oyster.ws" style="color:#FFF">ianseyer@oyster.ws</a></div>
+                <div><a href="https://github.com/ianseyer" style="color:#FFF">GitHub</a>&nbsp;|&nbsp;<a href="https://www.linkedin.com/in/ian-seyer-96a6907" style="color:#FFF">LinkedIn</a></div>
             </div>
         </div>
     </div>
     <div id="project_text" class="feature oy_project_pos">
         <div class="feature_title">Protocol-Centric Development</div>
         <div class="feature_content">
-            When projects are people-centric, they're prone to having a bad day when the people do. Oyster distinguishes itself from other projects by having a fully specified protocol definition in the whitepaper. Oyster engages development within the ethics of decentralization, therefore progress can be made by anyone if it conforms with protocol specifications. 15% of the total PRL token supply has been reserved to pay developers for completing development bounties.
+            When projects are people-centric, they're prone to having a bad day when the people do. Oyster distinguishes itself from other projects by having a fully specified protocol definition in the whitepaper. Oyster engages development within the ethics of decentralization, therefore progress can be made by anyone if it conforms with protocol specifications. 15% of the total PRL token supply has been reserved to pay freelance developers for completing development bounties.
         </div>
     </div>
     <div class="el_container">
@@ -510,6 +523,7 @@
                     oy_countdown("countdown_extra", parseFloat(document.getElementById('extra_timeset').innerHTML));
                     document.getElementById('access_go_button').style.backgroundColor = "#46599A";
                     if (oy_noscroll===false) oy_scroll(3);
+                    document.getElementById('front_extra_sign').style.display = "block";
                 }
                 else {
                     document.getElementById('access_go_button').style.backgroundColor = "#e61000";
