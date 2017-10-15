@@ -146,13 +146,25 @@ a {
 
     .front_extra {
         position:absolute;
-        bottom:1vh;
-        right:1vh;
+        top:1vh;
+        left:1vh;
         padding:1vh;
         font-size:1.5vh;
         color:#558AEA;
         border: 0.5vh solid #46599A;
         text-align: center;
+    }
+
+    .front_nav {
+        position:absolute;
+        bottom:4vh;
+        right:1vh;
+        width: 30vh;
+        height:10vh;
+        padding:1vh;
+        font-size:1.5vh;
+        color: #131313;
+        text-align: right;
     }
 
     .description {
@@ -1099,13 +1111,25 @@ a {
 
     .front_extra {
         position:absolute;
-        bottom:1vw;
-        right:1vw;
+        top:1vw;
+        left:1vw;
         padding:1vw;
         font-size:1.5vw;
         color:#558AEA;
         border: 0.5vw solid #46599A;
         text-align: center;
+    }
+
+    .front_nav {
+        position:absolute;
+        bottom:4vw;
+        right:1vw;
+        width: 30vw;
+        height:10vw;
+        padding:1vw;
+        font-size:1.5vw;
+        color: #131313;
+        text-align: right;
     }
 
     .description {
