@@ -146,8 +146,9 @@ a {
 
     .front_extra {
         position:absolute;
-        top:1vh;
-        left:1vh;
+        bottom:5vh;
+        left:50%;
+        transform:translateX(-50%);
         padding:1vh;
         font-size:1.5vh;
         color:#558AEA;
@@ -1111,8 +1112,9 @@ a {
 
     .front_extra {
         position:absolute;
-        top:1vw;
-        left:1vw;
+        bottom:5vw;
+        left:50%;
+        transform:translateX(-50%);
         padding:1vw;
         font-size:1.5vw;
         color:#558AEA;
