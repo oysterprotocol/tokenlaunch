@@ -302,9 +302,9 @@ a {
     .core_team {
         position:absolute;
         top:4%;
-        width:110vh;
-        height:15vh;
-        color:#FFF;
+        width:120vh;
+        height:70vh;
+        color:#2a2a2a;
     }
 
     .core_team_lead {
@@ -313,17 +313,33 @@ a {
     }
 
     .core_team_unit {
-        top:30%;
         position:absolute;
-        width:50%;
+        width:40%;
         height:50%;
         font-size:2vh;
         text-align: center;
     }
 
     .core_team_name {
-        font-size:2.8vh;
+        font-size:3vh;
+        width:50%;
         font-weight: bold;
+        background-color: #2F5CA9;
+    }
+
+    .core_team_contact {
+        position:absolute;
+        right:0;
+        top:0;
+        width:50%;
+        text-align:left;
+        font-size:1.3vh;
+        background-color: #14a2cc
+    }
+
+    .core_team_text {
+        font-size:1.5vh;
+        text-align: left;
     }
 
     .el_logo {
@@ -1270,7 +1286,6 @@ a {
         top:4%;
         width:110vw;
         height:15vw;
-        color:#FFF;
     }
 
     .core_team_lead {
