@@ -161,9 +161,9 @@ a {
         bottom:4vh;
         right:1vh;
         width: 30vh;
-        height:10vh;
+        height:12vh;
         padding:1vh;
-        font-size:1.5vh;
+        font-size:1.8vh;
         color: #131313;
         text-align: right;
     }
@@ -285,7 +285,7 @@ a {
     }
 
     .oy_project_pos {
-        top:45%;
+        top:40%;
         left:calc(50% + 14vh);
     }
 
@@ -299,11 +299,37 @@ a {
         max-width: 40vh;
     }
 
+    .press {
+        position:absolute;
+        bottom:0.5vh;
+        left:50%;
+        transform:translateX(-50%)
+    }
+
+    .press_lead {
+        font-size:2vh;
+        font-family: geo_med, Fallback, sans-serif;
+        text-align: center;
+    }
+
+    .press_img {
+        width: auto;
+        height: 2.5vh;
+        filter:grayscale(100%);
+        opacity:0.6;
+        transition-duration: 0.5s;
+    }
+
+    .press_img:hover {
+        filter:none;
+        opacity:1;
+    }
+
     .core_team {
         position:absolute;
-        top:4%;
+        top:10%;
         width:120vh;
-        height:70vh;
+        height:80vh;
         color:#2a2a2a;
     }
 
@@ -321,25 +347,30 @@ a {
     }
 
     .core_team_name {
+        position:absolute;
+        top:0;
+        left:0;
+        text-align:right;
+        transform:translateY(-100%);
         font-size:3vh;
-        width:50%;
+        width:49%;
         font-weight: bold;
-        background-color: #2F5CA9;
     }
 
     .core_team_contact {
+        transform:translateY(-100%);
         position:absolute;
         right:0;
         top:0;
-        width:50%;
+        width:49%;
         text-align:left;
-        font-size:1.3vh;
-        background-color: #14a2cc
+        font-size:1.5vh;
     }
 
     .core_team_text {
-        font-size:1.5vh;
+        font-size:1.6vh;
         text-align: left;
+        color: #4b4b4b;
     }
 
     .el_logo {
@@ -349,7 +380,7 @@ a {
 
     .el_container {
         position:absolute;
-        top:76.5%;
+        top:70%;
         left:55%;
         transform: translateX(-50%);
         width:85vh;
@@ -1143,9 +1174,9 @@ a {
         bottom:4vw;
         right:1vw;
         width: 30vw;
-        height:10vw;
+        height:12vw;
         padding:1vw;
-        font-size:1.5vw;
+        font-size:1.8vw;
         color: #131313;
         text-align: right;
     }
@@ -1281,11 +1312,38 @@ a {
         max-width: 30vw;
     }
 
+    .press {
+        position:absolute;
+        bottom:0.5vw;
+        left:50%;
+        transform:translateX(-50%)
+    }
+
+    .press_lead {
+        font-size:2vw;
+        font-family: geo_med, Fallback, sans-serif;
+        text-align: center;
+    }
+
+    .press_img {
+        width: auto;
+        height: 2.5vw;
+        filter:grayscale(100%);
+        opacity:0.6;
+        transition-duration: 0.5s;
+    }
+
+    .press_img:hover {
+        filter:none;
+        opacity:1;
+    }
+
     .core_team {
         position:absolute;
-        top:4%;
-        width:110vw;
-        height:15vw;
+        top:10%;
+        width:95vw;
+        height:110vw;
+        color:#2a2a2a;
     }
 
     .core_team_lead {
@@ -1294,17 +1352,38 @@ a {
     }
 
     .core_team_unit {
-        top:30%;
         position:absolute;
-        width:50%;
+        width:40%;
         height:50%;
         font-size:2vw;
         text-align: center;
     }
 
     .core_team_name {
-        font-size:2.8vw;
+        position:absolute;
+        top:0;
+        left:0;
+        text-align:right;
+        transform:translateY(-100%);
+        font-size:3vw;
+        width:49%;
         font-weight: bold;
+    }
+
+    .core_team_contact {
+        transform:translateY(-100%);
+        position:absolute;
+        right:0;
+        top:0;
+        width:49%;
+        text-align:left;
+        font-size:1.5vw;
+    }
+
+    .core_team_text {
+        font-size:1.6vw;
+        text-align: left;
+        color: #4b4b4b;
     }
 
     .el_logo {
