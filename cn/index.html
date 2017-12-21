@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Oyster enables websites to silently generate traffic revenue as visitors perform Proof of Work for a decentralized storage ledger.">
+    <link rel="apple-touch-icon" sizes="57x57" href="../icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+    <link rel="manifest" href="../icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Oyster - Web Storage</title>
+    <base target="_blank">
+    <link rel="stylesheet" type="text/css" href="../oy_style.css?85"/>
+    <script>
+        var _prum = [['id', '59c735d0fbb0e6c1867b23c6'],
+            ['mark', 'firstbyte', (new Date()).getTime()]];
+        (function () {
+            var s = document.getElementsByTagName('script')[0]
+                , p = document.createElement('script');
+            p.async = 'async';
+            p.src = '//rum-static.pingdom.net/prum.min.js';
+            s.parentNode.insertBefore(p, s);
+        })();
+    </script>
+</head>
+<body>
+<script type="text/javascript" src="../jquery.js"></script>
+<span id="github_ribbon" class="oy_fade five"><a href="https://github.com/oysterprotocol" target="_blank">查看 GitHub 网站 </a></span>
+<div id="front" class="slide scroll" style="height:100%;background-color:#fff">
+    <div class="oy_fade one shell_cont_img" style="transform:translateX(-50%) scale(0.82);">
+        <img class="shell_img" src="../oy_logo_shell.png"/>
+        <div class="shadow">
+            <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
+                <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
+            </div>
+        </div>
+    </div>
+    <div class="logo_text">
+        <div class="oy_fade two" style="position:relative;">
+            <img class="logo_text_sub" src="../oy_logo_text.png"/>
+        </div>
+    </div>
+    <div class="front_video oy_fade four">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://player.vimeo.com/video/239320938" frameborder="0"></iframe>
+    </div>
+    <div id="front_extra_sign" class="front_extra oy_fade five">
+        <span style="font-weight:bold;">TIME LEFT</span><br>
+        <div id="countdown_minor" class="countdown_minor" style="z-index: 9999999">
+            <div id="countdown_minor_day" class="countdown_inner" style="left:0;"></div>
+            <div id="countdown_minor_hour" class="countdown_inner" style="left:33%;"></div>
+            <div id="countdown_minor_minute" class="countdown_inner" style="left:66%;"></div>
+            <div id="countdown_minor_second" class="countdown_inner" style="left:100%;"></div>
+        </div>
+        <br><br>&nbsp;&nbsp;在本网站的底部&nbsp;&nbsp;
+        <div style="text-decoration: underline" onmouseover="this.style.cursor = 'pointer'" onclick="oy_scroll(3)">直接滚动到底部</div>
+    </div>
+    <div class="press oy_fade five">
+        <div class="press_lead">精选网页</div>
+        <div>
+            <a href="https://www.huffingtonpost.com/entry/cloud-storages-not-so-silver-linings-issues-surrounding_us_59e6187ae4b08c75593ce697"><img class="press_img" src="../oy_press1.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://blog.icoalert.com/ico-alert-report-oyster-ffda53924db6"><img class="press_img" src="../oy_press2.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.newsbtc.com/2017/10/21/anonymous-storage-ledger-disrupt-ad-industry/"><img class="press_img" src="../oy_press3.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.cryptocoinsnews.com/solving-advertisement-cloud-concerns-unified-solution/"><img class="press_img" src="../oy_press4.png" /></a>
+        </div>
+        <div>
+            <a href="https://www.coinspeaker.com/2017/10/26/disruptive-blockchain-technology-targets-cloud-advertisement-industries/"><img class="press_img" src="../oy_press8.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.thedrum.com/profile/news/274738/online-advertising-problems-and-how-fix-them"><img class="press_img" src="../oy_press5.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://article.wn.com/view/2017/10/26/The_Data_on_the_internet_is_not_Protected/"><img class="press_img" src="../oy_press6.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.tgdaily.com/technology/data-storage-issues"><img class="press_img" src="../oy_press7.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://bitguru.co.uk/take-a-look-at-oyster-powered-by-the-iota-tangle/"><img class="press_img" src="../oy_press9.png" /></a>
+        </div>
+    </div>
+    <div id="front_nav_sign" class="front_nav oy_fade five">
+        <div style="position:absolute;height:100%;width:50%;right:0;">
+            <div style="position:absolute;top:0;right:0"><a style="text-decoration:none" href="https://github.com/oysterprotocol">GitHub</a></div>
+            <div style="position:absolute;top:20%;right:0"><a style="text-decoration:none" href="https://oyster.ws/OysterWhitepaper.pdf">白皮书</a></div>
+            <div style="position:absolute;top:40%;right:0"><a style="text-decoration:none" href="https://t.me/oysterprotocol">电报</a></div>
+            <div style="position:absolute;top:60%;right:0"><a style="text-decoration:none" href="https://medium.com/oysterprotocol">Oyster 博客</a></div>
+            <div style="position:absolute;top:80%;right:0"><a style="text-decoration:none" href="https://twitter.com/OysterProtocol">@OysterProtocol</a></div>
+            <div style="position:absolute;top:100%;right:0"><a style="text-decoration:none" href="mailto:contact@oyster.ws">contact@oyster.ws</a></div>
+            <div style="position:absolute;top:120%;right:0;font-weight:bold;" onmouseover="this.style.cursor = 'pointer'" onclick="oy_scroll(1)">向下滚动，获取更多信息</div>
+        </div>
+    </div>
+</div>
+<div id="problem" class="slide" style="background-color:#42BDE9;">
+    <div id="problem_img" class="pop_up oy_problem_pos">
+        <div class="feature_cont_img oy_problem"><img class="feature_img oy_problem" src="../oy_problem.png?1"/></div>
+    </div>
+    <div id="problem_text" class="feature oy_problem_pos">
+        <div class="feature_title">痛点：广告</div>
+        <div class="feature_content">
+            广告拦截器的出现以及人们对广告内容的普遍忽视，让创意内容发布商十分苦恼。在网站上显示广告从来都不是一个好对策/方法？他们具有侵扰性并且与主题无关，此外还会侵犯他人隐私并影响网站的清爽感觉。
+        </div>
+    </div>
+</div>
+<div id="solution" class="slide" style="background-color:#fff;">
+    <div id="solution_img" class="fade_up oy_solution_pos">
+        <div class="feature_cont_img oy_solution">
+            <div class="shell_cont_img">
+                <img class="shell_img" src="../oy_logo_shell.png"/>
+                <div class="shadow">
+                    <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
+                        <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="solution_text" class="feature oy_solution_pos">
+        <div class="feature_title">解决方案：Oyster</div>
+        <div class="feature_content">
+            Oyster 是一项全新的解决方案，只需新加一行代码，即可为网站带来相应的收入来源<br><br>
+            <div class="code_demo"><span style="color:#925a00">&lt;script</span>&nbsp;<span style="color:#d0b900">id</span><span style="color:#828282">=</span><span
+                    style="color:#83AC6F">"o.ws"</span>&nbsp;<span style="color:#d0b900">payout</span><span style="color:#828282">=</span><span style="color:#83AC6F">"ETH_ADDRESS"</span>&nbsp;<span
+                    style="color:#d0b900">src</span><span style="color:#828282">=</span><span style="color:#83AC6F">"https://oyster.ws/webnode.js"</span><span
+                    style="color:#925a00">&gt;&lt;/script&gt;</span></div>
+            <br>
+            网站访客提供了他们的一部分 CPU 和 GPU 处理能力，使得用户文件能够存储在分散式匿名账簿中。而作为回报，网站所有者则免费为用户维护他们的数据存储。
+        </div>
+    </div>
+</div>
+<div id="features" class="slide feature_slide" style="background-color:#42BDE9;">
+    <div class="feature" style="top:10%">
+        <div class="feature_cont_img"><img class="feature_img" src="../oy_feat_1.png"/></div>
+        <div class="feature_title">强大的冗余数据存储</div>
+        <div class="feature_content">通过 Oyster 上传的文件被存储在 <a
+                href="http://iota.org">IOTA Tangle</a>上。也就是说，大量的冗余重复数据通过 Tangle 的网络拓扑被存储下来，从而降低数据丢失的可能性。运行 Oyster 协议的节点通过工作证明的执行确保 Tangle 将数据保存下来。
+        </div>
+    </div>
+    <div class="feature" style="top:25%">
+        <div class="feature_cont_img"><img class="feature_img" src="../oy_feat_3.png"/></div>
+        <div class="feature_title">双账簿整合</div>
+        <div class="feature_content">The <a href="http://iota.org">IOTA Tangle</a> (<a
+                href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">有向无环图</a>)被用于节点之间的数据保存和工作证明协商。<a href="https://ethereum.org">以太坊区块链</a>的智能合约技术被用来生成 Oyster 珍珠（代币），从而激活启用 Oyster 操作的唯一代币属性。
+        </div>
+    </div>
+    <div class="feature" style="top:40%">
+        <div class="feature_cont_img"><img class="feature_img" src="../oy_feat_4.png"/></div>
+        <div class="feature_title">寻宝算法</div>
+        <div class="feature_content">Oyster 网络节点通过执行工作证明操作在 Tangle 上寻找嵌入的珍珠，此操作无意间将用户上传的数据提交给了 Tangle。这就好比蜜蜂在努力采蜜的过程中，无意间便为花授粉。Oyster 网络上的所有活动都具有经济动机，协议中不存在利他主义的因素。
+        </div>
+    </div>
+    <div class="feature" style="top:55%">
+        <div class="feature_cont_img"><img class="feature_img" src="../oy_feat_2.png"/></div>
+        <div class="feature_title">零知识，匿名存储</div>
+        <div class="feature_content">绝不使用任何个人信息、用户名和密码。每个上传的文件被分配了唯一的句柄，其作用就像一个私人种子密匙。任何有这个句柄的人都可以从 Tangle 中检索数据，即使他们使用的是自己定制的脚本和 Tangle 节点。<a href="https://ethereum.org">以太坊区块链</a>上的混合合约可以将付费存储的人隐藏起来。
+        </div>
+    </div>
+    <div class="feature" style="top:70%">
+        <div class="feature_cont_img"><img class="feature_img" src="../oy_feat_6.png"/></div>
+        <div class="feature_title">可扩展和审计的开放源代码</div>
+        <div class="feature_content">Oyster 协议是在一个没有任何单一故障点的社区驱动模型中开发的。扩展项目可以建立在网状网拓扑和 API 协议之上。此过程可以建立一整套真正分散的应用；例如分散式电话呼叫。任何人都可以开发客户或进行扩展，而不需要所谓中央领导者的许可。
+        </div>
+    </div>
+    <div class="feature" style="top:85%">
+        <div class="feature_cont_img"><img class="feature_img" src="../oy_feat_5.png?1"/></div>
+        <div class="feature_title">本质上与存储挂钩的价值</div>
+        <div class="feature_content">Oyster 珍珠将用户想要花钱获取可靠的数据存储与网站所有者想要从其网络内容中获利的动机对接在一起。珍珠代币 (PRL) 与其他任何钱币都不同，从本质上来说它是与存储价格的市场价值挂钩的，无需储备金的支持。Crowdsale 的价格只占存储价格的一小部分，因此<a href="https://medium.com/oysterprotocol/intrinsic-storage-pegged-value-447d970f6d69">早期投资者都以非常低的下行风险赚取利润</a>.
+        </div>
+    </div>
+</div>
+<div id="roadmap" class="slide" style="height:auto;background-color:#fff;">
+    <section class="timeline">
+        <ul>
+            <li>
+                <div>
+                    <time>2015 年初 — 协议构想，通过 Javascript/HTML5</time>
+                    <a href="https://www.w3schools.com/html/html5_webstorage.asp">本地存储</a>实现静默的流量创收这一初始概念被设计出来。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2016 年底 — FrozenJar 的开发 FrozenJar 是</time>
+                    Oyster 之前的集中式解决方案，它形成了静默的流量创收。源代码<a href="https://github.com/oysterprotocol/frozenjar">可从 github 上获得</a>.
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2017 年 7 月 — Tangle 研究 通过与开发人员之</time>
+                    间的讨论来研究 IOTA Tangle。从使用 FrozenJar 转变成使用 Tangle 的措施
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>9 月 18 日 — 发布协议 Oyster 协议最终的完整</time>
+                    规格通过白皮书发布。白皮书已成为 Oyster 协议开源开发的基准。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>10 月 5 日 — Oyster 合约审查 对创造了珍珠代</time>
+                    币 PRL 的 Oyster 合约进行全面的审计和审查。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>10 月 21 日 — PRL 代币 Crowdsale PRL 代币在</time>
+                    crowdsale 中第一次也是最后一次被创建和售卖。然后，PRL 代币产生的价值形成了 Oyster 网络，因为网站所有者和代理节点可以通过 PRL 来支付。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2017 年 12 月 — Testnet 将发布与代理节点操作</time>
+                    相关的协议逻辑在 Alpha 状态下发布，从而启用了一半的网络。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2018 年 2 月 — Testnet 将发布与网络节点操作相</time>
+                    关的 B 协议逻辑在 Alpha 状态下发布，从而完成了测试网络并第一次起到上传作用。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2018 年 4 月 — Mainnet 发布软件的改善以及分</time>
+                    布式信誉系统的增加，还有与 Oyster 合约的结合都有助于 Oyster 充分发挥其功能，并且易于使用。
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2018 - 2019年分散式 Oyster 应用 网络节点的网</time>
+                    状网络形成之后，可以在 Oyster 网络上轻松编写和执行分散式 JavaScript 应用。
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+<div id="dapp" class="slide" style="background-color:#42bde9;">
+    <div class="fade_up oy_project_pos" id="dapp_img">
+        <div class="feature_cont_img oy_project"><img class="feature_img oy_project" src="../oy_dapp.png?1"/></div>
+    </div>
+    <div id="dapp_text" class="feature oy_project_pos">
+        <div class="feature_title">可达到的分散化效果</div>
+        <div class="feature_content">
+            Oyster 为下一个分散式网络奠定了基础。网络节点（网站访客）在寻找 Oyster 珍珠 (PRL) 的过程中逐渐与彼此形成对等。由于他们有利于与相邻节点的低延迟连接，所以 Oyster 网络变成了一个性能优化的网状网络。由于网络节点完全在 JavaScript 上操作，所以 Oyster 通过一个可使用的编程语言为开发人员提供了到分散化网络的访问。
+        </div>
+    </div>
+</div>
+<div id="team" class="slide" style="background-color:#fff;">
+    <div class="core_team center_hor">
+        <div class="core_team_lead center_hor hide_generic">核心团队</div>
+        <div class="core_team_unit hide_generic" style="left:50%;transform: translateX(-50%);top:15%;">
+            <div class="core_team_name">Bruno Block</div>
+            <div class="core_team_contact">
+                <div><a href="mailto:brunoblock@oyster.ws" style="color:#2a2a2a">brunoblock@oyster.ws</a></div>
+                <div><a href="https://github.com/brunoblock" style="color:#2a2a2a">GitHub</a>&nbsp;|&nbsp;<a href="https://t.me/brunoblock" style="color:#2a2a2a">电报</a></div>
+            </div>
+            <div>协议设计者和开发主管</div>
+            <hr>
+            <div class="core_team_text">Bruno 是一位自学成才的程序员，他从事软件开发已 10 年。他在数据挖掘、机器学习、网络安全和人工智能方面具有丰富的经验。他独立开发了 Oyster 和 FrozenJar 之前的解决方案，而且在开发 Oyster 之前经常设计软件专利图。
+            </div>
+        </div>
+        <div class="core_team_unit hide_generic" style="left:5%;bottom:0;">
+            <div class="core_team_name">Taylor French</div>
+            <div class="core_team_contact">
+                <div><a href="mailto:taylorfrench@oyster.ws" style="color:#2a2a2a">taylorfrench@oyster.ws</a></div>
+                <div><a href="https://github.com/tfrench93" style="color:#2a2a2a">GitHub</a>&nbsp;|&nbsp;<a href="https://linkedin.com/in/taylorfrench93" style="color:#2a2a2a">LinkedIn</a></div>
+            </div>
+            <div>高级软件工程师和设计总监</div>
+            <hr>
+            <div class="core_team_text">Taylor 获授纪念大学的心理学学士学位以及麦吉尔大学的实验心理学硕士学位。心理学/神经科学方面的背景知识激发了他对 UI/UX 设计的兴趣，进而又使其对前端设计方法和框架产生了兴趣。他是一位自学成才的计算机编程人员，最近他作为亚马逊网页服务 (AWS) 的开发实习生加入了一家知名的金融科技公司。
+            </div>
+        </div>
+        <div class="core_team_unit hide_generic" style="right:5%;bottom:0;">
+            <div class="core_team_name">Ian Seyer</div>
+            <div class="core_team_contact">
+                <div><a href="mailto:ianseyer@oyster.ws" style="color:#2a2a2a">ianseyer@oyster.ws</a></div>
+                <div><a href="https://github.com/ianseyer" style="color:#2a2a2a">GitHub</a>&nbsp;|&nbsp;<a href="https://www.linkedin.com/in/ian-seyer-96a6907" style="color:#2a2a2a">LinkedIn</a></div>
+            </div>
+            <div>软件架构师和工程师</div>
+            <hr>
+            <div class="core_team_text">Ian Seyer 是一位具有 API 设计背景和参与过有规模的模范项目的软件和 devops 工程师。他具有分布式计算、大规模通讯系统、数据处理和机器学习方面的工作经验。而且在一年半之前以投资者的身份进入加密领域。
+            </div>
+        </div>
+    </div>
+</div>
+<div id="project" class="slide" style="background-color:#42bde9;">
+    <div class="fade_up oy_project_pos" id="project_img">
+        <div id="container" class="feature_cont_img oy_project"><img class="feature_img oy_project" src="../oy_dev.png"/></div>
+    </div>
+    <div id="project_text" class="feature oy_project_pos">
+        <div class="feature_title">以协议为中心的开发</div>
+        <div class="feature_content">
+            当项目以人为中心时，如果人遭遇不顺，他们往往也会如此。Oyster 通过白皮书中具有完整定义的指定协议将其自身与其他项目区别开来。Oyster 将开发置于分散化逻辑之内，所以只要符合协议规格，任何人都可以操作。保留了 PRL 代币总量的 15% 作为开发赏金支付给自由开发人员。
+        </div>
+    </div>
+    <div class="el_container">
+        <div class="el_discussion hide_generic">
+            <a href="https://t.me/oysterprotocol" style="color:#FFF;text-decoration:none;"><img src="../oy_telegram.png" class="feature_img el_logo" style="position:absolute;top:0;left:0;transform:translate(-110%, 4%)"/>
+                <div>加入讨论</div>
+            </a>
+        </div>
+        <div class="el_whitepaper hide_generic">
+            <a href="https://oyster.ws/OysterWhitepaper.pdf" style="color:#FFF;text-decoration:none;"><img src="../oy_whitepaper.png" class="feature_img el_logo" style="position:absolute;top:0;left:0;transform:translate(-124%, -8%)"/>
+                <div>下载白皮书</div>
+            </a>
+        </div>
+        <div class="el_team hide_generic">
+            <a href="https://trello.com/oysterprotocol" style="color:#FFF;text-decoration:none;"><img src="../oy_team.png?2" class="feature_img el_logo" style="position:absolute;top:0;left:0;transform:translate(-124%, -8%)"/>
+                <div>跟踪团队进度</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="protocol" class="slide" style="background-color:#fff;">
+    <div class="protocol_overview hide_generic">协议概述</div>
+    <div class="protocol_nav hide_generic">
+        <div><span id="nav_pr1" class="protocol_link" onclick="oy_protocol_switch(this.id)" style="background-color: rgba(66, 189, 233, 0.5);">存储用户</span>&nbsp;|&nbsp;<span id="nav_pr2" class="protocol_link" onclick="oy_protocol_switch(this.id)">代理节点</span>&nbsp;|&nbsp;<span
+                id="nav_pr3" class="protocol_link" onclick="oy_protocol_switch(this.id)">网络节点</span></div>
+        <div><span id="nav_pr4" class="protocol_link" onclick="oy_protocol_switch(this.id)">网站所有者</span>&nbsp;|&nbsp;<span id="nav_pr5" class="protocol_link"
+                                                                                                                                        onclick="oy_protocol_switch(this.id)">Tangle</span>&nbsp;|&nbsp;<span
+                id="nav_pr6" class="protocol_link" onclick="oy_protocol_switch(this.id)">区块链</span></div>
+    </div>
+    <div class="protocol_box_first pr1_height" id="pr1">
+        <div class="protocol_title hide_fixed pr1">
+            <div>存储用户
+            </div>
+            <div class="protocol_caption">通过花费  Oyster 珍珠来上传文件的用户</div>
+        </div>
+        <div class="protocol_content">
+            <div class="protocol_head hide pr1" style="transition-delay: 0.05s">责任</div>
+            <div class="hide pr1" style="transition-delay: 0.1s">&bull; 向两个代理节点支付正确数量的 Oyster 珍珠。
+            </div>
+            <div class="hide pr1" style="transition-delay: 0.15s">&bull; 尽管具有自动化功能，但是仍然具有选择使用哪两个代理节点的最终决定权。
+            </div>
+            <div class="hide pr1" style="transition-delay: 0.2s">&bull; 将部分文件传送给选择的代理节点之前，在本地浏览器中对文件进行加密和分离。
+            </div>
+            <div class="hide pr1" style="transition-delay: 0.25s">&bull; 验证由代理节点安装的数据地图的完整性。
+            </div>
+            <div class="hide pr1" style="transition-delay: 0.3s">&bull; 通过分布式信誉系统来共享代理节点合约。
+            </div>
+            <div class="hide pr1" style="transition-delay: 0.35s">&bull; 安全存储 Oyster 句柄，以便稍后从 Tangle 中检索文件。
+            </div>
+            <div class="protocol_head hide pr1" style="transition-delay: 0.45s">奖励</div>
+            <div class="hide pr1" style="transition-delay: 0.4s">&bull; 他们的文件以安全、可靠且匿名的方式存储。
+            </div>
+        </div>
+    </div>
+    <div class="protocol_box hidden pr2_height" id="pr2">
+        <div class="protocol_title hide_fixed pr2">
+            <div>代理节点&nbsp;
+            </div>
+            <div class="protocol_caption">可访问 Tangle 和区块链的网络设备</div>
+        </div>
+        <div class="protocol_content">
+            <div class="protocol_head hide pr2" style="transition-delay: 0.05s">责任</div>
+            <div class="hide pr2" style="transition-delay: 0.1s">&bull; 通过相邻节点保持与 Tangle 的连接。
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.15s">&bull; 提供可访问 Tangle 的网络节点和存储用户。
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.2s">&bull; 适用情况下对新文件执行工作证明操作。
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.25s">&bull; 在 Oyster 合约中将存储用户的珍珠提交到埋藏状态的宝藏中。
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.3s">&bull; 执行工作证明操作后，解锁发现的宝藏
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.35s">&bull; 保持 ETH 的正向平衡，解锁发现的宝藏
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.4s">&bull; 在分布式信誉系统中建立信誉评分
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.45s">&bull; 网络节点之间开始代理对等连接
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.5s">&bull; 将新的藏宝图发送给执行工作证明操作的网络节点
+            </div>
+            <div class="protocol_head hide pr2" style="transition-delay: 0.55s">奖励</div>
+            <div class="hide pr2" style="transition-delay: 0.6s">&bull; 从新埋藏的宝藏中收集剩余宝藏以赚取 Oyster 珍珠。
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.65s">&bull; 从新发现的宝藏中收取费用以赚取 Oyster 珍珠。
+            </div>
+            <div class="hide pr2" style="transition-delay: 0.7s">&bull; 适用情况下，将工作证明任务交给网络节点
+            </div>
+        </div>
+    </div>
+    <div class="protocol_box hidden pr3_height" id="pr3">
+        <div class="protocol_title hide_fixed pr3">
+            <div>网络节点
+            </div>
+            <div class="protocol_caption">访问网站的网络浏览器</div>
+        </div>
+        <div class="protocol_content">
+            <div class="protocol_head hide pr3" style="transition-delay: 0.05s">责任</div>
+            <div class="hide pr3" style="transition-delay: 0.1s">&bull; 通过工作证明查找藏宝图，从而发现嵌入的 Oyster 珍珠。
+            </div>
+            <div class="hide pr3" style="transition-delay: 0.15s">&bull; 将发现的宝藏提交给声称代表相应网站所有者的代理节点。
+            </div>
+            <div class="hide pr3" style="transition-delay: 0.2s">&bull; 为代理节点执行工作证明操作，以获得网络节点身份和新的藏宝图。
+            </div>
+            <div class="hide pr3" style="transition-delay: 0.25s">&bull; 为网络节点执行工作证明操作，以获得网络节点身份和旧的藏宝图。
+            </div>
+            <div class="hide pr3" style="transition-delay: 0.3s">&bull; 将网络节点身份和旧的藏宝图发送给执行了足够工作证明操作的网络节点。
+            </div>
+            <div class="hide pr3" style="transition-delay: 0.35s">&bull; 通过分布式信誉系统来共享代理节点合约。
+            </div>
+            <div class="protocol_head hide pr3" style="transition-delay: 0.4s">奖励</div>
+            <div class="hide pr3" style="transition-delay: 0.45s">&bull; 允许访问来自网站所有者的内容/商品/服务。
+            </div>
+            <div class="hide pr3" style="transition-delay: 0.5s">&bull; 适用情况下，将工作证明任务交给其他网络节点。
+            </div>
+        </div>
+    </div>
+    <div class="protocol_box hidden pr4_height" id="pr4">
+        <div class="protocol_title hide_fixed pr4">
+            <div>网站所有者 
+            </div>
+            <div class="protocol_caption">运营网站的组织或个人</div>
+        </div>
+        <div class="protocol_content">
+            <div class="protocol_head hide pr4" style="transition-delay: 0.05s">责任</div>
+            <div class="hide pr4" style="transition-delay: 0.1s">&bull; Provide content/goods/services to Web Nodes.
+            </div>
+            <div class="hide pr4" style="transition-delay: 0.15s">&bull; 将 Oyster 协议脚本添加到他们的网站 HTML 中。
+            </div>
+            <div class="protocol_head hide pr4" style="transition-delay: 0.2s">奖励</div>
+            <div class="hide pr4" style="transition-delay: 0.25s">&bull; 获得支付，用网络节点发现的 Oyster 珍珠来支付。
+            </div>
+        </div>
+    </div>
+    <div class="protocol_box hidden pr5_height" id="pr5">
+        <div class="protocol_title hide_fixed pr5">
+            <div>&nbsp;IOTA Tangle&nbsp;
+            </div>
+            <div class="protocol_caption">被称为有向无环图的分布式账簿</div>
+        </div>
+        <div class="protocol_content">
+            <div class="protocol_head hide pr5" style="transition-delay: 0.05s">责任</div>
+            <div class="hide pr5" style="transition-delay: 0.1s">&bull; 保存已执行工作证明操作的数据。
+            </div>
+            <div class="hide pr5" style="transition-delay: 0.15s">&bull; 从地理上分布数据的冗余副本。
+            </div>
+            <div class="hide pr5" style="transition-delay: 0.2s">&bull; 负载平衡存储负担，例如用群体智能。
+            </div>
+            <div class="protocol_head hide pr5" style="transition-delay: 0.25s">奖励</div>
+            <div class="hide pr5" style="transition-delay: 0.3s">&bull; 网络经验增加了对攻击向量的抵抗力。
+            </div>
+            <div class="hide pr5" style="transition-delay: 0.35s">&bull; 更快的事务确认平均时间。
+            </div>
+        </div>
+    </div>
+    <div class="protocol_box hidden pr6_height" id="pr6">
+        <div class="protocol_title hide_fixed pr6">
+            <div>以太坊区块链 
+            </div>
+            <div class="protocol_caption">具有智能合约功能的分布式账簿</div>
+        </div>
+        <div class="protocol_content">
+            <div class="protocol_head hide pr6" style="transition-delay: 0.05s">责任</div>
+            <div class="hide pr6" style="transition-delay: 0.1s">&bull; 提供可继承 Oyster 珍珠（作为代币）财产的智能合约框架。
+            </div>
+            <div class="protocol_head hide pr6" style="transition-delay: 0.15s">奖励</div>
+            <div class="hide pr6" style="transition-delay: 0.2s">&bull; 区块链矿工获得代理节点的 ETH 支付。
+            </div>
+        </div>
+    </div>
+</div>
+<div id="iphone" class="slide" style="background-color:#42BDE9;">
+    <div style="position:absolute;height:100%;width:50%;left:0;">
+        <div id="iphone_text" class="iphone_text iphone_slide">
+            <div class="iphone_title">
+                可使用的。<br>无论何处。
+            </div>
+            <div>Oyster 是一个在 IOTA Tangle 上存储数据的协议。所有需要检索其数据的人都与 Tangle 以及任何符合 Oyster 协议的软件客户端连接。与 Tangle 连接不需要任何的集中式门户或网关，因此 Oyster 完全是分散式的，而且订约方的风险很低。
+            </div>
+        </div>
+    </div>
+    <div style="position:absolute;height:100%;width:50%;right:0;">
+        <img id="iphone_img" class="iphone_img iphone_slide" src="../oy_iphone.png"/>
+    </div>
+</div>
+<div id="launch" class="slide" style="height:100vh;background-color:#f7f7f7;">
+    <div class="launch_lead hide_generic" style="transition-duration: 0.4s;z-index:1000">Oyster 释放数百万个网站的潜在收入潜力</div>
+    <div class="launch_text hide_final" style="transition-delay: 0.4s;z-index:1000">
+        PRL 是内容发布商与内容消费者以及存储供应商与存储消费者之间的经济桥梁。
+    </div>
+    <div class="launch_title hide_final" style="transition-delay:1s;transition-duration: 0.4s;color:rgba(0,18,37,0.75);z-index:1000">PRL SALE CLOSING IN</div>
+    <div id="countdown_major" class="countdown_major hide_final">
+        <div id="countdown_major_day" class="countdown_inner" style="left:0;"></div>
+        <div id="countdown_major_hour" class="countdown_inner" style="left:33%;"></div>
+        <div id="countdown_major_minute" class="countdown_inner" style="left:66%;"></div>
+        <div id="countdown_major_second" class="countdown_inner" style="left:100%;"></div>
+    </div>
+    <div class="extra_notice hide_final" style="transition-delay: 1s;z-index:1000">
+        <div style="position:absolute;left:0;">
+            不从交易所发送
+        </div>
+        <div style="position:absolute;right:0;">
+            将气体限制设置为 200,000
+        </div>
+    </div>
+    <div>
+        <div class="extra_note hide_final" style="transition-delay: 1s;z-index:1000">热销中
+            <a href="https://etherscan.io/address/0x1844b21593262668B7248d0f57a220CaaBA46ab9#code"><img class="launch_checksum" src="../oy_checksum.png" /></a>
+        </div>
+    </div>
+    <div id="launch_address" class="launch_address hide_final" style="transition-delay: 1.2s;z-index:99999">0x1844b21593262668B7248d0f57a220CaaBA46ab9</div>
+    <div class="launch_container hide_final" style="transition-delay: 1.2s;z-index:1000">
+        <div class="launch_info" style="position:absolute;height:100%;width:60%;left:0;">
+            共 5 亿颗珍珠 (PRL)<br>
+            硬上限为 80000 个 ETH <br>
+            1 ETH = 5000 PRL<br>
+            <img class="launch_chart_img" src="../oy_token.png?6"/>
+            <div class="launch_details2" style="position:absolute;left:0;width:45%;">
+                <span style="font-weight:bold;">使用募集资金</span><br>
+                预售和正式销售获得的资金可酌情使用于以下事项：<br><br>
+                1) 通过专业的营销活动来推广 Oyster。<br>
+                2) 支持为 Oyster 工作的全职开发人员。<br>
+                3) 利用服务器群的安全网对网络进行初始化。
+            </div>
+        </div>
+        <div class="launch_details" style="position:absolute;top:2%;height:100%;width:60%;right:0;text-align:right;">
+            Crowdsale 的硬上限为 4 亿个 PRL 或持续 24 天，以先达到目标的为准。<br>
+            PRL 是在收到资金时创建的。<br>
+            小心网络钓鱼攻击。<br>
+            不要从交易所发送。<br>
+            PRL 被自动发送到发送 ETH 的地址。<br>
+            最小金额为 0.001 ETH。<br>
+            <span style="font-weight:bold;">将气体限制设置为 200000</span>.
+            <br><br><a href="mew" style="text-decoration:none;font-weight:bold;background-color: rgba(66,189,233,0.56)">&nbsp;<span style="text-decoration:underline;">PRL 购买说明</span>&nbsp;</a>
+        </div>
+        <div class="launch_details3" style="position:absolute;bottom:6%;width:30%;right:0;text-align:left;">
+            * 保留 4 亿个 crowdsale PRL 中的 2%，以匹配预售代币并酌情使用。<br><br>
+            ** 未来，与存储挂钩的方式可能会被分散式的人工智能合约所改变。
+        </div>
+    </div>
+    <div class="launch_container hide_final" style="top:0;height:100%;z-index:0;">
+        <div class="launch_details" style="position:absolute;right:0;bottom:0.5%;font-weight:bold;">Access Code<br>
+            <input id="access_input" type="text" style="width:50%;" />
+            <span id="access_go_button" class="access_go" onclick="oy_access(document.getElementById('access_input').value)">GO</span>
+        </div>
+    </div>
+    <div class="launch_directory hide_final" style="transition-delay: 1.6s;z-index:1000">
+        <div style="position:absolute;height:100%;width:50%;left:0;">
+            <div class="launch_img oy_solution">
+                <div class="shell_cont_img">
+                    <img class="shell_img" src="../oy_logo_shell.png"/>
+                    <div class="shadow">
+                        <div style="position:relative;width:100%;height:100%;background: rgba(48, 48, 48, 0.20);border-radius:50%;filter: blur(8px);">
+                            <div style="position:absolute;left:50%;top:50%;transform: translateX(-50%) translateY(-50%);width:75%;height:50%;background: rgba(70, 70, 70, 0.40);border-radius:50%;z-index:20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position:absolute;height:100%;width:50%;right:0;">
+            <div style="position:absolute;top:0;"><a href="https://github.com/oysterprotocol">GitHub</a></div>
+            <div style="position:absolute;top:20%;"><a href="https://oyster.ws/OysterWhitepaper.pdf">Whitepaper</a></div>
+            <div style="position:absolute;top:40%;"><a href="https://t.me/oysterprotocol">Telegram</a></div>
+            <div style="position:absolute;top:60%;"><a href="https://medium.com/oysterprotocol">Oyster Blog</a></div>
+            <div style="position:absolute;top:80%;"><a href="https://twitter.com/OysterProtocol">@OysterProtocol</a></div>
+            <div style="position:absolute;top:100%;"><a href="mailto:contact@oyster.ws">contact@oyster.ws</a></div>
+        </div>
+    </div>
+    <div class="scroll_text hide_final" style="transition-delay: 3.2s;position:absolute;bottom:0;left:50%;transform:translateX(-50%)" onmouseover="this.style.cursor = 'pointer'"
+         onclick="oy_scroll(2)">scroll to top
+    </div>
+</div>
+<div id="oy_extra_space"></div>
+<script type="text/javascript">
+    function oy_access(oy_code, oy_noscroll) {
+        if (typeof oy_noscroll === 'undefined') oy_noscroll = false;
+        $.post("https://oyster.ws/tokeninternal/oy_access.php", {oy_code: oy_code},
+            function (data, status) {
+                if (status === "success" && data !== "oy_reject") {
+                    document.getElementById('oy_extra_space').innerHTML = data;
+                    document.getElementById('access_go_button').style.backgroundColor = "#46599A";
+                    oy_scroll(4);
+                    //document.getElementById('front_extra_sign').innerHTML = "AIRDROP SALE";
+                }
+                else {
+                    document.getElementById('access_go_button').style.backgroundColor = "#e61000";
+                    setTimeout(function () {
+                        document.getElementById('access_go_button').style.backgroundColor = "#14a2cc";
+                    }, 1000)
+                }
+            });
+    }
+
+    function oy_scroll(scroll_type) {
+        if (scroll_type === 1) {
+            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            var scroll_offset = Math.round(h / 15);
+            $('html,body').animate({scrollTop: $("#problem").offset().top - scroll_offset}, 1500);
+        }
+        else if (scroll_type === 2) {
+            $('html,body').animate({scrollTop: 0}, 2500);
+        }
+        else if (scroll_type === 3) {
+            $('html, body').animate({
+                    scrollTop: $(document).height() - $(window).height()
+                }, 2000
+            );
+        }
+        else if (scroll_type === 4) {
+            $('html, body').animate({
+                    scrollTop: $(document).height() - $(window).height()
+                }, 1600
+            );
+        }
+    }
+
+    oy_countdown("countdown_major", 1510675200000);
+    oy_countdown("countdown_minor", 1510675200000);
+
+    function oy_countdown(oy_label, oy_timestamp) {
+        var countDownDate = new Date(oy_timestamp).getTime();
+        oy_countdown_sub(oy_label, countDownDate);
+        var x = setInterval(function () {
+            oy_countdown_sub(oy_label, countDownDate);
+        }, 1000);
+
+        function oy_countdown_sub(oy_label, countDownDate) {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById(oy_label + "_day").innerHTML = days + "<br><span class='" + oy_label + "_label'>day" + (days === 1 ? '' : 's') + "</span>";
+            document.getElementById(oy_label + "_hour").innerHTML = hours + "<br><span class='" + oy_label + "_label'>hour" + (hours === 1 ? '' : 's') + "</span>";
+            document.getElementById(oy_label + "_minute").innerHTML = minutes + "<br><span class='" + oy_label + "_label'>minute" + (minutes === 1 ? '' : 's') + "</span>";
+            document.getElementById(oy_label + "_second").innerHTML = seconds + "<br><span class='" + oy_label + "_label'>second" + (seconds === 1 ? '' : 's') + "</span>";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById(oy_label).innerHTML = "<div style='font-size:3vh'>REFRESH THIS PAGE</div><div style='font-size:1.5vh'>If this message still shows, then <a href='https://oyster.ws/index.html?2' target='_self'>click here</a>.</div>";
+            }
+        }
+    }
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    window.OY_PRO_CURR = "pr1";
+
+    function oy_protocol_switch(oy_id) {
+        if (window.OY_PRO_CURR !== oy_id) {
+            document.getElementById("nav_" + window.OY_PRO_CURR).style.backgroundColor = "transparent";
+            document.getElementById(oy_id).style.backgroundColor = "rgba(66, 189, 233, 0.5)";
+            $("#" + window.OY_PRO_CURR).fadeOut(200, function () {
+                var j;
+                var target_sub;
+                var target = document.getElementById(window.OY_PRO_CURR);
+                target.classList.add("load_view_fixed");
+                target_sub = document.querySelectorAll('.' + target.id);
+                for (j = 0; j < target_sub.length; j++) {
+                    if (isElementInViewport(target_sub[j])) {
+                        target_sub[j].classList.remove("show");
+                    }
+                }
+                $("#" + oy_id.replace("nav_", "")).fadeIn(100, function () {
+                    var j;
+                    var target_sub;
+                    var target = document.getElementById(oy_id.replace("nav_", ""));
+                    target_sub = document.querySelectorAll('.' + target.id);
+                    for (j = 0; j < target_sub.length; j++) {
+                        if (isElementInViewport(target_sub[j])) {
+                            target_sub[j].classList.add("show");
+                        }
+                    }
+                });
+            });
+            window.OY_PRO_CURR = oy_id.replace("nav_", "");
+        }
+    }
+
+    (function () {
+
+        var split = location.search.replace('?', '').split('=');
+        if (split[0]==="sale"&&split[1].length>4) {
+            document.getElementById("access_input").value = split[1];
+            oy_access(split[1], true);
+        }
+
+        var items0 = document.querySelectorAll(".hide_generic");
+        var items1 = document.querySelectorAll(".timeline li");
+        var items2 = document.querySelectorAll(".feature");
+        var items3 = document.querySelectorAll(".pop_up");
+        var items4 = document.querySelectorAll(".fade_up");
+        var items5 = document.querySelectorAll(".protocol_box_first");
+        var items7 = document.querySelectorAll(".iphone_slide");
+        var items8 = document.querySelectorAll(".hide_final");
+
+        function scroll_effect(target, base, extra, scroll_pos) {
+            var scroll_react = 32;
+            var scroll_offset_img = ((scroll_pos - base) * scroll_react);
+            var scroll_offset_text = ((base - scroll_pos) * scroll_react);
+            var scroll_act = scroll_react / 10;
+            var target_img = document.getElementById(target + '_img');
+            var target_text = document.getElementById(target + '_text');
+            if (scroll_offset_img < scroll_act && scroll_offset_img > (scroll_act * -1) && window.getComputedStyle(target_img).opacity === '1' && window.getComputedStyle(target_text).opacity === '1') {
+                if (window.innerHeight > window.innerWidth) {
+                    target_img.style.transform = extra + "translateY(-50%) translateY(" + scroll_offset_img + "vw)";
+                    target_text.style.transform = extra + "translateY(-50%) translateY(" + scroll_offset_text + "vw)";
+                }
+                else {
+                    target_img.style.transform = extra + "translateY(-50%) translateY(" + scroll_offset_img + "vh)";
+                    target_text.style.transform = extra + "translateY(-50%) translateY(" + scroll_offset_text + "vh)";
+                }
+                setTimeout(function () {
+                    target_img.style.transition = "all 0.12s linear";
+                    target_text.style.transition = "all 0.12s linear";
+                }, 500);
+            }
+        }
+
+        function callbackFunc() {
+            var scroll_pos = $(window).scrollTop() / $(document).height();
+
+            console.log(scroll_pos);
+
+            scroll_effect('problem', 0.073, "translateX(-50%) ", scroll_pos);
+            scroll_effect('solution', 0.145, "translateX(-50%) ", scroll_pos);
+            scroll_effect('dapp', 0.565, "translateX(-50%) ", scroll_pos);
+            scroll_effect('project', 0.704, "translateX(-50%) ", scroll_pos);
+            scroll_effect('iphone', 0.818, "", scroll_pos);
+
+
+            var i;
+            for (i = 0; i < items0.length; i++) {
+                if (isElementInViewport(items0[i])) {
+                    items0[i].classList.add("show_generic");
+                }
+            }
+            for (i = 0; i < items1.length; i++) {
+                if (isElementInViewport(items1[i])) {
+                    items1[i].classList.add("in-view");
+                }
+            }
+            for (i = 0; i < items2.length; i++) {
+                if (isElementInViewport(items2[i])) {
+                    items2[i].classList.add("load_view");
+                }
+            }
+            for (i = 0; i < items3.length; i++) {
+                if (isElementInViewport(items3[i])) {
+                    items3[i].classList.add("load_view");
+                }
+            }
+            for (i = 0; i < items4.length; i++) {
+                if (isElementInViewport(items4[i])) {
+                    items4[i].classList.add("load_view");
+                }
+            }
+            var j;
+            var items6;
+            for (i = 0; i < items5.length; i++) {
+                if (isElementInViewport(items5[i])) {
+                    items5[i].classList.add("load_view_fixed");
+                    items6 = document.querySelectorAll('.' + items5[i].id);
+                    for (j = 0; j < items6.length; j++) {
+                        if (isElementInViewport(items6[j])) {
+                            items6[j].classList.add("show");
+                        }
+                    }
+                }
+            }
+            for (i = 0; i < items7.length; i++) {
+                if (isElementInViewport(items7[i])) {
+                    items7[i].classList.add("load_view_semi");
+                }
+            }
+            var final_skip = false;
+            for (i = 0; i < items8.length; i++) {
+                if (final_skip === true || isElementInViewport(items8[i])) {
+                    if (items8[i].id === "launch_address") final_skip = true;
+                    items8[i].classList.add("show_generic");
+                }
+            }
+        }
+
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("resize", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+
+    })();
+</script>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+    var sc_project = 11448740;
+    var sc_invisible = 1;
+    var sc_security = "692df40d";
+    var sc_https = 1;
+    var scJsHost = (("https:" == document.location.protocol) ?
+        "https://secure." : "http://www.");
+    document.write("<sc" + "ript type='text/javascript' src='" +
+        scJsHost +
+        "statcounter.com/counter/counter.js'></" + "script>");
+</script>
+<noscript>
+    <div class="statcounter"><a title="site stats"
+                                href="http://statcounter.com/" target="_blank"><img
+            class="statcounter"
+            src="//c.statcounter.com/11448740/0/692df40d/1/" alt="site
+stats"></a></div>
+</noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>

@@ -150,7 +150,7 @@ a {
         left:1vh;
         padding:1vh;
         font-size:1.5vh;
-        border: 0.5vh solid #83AC6F;
+        border: 0.5vh solid rgba(71, 71, 71, 0.98);
         text-align: center;
     }
 
@@ -305,7 +305,7 @@ a {
     }
 
     .press_lead {
-        font-size:2vh;
+        font-size:1.6vh;
         font-family: geo_med, Fallback, sans-serif;
         text-align: center;
     }
@@ -319,6 +319,20 @@ a {
     }
 
     .press_img:hover {
+        filter:none;
+        opacity:1;
+    }
+
+    .exchange_img {
+        width: auto;
+        height: 5vh;
+        filter:grayscale(100%);
+        transform:translateX(100%);
+        opacity:0.6;
+        transition-duration: 0.5s;
+    }
+
+    .exchange_img:hover {
         filter:none;
         opacity:1;
     }
@@ -586,24 +600,24 @@ a {
     .countdown_major {
         position:absolute;
         left:50%;
-        top:30%;
-        width:70vh;
-        height:20vh;
+        top: calc(30% - 10vh);
+        width:40vh;
+        height:5vh;
         transform: translate(-50%, -50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:7vh;
+        font-size:3vh;
         text-align: center;
     }
 
     .countdown_minor {
         position:absolute;
         left:50%;
-        top:88vh;
-        width:40vh;
-        height:20vh;
-        transform: translate(-50%, -50%);
+        top:2.7vh;
+        width:12vh;
+        height:5vh;
+        transform: translateX(-50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:3.5vh;
+        font-size:1.8vh;
         text-align: center;
     }
 
@@ -614,18 +628,18 @@ a {
 
     .countdown_major_label {
         position:relative;
-        top:-5vh;
+        top:-1.8vh;
         left:0;
         font-family: geo_light, Fallback, sans-serif;
-        font-size:4vh;
+        font-size:2vh;
     }
 
     .countdown_minor_label {
         position:relative;
-        top:-2vh;
+        top:-1vh;
         left:0;
         font-family: geo_light, Fallback, sans-serif;
-        font-size:2vh;
+        font-size:1vh;
     }
 
     .countdown_extra_label {
@@ -636,13 +650,31 @@ a {
         font-size:4vh;
     }
 
+    .market_cmc {
+        position:absolute;
+        top: calc(20% + 11.5vh);
+        left: 50%;
+        transform:translateX(-50%);
+        width:50vh;
+        height:40vh;
+    }
+
+    .market_exchanges {
+        position:absolute;
+        top: calc(30% + 31.5vh);
+        left: 50%;
+        transform:translateX(-50%);
+        width:80vh;
+        height:40vh;
+    }
+
     .launch_title {
         position: absolute;
-        top: calc(30% - 14vh);
+        top: calc(30% - 16vh);
         left:0;
         width: 100%;
-        font-weight:bold;
-        font-size: 4vh;
+        font-family: geo_med, Fallback, sans-serif;
+        font-size: 3vh;
         text-align: center;
     }
 
@@ -660,10 +692,10 @@ a {
         position:absolute;
         left:50%;
         transform:translateX(-50%);
-        top: calc(30% + 4vh);
+        top: calc(20% + 4vh);
         font-size:3.1vh;
         font-family: geo_med, Fallback, sans-serif;
-        background-color: #83AC6F;
+        background-color: rgba(82, 82, 82, 0.99);
         border-radius:1vh;
         color: #0a0a0a;
         padding:0.5vh 1vh;
@@ -815,7 +847,7 @@ a {
         position:absolute;
         left:0;
         top:0;
-        width:54vh;
+        width:25vh;
         font-size:1.8vh;
     }
 
@@ -831,11 +863,11 @@ a {
 
     .extra_notice {
         position:absolute;
-        top: calc(30% + 1.8vh);
+        top: calc(20% + 1.8vh);
         left:50%;
         transform:translate(-50%, -50%);
         width: 70vh;
-        color: #3b4f33;
+        background-color: rgba(82, 82, 82, 0.99);
         font-style: italic;
         font-weight:bold;
         font-size:1.75vh;
@@ -847,28 +879,26 @@ a {
     }
 
     .extra_head {
-        position:relative;
-        top:1vh;
-        font-size:1.6vh;
+        font-size:2.6vh;
         color: #558AEA;
     }
 
     .extra_main {
-        font-size:2vh;
+        font-size:3vh;
         font-weight:bold;
         color: #46599A;
     }
 
     .extra_note {
         position:absolute;
-        top: calc(30% - 8vh);
+        top: calc(20% - 6vh);
         left:50%;
         transform: translateX(-50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:3.5vh;
-        padding:0.5vh;
-        border-radius: 0.75vh;
-        background-color: rgba(131, 172, 111, 0.57);
+        font-size:2vh;
+        padding:0.3vh;
+        border-radius: 0.5vh;
+        background-color: rgba(172, 78, 20, 0.57);
     }
 
     .extra_push {
@@ -1179,7 +1209,7 @@ a {
         left:1vw;
         padding:1vw;
         font-size:1.5vw;
-        border: 0.5vw solid #83AC6F;
+        border: 0.5vh solid rgba(71, 71, 71, 0.98);
         text-align: center;
     }
 
@@ -1334,7 +1364,7 @@ a {
     }
 
     .press_lead {
-        font-size:2vw;
+        font-size:1.6vw;
         font-family: geo_med, Fallback, sans-serif;
         text-align: center;
     }
@@ -1348,6 +1378,20 @@ a {
     }
 
     .press_img:hover {
+        filter:none;
+        opacity:1;
+    }
+
+    .exchange_img {
+        width: auto;
+        height: 5vw;
+        filter:grayscale(100%);
+        transform:translateX(100%);
+        opacity:0.6;
+        transition-duration: 0.5s;
+    }
+
+    .exchange_img:hover {
         filter:none;
         opacity:1;
     }
@@ -1615,24 +1659,24 @@ a {
     .countdown_major {
         position:absolute;
         left:50%;
-        top:34%;
-        width:70vw;
-        height:20vw;
+        top: calc(34% - 10vw);
+        width:40vw;
+        height:5vw;
         transform: translate(-50%, -50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:8vw;
+        font-size:3vw;
         text-align: center;
     }
 
     .countdown_minor {
         position:absolute;
         left:50%;
-        top:88vw;
-        width:40vw;
-        height:20vw;
-        transform: translate(-50%, -50%);
+        top:2.7vw;
+        width:12vw;
+        height:5vw;
+        transform: translateX(-50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:3.5vw;
+        font-size:1.8vw;
         text-align: center;
     }
 
@@ -1643,18 +1687,18 @@ a {
 
     .countdown_major_label {
         position:relative;
-        top:-5vw;
+        top:-1.8vw;
         left:0;
         font-family: geo_light, Fallback, sans-serif;
-        font-size:4vw;
+        font-size:2vw;
     }
 
     .countdown_minor_label {
         position:relative;
-        top:-2vw;
+        top:-1vw;
         left:0;
         font-family: geo_light, Fallback, sans-serif;
-        font-size:2vw;
+        font-size:1vw;
     }
 
     .countdown_extra_label {
@@ -1665,13 +1709,31 @@ a {
         font-size:4vw;
     }
 
+    .market_cmc {
+        position:absolute;
+        top: calc(24% + 15vw);
+        left: 50%;
+        transform:translateX(-50%);
+        width:40vw;
+        height:40vw;
+    }
+
+    .market_exchanges {
+        position:absolute;
+        top: calc(30% + 40vw);
+        left: 50%;
+        transform:translateX(-50%);
+        width:80vw;
+        height:40vw;
+    }
+
     .launch_title {
         position: absolute;
-        top: calc(34% - 14vw);
+        top: calc(34% - 16vw);
         left:0;
         width: 100%;
-        font-weight:bold;
-        font-size: 4vw;
+        font-family: geo_med, Fallback, sans-serif;
+        font-size: 3vw;
         text-align: center;
     }
 
@@ -1689,10 +1751,10 @@ a {
         position:absolute;
         left:50%;
         transform:translateX(-50%);
-        top: calc(34% + 7vw);
+        top: calc(24% + 7vw);
         font-size:3.2vw;
         font-family: geo_med, Fallback, sans-serif;
-        background-color: #83AC6F;
+        background-color: rgba(82, 82, 82, 0.99);
         border-radius:1vw;
         color: #0a0a0a;
         padding:0.5vw 1vw;
@@ -1738,7 +1800,7 @@ a {
 
     .launch_lead {
         position:absolute;
-        top: calc(34% - 29.5vw);
+        top: calc(30% - 29.5vw);
         left: 50%;
         transform: translateX(-50%);
         width:95%;
@@ -1750,7 +1812,7 @@ a {
 
     .launch_text {
         position:absolute;
-        top: calc(34% - 26vw);
+        top: calc(30% - 26vw);
         left: 50%;
         transform: translateX(-50%);
         width:85vw;
@@ -1843,7 +1905,7 @@ a {
         position:absolute;
         left:0;
         top:0;
-        width:44vw;
+        width:25vw;
         font-size:1.8vw;
     }
 
@@ -1859,11 +1921,11 @@ a {
 
     .extra_notice {
         position:absolute;
-        top: calc(34% + 4.5vw);
+        top: calc(24% + 4.5vw);
         left:50%;
         transform:translate(-50%, -50%);
         width: 70vw;
-        color:#3b4f33;
+        background-color: rgba(82, 82, 82, 0.99);
         font-style: italic;
         font-weight:bold;
         font-size:1.75vw;
@@ -1875,28 +1937,26 @@ a {
     }
 
     .extra_head {
-        position:relative;
-        top:1vw;
-        font-size:1.6vw;
+        font-size:2.6vw;
         color: #558AEA;
     }
 
     .extra_main {
-        font-size:2vw;
+        font-size:3vw;
         font-weight:bold;
         color: #46599A;
     }
 
     .extra_note {
         position:absolute;
-        top: calc(30% - 2vw);
+        top: calc(20% + 1vw);
         left:50%;
         transform: translateX(-50%);
         font-family: geo_med, Fallback, sans-serif;
-        font-size:3.5vw;
-        padding:0.5vw;
-        border-radius: 0.75vw;
-        background-color: rgba(131, 172, 111, 0.57);
+        font-size:2vw;
+        padding:0.3vw;
+        border-radius: 0.5vw;
+        background-color: rgba(172, 78, 20, 0.57);
     }
 
     .extra_push {
