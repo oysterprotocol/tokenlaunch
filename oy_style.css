@@ -666,6 +666,11 @@ a {
         transform:translateX(-50%);
         width:80vh;
         height:40vh;
+        pointer-events: none;
+    }
+
+    .market_exchanges a {
+        pointer-events: all;
     }
 
     .launch_title {
